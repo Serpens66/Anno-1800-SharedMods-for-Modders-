@@ -3,13 +3,6 @@
     <!-- uses Serp GUIDS from 1500001600 to 1500001619 including (currently in use up to 1500001612)  -->
     
     
-    <!-- TODO: ConditionTimer mit subtrigger conditions testen: -->
-    <!-- timer nach 30 sek wahr und dann bedingungn ein bauernhaus zu besitzen. -->
-    <!-- im test baue ich das haus dann nach ~40 sekunden und gucken ob dadurch dann sofort die action ausgelöst wird -->
-    <!-- oder ob der timer quasi nochmal von vorne beginnt und es dadurch erst bei 60 sekunden auslöst -->
-    
-    
-    
     <!-- USAGE: use the GUID from list below for the AI you want to check and use this condition in your code: -->
     <!-- <TriggerCondition> -->
       <!-- <Template>ConditionUnlocked</Template> -->
