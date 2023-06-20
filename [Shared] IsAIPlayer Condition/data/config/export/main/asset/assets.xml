@@ -93,6 +93,7 @@
     <!-- In addition we will add a "Is Human" condition, which is automatically true for all humans using the UsedBySecondParties=0 Trigger execution. -->
     <!-- So in the end everyone that has not IsHuman and owns a lighthouse must be an AI -->
     
+    <Include File="/data/config/export/main/asset/LighthouseFix.include.xml" />
     
     <!-- FeatureUnlock to check if a specific Participant is AI -->
     <ModOp Type="AddNextSibling" GUID="137108">
