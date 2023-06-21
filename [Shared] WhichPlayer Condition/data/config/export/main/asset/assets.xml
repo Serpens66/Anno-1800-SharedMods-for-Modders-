@@ -1,6 +1,6 @@
 <ModOps>
     
-    <!-- uses Serp GUIDS from 1500001600 to 1500001649 including (currently in use up to )  -->
+    <!-- uses Serp GUIDS from 1500001600 to 1500001675 including (reserved up to 1500001700)  -->
     
     
     <!-- USAGE: use the GUID from list below for the AI you want to check and use this condition in your code: -->
@@ -18,8 +18,8 @@
     <!-- The AI Unlocks are true for AIs after 1 second of gametime. So dont use a construct with NegateCondition to check "Is not AI" directly at gamestart, because this will give false results. -->
     <!-- But you can use all of it without NegateCondition anytime, it will just take 1 second until the trigger executed eg. for the AI -->
     <!-- The GUIDs to use from this mod are: -->
-    <!-- 1500001600 - Is Human -->
-    <!-- 1500001601 - Is AI -->
+    <!-- 1500001600 - Is any Human -->
+    <!-- 1500001601 - Is any AI -->
     <!-- 1500001602 - Second_ai_01_Jorgensen -->
     <!-- 1500001603 - Second_ai_02_Qing -->
     <!-- 1500001604 - Second_ai_03_Wibblesock -->
@@ -60,9 +60,6 @@
     <!-- 1500001638 - Human5 -->
     <!-- 1500001639 - Human6 -->
     <!-- 1500001640 - Human7 -->
-    
-    <!-- TODO:
-    <!-- Und evlt auch hier den check sind 3 menscliche spieler dabei oder 4 usw. -->
     
     
 
