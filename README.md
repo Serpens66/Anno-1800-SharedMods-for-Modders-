@@ -7,7 +7,8 @@ Condition to check if processing player is an AI or specific AI or specific Huma
 
 USAGE: 
   Put the whole mod folder into your mod (next to your data folder) and use the GUID from list below for the player you want to check and use this condition in your code:
-  ```<TriggerCondition>
+  ```
+ <TriggerCondition>
     <Template>ConditionUnlocked</Template>
     <Values>
       <Condition />
