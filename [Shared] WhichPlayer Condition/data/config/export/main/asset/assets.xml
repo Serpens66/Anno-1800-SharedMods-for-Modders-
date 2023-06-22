@@ -1,7 +1,8 @@
 <ModOps>
     
-    <!-- uses Serp GUIDS from 1500001600 to 1500001675 including (reserved up to 1500001700)  -->
+    <!-- uses Serp GUIDS from 1500001600 to 1500001671 including (reserved up to 1500001679) -->
     
+
     
     <!-- USAGE: use the GUID from list below for the AI you want to check and use this condition in your code: -->
     <!-- <TriggerCondition> -->
@@ -98,7 +99,11 @@
     
     <!-- Unfortunately the game only allows us to execute triggers for: "Only Humans" or "Every Huamnd and every AI". There is no proper way to check for who exactly -->
     <!--  a trigger is executed and no way to execute triggers only for AI (triggers are never executed for 3rd parties, eg. pirates. You can do stuff with the pirates, but then it is done from the view of the executing player)  -->
-    <!-- For this I only know a workaround to check if the processing (owner) Player has a AI-lighthouse GUID build. This is done by adding subtriggers. -->
+    
+    <!-- So we will simply unlock for all humans the GUID 1500001600 -->
+    <!-- and with a short delay we will check for every player (human+AI) that everyone who has not 1500001600 unlocked must be an AI. -->
+    
+    <!-- For specific AI I only know a workaround to check if the processing (owner) Player has a AI-lighthouse GUID build. This is done by adding subtriggers. -->
     <!-- We will use triggers to check if the processing/owner does own any of the lighthouses (so of course this can only find specific AIs the lighthouse GUID is known, eg. mod-AIs must bei added to this first) -->
     <!-- Lighthouse GUIDs -->
     <!-- <GUID>100549</GUID> Jorgensens Leuchtturm , Second_ai_01_Jorgensen -->
@@ -112,11 +117,8 @@
     <!-- <GUID>100705</GUID> Silvas Leuchtturm , Second_ai_09_Silva -->
     <!-- <GUID>100706</GUID> Hunts Leuchtturm , Second_ai_10_Hunt -->
     <!-- <GUID>110669</GUID> Merciers Leuchtturm , Second_ai_11_Mercier -->
-    <!-- In addition we will add a "Is Human" condition, which is automatically true for all humans using the UsedBySecondParties=0 Trigger execution. -->
-    <!-- So in the end everyone that has not IsHuman and owns a lighthouse must be an AI -->
     
-    
-    <!-- To find out who is Human0 to Human3, I will spawn a Fake Object with unique GUID at first execution once -->
+    <!-- To find out who is Human0 to Human3 and Mod1 to Mod20, I will spawn a Fake Object with unique GUID at first execution once -->
     <!-- for everyone who is part of the game -->
     <!-- We have to check ConditionIsParticipantInGame first, because spawning something with Owner not existent players might cause problems -->
     
@@ -1982,6 +1984,10 @@
           <MilitaryShipPoints>0</MilitaryShipPoints>
           <TradeShipPoints>0</TradeShipPoints>
         </CommandQueue>
+        <MinimapToken>
+          <TokenAsset>0</TokenAsset>
+          <StrategicMapAsset>0</StrategicMapAsset>
+        </MinimapToken>
 				<Cost>
           <InfluenceCostPoints>0</InfluenceCostPoints>
         </Cost>
@@ -2347,7 +2353,7 @@
       <Template>Trigger</Template>
       <Values>
         <Standard>
-          <GUID>1500001675</GUID>
+          <GUID>1500001671</GUID>
         </Standard>
         <Trigger>
           <TriggerCondition>
@@ -2362,33 +2368,13 @@
           <TriggerActions> 
             <Item>
               <TriggerAction>
-                <Template>ActionDelayedActions</Template>
+                <Template>ActionDeleteObjects</Template>
                 <Values>
                   <Action />
-                  <ActionDelayedActions>
-                    <ExecutionDelay>2000</ExecutionDelay>
-                    <DelayedActions>
-                      <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
-                      <Values>
-                        <ActionList>
-                          <Actions>
-                            <Item>
-                              <Action>
-                                <Template>ActionDeleteObjects</Template>
-                                <Values>
-                                  <Action />
-                                  <ActionDeleteObjects />
-                                  <ObjectFilter>
-                                    <ObjectGUID>1500001670</ObjectGUID>
-                                  </ObjectFilter>
-                                </Values>
-                              </Action>
-                            </Item>
-                          </Actions>
-                        </ActionList>
-                      </Values>
-                    </DelayedActions>
-                  </ActionDelayedActions>
+                  <ActionDeleteObjects />
+                  <ObjectFilter>
+                    <ObjectGUID>1500001670</ObjectGUID>
+                  </ObjectFilter>
                 </Values>
               </TriggerAction>
             </Item>
@@ -2401,6 +2387,7 @@
       </Values>
     </Asset>
   </ModOp>
+  <!-- using ConditionPlayerCounter-Area as main condition is needed to get a random active session from the processing player to use in ActionSpawnObjects (will be used with AllowQuestSession=1 and AllowQuestArea=1) -->
   <ModOp Type="addNextSibling" GUID="130248">
     <Asset>
       <Template>Trigger</Template>
@@ -2411,10 +2398,15 @@
         </Standard>
         <Trigger>
           <TriggerCondition>
-            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Template>ConditionPlayerCounter</Template>
             <Values>
               <Condition />
-              <ConditionAlwaysTrue />
+              <ConditionPlayerCounter>
+                <Context>700000</Context>
+                <CounterAmount>1</CounterAmount>
+                <CounterScope>Area</CounterScope>
+                <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+              </ConditionPlayerCounter>
             </Values>
           </TriggerCondition>
           <SubTriggers>
@@ -3221,248 +3213,5 @@
   </ModOp>
   
   
-  <!-- quests may help to spawn stuff session independend, but still require ConditionPlayerCounter Trigger to start them, so we would need a single trigger and a single quest per player and that is simply too much bullshit code to acheive simply spawning something in any not hardcoded session -->
-  <!-- <ModOp Type="AddNextSibling" GUID="110746"> -->
-    <!-- <Asset> -->
-      <!-- <Template>A7_QuestStatusQuo</Template> -->
-      <!-- <Values> -->
-        <!-- <Standard> -->
-          <!-- <GUID>1500001671</GUID> -->
-          <!-- <Name>Fake Quest Spawn Test Objects</Name> -->
-        <!-- </Standard> -->
-        <!-- <Quest> -->
-          <!-- <StarterMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </StarterMessage> -->
-          <!-- <SuccessMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </SuccessMessage> -->
-          <!-- <FailureMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </FailureMessage> -->
-          <!-- <SelectionReminderMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </SelectionReminderMessage> -->
-          <!-- <AbortedManuallyMessage /> -->
-          <!-- <AbortedAutomaticallyMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </AbortedAutomaticallyMessage> -->
-          <!-- <InvitationMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </InvitationMessage> -->
-          <!-- <EscortShipSelectedMessage /> -->
-          <!-- <ReminderMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </ReminderMessage> -->
-          <!-- <ResolveConfirmationMessage> -->
-            <!-- <SuppressMessage>1</SuppressMessage> -->
-          <!-- </ResolveConfirmationMessage> -->
-          <!-- <InvitationSmugglerQuestMessage /> -->
-          <!-- <SmugglerQuestTradingStationReached /> -->
-          <!-- <StartInvitationGiveItemMessage /> -->
-          <!-- <StartFollowShipMessage /> -->
-          <!-- <OnQuestStart> -->
-            <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
-            <!-- <Values> -->
-              <!-- <ActionList> -->
-                <!-- <Actions> -->
-                  <!-- <Item> -->
-                    <!-- <Action> -->
-                      <!-- <Template>ActionSpawnObjects_SerpPlayerTest</Template> -->
-                      <!-- <Values> -->
-                        <!-- <Action /> -->
-                        <!-- <ActionSpawnObjects> -->
-                          <!-- <SpawnGUID>1500001641</SpawnGUID> -->
-                          <!-- <Owner>Human0</Owner> -->
-                        <!-- </ActionSpawnObjects> -->
-                      <!-- </Values> -->
-                    <!-- </Action> -->
-                  <!-- </Item> -->
-                <!-- </Actions> -->
-              <!-- </ActionList> -->
-            <!-- </Values> -->
-          <!-- </OnQuestStart> -->
-          <!-- <OnQuestDeclined /> -->
-          <!-- <OnQuestActive /> -->
-          <!-- <OnQuestAborted /> -->
-          <!-- <OnQuestTimedOut /> -->
-          <!-- <OnActiveQuestTimedOut /> -->
-          <!-- <OnQuestFailed /> -->
-          <!-- <OnQuestDiscarded /> -->
-          <!-- <OnQuestSucceeded /> -->
-          <!-- <OnQuestEnd> -->
-            <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
-            <!-- <Values> -->
-              <!-- <ActionList> -->
-                <!-- <Actions> -->
-                  <!-- <Item> -->
-                    <!-- <Action> -->
-                      <!-- <Template>ActionDelayedActions</Template> -->
-                      <!-- <Values> -->
-                        <!-- <Action /> -->
-                        <!-- <ActionDelayedActions> -->
-                          <!-- <ExecutionDelay>10000</ExecutionDelay> -->
-                          <!-- <DelayedActions> -->
-                            <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
-                            <!-- <Values> -->
-                              <!-- <ActionList> -->
-                                <!-- <Actions> -->
-                                  <!-- <Item> -->
-                                    <!-- <Action> -->
-                                      <!-- <Template>ActionDeleteObjects</Template> -->
-                                      <!-- <Values> -->
-                                        <!-- <Action /> -->
-                                        <!-- <ActionDeleteObjects /> -->
-                                        <!-- <ObjectFilter> -->
-                                          <!-- <ObjectGUID>1500001670</ObjectGUID> -->
-                                        <!-- </ObjectFilter> -->
-                                      <!-- </Values> -->
-                                    <!-- </Action> -->
-                                  <!-- </Item> -->
-                                <!-- </Actions> -->
-                              <!-- </ActionList> -->
-                            <!-- </Values> -->
-                          <!-- </DelayedActions> -->
-                        <!-- </ActionDelayedActions> -->
-                      <!-- </Values> -->
-                    <!-- </Action> -->
-                  <!-- </Item> -->
-                <!-- </Actions> -->
-              <!-- </ActionList> -->
-            <!-- </Values> -->
-          <!-- </OnQuestEnd> -->
-          <!-- <OnPhotographySuccessNewspaperAction /> -->
-          <!-- <QuestGiver>86</QuestGiver> -->
-          <!-- <StoryText>17246</StoryText> -->
-          <!-- <QuestActivation>QuestStart</QuestActivation> -->
-          <!-- <IsAbortable>0</IsAbortable> -->
-          <!-- <QuestTimeLimit>0</QuestTimeLimit> -->
-          <!-- <CountForQuestLimit>0</CountForQuestLimit> -->
-          <!-- <QuestTrackerVisibility>Never</QuestTrackerVisibility> -->
-          <!-- <QuestSessionDependencies/> -->
-          <!-- <ConfirmOnReachedCondition /> -->
-          <!-- <ConfirmOnReached>0</ConfirmOnReached> -->
-          <!-- <ReputationQuestFail/> -->
-          <!-- <QuestHints /> -->
-          <!-- <StarterSpeechBubble /> -->
-          <!-- <SuccessSpeechBubble /> -->
-        <!-- </Quest> -->
-        <!-- <PreConditionList /> -->
-        <!-- <Text /> -->
-        <!-- <Reward> -->
-          <!-- <RewardAssets /> -->
-          <!-- <RewardReputation /> -->
-        <!-- </Reward> -->
-        <!-- <Objectives> -->
-          <!-- <WinConditions> -->
-            <!-- <Item> -->
-              <!-- <Objective> -->
-                <!-- <Template>FakeQuestObjective</Template> -->
-                <!-- <Values> -->
-                  <!-- <ConditionQuestObjective /> -->
-                  <!-- <ConditionQuestFakeObjective /> -->
-                <!-- </Values> -->
-              <!-- </Objective> -->
-            <!-- </Item> -->
-          <!-- </WinConditions> -->
-        <!-- </Objectives> -->
-        <!-- <QuestOptional /> -->
-      <!-- </Values> -->
-    <!-- </Asset> -->
-    <!-- <Asset> -->
-      <!-- <BaseAssetGUID>1500001671</BaseAssetGUID> -->
-      <!-- <Values> -->
-        <!-- <Standard> -->
-          <!-- <GUID>1500001672</GUID> -->
-        <!-- </Standard> -->
-        <!-- <Quest> -->
-          <!-- <OnQuestStart> -->
-            <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
-            <!-- <Values> -->
-              <!-- <ActionList> -->
-                <!-- <Actions> -->
-                  <!-- <Item> -->
-                    <!-- <Action> -->
-                      <!-- <Template>ActionSpawnObjects_SerpPlayerTest</Template> -->
-                      <!-- <Values> -->
-                        <!-- <Action /> -->
-                        <!-- <ActionSpawnObjects> -->
-                          <!-- <SpawnGUID>1500001642</SpawnGUID> -->
-                          <!-- <Owner>Human1</Owner> -->
-                        <!-- </ActionSpawnObjects> -->
-                      <!-- </Values> -->
-                    <!-- </Action> -->
-                  <!-- </Item> -->
-                <!-- </Actions> -->
-              <!-- </ActionList> -->
-            <!-- </Values> -->
-          <!-- </OnQuestStart> -->
-        <!-- </Quest> -->
-      <!-- </Values> -->
-    <!-- </Asset> -->
-    <!-- <Asset> -->
-      <!-- <BaseAssetGUID>1500001671</BaseAssetGUID> -->
-      <!-- <Values> -->
-        <!-- <Standard> -->
-          <!-- <GUID>1500001673</GUID> -->
-        <!-- </Standard> -->
-        <!-- <Quest> -->
-          <!-- <OnQuestStart> -->
-            <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
-            <!-- <Values> -->
-              <!-- <ActionList> -->
-                <!-- <Actions> -->
-                  <!-- <Item> -->
-                    <!-- <Action> -->
-                      <!-- <Template>ActionSpawnObjects_SerpPlayerTest</Template> -->
-                      <!-- <Values> -->
-                        <!-- <Action /> -->
-                        <!-- <ActionSpawnObjects> -->
-                          <!-- <SpawnGUID>1500001643</SpawnGUID> -->
-                          <!-- <Owner>Human2</Owner> -->
-                        <!-- </ActionSpawnObjects> -->
-                      <!-- </Values> -->
-                    <!-- </Action> -->
-                  <!-- </Item> -->
-                <!-- </Actions> -->
-              <!-- </ActionList> -->
-            <!-- </Values> -->
-          <!-- </OnQuestStart> -->
-        <!-- </Quest> -->
-      <!-- </Values> -->
-    <!-- </Asset> -->
-    <!-- <Asset> -->
-      <!-- <BaseAssetGUID>1500001671</BaseAssetGUID> -->
-      <!-- <Values> -->
-        <!-- <Standard> -->
-          <!-- <GUID>1500001674</GUID> -->
-        <!-- </Standard> -->
-        <!-- <Quest> -->
-          <!-- <OnQuestStart> -->
-            <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
-            <!-- <Values> -->
-              <!-- <ActionList> -->
-                <!-- <Actions> -->
-                  <!-- <Item> -->
-                    <!-- <Action> -->
-                      <!-- <Template>ActionSpawnObjects_SerpPlayerTest</Template> -->
-                      <!-- <Values> -->
-                        <!-- <Action /> -->
-                        <!-- <ActionSpawnObjects> -->
-                          <!-- <SpawnGUID>1500001644</SpawnGUID> -->
-                          <!-- <Owner>Human3</Owner> -->
-                        <!-- </ActionSpawnObjects> -->
-                      <!-- </Values> -->
-                    <!-- </Action> -->
-                  <!-- </Item> -->
-                <!-- </Actions> -->
-              <!-- </ActionList> -->
-            <!-- </Values> -->
-          <!-- </OnQuestStart> -->
-        <!-- </Quest> -->
-      <!-- </Values> -->
-    <!-- </Asset> -->
-  <!-- </ModOp> -->
-
     
 </ModOps>

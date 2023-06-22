@@ -16,31 +16,12 @@
             <DistanceToIsland>Far</DistanceToIsland>
           </SpawnArea>
           <SessionFilter>
-            <AllowProcessingSession>1</AllowProcessingSession>
-            <Sessions>
-              <Item>
-                <Session>180023</Session>
-              </Item>
-            </Sessions>
+            <AllowQuestSession>1</AllowQuestSession>
+            <AllowQuestArea>1</AllowQuestArea>
           </SessionFilter>
         </Properties>
       </Template>
     </ModOp>
-    <ModOp Type="addNextSibling" Template="ActionStartQuest">
-      <Template>
-        <Name>ActionStartQuest_SerpPlayerTest</Name>
-        <IsExpertTemplate>1</IsExpertTemplate>
-        <Properties>
-          <Action />
-          <ActionStartQuest>
-            <Quest>1500001671</Quest>
-            <InheritQuestArea>1</InheritQuestArea>
-            <InheritQuestObjects>1</InheritQuestObjects>
-            <GetQuestSessionFromArea>1</GetQuestSessionFromArea>
-            <InheritQuestSession>1</InheritQuestSession>
-          </ActionStartQuest>
-        </Properties>
-      </Template>
-    </ModOp>
+
     
 </ModOps>
