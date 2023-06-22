@@ -5,8 +5,10 @@
 -
 Condition to check if processing player is an AI or specific AI or specific Human.
 
-USAGE: use the GUID from list below for the player you want to check and use this condition in your code:
-  <TriggerCondition>
+USAGE: 
+  Put the whole mod folder into your mod (next to your data folder) and use the GUID from list below for the player you want to check and use this condition in your code:
+  ```
+ <TriggerCondition>
     <Template>ConditionUnlocked</Template>
     <Values>
       <Condition />
@@ -16,7 +18,7 @@ USAGE: use the GUID from list below for the player you want to check and use thi
       <ConditionPropsNegatable />
     </Values>
   </TriggerCondition>
-  
+  ```
   The GUIDs to use from this mod are:
   - 1500001600 - Is any Human
   - 1500001601 - Is any AI
