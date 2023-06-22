@@ -3,7 +3,8 @@
 
 [Shared] WhichPlayer Condition
 -
-Condition to check if processing player is an AI or specific AI or specific Human.
+Condition to check if processing player is any AI or specific AI or specific Human.
+(If you only need the "Is any AI" Condition and not the advanced ones, you can also use the lightweight code from "IsAIPlayer Condition" mod instead.)
 
 USAGE: 
   Put the whole mod folder into your mod (next to your data folder) and use the GUID from list below for the player you want to check and use this condition in your code:
