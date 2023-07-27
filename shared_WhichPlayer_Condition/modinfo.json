@@ -1,7 +1,7 @@
 {
-  "Version": "1.02",
+  "Version": "1.03",
   "ModID": "WhichPlayer_Serp",
-  "DeprecateIds":["IsAIPlayer_Serp"],
+  "DeprecateIds":null,
   "IncompatibleIds": null,
   "ModDependencies": null,
   "Category": {

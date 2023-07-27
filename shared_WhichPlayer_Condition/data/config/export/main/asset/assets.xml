@@ -3,21 +3,91 @@
     <!-- uses Serp GUIDS from 1500001600 to 1500001671 including (reserved up to 1500001679) -->
     
 
-    
     <!-- USAGE: use the GUID from list below for the AI you want to check and use this condition in your code: -->
     <!-- <TriggerCondition> -->
       <!-- <Template>ConditionUnlocked</Template> -->
       <!-- <Values> -->
         <!-- <Condition /> -->
         <!-- <ConditionUnlocked> -->
-          <!-- <UnlockNeeded>1500001601</UnlockNeeded> -->
+          <!-- <UnlockNeeded>1500001602</UnlockNeeded> -->
         <!-- </ConditionUnlocked> -->
         <!-- <ConditionPropsNegatable /> -->
       <!-- </Values> -->
     <!-- </TriggerCondition> -->
     
-    <!-- The AI Unlocks are true for AIs after 1 second of gametime. So dont use a construct with NegateCondition to check "Is not AI" directly at gamestart, because this will give false results. -->
-    <!-- But you can use all of it without NegateCondition anytime, it will just take 1 second until the trigger executed eg. for the AI -->
+    
+    <!-- ############################################################################################################################################ -->
+    <!-- ############################################################################################################################################ -->
+     <!-- ##### WARNING ##### -->
+      <!-- IF you want to use ConditionPropsNegatable/NegateCondition to check "is not AI" or "is not Jorgensen" and so on: -->
+      <!-- The "Is Any Human" and "Is any AI" can be true after 1 second of gametime. -->
+      <!-- All "Second_ai_" condition can be true after ~1 second after the AI settled their first island and therefore gets the AI-lighthouse. -->
+      <!-- All other conditions can be true after ~1 second after the player ownes any Kontor of the the vanilla pool 700000. -->
+      <!-- This means: -->
+      <!-- If you want to check "is not" you should add additional Conditions to your code, eg. a ConditionTimer with ~2 seconds and a check if the player you are checking already owns any Kontor anywhere: -->
+      <!-- .. -->
+      <!-- example for "is not Bente" Trigger condition (first check if player has any Kontor, then wait 2 seconds and only then check UnlockNeeded with NegateCondition=1.. and then you can check everything else you want to check .. that is why we use SubConditionCompletionOrder=Linear): -->
+      <!-- (if you want to execute your trigger multiple times and dont want it to wait 2 seconds each time, you have to create 2 triggers, one for the very first execution that registers the second for multiple execution without additional delay) -->
+      <!-- .. -->
+      <!-- <TriggerCondition> -->
+        <!-- <Template>ConditionPlayerCounter</Template> -->
+        <!-- <Values> -->
+          <!-- <Condition> -->
+            <!-- <SubConditionCompletionOrder>Linear</SubConditionCompletionOrder> -->
+          <!-- </Condition> -->
+          <!-- <ConditionPlayerCounter> -->
+            <!-- <Context>700000</Context> -->
+            <!-- <CounterAmount>1</CounterAmount> -->
+          <!-- </ConditionPlayerCounter> -->
+        <!-- </Values> -->
+      <!-- </TriggerCondition> -->
+      <!-- <SubTriggers> -->
+        <!-- <Item> -->
+          <!-- <SubTrigger> -->
+            <!-- <Template>AutoCreateTrigger</Template> -->
+            <!-- <Values> -->
+              <!-- <Trigger> -->
+                <!-- <TriggerCondition> -->
+                  <!-- <Template>ConditionTimer</Template> -->
+                  <!-- <Values> -->
+                    <!-- <Condition /> -->
+                    <!-- <ConditionTimer> -->
+                      <!-- <TimeLimit>2000</TimeLimit> -->
+                    <!-- </ConditionTimer> -->
+                  <!-- </Values> -->
+                <!-- </TriggerCondition> -->
+              <!-- </Trigger> -->
+            <!-- </Values> -->
+          <!-- </SubTrigger> -->
+        <!-- </Item> -->
+        <!-- <Item> -->
+          <!-- <SubTrigger> -->
+            <!-- <Template>AutoCreateTrigger</Template> -->
+            <!-- <Values> -->
+              <!-- <Trigger> -->
+                <!-- <TriggerCondition> -->
+                  <!-- <Template>ConditionUnlocked</Template> -->
+                  <!-- <Values> -->
+                    <!-- <Condition /> -->
+                    <!-- <ConditionUnlocked> -->
+                      <!-- <UnlockNeeded>1500001602</UnlockNeeded> -->
+                    <!-- </ConditionUnlocked> -->
+                    <!-- <ConditionPropsNegatable> -->
+                      <!-- <NegateCondition>1</NegateCondition> -->
+                    <!-- </ConditionPropsNegatable> -->
+                  <!-- </Values> -->
+                <!-- </TriggerCondition> -->
+              <!-- </Trigger> -->
+            <!-- </Values> -->
+          <!-- </SubTrigger> -->
+        <!-- </Item> -->
+      <!-- </SubTriggers> -->
+      <!-- ... -->
+     <!-- But you can use all of it without NegateCondition anytime, it will just take ~1 second until your trigger is executed the first time eg. for the AI -->
+    <!-- ############################################################################################################################################ -->
+    <!-- ############################################################################################################################################ -->
+    
+    
     <!-- The GUIDs to use from this mod are: -->
     <!-- 1500001600 - Is any Human -->
     <!-- 1500001601 - Is any AI -->
@@ -65,7 +135,40 @@
     
 
     <!-- ############################################################################################################################################ -->
+    <!-- ############################################################################################################################################ -->
+    <!-- ############################################################################################################################################ -->
+
+    <!-- how this mod works: -->
     
+    <!-- Unfortunately the game only allows us to execute triggers for: "Only Humans" or "Every Human and every AI". There is no proper way to check for who exactly -->
+    <!--  a trigger is executed and no way to execute triggers only for AI (triggers are never executed for 3rd parties, eg. pirates. You can do stuff with the pirates, but then it is done from the view of the executing player)  -->
+    
+    <!-- So we will simply unlock for all humans the GUID 1500001600 -->
+    <!-- and with a short delay we will check for every player (human+AI) that everyone who has not 1500001600 unlocked must be an AI. -->
+    
+    <!-- For specific AI I only know a workaround to check if the processing (owner) Player has a AI-lighthouse GUID built. This is done by adding subtriggers. -->
+    <!-- We will use triggers to check if the processing does own any of the lighthouses -->
+    <!-- Lighthouse GUIDs -->
+    <!-- <GUID>100549</GUID> Jorgensens Leuchtturm , Second_ai_01_Jorgensen -->
+    <!-- <GUID>100700</GUID> Qings Leuchtturm , Second_ai_02_Qing -->
+    <!-- <GUID>100701</GUID> Wibblesocks' Leuchtturm , Second_ai_03_Wibblesock -->
+    <!-- <GUID>100702</GUID> Smiths Leuchtturm , Second_ai_04_Smith -->
+    <!-- <GUID>100703</GUID> O'Maras Leuchtturm , Second_ai_05_OMara -->
+    <!-- <GUID>100704</GUID> Gasparovs Leuchtturm , Second_ai_06_Gasparov -->
+    <!-- <GUID>100518</GUID> von Malchings Leuchtturm , Second_ai_07_von_Malching -->
+    <!-- <GUID>100550</GUID> Graves Leuchtturm , Second_ai_08_Gravez -->
+    <!-- <GUID>100705</GUID> Silvas Leuchtturm , Second_ai_09_Silva -->
+    <!-- <GUID>100706</GUID> Hunts Leuchtturm , Second_ai_10_Hunt -->
+    <!-- <GUID>110669</GUID> Merciers Leuchtturm , Second_ai_11_Mercier -->
+    
+    <!-- To find out who is Human0 to Human3 and Mod1 to Mod20, I will spawn a Fake Object with unique GUID at first execution once -->
+    <!-- for everyone who is part of the game -->
+    <!-- We have to check ConditionIsParticipantInGame first, because spawning something with Owner not existent players might cause problems -->
+    <!-- And everyone who owns the unique GUID we spawned shortly with Owner Human0, must be Human0 and so on. -->
+    
+    
+    <!-- ############################################################################################################################################ -->
+
     
     <!-- useful unrelated info: -->
     <!-- <ResetTrigger> ist ein trigger der registered wird sobald die condition des haupttriggers erfuellt wurde. -->
@@ -95,114 +198,11 @@
     
     <!-- ############################################################################################################################################ -->
 
-    <!-- how this mod works: -->
     
-    <!-- Unfortunately the game only allows us to execute triggers for: "Only Humans" or "Every Huamnd and every AI". There is no proper way to check for who exactly -->
-    <!--  a trigger is executed and no way to execute triggers only for AI (triggers are never executed for 3rd parties, eg. pirates. You can do stuff with the pirates, but then it is done from the view of the executing player)  -->
+    <!-- 1500001600 and 1500001601 are taken from the shared_IsAIPlayer_Condition (IsAIPlayer_Serp) submod -->
     
-    <!-- So we will simply unlock for all humans the GUID 1500001600 -->
-    <!-- and with a short delay we will check for every player (human+AI) that everyone who has not 1500001600 unlocked must be an AI. -->
-    
-    <!-- For specific AI I only know a workaround to check if the processing (owner) Player has a AI-lighthouse GUID build. This is done by adding subtriggers. -->
-    <!-- We will use triggers to check if the processing/owner does own any of the lighthouses (so of course this can only find specific AIs the lighthouse GUID is known, eg. mod-AIs must bei added to this first) -->
-    <!-- Lighthouse GUIDs -->
-    <!-- <GUID>100549</GUID> Jorgensens Leuchtturm , Second_ai_01_Jorgensen -->
-    <!-- <GUID>100700</GUID> Qings Leuchtturm , Second_ai_02_Qing -->
-    <!-- <GUID>100701</GUID> Wibblesocks' Leuchtturm , Second_ai_03_Wibblesock -->
-    <!-- <GUID>100702</GUID> Smiths Leuchtturm , Second_ai_04_Smith -->
-    <!-- <GUID>100703</GUID> O'Maras Leuchtturm , Second_ai_05_OMara -->
-    <!-- <GUID>100704</GUID> Gasparovs Leuchtturm , Second_ai_06_Gasparov -->
-    <!-- <GUID>100518</GUID> von Malchings Leuchtturm , Second_ai_07_von_Malching -->
-    <!-- <GUID>100550</GUID> Graves Leuchtturm , Second_ai_08_Gravez -->
-    <!-- <GUID>100705</GUID> Silvas Leuchtturm , Second_ai_09_Silva -->
-    <!-- <GUID>100706</GUID> Hunts Leuchtturm , Second_ai_10_Hunt -->
-    <!-- <GUID>110669</GUID> Merciers Leuchtturm , Second_ai_11_Mercier -->
-    
-    <!-- To find out who is Human0 to Human3 and Mod1 to Mod20, I will spawn a Fake Object with unique GUID at first execution once -->
-    <!-- for everyone who is part of the game -->
-    <!-- We have to check ConditionIsParticipantInGame first, because spawning something with Owner not existent players might cause problems -->
-    
-    
-    <!-- FeatureUnlock to check if a specific Participant is AI -->
   <ModOp Type="AddNextSibling" GUID="137108">
-    <Asset>
-      <Template>FeatureUnlock</Template>
-      <Values>
-        <Standard>
-          <GUID>1500001600</GUID>
-          <Name>Is Human</Name>
-          <IconFilename>data/ui/2kimages/main/profiles/playerlogos/small/player_logo_03.png</IconFilename>
-        </Standard>
-        <Locked />
-        <Trigger>
-          <TriggerCondition>
-            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
-            <Values>
-              <Condition />
-              <ConditionAlwaysTrue />
-            </Values>
-          </TriggerCondition>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>1</AutoRegisterTrigger>
-          <UsedBySecondParties>0</UsedBySecondParties>
-          <AutoSelfUnlock>1</AutoSelfUnlock>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-    
-    <!-- use a short timer for the AI check to be sure the "Is Human" Feature is already unlocked for all humans (cause everyone who does not have it unlocked is an AI) -->
-    <Asset>
-      <Template>FeatureUnlock</Template>
-      <Values>
-        <Standard>
-          <GUID>1500001601</GUID>
-          <Name>Is AI</Name>
-          <IconFilename>data/ui/2kimages/main/profiles/ai_01.png</IconFilename>
-        </Standard>
-        <Locked />
-        <Trigger>
-          <TriggerCondition>
-            <Template>ConditionTimer</Template>
-            <Values>
-              <Condition />
-              <ConditionTimer>
-                <TimeLimit>1000</TimeLimit>
-              </ConditionTimer>
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionUnlocked</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionUnlocked>
-                          <UnlockNeeded>1500001600</UnlockNeeded>
-                        </ConditionUnlocked>
-                        <ConditionPropsNegatable>
-                          <NegateCondition>1</NegateCondition>
-                        </ConditionPropsNegatable>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>1</AutoRegisterTrigger>
-          <UsedBySecondParties>1</UsedBySecondParties>
-          <AutoSelfUnlock>1</AutoSelfUnlock>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-    
+  
     <Asset>
       <Template>FeatureUnlock</Template>
       <Values>
@@ -1958,42 +1958,16 @@
         
         
         
-  <!-- # fake airships to find out who is who -->
+  <!-- # fake object to find out who is who -->
         
   <ModOp Type="addNextSibling" GUID='1654'>
 		<Asset>
-			<BaseAssetGUID>1654</BaseAssetGUID>
+			<Template>ObjectDummyWithOwner</Template>
 			<Values>
 				<Standard>
 					<GUID>1500001641</GUID>
           <Name>Human0 Test</Name>
 				</Standard>
-				<Object>
-          <Variations />
-          <Skins />
-        </Object>
-        <Mesh>
-          <MeshPlacement>IgnoreTerrain</MeshPlacement>
-        </Mesh>
-        <Walking>
-          <PathPlannerLayer>Air</PathPlannerLayer>
-        </Walking>
-				<CommandQueue>
-          <IsPlayerControllableVehicle>0</IsPlayerControllableVehicle>
-          <InsecurityAttractiveness>0</InsecurityAttractiveness>
-          <MilitaryShipPoints>0</MilitaryShipPoints>
-          <TradeShipPoints>0</TradeShipPoints>
-        </CommandQueue>
-        <MinimapToken>
-          <TokenAsset>0</TokenAsset>
-          <StrategicMapAsset>0</StrategicMapAsset>
-        </MinimapToken>
-				<Cost>
-          <InfluenceCostPoints>0</InfluenceCostPoints>
-        </Cost>
-        <ShipMaintenance>
-          <Maintenance>0</Maintenance>
-        </ShipMaintenance>
 			</Values>
 		</Asset>
 		<Asset>
@@ -2400,7 +2374,9 @@
           <TriggerCondition>
             <Template>ConditionPlayerCounter</Template>
             <Values>
-              <Condition />
+              <Condition>
+                <SubConditionCompletionOrder>Parallel</SubConditionCompletionOrder>
+              </Condition>
               <ConditionPlayerCounter>
                 <Context>700000</Context>
                 <CounterAmount>1</CounterAmount>
@@ -2418,7 +2394,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Human0</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2451,7 +2429,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Human1</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2484,7 +2464,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Human2</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2517,7 +2499,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Human3</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2550,7 +2534,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod1</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2583,7 +2569,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod2</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2616,7 +2604,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod3</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2649,7 +2639,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod4</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2682,7 +2674,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod5</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2715,7 +2709,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod6</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2748,7 +2744,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod7</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2781,7 +2779,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod8</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2814,7 +2814,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod9</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2847,7 +2849,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod10</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2880,7 +2884,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod11</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2913,7 +2919,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod12</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2946,7 +2954,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod13</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -2979,7 +2989,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod14</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3012,7 +3024,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod15</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3045,7 +3059,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod16</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3078,7 +3094,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod17</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3111,7 +3129,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod18</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3144,7 +3164,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod19</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3177,7 +3199,9 @@
                     <TriggerCondition>
                       <Template>ConditionIsParticipantInGame</Template>
                       <Values>
-                        <Condition />
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
                         <ConditionIsParticipantInGame>
                           <InGameParticipant>Mod20</InGameParticipant>
                         </ConditionIsParticipantInGame>
@@ -3193,6 +3217,146 @@
                             <ActionSpawnObjects>
                               <SpawnGUID>1500001664</SpawnGUID>
                               <Owner>Mod20</Owner>
+                            </ActionSpawnObjects>
+                          </Values>
+                        </TriggerAction>
+                      </Item>
+                    </TriggerActions>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionIsParticipantInGame</Template>
+                      <Values>
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
+                        <ConditionIsParticipantInGame>
+                          <InGameParticipant>Human4</InGameParticipant>
+                        </ConditionIsParticipantInGame>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                    <TriggerActions> 
+                      <Item>
+                        <TriggerAction>
+                          <Template>ActionSpawnObjects_SerpPlayerTest</Template>
+                          <Values>
+                            <Action />
+                            <ActionSpawnObjects>
+                              <SpawnGUID>1500001665</SpawnGUID>
+                              <Owner>Human4</Owner>
+                            </ActionSpawnObjects>
+                          </Values>
+                        </TriggerAction>
+                      </Item>
+                    </TriggerActions>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionIsParticipantInGame</Template>
+                      <Values>
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
+                        <ConditionIsParticipantInGame>
+                          <InGameParticipant>Human5</InGameParticipant>
+                        </ConditionIsParticipantInGame>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                    <TriggerActions> 
+                      <Item>
+                        <TriggerAction>
+                          <Template>ActionSpawnObjects_SerpPlayerTest</Template>
+                          <Values>
+                            <Action />
+                            <ActionSpawnObjects>
+                              <SpawnGUID>1500001666</SpawnGUID>
+                              <Owner>Human5</Owner>
+                            </ActionSpawnObjects>
+                          </Values>
+                        </TriggerAction>
+                      </Item>
+                    </TriggerActions>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionIsParticipantInGame</Template>
+                      <Values>
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
+                        <ConditionIsParticipantInGame>
+                          <InGameParticipant>Human6</InGameParticipant>
+                        </ConditionIsParticipantInGame>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                    <TriggerActions> 
+                      <Item>
+                        <TriggerAction>
+                          <Template>ActionSpawnObjects_SerpPlayerTest</Template>
+                          <Values>
+                            <Action />
+                            <ActionSpawnObjects>
+                              <SpawnGUID>1500001667</SpawnGUID>
+                              <Owner>Human6</Owner>
+                            </ActionSpawnObjects>
+                          </Values>
+                        </TriggerAction>
+                      </Item>
+                    </TriggerActions>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionIsParticipantInGame</Template>
+                      <Values>
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
+                        <ConditionIsParticipantInGame>
+                          <InGameParticipant>Human7</InGameParticipant>
+                        </ConditionIsParticipantInGame>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                    <TriggerActions> 
+                      <Item>
+                        <TriggerAction>
+                          <Template>ActionSpawnObjects_SerpPlayerTest</Template>
+                          <Values>
+                            <Action />
+                            <ActionSpawnObjects>
+                              <SpawnGUID>1500001668</SpawnGUID>
+                              <Owner>Human7</Owner>
                             </ActionSpawnObjects>
                           </Values>
                         </TriggerAction>

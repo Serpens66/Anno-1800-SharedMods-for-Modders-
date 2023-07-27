@@ -15,13 +15,59 @@
       <!-- </Values> -->
     <!-- </TriggerCondition> -->
     
-    <!-- The AI Unlocks are true for AIs after 1 second of gametime. So dont use a construct with NegateCondition to check "Is not AI" directly at gamestart, because this will give false results. -->
-    <!-- But you can use all of it without NegateCondition anytime, it will just take 1 second until the trigger executed eg. for the AI -->
     <!-- The GUIDs to use from this mod are: -->
-    
     <!-- 1500001600 - Is any Human -->
     <!-- 1500001601 - Is any AI -->
    
+    
+    
+    <!-- ############################################################################################################################################ -->
+    <!-- ############################################################################################################################################ -->
+     <!-- ##### WARNING ##### -->
+      <!-- IF you want to use ConditionPropsNegatable/NegateCondition to check "is not AI": -->
+      <!-- The "Is Any Human" and "Is any AI" can be true after 1 second of gametime. -->
+      <!-- This means: -->
+      <!-- If you want to check "is not" you should add additional Conditions to your code, eg. a ConditionTimer with ~2 seconds: -->
+      <!-- .. -->
+      <!-- example for "is not AI" Trigger condition (wait 2 seconds and only then check UnlockNeeded with NegateCondition=1.. and then you can check everything else you want to check): -->
+      <!-- (if you want to execute your trigger multiple times and dont want it to wait 2 seconds each time, you have to create 2 triggers, one for the very first execution that registers the second for multiple execution without additional delay) -->
+      <!-- .. -->
+      <!-- <TriggerCondition> -->
+        <!-- <Template>ConditionTimer</Template> -->
+        <!-- <Values> -->
+          <!-- <Condition /> -->
+          <!-- <ConditionTimer> -->
+            <!-- <TimeLimit>2000</TimeLimit> -->
+          <!-- </ConditionTimer> -->
+        <!-- </Values> -->
+      <!-- </TriggerCondition> -->
+      <!-- <SubTriggers> -->
+        <!-- <Item> -->
+          <!-- <SubTrigger> -->
+            <!-- <Template>AutoCreateTrigger</Template> -->
+            <!-- <Values> -->
+              <!-- <Trigger> -->
+                <!-- <TriggerCondition> -->
+                  <!-- <Template>ConditionUnlocked</Template> -->
+                  <!-- <Values> -->
+                    <!-- <Condition /> -->
+                    <!-- <ConditionUnlocked> -->
+                      <!-- <UnlockNeeded>1500001601</UnlockNeeded> -->
+                    <!-- </ConditionUnlocked> -->
+                    <!-- <ConditionPropsNegatable> -->
+                      <!-- <NegateCondition>1</NegateCondition> -->
+                    <!-- </ConditionPropsNegatable> -->
+                  <!-- </Values> -->
+                <!-- </TriggerCondition> -->
+              <!-- </Trigger> -->
+            <!-- </Values> -->
+          <!-- </SubTrigger> -->
+        <!-- </Item> -->
+      <!-- </SubTriggers> -->
+      <!-- ... -->
+     <!-- But you can use all of it without NegateCondition anytime, it will just take ~1 second until your trigger is executed the first time eg. for the AI -->
+    <!-- ############################################################################################################################################ -->
+    <!-- ############################################################################################################################################ -->
     
     
 
@@ -140,6 +186,6 @@
         </TriggerSetup>
       </Values>
     </Asset>
-    
+  </ModOp>
     
 </ModOps>
