@@ -1,8 +1,12 @@
 {
-  "Version": "1.01",
+  "Version": "1.02",
   "ModID": "RemoveHumanAILighthouse_Serp",
   "IncompatibleIds": null,
   "ModDependencies": null,
+  "LoadAfterIds": [
+    "*",
+    "KeepOnTakeover_Serp"
+  ],
   "Category": {
     "Chinese": "共享",
     "English": "Shared",
