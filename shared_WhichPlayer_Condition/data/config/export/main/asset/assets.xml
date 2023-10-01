@@ -2322,6 +2322,7 @@
    <!-- So following code will not work if you start the game in another Session than old world (180023) -->
   
   <!-- delete the test objects again. We can not really put this into trigger 1500001669 because we would have to add it to each single subtrigger, because the main TriggerActions will never be executed -->
+  <!-- change owner to neutral before (works with pool), so they dont drop reward loot from AIs -->
   <ModOp GUID="130248" Type="AddNextSibling">
     <Asset>
       <Template>Trigger</Template>
@@ -2342,13 +2343,48 @@
           <TriggerActions> 
             <Item>
               <TriggerAction>
-                <Template>ActionDeleteObjects</Template>
+                <Template>ActionChangeParticipant</Template>
                 <Values>
                   <Action />
-                  <ActionDeleteObjects />
+                  <ActionChangeParticipant>
+                    <NewParticipantID>Neutral</NewParticipantID>
+                  </ActionChangeParticipant>
                   <ObjectFilter>
                     <ObjectGUID>1500001670</ObjectGUID>
+                    <CheckParticipantID>0</CheckParticipantID>
                   </ObjectFilter>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <Item>
+              <TriggerAction>
+                <Template>ActionDelayedActions</Template>
+                <Values>
+                  <Action />
+                  <ActionDelayedActions>
+                    <ExecutionDelay>1000</ExecutionDelay>
+                    <DelayedActions>
+                      <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                      <Values>
+                        <ActionList>
+                          <Actions>
+                            <Item>
+                              <Action>
+                                <Template>ActionDeleteObjects</Template>
+                                <Values>
+                                  <Action />
+                                  <ActionDeleteObjects />
+                                  <ObjectFilter>
+                                    <ObjectGUID>1500001670</ObjectGUID>
+                                  </ObjectFilter>
+                                </Values>
+                              </Action>
+                            </Item>
+                          </Actions>
+                        </ActionList>
+                      </Values>
+                    </DelayedActions>
+                  </ActionDelayedActions>
                 </Values>
               </TriggerAction>
             </Item>
