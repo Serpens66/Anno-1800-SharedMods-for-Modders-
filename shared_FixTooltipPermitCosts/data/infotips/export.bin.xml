@@ -1,0 +1,54 @@
+<ModOps>
+  
+  <!-- https://github.com/jakobharder/anno1800-mod-loader/blob/main/doc/modloader11.md#patching-infotip-exportbin -->
+    <!-- to export the tooltips from the game use FileDBReader and the FileFormat "infotip.xml" and unpack "data\infotips\export.bin" -->
+    <!-- or download it in anno modding discord here: -->
+    <!-- https://discord.com/channels/578443209940926465/1146098268850376816/1149910673678159964 -->
+
+
+  <!-- guid 500057 is responsible for tooltips showing when hovering over buildable ships in the shipyard -->
+  <!-- first half of this guid is without gamepadmode and the other half is with gamepadmode, my code should work for both -->
+  
+  <!-- Bug we want to fix: -->
+   <!-- Ships which require a godlike permit are no showing the needed buildcosts as long as you can not afford the ship -->
+  
+  
+  
+  
+  <!-- the buildcosts entry that should be shown when we can not afford it is: -->
+   <!-- <Text>[Selection Object Shipyard BuildCostForShip([RefGuid]) Available AT(#index0#)]/[Selection Object Shipyard BuildCostForShip([RefGuid]) Values AT(#index0#)]</Text> -->
+
+   <!-- an den stellen wo  -->
+   <!-- <Condition>[Research IsGodlikePermit([Selection Object Shipyard BuildCostForShip([RefGuid]) Costs AT(0) ProductGUID])]</Condition> -->
+   <!-- und darüber  -->
+   <!-- <Condition>[Selection Object Shipyard BuildCostForShip([RefGuid]) Costs AT(#index0#) ProductGUID]</Condition> -->
+   <!-- mit <ExpectedValueInt>1010190</ExpectedValueInt> -->
+   <!-- geprüft wird, wird das Spiel 3 Situationen um die Baukosten anzuzigen:    -->
+   <!-- payable und es ist kein godlike -->
+   <!-- nicht payable und es ist kein godlike  -->
+   <!-- payable und es ist godlike -->
+   <!-- ..  -->
+  <!-- wobei beide payables identisch aussehen, dass heißt diese unterscheidung macht überhaupt keinen sinn und wenn man die unterscheidung dennoch haben wollte, fehlt halt der "nicht payable und godlike" Fall -->
+  <!-- Daher ist der Fix die godlike Bedingung hier einfach zu streichen und den dritten ast auch zu entfernen -->
+  
+  
+  <!-- remove the godlike condition for buildcosts display -->
+  <ModOp Type="remove" Path="//InfoTipData[Guid='500057']//VisibilityElement[VisibilityElement[Condition='[Selection Object Shipyard BuildCostForShip([RefGuid]) Costs AT(#index0#) ProductGUID]' and ExpectedValueInt='1010190' and CompareOperator/CompareOperator='1']]/VisibilityElement[Condition='[Research IsGodlikePermit([Selection Object Shipyard BuildCostForShip([RefGuid]) Costs AT(0) ProductGUID])]' and ExpectedValueBool='False']" />
+  <!-- remove the InfoElement for payable+godlike which is not needed anymore -->
+  <ModOp Type="remove" Path="//InfoTipData[Guid='500057']//InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([Selection Object Shipyard BuildCostForShip([RefGuid]) Costs AT(0) ProductGUID])]' and not(ExpectedValueBool)] and VisibilityElement/VisibilityElement[Condition='[Selection Object Shipyard BuildCostForShip([RefGuid]) Costs AT(#index0#) ProductGUID]' and ExpectedValueInt='1010190' and CompareOperator/CompareOperator='1']]" />
+
+  
+  
+  
+  
+  
+  
+</ModOps>
+
+
+
+
+
+
+
+
