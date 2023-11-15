@@ -1,5 +1,5 @@
 {
-  "Version": "1.0",
+  "Version": "1.02",
   "ModID": "TooltipBugFixes_Serp",
   "DeprecateIds":["FixPopTooltip_Serp","FixTooltipGodlikePermitBuildCosts_Serp"],
   "IncompatibleIds": null,

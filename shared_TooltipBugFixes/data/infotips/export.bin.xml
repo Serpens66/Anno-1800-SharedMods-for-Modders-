@@ -12,6 +12,8 @@
   <Include File="./exportbin_FixTTPermitCosts.include.xml" />
   <!-- build warning for permit buildings although you can build them -->
   <Include File="./exportbin_FixTTBuildWarning.include.xml" />
+  <!-- vanilla can not display tooltip properly for items that are adding as additionaloutput the same and more products -->
+  <Include File="./exportbin_FixTTAddSameOutput.include.xml" />
   
 </ModOps>
 

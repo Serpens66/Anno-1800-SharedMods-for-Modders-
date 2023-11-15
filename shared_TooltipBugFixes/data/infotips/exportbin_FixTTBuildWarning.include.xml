@@ -11,129 +11,51 @@
   <!-- guid 25000020 is responsilbe for tooltips when hovering over buildings in the build menu -->
   
   
-  <!-- add the correct VisibilityElement at the correct location -->
-  <!-- <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')] and InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]]/VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]"> -->
-  <ModOp Type="merge" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]]/InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]/Text">
-    <TextGUID>12662</TextGUID>
-  </ModOp>
   
-  <!-- remove the wrong InfoElement -->
-  <ModOp Type="remove" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement
-      [VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')] 
-        and 
-      InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]]
-    /InfoElement[Text/TextGUID='12662' and not(VisibilityElement/VisibilityElement)]" />
+  
+  <!-- my new code I chose, because I saw the other correct occurances of 12662 and think this wrong one was meant to look exactly like this -->
+  <!-- place the VisibilityElement at correct location -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement[InfoElement/VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]/VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]">
+    <VisibilityElement>
+      <ElementType>
+        <ElementType>1</ElementType>
+      </ElementType>
+      <CompareOperator>
+        <CompareOperator>3</CompareOperator>
+      </CompareOperator>
+      <ResultType>
+        <ResultType>1</ResultType>
+      </ResultType>
+      <Condition>[BuildPermits BuildPermits([RefGuid])]</Condition>
+    </VisibilityElement>
+  </ModOp>
+  <!-- remove the wrong placed VisibilityElement. when you compare it to other occurances of 12662, this infoelement should just create an empty line -->
+  <ModOp Type="remove" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]]/InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3'] and (Text/Style and not(Text/TextGUID))]/VisibilityElement/VisibilityElement" />
+
   
 
+  
   <!-- #################################################### -->
+  <!-- #################################################### -->
+  <!-- #################################################### -->
+
+  <!-- OLD code that also works fine, but I think new one is more what was intended by the devs: -->
   
-  <!-- in vanilla it looks like this: -->
   
-  <!-- <InfoElement> -->
-    <!-- <ElementType>8</ElementType> -->
-    <!-- <ChildCount>3</ChildCount> -->
-    <!-- <VisibilityElement> -->
-      <!-- <ElementType> -->
-        <!-- <ElementType>2</ElementType> -->
-      <!-- </ElementType> -->
-      <!-- <ChildCount>1</ChildCount> -->
-      <!-- <VisibilityElement> -->
-        <!-- <ElementType> -->
-          <!-- <ElementType>1</ElementType> -->
-        <!-- </ElementType> -->
-        <!-- <CompareOperator /> -->
-        <!-- <ResultType /> -->
-        <!-- <Condition>[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]</Condition> -->
-      <!-- </VisibilityElement> -->
-      <!-- <OperatorType /> -->
-    <!-- </VisibilityElement> -->
-    <!-- <InfoElement> -->
-      <!-- <ElementType>6</ElementType> -->
-      <!-- <VisibilityElement> -->
-        <!-- <ElementType> -->
-          <!-- <ElementType>2</ElementType> -->
-        <!-- </ElementType> -->
-        <!-- <ChildCount>1</ChildCount> -->
-        <!-- <VisibilityElement> -->
-          <!-- <ElementType> -->
-            <!-- <ElementType>1</ElementType> -->
-          <!-- </ElementType> -->
-          <!-- <CompareOperator> -->
-            <!-- <CompareOperator>3</CompareOperator> -->
-          <!-- </CompareOperator> -->
-          <!-- <ResultType> -->
-            <!-- <ResultType>1</ResultType> -->
-          <!-- </ResultType> -->
-          <!-- <Condition>[BuildPermits BuildPermits([RefGuid])]</Condition> -->
-        <!-- </VisibilityElement> -->
-        <!-- <OperatorType /> -->
-      <!-- </VisibilityElement> -->
-      <!-- <Text> -->
-        <!-- <Style /> -->
-      <!-- </Text> -->
-    <!-- </InfoElement> -->
-    <!-- <InfoElement> -->
-      <!-- <ElementType>5</ElementType> -->
-      <!-- <VisibilityElement> -->
-        <!-- <ElementType> -->
-          <!-- <ElementType>2</ElementType> -->
-        <!-- </ElementType> -->
-        <!-- <OperatorType /> -->
-      <!-- </VisibilityElement> -->
-      <!-- <Text> -->
-        <!-- <TextGUID>12662</TextGUID> -->
-        <!-- <Style /> -->
-      <!-- </Text> -->
-      <!-- <BackgroundType /> -->
-    <!-- </InfoElement> -->
+  <!-- add the correct VisibilityElement at the correct location -->
+  <!-- <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')] and InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]]/VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]"> -->
+  <!-- <ModOp Type="merge" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]]/InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]/Text"> -->
+    <!-- <TextGUID>12662</TextGUID> -->
+  <!-- </ModOp> -->
   
-  <!-- but it should look like this (see also shipyard tooltip, there it is correct) -->
+  <!-- remove the wrong InfoElement -->
+  <!-- <ModOp Type="remove" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement -->
+      <!-- [VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]' and (not(ExpectedValueBool) or ExpectedValueBool='True')]  -->
+        <!-- and  -->
+      <!-- InfoElement[VisibilityElement/VisibilityElement[Condition='[BuildPermits BuildPermits([RefGuid])]' and CompareOperator/CompareOperator='3']]] -->
+    <!-- /InfoElement[Text/TextGUID='12662' and not(VisibilityElement/VisibilityElement)]" /> -->
   
-  <!-- <InfoElement> -->
-    <!-- <ElementType>8</ElementType> -->
-    <!-- <ChildCount>2</ChildCount> -->
-    <!-- <VisibilityElement> -->
-      <!-- <ElementType> -->
-        <!-- <ElementType>2</ElementType> -->
-      <!-- </ElementType> -->
-      <!-- <ChildCount>1</ChildCount> -->
-      <!-- <VisibilityElement> -->
-        <!-- <ElementType> -->
-          <!-- <ElementType>1</ElementType> -->
-        <!-- </ElementType> -->
-        <!-- <CompareOperator /> -->
-        <!-- <ResultType /> -->
-        <!-- <Condition>[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(0) ProductGUID])]</Condition> -->
-      <!-- </VisibilityElement> -->
-      <!-- <OperatorType /> -->
-    <!-- </VisibilityElement> -->
-    <!-- <InfoElement> -->
-      <!-- <ElementType>5</ElementType> -->
-      <!-- <VisibilityElement> -->
-        <!-- <ElementType> -->
-          <!-- <ElementType>2</ElementType> -->
-        <!-- </ElementType> -->
-        <!-- <ChildCount>1</ChildCount> -->
-        <!-- <VisibilityElement> -->
-          <!-- <ElementType> -->
-            <!-- <ElementType>1</ElementType> -->
-          <!-- </ElementType> -->
-          <!-- <CompareOperator> -->
-            <!-- <CompareOperator>3</CompareOperator> -->
-          <!-- </CompareOperator> -->
-          <!-- <ResultType> -->
-            <!-- <ResultType>1</ResultType> -->
-          <!-- </ResultType> -->
-          <!-- <Condition>[BuildPermits BuildPermits([RefGuid])]</Condition> -->
-        <!-- </VisibilityElement> -->
-        <!-- <OperatorType /> -->
-      <!-- </VisibilityElement> -->
-      <!-- <Text> -->
-        <!-- <TextGUID>12662</TextGUID> -->
-        <!-- <Style /> -->
-      <!-- </Text> -->
-      <!-- <BackgroundType /> -->
-    <!-- </InfoElement> -->
+  
   
 </ModOps>
 

@@ -73,9 +73,133 @@
   </ModOp>
   
   
+  <!-- ##################################################################################################### -->
+  <!-- ##################################################################################################### -->
   
   
+  <!-- BUILDINGS -->
+  <!-- guid 25000020 is responsilbe for tooltips when hovering over buildings in the build menu -->
   
-  
+  <!-- The godlike permit buildings coffee/rum/cotton/scholar house are hardcoded to display their godlike icon when you can afford it as buildcosts -->
+    <!-- But if modders add more buildings requiring these godlike permits, they won't show this permit as buildcosts, since there is no code for this case. -->
+    <!-- Hardcoding the GUIDs really suck, because regardless what I do, it might break other mods. -->
+     <!-- I can add a new InfoElement to display the permit icon (usually the building icon) if it is not Rum/coffee/rum/cotton/scholar house. -->
+      <!-- But if another mod edits the tooltips to also add such an hardcoded case for his GUID, my code will make it show twice... -->
+      <!-- So I think I should just tell every modder to NOT hardcode their GUIDs in there and give a f**k on which icon is displayed and be fine with the building icon. -->
+  <!-- Display permit-buildcost when we can afford it also for not hardcoded godlike-permit buildings, eg. ones added by mods -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='25000020']//InfoElement/InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) ProductGUID])]' and ExpectedValueBool='False'] and VisibilityElement/VisibilityElement[Condition='[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) IsAffordable]' and ExpectedValueBool='False'] and VisibilityElement/VisibilityElement[not(Condition='[RefGuid]')]]">
+    <InfoElement>
+      <ElementType>11</ElementType>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>4</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator />
+          <ResultType />
+          <Condition>[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) IsAffordable]</Condition>
+        </VisibilityElement>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>1</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <ExpectedValueInt>1010190</ExpectedValueInt>
+          <Condition>[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) ProductGUID]</Condition>
+        </VisibilityElement>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator />
+          <ResultType />
+          <Condition>[Research IsGodlikePermit([ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) ProductGUID])]</Condition>
+        </VisibilityElement>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>3</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>1</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <ExpectedValueInt>124737</ExpectedValueInt>
+              <Condition>[RefGuid]</Condition>
+            </VisibilityElement>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>1</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <ExpectedValueInt>124738</ExpectedValueInt>
+              <Condition>[RefGuid]</Condition>
+            </VisibilityElement>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>1</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <ExpectedValueInt>124739</ExpectedValueInt>
+              <Condition>[RefGuid]</Condition>
+            </VisibilityElement>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>1</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <ExpectedValueInt>114445</ExpectedValueInt>
+              <Condition>[RefGuid]</Condition>
+            </VisibilityElement>
+          </VisibilityElement>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <Icon>
+        <IconText>[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) Icon]</IconText>
+        <Style />
+      </Icon>
+      <Text>
+        <Text>[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) Amount &gt;&gt; storagegood]</Text>
+        <Style />
+      </Text>
+      <WarningType />
+    </InfoElement>
+  </ModOp>
   
 </ModOps>

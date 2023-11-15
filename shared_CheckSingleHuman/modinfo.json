@@ -1,8 +1,9 @@
 {
-  "Version": "1.00",
+  "Version": "1.01",
   "ModID": "CheckSingleHuman_Serp",
   "IncompatibleIds": null,
   "ModDependencies": null,
+  "LoadAfterIds": ["StoryQuestsInCoop_Serp"],
   "Category": {
     "Chinese": "Shared",
     "English": "Shared",
