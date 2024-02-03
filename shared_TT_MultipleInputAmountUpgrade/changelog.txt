@@ -1,0 +1,2 @@
+1.01:
+- adjusted text formating and added translations by Kurila
