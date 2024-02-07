@@ -1,0 +1,28 @@
+{
+  "Version": "1.00",
+  "ModID": "shared_WhichModPlayer_Serp",
+  "DeprecateIds":null,
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "Category": {
+    "English": "Shared",
+    "German": "Shared"
+  },
+  "ModName": {
+    "English": "Which Mod-Player Condition",
+    "German": "Which Mod-Player Condition"
+  },
+  "Description": {
+    "English": "For Modders: Condition to check which Mod1-Mod20 or Human4 to Human7 the processing player is. These do not exist in vanilla, so its just for Mod-Participants. I made this a separated mod, because the code is quite heavy. The code will spawn an invisble fake object at start once and deletes it after few seconds after it checked this way who is who.",
+    "German": "Für Modder: Condition um zu prüfen welcher der Mod1-Mod20 oder Human4 bis Human7 der ausführende Spieler ist. Diese existieren nicht in Vanilla, es geht also nur um Mod-Participants. Ich mache dies als separaten Mod, da der Code relativ heftig ist. Um rauszufinden wer wer ist, wird ein unsichtbares Fake object zu Beginn einmalig gespawned und nach wenigen Sekunden wieder entfernt."
+  },
+  "KnownIssues": [
+    {
+      "English": null,
+      "German": null
+    }
+  ],
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

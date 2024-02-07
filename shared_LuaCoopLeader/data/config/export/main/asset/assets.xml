@@ -1,0 +1,148 @@
+<ModOps>
+    
+  <!-- uses SerpGUIDS 1500004526 to 1500004529 -->
+  
+  <!-- use the lua variable  -->
+    <!-- g_Im_CoopLeader_LuaCoopHelper == true -->
+  <!-- in your lua scripts to check if the executing player is the Coop-Leader, to only execute code once per coop-team. -->
+  <!-- It will also be true for every human if it is a singleplayer game or a MP game without any Coop players. -->
+    <!-- IMPORTANT: -->
+    <!-- if you start your script On SessionEnter, make sure to add a small delay, at least 2 seconds, to make sure my script ran first to set this variable -->
+
+  
+  <!-- Replacing a game PopUp with our own (Console Popups are not needed, since mods only work on PC anyways, so we will overwrite this ) -->
+      
+    <ModOp Type="replace" GUID='500115' Path="/Values/GenericPopup/Popups/ResetConsoleOptionsConfirmation">
+      <ResetConsoleOptionsConfirmation>
+        <HeaderText>1500004526</HeaderText>
+        <MainText>1500004527</MainText>
+        <Buttons>
+          <Item>
+            <Text>145003</Text>
+            <Actions>
+              <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+              <Values>
+                <ActionList />
+              </Values>
+            </Actions>
+            <Command>console.startScript("data/scripts_coophelper_serp/yes_im_coopleader.lua")</Command>
+            <ShortcutIdentifier>ConfirmPopup</ShortcutIdentifier>
+            <GamepadAction>SystemPopupAcceptHold</GamepadAction>
+          </Item>
+          <Item>
+            <Text>145004</Text>
+            <Actions>
+              <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+              <Values>
+                <ActionList />
+              </Values>
+            </Actions>
+            <Command>console.startScript("data/scripts_coophelper_serp/not_coopleader.lua")</Command>
+            <ShortcutIdentifier>CancelPopup</ShortcutIdentifier>
+            <GamepadAction>SystemPopupDecline</GamepadAction>
+          </Item>
+        </Buttons>
+        <IsModal>1</IsModal>
+        <IsUnique>1</IsUnique>
+      </ResetConsoleOptionsConfirmation>
+    </ModOp>
+    
+    <ModOp GUID="153271" Type="AddNextSibling">
+      <Asset>
+        <Template>Trigger</Template>
+        <Values>
+          <Standard>
+            <GUID>1500004528</GUID>
+            <Name>Check if lua-variable set</Name>
+          </Standard>
+          <Trigger>
+            <TriggerCondition>
+              <Template>ConditionEvent</Template>
+              <Values>
+                <Condition />
+                <ConditionEvent>
+                  <ConditionEvent>SessionEnter</ConditionEvent>
+                  <ContextAssetInfolayer>0</ContextAssetInfolayer>
+                </ConditionEvent>
+                <ConditionPropsNegatable />
+              </Values>
+            </TriggerCondition>
+            <TriggerActions>
+              <Item>
+                <TriggerAction>
+                  <Template>ActionExecuteScript</Template>
+                  <Values>
+                    <Action />
+                    <ActionExecuteScript>
+                      <ScriptFileName>data/scripts_coophelper_serp/check_coopleader_set.lua</ScriptFileName>
+                    </ActionExecuteScript>
+                  </Values>
+                </TriggerAction>
+              </Item>
+            </TriggerActions>
+            <ResetTrigger>
+              <Template>AutoCreateTrigger</Template>
+              <Values>
+                <Trigger>
+                  <TriggerCondition>
+                    <Template>ConditionTimer</Template>
+                    <Values>
+                      <Condition />
+                      <ConditionTimer>
+                        <TimeLimit>10000</TimeLimit>
+                      </ConditionTimer>
+                    </Values>
+                  </TriggerCondition>
+                </Trigger>
+              </Values>
+            </ResetTrigger>
+          </Trigger>
+          <TriggerSetup>
+            <AutoRegisterTrigger>1</AutoRegisterTrigger>
+            <UsedBySecondParties>0</UsedBySecondParties>
+          </TriggerSetup>
+        </Values>
+      </Asset>
+    </ModOp>
+    
+    <ModOp GUID="153271" Type="AddNextSibling">
+      <Asset>
+        <Template>Trigger</Template>
+        <Values>
+          <Standard>
+            <GUID>1500004529</GUID>
+            <Name>Trigger PopUp to set lua variable</Name>
+          </Standard>
+          <Trigger>
+            <TriggerCondition>
+              <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+              <Values>
+                <Condition />
+                <ConditionAlwaysTrue />
+              </Values>
+            </TriggerCondition>
+            <TriggerActions>
+              <Item>
+                <TriggerAction>
+                  <Template>ActionTriggerPopup</Template>
+                  <Values>
+                    <Action />
+                    <ActionTriggerPopup>
+                      <PopupType>ResetConsoleOptionsConfirmation</PopupType>
+                    </ActionTriggerPopup>
+                  </Values>
+                </TriggerAction>
+              </Item>
+            </TriggerActions>
+          </Trigger>
+          <TriggerSetup>
+            <AutoRegisterTrigger>0</AutoRegisterTrigger>
+            <UsedBySecondParties>0</UsedBySecondParties>
+          </TriggerSetup>
+        </Values>
+      </Asset>
+    </ModOp>
+  
+    
+    
+</ModOps>
