@@ -1167,6 +1167,8 @@
     </Asset>
   </ModOp>
   
+  <!-- executing it once per savegame per player is enough, so one time AlwaysTrue -->
+  
   <ModOp Type="addNextSibling" GUID="130248">
     <Asset>
       <Template>Trigger</Template>
@@ -1177,13 +1179,10 @@
         </Standard>
         <Trigger>
           <TriggerCondition>
-            <Template>ConditionEvent</Template>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
             <Values>
               <Condition />
-              <ConditionEvent>
-                <ConditionEvent>SessionLoaded</ConditionEvent>
-              </ConditionEvent>
-              <ConditionPropsNegatable />
+              <ConditionAlwaysTrue />
             </Values>
           </TriggerCondition>
           <TriggerActions> 
@@ -1207,7 +1206,20 @@
       </Values>
     </Asset>
   </ModOp>  
-        
-
+  <!-- Unfortunately ConditionEvaluateTextSource does not work correclty, otherwise one could use this without lua script to check for the current Participant ID within xml... -->
+   <!-- ConditionEvaluateTextSource only works for commands returning boolean. Things that return numbers always result in the condition to be true (although it should work according to properties-toolone.xml so it is bugged) -->
+    <!-- tested this code: -->
+    <!-- <TriggerCondition> -->
+      <!-- <Template>ConditionEvaluateTextSource</Template> -->
+      <!-- <Values> -->
+        <!-- <Condition /> -->
+        <!-- <ConditionEvaluateTextSource> -->
+          <!-- <TextSourceString>[Participants GetCurrentParticipantID()]</TextSourceString> -->
+          <!-- <ComparisonType>Equals</ComparisonType> -->
+          <!-- <ComparisonValue>2</ComparisonValue> -->
+        <!-- </ConditionEvaluateTextSource> -->
+        <!-- <ConditionPropsNegatable /> -->
+      <!-- </Values> -->
+    <!-- </TriggerCondition> -->
     
 </ModOps>

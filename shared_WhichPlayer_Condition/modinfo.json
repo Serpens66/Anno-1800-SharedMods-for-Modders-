@@ -1,5 +1,5 @@
 {
-  "Version": "1.07",
+  "Version": "1.08",
   "ModID": "WhichPlayer_Serp",
   "DeprecateIds":null,
   "IncompatibleIds": null,
@@ -9,16 +9,8 @@
     "German": "Shared"
   },
   "ModName": {
-    "Chinese": "Which Player Condition",
     "English": "Which Player Condition",
-    "French": "Which Player Condition",
-    "German": "Which Player Condition",
-    "Italian": "Which Player Condition",
-    "Korean": "Which Player Condition",
-    "Polish": "Which Player Condition",
-    "Russian": "Which Player Condition",
-    "Spanish": "Which Player Condition",
-    "Taiwanese": "Which Player Condition"
+    "German": "Which Player Condition"
   },
   "Description": {
     "English": "For Modders: Condition to check if processing player is any AI or specific AI or specific Human. Does not support Mod1 to Mod20 or Human4 to Human7 Mod Participants. The code uses the AI-specific lighthouse as main condition, but it will also make sure no human players are hit by this, even if they somehow controll such a lighthouse! To check for which human, lightweight lua code is used.",

@@ -42,57 +42,43 @@ local LoadingScreenLeft_ID = 60
 -- It also happens when we went from within a SP game to the main menu and then again back into the same game.
 
 
-local function table_contains_value(tbl, x)
-  for _,v in pairs(tbl) do
-    if v == x then 
-      return true
-    end
-  end
-  return false
-end
-local function modlog(t)
-  if type(t)~="string" then
-    t = tostring(t)
-  end
-  local file = io.open("logs/modlog.txt", "a")
-  io.output(file)
-  io.write(t,"\n")
-  io.close(file)
-end
 
 local function Execute_SavegameLoadedEvent()
   -- modlog("Execute_SavegameLoadedEvent")
   -- wait 1 second, to make sure other mods added their functions to g_saveloaded_events_serp already. And also on every call from g_OnLeaveUIState_serp use a delay (at least 1 second), because multiplayer needs this for the code to be executed already ingame (because LeaveUIState fires too fast there)
   system.waitForGameTimeDelta(1000)
   for id,fn in pairs(g_saveloaded_events_serp) do
-    if fn~=nil then
+    if fn~=nil and type(fn)=="function" then
       local status, err = pcall(fn)
       if status==false then -- error
         print("Mod Lua Error SavegameLoadedEvent: Function from mod "..tostring(id).." had an error: "..tostring(err))
-        pcall(modlog,"Mod Lua Error SavegameLoadedEvent: Function from mod "..tostring(id).." had an error: "..tostring(err))
+        -- pcall(modlog,"Mod Lua Error SavegameLoadedEvent: Function from mod "..tostring(id).." had an error: "..tostring(err))
       end
+    else
+      print("Mod Lua Error SavegameLoadedEvent: Function from mod "..tostring(id).." has no function: "..tostring(fn))
     end
   end
 end
 
 
 
-g_OnLeaveUIState_serp = g_OnLeaveUIState_serp
-if not table_contains_value(event.OnLeaveUIState,g_OnLeaveUIState_serp) then -- only add it once
-  -- important to really define the g_OnLeaveUIState_serp function after the table_contains_value check, otherwise it will be a new object on every lua call!
-  function g_OnLeaveUIState_serp(UILeft_ID)
-    if UILeft_ID == LoadingScreenLeft_ID then
-      -- modlog("g_OnLeaveUIState_serp")
-      system.start(Execute_SavegameLoadedEvent)
-    end
+local function g_OnLeaveUIState_serp(UILeft_ID)
+  if UILeft_ID == LoadingScreenLeft_ID then
+    -- modlog("g_OnLeaveUIState_serp")
+    system.start(Execute_SavegameLoadedEvent)
   end
-  table.insert(event.OnLeaveUIState, g_OnLeaveUIState_serp)
+end
+
+if event.OnLeaveUIState["shared_LuaOnGameLoaded_Serp"] == nil then -- only add it once
+  event.OnLeaveUIState["shared_LuaOnGameLoaded_Serp"] = g_OnLeaveUIState_serp
+  
   -- The first time this script is called with help of SessionEnter, it will already be too late for the very first OnLeaveUIState,
    -- because right now we can only execute lua with help of xml, while xml is not yet available when we first enter the main menu or are in the first loading screen
     -- that means if g_OnLeaveUIState_serp was not yet added, Anno was just recently started, so the first SessionEnter for sure means a savegame was loaded.
     -- after that, the lua event.OnLeaveUIState will continue to work outside of a savegame, so also in main menu, so checking for LoadingScreenLeft_ID is enough then, to catch another savegame load without restarting the whole game
   -- modlog("register OnLeaveUIState")
   system.start(Execute_SavegameLoadedEvent)
+  
 end
 
 
