@@ -13,7 +13,7 @@ All shared mods are intended to not be changed from other modders except the aut
 -
 Condition to check if processing player is any AI or specific AI or specific Human.
 
-If you only need the "Is any AI" Condition and not the advanced ones, you can also use the lightweight code from 
+If you only need the "Is any AI" Condition and not the advanced ones, you can also use the 
 <br>**"IsAIPlayer Condition"**<br>
 mod instead.
 
@@ -49,6 +49,8 @@ USAGE:
   - 1500001614 - Human1
   - 1500001615 - Human2
   - 1500001616 - Human3
+
+With **WhichModPlayer** shared mod you can also use the following for Participants added by mods:
   - 1500001617 - Mod1
   - 1500001618 - Mod2
   - 1500001619 - Mod3
