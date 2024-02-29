@@ -5,8 +5,7 @@
   
   <!-- guid 454144439: -->
   <!-- Add support for multiple entries in InputAmountUpgradeCount and combinations of InputAmountUpgradeCount+ReplaceInputCount -->
-     <!-- one minor downside, see below explanation: Items like "mines use dynamite" now also display the "dynamites +1 input" tooltip. While technically it is correct, it can be confusing. -->
- 
+  <!-- one minor downside, see below explanation: Items like "mines use dynamite" now also display the "dynamites +1 input" tooltip. While technically it is correct, it can be confusing. --> 
   
   <!-- general Infos: -->
     <!-- unfortunately it does not to seem possible to use sth like this as ExpectedValueInt: -->
@@ -14,7 +13,7 @@
      <!-- the game seems to expect only direct integers, although this would evaluate to an integer. -->
      <!-- this limits the options to compare ReplaceInput with InputAmountUpgrade and may explain the bad implementation from the devs, only supporting one entry each. (instead of simply telling the backend devs to implement evaluation for the result -.-) -->
      <!-- (and looping over both the same time to be able to compare each product with eachother it most likely also not possible anyways..) -->
-      <!-- This means we are unable to check if a InputAmountUpgrade-Product is the smae like a ReplaceInput-Product, which would be necessary to prevent eg. the InputAmountUpgrade-Tooltip if it is used like in the mines-dynamite-item. -->
+     <!-- This means we are unable to check if a InputAmountUpgrade-Product is the smae like a ReplaceInput-Product, which would be necessary to prevent eg. the InputAmountUpgrade-Tooltip if it is used like in the mines-dynamite-item. -->
     
     <!-- it seems [RefGuid] is here the same as {ItemGuid} -->
     
@@ -63,11 +62,11 @@
           <OperatorType />
         </VisibilityElement>
         <Icon>
-          <IconGUID>1500301995</IconGUID>
+          <IconGUID>1500301995</IconGUID> <!-- Icon Input Goods -->
           <Style />
         </Icon>
         <Text>
-          <TextGUID>1500301995</TextGUID>
+          <TextGUID>1500301995</TextGUID> <!-- "Input Goods:" -->
           <Style />
         </Text>
         <Value>
@@ -86,52 +85,65 @@
           <OperatorType />
         </VisibilityElement>
         <InfoElement>
-          <ElementType>5</ElementType>
+          <ElementType>4</ElementType>
           <!-- wenn Amount größer 0 ist, nimm zb. einen text wo wir ein "+" vor die Menge machen (andernfalls ohne zeichen)  -->
           <VisibilityElement>
             <ElementType>
               <ElementType>1</ElementType>
             </ElementType>
             <CompareOperator>
-              <CompareOperator>5</CompareOperator>
+              <CompareOperator>5</CompareOperator> <!-- bigger than #index0# == has InputAmountUpgradeAmount -->
             </CompareOperator>
             <ResultType>
               <ResultType>1</ResultType>
             </ResultType>
             <Condition>[ItemAssetData({ItemGuid}) InputAmountUpgradeAmount(#index0#)]</Condition>
           </VisibilityElement>
+          <Icon>
+            <IconText>[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Icon]</IconText> <!-- Icon from Product -->
+            <Style />
+          </Icon>
           <Text>
-            <TextGUID>1500301996</TextGUID>
+            <Text>&lt;font color='0xff817f87'&gt;[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Text]&lt;/font&gt;</Text> <!-- Text from Product -->
             <Style />
           </Text>
+          <Value>
+            <Text>&lt;font color='0xff817f87'&gt;+[ItemAssetData([RefGuid]) InputAmountUpgradeAmount(#index0#)]/1&lt;/font&gt;</Text> <!-- Value of extra Input -->
+            <Style />
+          </Value>
           <BackgroundType />
         </InfoElement>
         <InfoElement>
-          <ElementType>5</ElementType>
+          <ElementType>4</ElementType>
           <VisibilityElement>
             <ElementType>
               <ElementType>1</ElementType>
             </ElementType>
             <CompareOperator>
-              <CompareOperator>3</CompareOperator>
+              <CompareOperator>3</CompareOperator> <!-- smaller than #index0# == has no InputAmountUpgradeAmount -->
             </CompareOperator>
             <ResultType>
               <ResultType>1</ResultType>
             </ResultType>
             <Condition>[ItemAssetData({ItemGuid}) InputAmountUpgradeAmount(#index0#)]</Condition>
           </VisibilityElement>
+          <Icon>
+            <IconText>[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Icon]</IconText> <!-- Icon from Product -->
+            <Style />
+          </Icon>
           <Text>
-            <TextGUID>1500301997</TextGUID>
+            <Text>&lt;font color='0xff817f87'&gt;[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Text]&lt;/font&gt;</Text> <!-- Text from Product -->
             <Style />
           </Text>
+          <Value>
+            <Text>&lt;font color='0xff817f87'&gt;[ItemAssetData([RefGuid]) InputAmountUpgradeAmount(#index0#)]/1&lt;/font&gt;</Text> <!-- Value of Input -->
+            <Style />
+          </Value>
           <BackgroundType />
         </InfoElement>
         <Source>[ItemAssetData({ItemGuid}) InputAmountUpgradeCount]</Source>
       </InfoElement>
-    </InfoElement>
-
-    
-    
+    </InfoElement>    
     
   </ModOp>
   
