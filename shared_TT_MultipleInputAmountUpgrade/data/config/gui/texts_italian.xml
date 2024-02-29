@@ -8,18 +8,7 @@
       <GUID>1500301995</GUID>
       <Text>Beni in ingresso:</Text>
     </Text>
-    <!-- positive InputAmountUpgrade -->
-    <Text>
-      <!-- TODO translation -->
-      <GUID>1500301996</GUID>
-      <Text>[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Text] &lt;img height='24' width='24' src="[ItemAssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Icon]"/&gt; +[ItemAssetData([RefGuid]) InputAmountUpgradeAmount(#index0#)]</Text>
-    </Text>
-    <!-- negative InputAmountUpgrade -->
-    <Text>
-      <!-- TODO translation -->
-      <GUID>1500301997</GUID>
-      <Text>[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Text] &lt;img height='24' width='24' src="[ItemAssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Icon]"/&gt; [ItemAssetData([RefGuid]) InputAmountUpgradeAmount(#index0#)]</Text>
-    </Text>
+    <!-- InputAmountUpgrade Text found in infotip code directly, since it needs no translation -->
 
     <!-- ReplaceInput remains GUID 20081 -->
     <!-- ReplaceInput not abstract -->
