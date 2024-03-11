@@ -1,0 +1,205 @@
+<ModOps>
+  
+  <!-- Serp GUIDs 1500004660 to 1500004669 -->
+  <!-- (1500004660 used in shared mod shared_CopyPools_AP_Kontors) -->
+
+
+  <!-- This mod spawns a invisble ItemContainer Dummy Building on every human island (at Kontor) -->
+   <!-- This can be used in further triggers to socket items into them by code, which then provide their buff area-wide (area==island) -->
+   <!-- And you can also remove them on another condition only at the relevant Area found by ConditionPlayerCounter -->
+   
+   
+  <!-- enable the following line to activate example code -->
+  <!-- <Include File="./ExampleHowToUse.include.xml" /> -->
+   
+   
+  
+  <ModOp Type="AddNextSibling" GUID='100586'>
+    <Asset>
+      <Template>BuildingDummy_WithOwner</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004661</GUID>
+          <Name>ItemContainer DummyBuilding</Name>
+        </Standard>
+        <ItemContainer>
+          <UnlimitedSlotCount>1</UnlimitedSlotCount>
+          <UnlimitedStack>1</UnlimitedStack>
+          <SocketCount>500</SocketCount>
+          <SocketAllocation>RadiusBuilding;GuildHouse</SocketAllocation>
+          <SocketScope>Area</SocketScope>
+          <CanStoreProducts>0</CanStoreProducts>
+          <SpawnsFlotsam>0</SpawnsFlotsam>
+        </ItemContainer>
+      </Values>
+    </Asset>
+  </ModOp>
+
+  
+  <!-- Only within Quests the game accepts many things, like "LimitToQuestArea" and such. -->
+   <!-- But within a trigger we can already check the Area and forward it to a Quest. ConditionPlayerCounter + Area as Scope remembers the area it found. -->
+    <!-- ConditionMutualAreaInSubconditions can be used to check if the area of multiple ConditionPlayerCounter Areas is the same -->
+    
+  <!-- While using ConditionMutualAreaInSubconditions there seems to be an exception to how the Conditions are checked. -->
+     <!-- Normally, if you put several SubTrigger on the same level, they must NOT be true at the same time to trigger the main actions, but it is enough if each of them was true in the past at least once, regardless of the other. -->
+     <!-- But when using ConditionMutualAreaInSubconditions the subtriggers must be written on the same level, otherwise ConditionMutualAreaInSubconditions can not check if they are the same Area.  -->
+      <!-- And it seems it also makes sure that all conditions must be true at the same time -->
+  <ModOp Type="AddNextSibling" GUID="130248">
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004663</GUID>
+          <Name>Trigger Quest to Spawn ItemContainer On Each Island Once</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionMutualAreaInSubconditions</Template>
+            <Values>
+              <Condition />
+              <ConditionMutualAreaInSubconditions />
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <Context>700000</Context>
+                          <CounterAmount>1</CounterAmount>
+                          <ComparisonOp>AtLeast</ComparisonOp>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <Context>1500004661</Context>
+                          <CounterAmount>0</CounterAmount>
+                          <ComparisonOp>AtMost</ComparisonOp>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <TriggerActions> 
+            <Item>
+              <TriggerAction>
+                <Template>ActionStartQuest</Template>
+                <Values>
+                  <Action />
+                  <ActionStartQuest>
+                    <Quest>1500004664</Quest>
+                    <InheritQuestArea>1</InheritQuestArea>
+                    <InheritQuestSession>1</InheritQuestSession>
+                  </ActionStartQuest>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+          <!-- small delay for trigger, just in case sth goes totally wrong, to not cost too much performance -->
+          <ResetTrigger>
+            <Template>AutoCreateTrigger</Template>
+            <Values>
+              <Trigger>
+                <TriggerCondition>
+                  <Template>ConditionTimer</Template>
+                  <Values>
+                    <Condition />
+                    <ConditionTimer>
+                      <TimeLimit>2000</TimeLimit>
+                    </ConditionTimer>
+                  </Values>
+                </TriggerCondition>
+              </Trigger>
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+  </ModOp>
+    
+    
+  
+  
+  <ModOp Type="AddNextSibling" GUID="152264">
+    <Asset>
+      <Template>A7_QuestDummyQuest</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004664</GUID>
+          <Name>Spawn ItemContainer Helper at Kontor</Name>
+        </Standard>
+        <Quest>
+          <OnQuestStart>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <ActionList>
+                <Actions>
+                  <Item>
+                    <Action>
+                      <Template>ActionSpawnObjects</Template>
+                      <Values>
+                        <Action />
+                        <ActionSpawnObjects>
+                          <SpawnGUID>1500004661</SpawnGUID>
+                          <Amount>1</Amount>
+                          <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
+                        </ActionSpawnObjects>
+                        <SpawnArea>
+                          <SpawnContext>ForceContextPosition</SpawnContext>
+                          <ContextGUID>1500004660</ContextGUID>
+                          <LimitToQuestArea>1</LimitToQuestArea>
+                        </SpawnArea>
+                        <SessionFilter>
+                          <AllowProcessingSession>0</AllowProcessingSession>
+                          <AllowParentConditionSession>0</AllowParentConditionSession>
+                          <AllowQuestSession>1</AllowQuestSession>
+                          <AllowQuestArea>1</AllowQuestArea>
+                        </SessionFilter>
+                      </Values>
+                    </Action>
+                  </Item>
+                </Actions>
+              </ActionList>
+            </Values>
+          </OnQuestStart>
+        </Quest>
+      </Values>
+    </Asset>
+    
+  </ModOp>
+  
+  
+  
+  
+
+</ModOps>

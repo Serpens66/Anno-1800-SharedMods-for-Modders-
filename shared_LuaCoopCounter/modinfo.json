@@ -1,5 +1,5 @@
 {
-  "Version": "1.01",
+  "Version": "1.04",
   "ModID": "shared_LuaCoopCounter_Serp",
   "IncompatibleIds": null,
   "ModDependencies": null,
@@ -11,7 +11,7 @@
     "English": "shared_LuaCoopCounter"
   },
   "Description": {
-    "English": "shared_LuaCoopCounter: Lua scripts are tricky in Multiplayer/Coop because scripts started with ActionExecuteScript are executed for each local player. So eg. 2 times if you play Coop with 2 humans. For MP with 2 seperate human players you can use my shared mod WhichPlayer to make sure your script is executed for the correct human. This mod here is for Coop. It will count how many coop players are active in the executing Participant and save it into a global variable to use in lua."
+    "English": "shared_LuaCoopCounter: Lua scripts are tricky in Multiplayer/Coop because scripts started with ActionExecuteScript are executed for each local player. So eg. 2 times if you play Coop with 2 humans. For MP with 2 seperate human players you can use my shared mod WhichPlayer to make sure your script is executed for the correct human. This mod here is for Coop. It provides a function to count how many coop players are active in the executing Participant."
   },
   "DLCDependencies": null,
   "CreatorName": "Serp",

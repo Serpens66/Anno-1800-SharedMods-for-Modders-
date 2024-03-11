@@ -1,0 +1,390 @@
+<ModOps>
+  
+    
+  <!-- Example code in your mod to add 3 times the same item-buff affecting all production buildings  -->
+    <!-- if the island has more than 40 tons of wood-planks in stock (and remove it if not) -->
+  
+  <!-- Make sure to use AddNextSibling with GUID 112574 , because if you add your item at a wrong location, it might accidently be part of a RewardPool or any other pool you dont want, because the game uses "Groups" -->
+  <ModOp Type="AddNextSibling" GUID="112574">
+    <Asset>
+      <Template>GuildhouseItem</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004662</GUID>
+          <Name>example item</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/specialists/systemic/icon_pearl_diver_102.png</IconFilename>
+          <InfoDescription>12513</InfoDescription>
+        </Standard>
+        <Item>
+          <Allocation>GuildHouse</Allocation>
+          <MaxStackSize>1</MaxStackSize>
+          <TradePrice>1</TradePrice>
+          <OnlyEquippableOnce>0</OnlyEquippableOnce>
+          <TransferBlocked>1</TransferBlocked>
+        </Item>
+        <FactoryUpgrade>
+          <ProductivityUpgrade>
+            <Value>10</Value>
+            <Percental>1</Percental>
+          </ProductivityUpgrade>
+        </FactoryUpgrade>
+        <ItemEffect>
+          <EffectTargets>
+            <Item>
+              <GUID>6000018</GUID>
+            </Item>
+          </EffectTargets>
+        </ItemEffect>
+      </Values>
+    </Asset>
+  </ModOp>
+  <ModOp Type="AddNextSibling" GUID='100586'>
+    <!-- since we can not check via xml conditions if our item is socketed already, we will mark the area with another helper building instead -->
+    <!-- We need one of this helper building per Item we want to socket, to show the Triggers that it is already socketed! -->
+    <Asset>
+      <Template>BuildingDummy_WithOwner</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004667</GUID>
+          <Name>Item_1 active on this Island, Marker Building</Name>
+        </Standard>
+      </Values>
+    </Asset>
+  </ModOp>
+  
+  <ModOp Type="AddNextSibling" GUID="130248">
+    <!-- While using ConditionMutualAreaInSubconditions there seems to be an exception to how the Conditions are checked. -->
+     <!-- Normally, if you put several SubTrigger on the same level, they must NOT be true at the same time to trigger the main actions, but it is enough if each of them was true in the past at least once, regardless of the other. -->
+     <!-- But when using ConditionMutualAreaInSubconditions the subtriggers must be written on the same level, otherwise ConditionMutualAreaInSubconditions can not check if they are the same Area.  -->
+      <!-- And it seems it also makes sure that all conditions must be true at the same time -->
+    
+    <!-- Trigger Quest To Spawn Item If we have atleast x GoodsInStock at Area, the ItemContainer is already there and the area does not have the Marker Building for that Item yet -->
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004666</GUID>
+          <Name>Trigger Quest To Spawn Item</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionMutualAreaInSubconditions</Template>
+            <Values>
+              <Condition />
+              <ConditionMutualAreaInSubconditions />
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <Context>1500004661</Context>
+                          <CounterAmount>1</CounterAmount>
+                          <ComparisonOp>AtLeast</ComparisonOp>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <PlayerCounter>GoodsInStock</PlayerCounter>
+                          <Context>1010196</Context>
+                          <ComparisonOp>AtLeast</ComparisonOp>
+                          <CounterAmount>40</CounterAmount>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <Context>1500004667</Context>
+                          <CounterAmount>0</CounterAmount>
+                          <ComparisonOp>AtMost</ComparisonOp>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionStartQuest</Template>
+                <Values>
+                  <Action />
+                  <ActionStartQuest>
+                    <Quest>1500004668</Quest>
+                    <InheritQuestArea>1</InheritQuestArea>
+                    <InheritQuestSession>1</InheritQuestSession>
+                  </ActionStartQuest>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+          <!-- small delay for resetting trigger, just in case sth goes totally wrong, to not cost too much performance -->
+          <ResetTrigger>
+            <Template>AutoCreateTrigger</Template>
+            <Values>
+              <Trigger>
+                <TriggerCondition>
+                  <Template>ConditionTimer</Template>
+                  <Values>
+                    <Condition />
+                    <ConditionTimer>
+                      <TimeLimit>2000</TimeLimit>
+                    </ConditionTimer>
+                  </Values>
+                </TriggerCondition>
+              </Trigger>
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004665</GUID>
+          <Name>If we have less goods and marker built, remove the item again</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionMutualAreaInSubconditions</Template>
+            <Values>
+              <Condition />
+              <ConditionMutualAreaInSubconditions />
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <PlayerCounter>GoodsInStock</PlayerCounter>
+                          <Context>1010196</Context>
+                          <ComparisonOp>LessThan</ComparisonOp>
+                          <CounterAmount>40</CounterAmount>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <Context>1500004667</Context>
+                          <CounterAmount>1</CounterAmount>
+                          <ComparisonOp>AtLeast</ComparisonOp>
+                          <CounterScope>Area</CounterScope>
+                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <TriggerActions>
+            <!-- ActionDeleteItem has no filter -.- so it deletes all items worldwide from every player... -->
+            <Item>
+              <TriggerAction>
+                <Template>ActionDeleteItem</Template>
+                <Values>
+                  <Action />
+                  <ActionDeleteItem>
+                    <ItemGUID>1500004662</ItemGUID>
+                  </ActionDeleteItem>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <!-- But luckily we have our marker-building that shows which island already has an item equipped. We will simply also delete all of these buildings from everyone, -->
+             <!-- which should make our other trigger spawn new items for the islands where the condition is still true -->
+            <Item>
+              <TriggerAction>
+                <Template>ActionDeleteObjects</Template>
+                <Values>
+                  <Action />
+                  <ActionDeleteObjects />
+                  <ObjectFilter>
+                    <ObjectGUID>1500004667</ObjectGUID>
+                  </ObjectFilter>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+          <!-- small delay for resetting trigger, just in case sth goes totally wrong, to not cost too much performance -->
+          <ResetTrigger>
+            <Template>AutoCreateTrigger</Template>
+            <Values>
+              <Trigger>
+                <TriggerCondition>
+                  <Template>ConditionTimer</Template>
+                  <Values>
+                    <Condition />
+                    <ConditionTimer>
+                      <TimeLimit>2000</TimeLimit>
+                    </ConditionTimer>
+                  </Values>
+                </TriggerCondition>
+              </Trigger>
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+  </ModOp>
+  
+  <ModOp Type="AddNextSibling" GUID="152264">
+    <!-- spawn Marker Building at the ItemContainer Helper Building (both invisible and not blocking) -->
+     <!-- And then socket the Item to the ItemContainer Building -->
+      <!-- if you want to add the same Item multiple times (for whatever reason) use multiple <Item> entries in ActionAddGoodsToItemContainer, instead of increeasing the "Amount" -->
+    <Asset>
+      <Template>A7_QuestDummyQuest</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004668</GUID>
+          <Name>Spawn BuffItem and Marker-HelperBuilding</Name>
+        </Standard>
+        <Quest>
+          <OnQuestStart>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <ActionList>
+                <Actions>
+                  <Item>
+                    <Action>
+                      <Template>ActionSpawnObjects</Template>
+                      <Values>
+                        <Action />
+                        <ActionSpawnObjects>
+                          <SpawnGUID>1500004667</SpawnGUID>
+                          <Amount>1</Amount>
+                          <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
+                        </ActionSpawnObjects>
+                        <SpawnArea>
+                          <SpawnContext>ForceContextPosition</SpawnContext>
+                          <ContextGUID>1500004661</ContextGUID>
+                          <LimitToQuestArea>1</LimitToQuestArea>
+                        </SpawnArea>
+                        <SessionFilter>
+                          <AllowProcessingSession>0</AllowProcessingSession>
+                          <AllowParentConditionSession>0</AllowParentConditionSession>
+                          <AllowQuestSession>1</AllowQuestSession>
+                          <AllowQuestArea>1</AllowQuestArea>
+                        </SessionFilter>
+                      </Values>
+                    </Action>
+                  </Item>
+                  <Item>
+                    <Action>
+                      <Template>ActionAddGoodsToItemContainer</Template>
+                      <Values>
+                        <Action />
+                        <ActionAddGoodsToItemContainer>
+                          <Goods>
+                            <Item>
+                              <Good>1500004662</Good>
+                              <Amount>1</Amount>
+                            </Item>
+                            <Item>
+                              <Good>1500004662</Good>
+                              <Amount>1</Amount>
+                            </Item>
+                            <Item>
+                              <Good>1500004662</Good>
+                              <Amount>1</Amount>
+                            </Item>
+                          </Goods>
+                          <ItemContainerObjects>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <ObjectFilter>
+                                <ObjectGUID>1500004661</ObjectGUID>
+                                <CheckParticipantID>1</CheckParticipantID>
+                                <CheckProcessingParticipantID>1</CheckProcessingParticipantID>
+                                <CheckQuestStarterSession>1</CheckQuestStarterSession>
+                                <CheckQuestArea>1</CheckQuestArea>
+                              </ObjectFilter>
+                            </Values>
+                          </ItemContainerObjects>
+                        </ActionAddGoodsToItemContainer>
+                      </Values>
+                    </Action>
+                  </Item>
+                </Actions>
+              </ActionList>
+            </Values>
+          </OnQuestStart>
+        </Quest>
+      </Values>
+    </Asset>
+    
+  </ModOp>
+
+</ModOps>

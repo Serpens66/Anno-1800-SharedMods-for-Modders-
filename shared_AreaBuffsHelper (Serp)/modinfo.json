@@ -1,0 +1,21 @@
+{
+  "Version": "1.00",
+  "ModID": "shared_AreaBuffsHelper",
+  "IncompatibleIds": null,
+  "ModDependencies": ["shared_CopyPools_AP_Kontors_Serp","ObjectDummies_Serp"],
+  "Category": {
+    "English": "Shared",
+    "German": "Shared"
+  },
+  "ModName": {
+    "English": "shared_AreaBuffsHelper (Serp)",
+    "German": "shared_AreaBuffsHelper (Serp)"
+  },
+  "Description": {
+    "English": "shared_AreaBuffsHelper: Includes Triggers and sample code for you to easily enable/disable Island specifc and islandwide Buffs based on ConditionPlayerCounter-Area-Scope Conditions.",
+    "German": "shared_AreaBuffsHelper: Enthält Trigger und Beispielcode damit du leicht Insel spezifische und Inselweite Buffs aktivieren/deaktivieren kann, basierend auf ConditionPlayerCounter-Area-Scope Conditions."
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}
