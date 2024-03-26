@@ -45,10 +45,40 @@
             <ResultType />
             <Condition>[FactoryAssetData([RefGuid]) HasProduction]</Condition>
           </VisibilityElement>
-          <OperatorType />
-        </VisibilityElement>
-      
-      
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>2</ChildCount>
+            <!-- Include factories with abstract or buff outputs (not recognized by HasProduction) -->
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>5</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[StaticData Factory Inputs([RefGuid]) AT(0)]</Condition>
+            </VisibilityElement>
+            <!-- Exclude Monuments -->
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator />
+              <ResultType />
+              <ExpectedValueBool>False</ExpectedValueBool>
+              <Condition>[ToolOneHelper IsMonument([RefGuid])]</Condition>
+            </VisibilityElement>
+            <OperatorType />
+          </VisibilityElement>
+          <OperatorType>
+            <OperatorType>1</OperatorType>
+          </OperatorType>
+        </VisibilityElement>      
         <InfoElement>
           <ElementType>8</ElementType>
           <ChildCount>1</ChildCount>
@@ -80,7 +110,7 @@
                 <Style />
               </Icon>
               <Text>
-                <TextGUID>11143</TextGUID>
+                <TextGUID>2100115950</TextGUID> <!-- use "Cycle time" instead of "produce goods" which is already displayed via InfoDescription -->
                 <Style />
               </Text>
               <Value>
@@ -92,7 +122,8 @@
             </InfoElement>
           </InfoElement>
         </InfoElement>
-
+        
+        <!-- Inputs formatted -->
         <InfoElement>
           <ElementType>8</ElementType>
           <ChildCount>1</ChildCount>
@@ -209,9 +240,10 @@
               <BackgroundType />
             </InfoElement>
             <Source>[StaticData Factory Inputs([RefGuid]) Count]</Source>
-          </InfoElement>
-        
+          </InfoElement>        
         </InfoElement>
+        
+        <!-- Outputs formatted -->
         <InfoElement>
           <ElementType>8</ElementType>
           <ChildCount>1</ChildCount>
