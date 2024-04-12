@@ -1,6 +1,6 @@
 # xml ModOp code snippets for various purposes
 
-- [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-"once-per-island"-without-uniqueType-property)
+- [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-once-per-island-without-uniquetype-property)
 
 ###  Limit a building to "once per Island" without UniqueType property
   <details>
