@@ -149,6 +149,7 @@
         </Locked>
         <Text />
         <Product>
+          <HideInUI>1</HideInUI>
           <StorageLevel>Building</StorageLevel>
           <ProductCategory>11707</ProductCategory>
           <BasePrice>1</BasePrice>
