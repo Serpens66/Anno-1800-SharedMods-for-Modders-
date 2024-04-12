@@ -2,6 +2,114 @@
 
 - [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-once-per-island-without-uniquetype-property)
 
+###  ActionExecuteActionByChance with fixed chance
+- Usage of ActionExecuteActionByChance without a variable (vanilla xml always uses a variable for this, but we can not add our variables. So being able to use it with a fixed value is important, but vanilla code has no example of it). Make sure to use naming "TriggerAction" in "TriggerActions" and "Action" in "Actions", it is basically the same, but if you name it wrong, the code does nothing, this is true for all kind of actions. 50:50 chance:
+
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```xml
+  <TriggerAction>
+    <Template>ActionExecuteActionByChance</Template>
+    <Values>
+      <Action />
+      <ActionExecuteActionByChance>
+        <ChanceValue>
+          <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+          <Values>
+            <VariableValue>
+              <FloatValue>50</FloatValue>
+            </VariableValue>
+          </Values>
+        </ChanceValue>
+        <ActionListChanceSuccess>
+          <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+          <Values>
+            <ActionList>
+              <Actions>
+                [...]
+              </Actions>
+            </ActionList>
+          </Values>
+        </ActionListChanceSuccess>
+        <ActionListChanceFailure>
+          <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+          <Values>
+            <ActionList>
+              <Actions>
+                [...]
+              </Actions>
+            </ActionList>
+          </Values>
+        </ActionListChanceFailure>
+      </ActionExecuteActionByChance>
+    </Values>
+  </TriggerAction>
+
+  ```
+  </details>
+
+###  Delete all kontors from an AI (and therefore removing it from the game) 
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```xml
+  <ModOp GUID="130248" Type="AddNextSibling">
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>1500001161</GUID>
+          <Name>Delete Kontors from AI mentioned below</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <Condition />
+              <ConditionAlwaysTrue />
+            </Values>
+          </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionDeleteObjects</Template>
+                <Values>
+                  <Action />
+                  <ActionDeleteObjects />
+                  <ObjectFilter>
+                    <ObjectGUID>700000</ObjectGUID>
+                    <CheckParticipantID>1</CheckParticipantID>
+                    <ObjectParticipantID>Second_ai_11_Mercier</ObjectParticipantID>
+                  </ObjectFilter>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+  </ModOp>
+  ```
+  </details>
+
+###  Add text to existing strings (from vanilla or other mods) 
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```xml
+  <!-- add something to a vanilla text (one can not use [AssetData(10595) Text] within Text 10595, it causes endless loop). here we add " (0%)" after the string. -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID = '10595']/Text[not(contains(.,' (0%)'))]"
+    Content="/TextExport/Texts/Text[GUID = '10595']/Text/text()">
+    <Text><ModOpContent /> (0%)</Text>
+  </ModOp>
+  ```
+  </details>
+
 ###  Limit a building to "once per Island" without UniqueType property
   <details>
   <summary>(CLICK) CODE</summary>  
