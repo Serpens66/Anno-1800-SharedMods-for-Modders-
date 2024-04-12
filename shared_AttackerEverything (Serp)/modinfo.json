@@ -1,0 +1,19 @@
+{
+  "Version": "1.00",
+  "ModID": "shared_AttackerEverything_Serp",
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "LoadAfterIds": ["*"],
+  "Category": {
+    "English": "Shared"
+  },
+  "ModName": {
+    "English": "shared_AttackerEverything (Serp)"
+  },
+  "Description": {
+    "English": "shared_AttackerEverything: Changes the BasicAttackType -Seamine- to be able to attack everything else. Seamines itself still work fine and you can use the BasicAttackType for your objects that should be able to attack everything, also island buildings."
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}
