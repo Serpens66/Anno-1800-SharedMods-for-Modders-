@@ -1,9 +1,12 @@
 # xml ModOp code snippets for various purposes
 
+- [ActionExecuteActionByChance with fixed chance](#actionexecuteactionbychance-with-fixed-chance)
+- [Delete all kontors from an AI (and therefore removing it from the game)](#delete-all-kontors-from-an-ai-and-therefore-removing-it-from-the-game)
+- [Add text to existing strings (from vanilla or other mods)](#add-text-to-existing-strings-from-vanilla-or-other-mods)
 - [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-once-per-island-without-uniquetype-property)
 
 ###  ActionExecuteActionByChance with fixed chance
-- Usage of ActionExecuteActionByChance without a variable (vanilla xml always uses a variable for this, but we can not add our variables. So being able to use it with a fixed value is important, but vanilla code has no example of it). Make sure to use naming "TriggerAction" in "TriggerActions" and "Action" in "Actions", it is basically the same, but if you name it wrong, the code does nothing, this is true for all kind of actions. 50:50 chance:
+- Usage of ActionExecuteActionByChance without a variable (vanilla xml always uses a variable for this, but we can not add custom variables. So being able to use it with a fixed value is important, but vanilla code has no example of it). 50:50 chance example:
 
   <details>
   <summary>(CLICK) CODE</summary>  
