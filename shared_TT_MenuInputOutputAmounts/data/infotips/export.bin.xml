@@ -110,7 +110,7 @@
                 <Style />
               </Icon>
               <Text>
-                <TextGUID>2100115950</TextGUID> <!-- use "Cycle time" instead of "produce goods" which is already displayed via InfoDescription -->
+                <TextGUID>2100115950</TextGUID> <!-- use "Production cycle" instead of "produce goods" which is already displayed as InfoDescription in the infotip; all languages use the same terms now -->
                 <Style />
               </Text>
               <Value>
