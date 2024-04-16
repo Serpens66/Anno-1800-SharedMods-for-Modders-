@@ -1,8 +1,15 @@
 <ModOps>
   
+  <!-- OUTDATED, see here for better code that does not need items, only dummy buildings: -->
+  <!-- https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/CodeSnippets.md#area-wide-buff-based-on-area-conditionplayercounter-conditions -->
+  <!-- (no need for a "shared mod" for this, since you need to create your own assets everytime) -->
+  
+  
   <!-- Serp GUIDs 1500004660 to 1500004669 -->
   <!-- (1500004660 used in shared mod shared_CopyPools_AP_Kontors) -->
 
+  <!-- ACHTUNG: geht ohne Items sockeln viel einfacher. einfach direkt ein dummy gebäude spawnen was den gewünschten Buff areawide verteilt (mit item brauchen wir ja auch n marker building, kommt also von der gebäudezahl aufs selbe raus) -->
+    <!-- entweder mit BuffFactory BaseBuff oder mit DefaultBuff-EffectForward den AreaBuff verteilen -->
 
   <!-- This mod spawns a invisble ItemContainer Dummy Building on every human island (at Kontor) -->
    <!-- This can be used in further triggers to socket items into them by code, which then provide their buff area-wide (area==island) -->
