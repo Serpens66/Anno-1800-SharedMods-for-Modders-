@@ -345,15 +345,15 @@
   <!-- Global Buffs added via "ActionBuff" are only applied to sessions that were already visited by the player/AI (by camera or by ship) at the time of action.  -->
   <!-- That means we need to reapply the buff everytime we enter a new session for the first time -->
   <!-- This can either be done by hardcoding each session GUID in your code and use ConditionActiveSession. But this then only works on Sessions we know. It won't work for mod-session if we did not add their GUIDs as well to our code. -->
-   <!-- So the best alternative found your would be the ConditionEvent "SessionEnter". This fires everytime the human player enters any session (switches camare to the session). -->
+   <!-- So the best alternative found your would be the ConditionEvent "SessionEnter". This fires everytime the human player enters any session (switches camera to the session). -->
    <!-- It means it fires too often, but there is not really an alternative that catches all sessions without hardcoding GUIDs. -->
     <!-- So when using "SessionEnter", we will remove and add the global buff again, to reapply it, so it affects all currently visited sessions. -->
-    
+  <!-- Unfortunately there is no way to check if a buff is already active for a player in a session, so all we can do is to remove and add the buff again on each SessionEnter -->
+  
     <!-- I made alot of helper-shared-mods you can find here: -->
      <!-- https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders- -->
     <!-- two of them will be used in the following code exmaples: shared_IsAIPlayer_Condition and shared_OncePerSessionPerSaveLoad -->
 
-  <!-- Unfortunately there is no way to check if a buff is already active for a player in a session, so all we can do is to remove and add the buff again on each SessionEnter -->
   
   
   <!-- ########################### -->
@@ -556,7 +556,34 @@
                                   <ConditionPropsNegatable />
                                 </Values>
                               </TriggerCondition>
-                              <TriggerActions />
+                              <TriggerActions>
+                                <Item>
+                                  <TriggerAction>
+                                    <Template>ActionBuff</Template>
+                                    <Values>
+                                      <Action />
+                                      <ActionBuff>
+                                        <BuffAsset>2001000001</BuffAsset>
+                                        <AddBuff>0</AddBuff>
+                                        <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                                      </ActionBuff>
+                                    </Values>
+                                  </TriggerAction>
+                                </Item>
+                                <Item>
+                                  <TriggerAction>
+                                    <Template>ActionBuff</Template>
+                                    <Values>
+                                      <Action />
+                                      <ActionBuff>
+                                        <BuffAsset>2001000001</BuffAsset>
+                                        <AddBuff>1</AddBuff>
+                                        <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                                      </ActionBuff>
+                                    </Values>
+                                  </TriggerAction>
+                                </Item>
+                              </TriggerActions>
                             </Trigger>
                           </Values>
                         </SubTrigger>
