@@ -4,6 +4,7 @@
 - [Delete all kontors from an AI (and therefore removing it from the game)](#delete-all-kontors-from-an-ai-and-therefore-removing-it-from-the-game)
 - [Add text to existing strings (from vanilla or other mods)](#add-text-to-existing-strings-from-vanilla-or-other-mods)
 - [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-once-per-island-without-uniquetype-property)
+- [Global Buffs](#global-buffs)
 - [Area wide Buff based on Area ConditionPlayerCounter conditions](#area-wide-buff-based-on-area-conditionplayercounter-conditions)
 
 ###  ActionExecuteActionByChance with fixed chance
@@ -326,6 +327,359 @@
     </Asset>
   </ModOp>
 
+
+  ```
+  </details>
+
+###  Global Buffs
+- Adding Global Buffs to human/AIs and make sure thay also work on new entered sessions:
+
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```xml
+  <!-- Example uses personal GUID range 2001000000 -	2001009999, replace them with your own GUIDs. -->
+  <!-- In this example GUID 2001000000 and 2001000001 will be the Buffs you want to apply globally -->
+   <!-- They can be InfluenceTitleBuff, GuildhouseBuff, HarbourOfficeBuff, TownhallBuff and any combination of buff properties (usually ending on "..Upgrade", like "ResidenceUpgrade") -->
+
+  <!-- Global Buffs added via "ActionBuff" are only applied to sessions that were already visited by the player/AI (by camera or by ship) at the time of action.  -->
+  <!-- That means we need to reapply the buff everytime we enter a new session for the first time -->
+  <!-- This can either be done by hardcoding each session GUID in your code and use ConditionActiveSession. But this then only works on Sessions we know. It won't work for mod-session if we did not add their GUIDs as well to our code. -->
+   <!-- So the best alternative found your would be the ConditionEvent "SessionEnter". This fires everytime the human player enters any session (switches camera to the session). -->
+   <!-- It means it fires too often, but there is not really an alternative that catches all sessions without hardcoding GUIDs. -->
+    <!-- So when using "SessionEnter", we will remove and add the global buff again, to reapply it, so it affects all currently visited sessions. -->
+  <!-- Unfortunately there is no way to check if a buff is already active for a player in a session, so all we can do is to remove and add the buff again on each SessionEnter -->
+  
+    <!-- I made alot of helper-shared-mods you can find here: -->
+     <!-- https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders- -->
+    <!-- two of them will be used in the following code exmaples: shared_IsAIPlayer_Condition and shared_OncePerSessionPerSaveLoad -->
+
+  
+  
+  <!-- ########################### -->
+
+
+  <!-- Only for humans -->
+   <!-- (using ConditionTimer before resetting the trigger just to not trigger it too often when switching sessions back and forth) -->
+  <ModOp GUID="153271" Type="AddNextSibling">
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>2001000002</GUID>
+          <Name>Apply and reapply Buff 2001000000 to Human</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionEvent</Template>
+            <Values>
+              <Condition />
+              <ConditionEvent>
+                <ConditionEvent>SessionEnter</ConditionEvent>
+              </ConditionEvent>
+              <ConditionPropsNegatable />
+            </Values>
+          </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionBuff</Template>
+                <Values>
+                  <Action />
+                  <ActionBuff>
+                    <BuffAsset>2001000000</BuffAsset>
+                    <AddBuff>0</AddBuff>
+                    <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                  </ActionBuff>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <Item>
+              <TriggerAction>
+                <Template>ActionBuff</Template>
+                <Values>
+                  <Action />
+                  <ActionBuff>
+                    <BuffAsset>2001000000</BuffAsset>
+                    <AddBuff>1</AddBuff>
+                    <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                  </ActionBuff>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+          <ResetTrigger>
+            <Template>AutoCreateTrigger</Template>
+            <Values>
+              <Trigger>
+                <TriggerCondition>
+                  <Template>ConditionTimer</Template>
+                  <Values>
+                    <Condition />
+                    <ConditionTimer>
+                      <TimeLimit>30000</TimeLimit>
+                    </ConditionTimer>
+                  </Values>
+                </TriggerCondition>
+              </Trigger>
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+
+
+  <!-- ########################### -->
+  <!-- humans and/or AIs -->
+
+  <!-- It will renew the buffs for AI everytime the AI settles any Island, to make sure it is active in every session (since SessionEnter does not work for AI) -->
+  <!-- GUID 1500001601 is from my "shared_IsAIPlayer_Condition" shared mod to make sure sth is only executed for AI (and 1500001600 only for human) -->
+  <ModOp GUID="153271" Type="AddNextSibling">
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>2001000003</GUID>
+          <Name>Apply and reapply Buff 2001000000 to Human and Buff 2001000001 to AI</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <Condition>
+                <SubConditionCompletionOrder>MutuallyExclusive</SubConditionCompletionOrder>
+              </Condition>
+              <ConditionAlwaysTrue />
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionUnlocked</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionUnlocked>
+                          <UnlockNeeded>1500001600</UnlockNeeded>
+                        </ConditionUnlocked>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                    <SubTriggers>
+                      <Item>
+                        <SubTrigger>
+                          <Template>AutoCreateTrigger</Template>
+                          <Values>
+                            <Trigger>
+                              <TriggerCondition>
+                                <Template>ConditionEvent</Template>
+                                <Values>
+                                  <Condition />
+                                  <ConditionEvent>
+                                    <ConditionEvent>SessionEnter</ConditionEvent>
+                                  </ConditionEvent>
+                                  <ConditionPropsNegatable />
+                                </Values>
+                              </TriggerCondition>
+                              <TriggerActions>
+                                <Item>
+                                  <TriggerAction>
+                                    <Template>ActionBuff</Template>
+                                    <Values>
+                                      <Action />
+                                      <ActionBuff>
+                                        <BuffAsset>2001000000</BuffAsset>
+                                        <AddBuff>0</AddBuff>
+                                        <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                                      </ActionBuff>
+                                    </Values>
+                                  </TriggerAction>
+                                </Item>
+                                <Item>
+                                  <TriggerAction>
+                                    <Template>ActionBuff</Template>
+                                    <Values>
+                                      <Action />
+                                      <ActionBuff>
+                                        <BuffAsset>2001000000</BuffAsset>
+                                        <AddBuff>1</AddBuff>
+                                        <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                                      </ActionBuff>
+                                    </Values>
+                                  </TriggerAction>
+                                </Item>
+                              </TriggerActions>
+                            </Trigger>
+                          </Values>
+                        </SubTrigger>
+                      </Item>
+                    </SubTriggers>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionUnlocked</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionUnlocked>
+                          <UnlockNeeded>1500001601</UnlockNeeded>
+                        </ConditionUnlocked>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                    <SubTriggers>
+                      <Item>
+                        <SubTrigger>
+                          <Template>AutoCreateTrigger</Template>
+                          <Values>
+                            <Trigger>
+                              <TriggerCondition>
+                                <Template>ConditionEvent</Template>
+                                <Values>
+                                  <Condition />
+                                  <ConditionEvent>
+                                    <ConditionEvent>IslandSettled</ConditionEvent>
+                                  </ConditionEvent>
+                                  <ConditionPropsNegatable />
+                                </Values>
+                              </TriggerCondition>
+                              <TriggerActions>
+                                <Item>
+                                  <TriggerAction>
+                                    <Template>ActionBuff</Template>
+                                    <Values>
+                                      <Action />
+                                      <ActionBuff>
+                                        <BuffAsset>2001000001</BuffAsset>
+                                        <AddBuff>0</AddBuff>
+                                        <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                                      </ActionBuff>
+                                    </Values>
+                                  </TriggerAction>
+                                </Item>
+                                <Item>
+                                  <TriggerAction>
+                                    <Template>ActionBuff</Template>
+                                    <Values>
+                                      <Action />
+                                      <ActionBuff>
+                                        <BuffAsset>2001000001</BuffAsset>
+                                        <AddBuff>1</AddBuff>
+                                        <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                                      </ActionBuff>
+                                    </Values>
+                                  </TriggerAction>
+                                </Item>
+                              </TriggerActions>
+                            </Trigger>
+                          </Values>
+                        </SubTrigger>
+                      </Item>
+                    </SubTriggers>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <ResetTrigger>
+            <Template>AutoCreateTrigger</Template>
+            <Values>
+              <Trigger>
+                <TriggerCondition>
+                  <Template>ConditionTimer</Template>
+                  <Values>
+                    <Condition />
+                    <ConditionTimer>
+                      <TimeLimit>30000</TimeLimit>
+                    </ConditionTimer>
+                  </Values>
+                </TriggerCondition>
+              </Trigger>
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>1</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    <!-- For AI: starting a savegame with already settled islands does not count for IslandSettled, so we have to add the buff once after the mod was newly added to enable the buff first time -->
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>2001000004</GUID>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionUnlocked</Template>
+            <Values>
+              <Condition />
+              <ConditionUnlocked>
+                <UnlockNeeded>1500001601</UnlockNeeded>
+              </ConditionUnlocked>
+              <ConditionPropsNegatable />
+            </Values>
+          </TriggerCondition>
+          <TriggerActions />
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>1</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+  </ModOp>
+  
+  <!-- ########################################################## -->
+  
+  <!-- Advanced: -->
+  <!-- Use the following for humans, if your code might cause lag, eg. because your buff affects alot of targets: -->
+   <!-- Use my shared mod: shared_OncePerSessionPerSaveLoad. This adds a new FeatureUnlock you can simply add your actions to, you want to execute everytime the human enters a session for the first time (since loading a savegame) -->
+   <!-- That means your buffs are only once per session per gameload renewed, which might cause lag as usual first, but not all the time on every single session-switching. -->
+  <ModOp Type="add" GUID="1500004530" Path="Values/Trigger/ResetTrigger/Values/Trigger/TriggerActions">
+    <Item>
+      <TriggerAction>
+        <Template>ActionBuff</Template>
+        <Values>
+          <Action />
+          <ActionBuff>
+            <BuffAsset>2001000000</BuffAsset>
+            <AddBuff>0</AddBuff>
+            <BuffProcessingParticipant>1</BuffProcessingParticipant>
+          </ActionBuff>
+        </Values>
+      </TriggerAction>
+    </Item>
+    <Item>
+      <TriggerAction>
+        <Template>ActionBuff</Template>
+        <Values>
+          <Action />
+          <ActionBuff>
+            <BuffAsset>2001000000</BuffAsset>
+            <AddBuff>1</AddBuff>
+            <BuffProcessingParticipant>1</BuffProcessingParticipant>
+          </ActionBuff>
+        </Values>
+      </TriggerAction>
+    </Item>
+  </ModOp>
 
   ```
   </details>
