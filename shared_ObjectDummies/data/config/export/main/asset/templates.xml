@@ -250,6 +250,46 @@
       </Properties>
     </Template>
     
+     <!-- BuffFactory needs the following to work:  -->
+      <!--  LogisticNode (sonst crash) -->
+      <!-- Pauseable: otherwise BaseBuff does not work -->
+      <!-- FactoryBase: Otherwise ProductionBuffs does not work (can be empty to produce wiht no input just the buff) -->
+     <!-- optional: UpgradeList wenn auf es selbst buffs wirken sollen. -->
+     <!-- Hint: The BuffFactory must be moved/rebuild to update the buffs, if you want to add/remove buff assets in a running game -->
+     <!-- Alterantive to make a building forward a buff areawide: UpgradeList+DefaultBuff, where you add a EffectForward that forwards your buff (so 2 buff assets needed), this does not require more properties for the building -->
+    <Template>
+      <Name>BuffFactoryDummy_WithOwner</Name>
+      <Properties>
+        <Standard />
+        <Object />
+        <Building>
+          <AssociatedRegions>Moderate;Colony01;Africa;Arctic</AssociatedRegions>
+          <TerrainType>Terrain</TerrainType>
+          <SecondPartyRelevant>0</SecondPartyRelevant>
+          <Destructable>0</Destructable>
+          <Movable>0</Movable>
+        </Building>
+        <Selection>
+          <GUIType>Generic</GUIType>
+          <MultiSelectable>0</MultiSelectable>
+          <Selectable>0</Selectable>
+          <DestructSelectable>0</DestructSelectable>
+          <InteractionDistance>0</InteractionDistance>
+          <AllowedDragType>[NONE]</AllowedDragType>
+        </Selection>
+        
+        <BuffFactory />
+        <LogisticNode>
+          <TransporterCountMax>0</TransporterCountMax>
+          <HideTransportersBeforeTheyMove>1</HideTransportersBeforeTheyMove>
+          <NeedsTransporterQueue>0</NeedsTransporterQueue>
+        </LogisticNode>
+        <FactoryBase />
+        <Pausable />
+        
+      </Properties>
+    </Template>
+    
     <!-- An object, not a building, that acts as shipyard.  -->
     <!-- for usage in sabotage mod to buy items from it. NOT meant to be a real shipyard with street, maintenance, electricty and such -->
     <Template>
@@ -455,8 +495,7 @@
           <CurveSegmentDensity>High</CurveSegmentDensity>
         </Walking>
         <Attackable>
-          <AttackableType>Airship</AttackableType>
-          <MaximumHitPoints>20000</MaximumHitPoints>
+          <AttackableType>[NONE]</AttackableType>
         </Attackable>
         <Attacker>
           <BasicAttackType>HunterAirship</BasicAttackType>
@@ -478,7 +517,7 @@
           <AccuracyByDistance />
         </Attacker>
         <ItemContainer>
-          <SocketAllocation>Ship;AirShip</SocketAllocation>
+          <SocketAllocation>Warship;Ship;AirShip</SocketAllocation>
           <SocketCount>1</SocketCount>
           <SlotCount>0</SlotCount>
           <CanStoreProducts>0</CanStoreProducts>
