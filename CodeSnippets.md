@@ -685,6 +685,8 @@
   </details>
 
 ###  Area wide Buff based on Area ConditionPlayerCounter conditions
+- **WARNING:**
+  this code is currently incomplete and not optimal! I will improve it within few days.  
 - improved code from previous shared_AreaBuffsHelper, this share mod was removed, because its better as Code Snippet  
 - enable/disable Island specifc and islandwide Buffs based on ConditionPlayerCounter-Area-Scope Conditions
 - It works by spawning invisible BuffFactories on the island you want which buff all targets on the island. 
@@ -698,6 +700,10 @@
   <summary>(CLICK) CODE</summary>  
   
   ```xml
+  WARNING:
+  this code is currently incomplete and not optimal! I will improve it within some days.  
+
+
   <ModOp Type="AddNextSibling" GUID='132370'>
     
     <!-- ############################################################## -->
