@@ -53,6 +53,8 @@
 
   ```
   </details>
+If you want sth to happen with different chances based on circumstance, you may try a Trigger with multiple SubTriggers checking for your custom unlocks.
+I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Then in the trigger you check for these unlocks with MutuallyExclusive. And eg. if the 10%-unlock is unlocked, the action will be a ActionExecuteActionByChance with FloatValue 10 and your action in success (and nothing in fail). This way you can lock/unlock your UnlockableAssets however you like, to control hat what chance your actions will be executed.
 
 ###  Delete all kontors from an AI (and therefore removing it from the game) 
   <details>
@@ -685,6 +687,8 @@
   </details>
 
 ###  Area wide Buff based on Area ConditionPlayerCounter conditions
+- **WARNING:**
+  this code is currently incomplete and not optimal! I will improve it within few days.  
 - improved code from previous shared_AreaBuffsHelper, this share mod was removed, because its better as Code Snippet  
 - enable/disable Island specifc and islandwide Buffs based on ConditionPlayerCounter-Area-Scope Conditions
 - It works by spawning invisible BuffFactories on the island you want which buff all targets on the island. 
@@ -698,6 +702,10 @@
   <summary>(CLICK) CODE</summary>  
   
   ```xml
+  WARNING:
+  this code is currently incomplete and not optimal! I will improve it within some days.  
+
+
   <ModOp Type="AddNextSibling" GUID='132370'>
     
     <!-- ############################################################## -->
