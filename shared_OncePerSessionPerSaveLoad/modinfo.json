@@ -11,7 +11,7 @@
     "English": "shared_OncePerSessionPerSaveLoad"
   },
   "Description": {
-    "English": "shared_OncePerSessionPerSaveLoad: For Modders: Adds an FeatureUnlock that unlocks everytime a variable session is entered the first time. You can use it eg. instead of SessionEnter to reapply global Buffs to a new session. It will be repeated whenever the user loads a savegame (then it fires again for all sessions once), but this is still much better than on every single SessionEnter. Use it eg. for ActionBuff/AddBuff."
+    "English": "shared_OncePerSessionPerSaveLoad: For Modders: Adds an FeatureUnlock that unlocks everytime a session is entered the first time. You can use it eg. instead of SessionEnter to reapply global Buffs to a new session. It will be repeated whenever the user loads a savegame (then it fires again for all sessions once), but this is still much better than on every single SessionEnter. Use it eg. for ActionBuff/AddBuff."
   },
   "DLCDependencies": null,
   "CreatorName": "Serp",

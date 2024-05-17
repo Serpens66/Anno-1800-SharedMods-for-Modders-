@@ -15,12 +15,15 @@
      <!-- which sucks if it happens on every session switching. -->
     <!-- (You can also not use an SessionLoaded Event, because AddBuf only works if the user already visited the session or owns an object in it, which is not the case when SessionLoaded fires, especially if eg. AI made the session load, then the human may be far from entering that session) -->
   
+  <!-- Since this one resets everytime the user loads a savegame, it also resets everytime the user changes mods. -->
+   <!-- so this means using this shared mod is easier to use to add global buffs than my OncePerSession_xml mod, which remembers if it already fired for a session forever -->
   
   
   
   <!-- HOW TO USE: xml code -->
    <!-- add your actions you want to execute on first SessionEnter to 1500004530 this way: -->
     <!-- (putting them into ResetTrigger, because this way the new actions added by your mod will directly be used (already registered triggers can not change code, but ResetTrigger will only get registered after main trigger is true)) -->
+    <!-- or check for ConditionEvent GUIDUnlocked 1500004530 in your own Condition -->
 
 	<!-- <ModOp Type="add" GUID="1500004530" Path="Values/Trigger/ResetTrigger/Values/Trigger/TriggerActions"> -->
     <!-- <Item> -->
@@ -35,8 +38,7 @@
   <!-- ########################################### -->
   <!-- ########################################### -->
   
-  <!-- Serp GUID 1500004530 and 1500004531 -->
-   <!-- 1500004531 wieder frei -->
+  <!-- Serp GUID 1500004530 -->
   
   <!-- Will get unlocked by lua everytime a session was entered the first time. (resets on savegame load in lua) -->
    <!-- it will lock itself again directly after unlock and waits for his next unlock and so on -->

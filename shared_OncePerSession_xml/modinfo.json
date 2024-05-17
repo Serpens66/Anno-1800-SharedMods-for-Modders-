@@ -1,0 +1,19 @@
+{
+  "Version": "1.0",
+  "ModID": "shared_OncePerSession_xml_Serp",
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "LoadAfterIds": null,
+  "Category": {
+    "English": "Shared"
+  },
+  "ModName": {
+    "English": "shared_OncePerSession (xml only)"
+  },
+  "Description": {
+    "English": "shared_OncePerSession: For Modders: Adds an FeatureUnlock that unlocks everytime a session is entered the first time (since this shared mod was activated). You can use it eg. instead of SessionEnter to reapply global Buffs to a new session with ActionBuff/AddBuff."
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

@@ -1,0 +1,318 @@
+<ModOps>
+    
+
+  
+  <!-- ########################################### -->
+  <!-- ########################################### -->
+  
+  <!-- Most Common Problem that this mod tries to solve/make less of a pain: -->
+   <!-- If one wants to apply global buffs with ActionBuff/AddBuff, they must be applied to every newly entered session again. -->
+   <!-- One could solve this by making a trigger that checks once for each Session eg. by ConditionActiveSession and hardcoding all known Session GUIDs here. -->
+    <!-- This should work fine for all the Session GUIDs you mentioned here and should be enough to execute this once per Session. -->
+   <!-- While this is the most efficient way, it can only support the sessions you explicit mentioned with GUID. It can not support other (mod-)sessions. -->
+    <!-- That is why many modders use SessionEnter instead, because this triggers everytime the user switches session and catches this way also unknown session GUIDs. -->
+    <!-- Downside is that it tirggers everytime on switching session and depending on the number of buffs/the buff-targets this might lag a short time,  -->
+     <!-- which sucks if it happens on every session switching. -->
+    <!-- (You can also not use an SessionLoaded Event, because AddBuf only works if the user already visited the session or owns an object in it, which is not the case when SessionLoaded fires, espeically if eg. AI made the session load, then the human may be far from entering that session) -->
+  
+  <!-- ATTENTION: -->
+   <!-- keep in mind that also other mods might use this shared mod, so it is possible that it was already active before your mod was activated on a savegame. -->
+    <!-- this means this shared mod most likely already fired for all "first time"-session-visited events and won't fire anymore. -->
+   <!-- If you are using this shared mod for adding global buffs: -->
+    <!-- Use 2 conditions, one with "session entered first time" and one that fires directly when you want the buffs to be added (eg. alwaystrue) -->
+     <!-- because global buffs apply to all sessions already visited. -->
+   <!-- If you have different code that you want to execute once per session-visited, you better copy paste the code from this shared mod with your own GUIDs, -->
+    <!-- to make sure it again fires once per session after your mod was activated -->
+   
+  <!-- ############# -->
+  
+  <!-- HOW TO USE: <ConditionEvent>GUIDUnlocked</ConditionEvent> with <ContextAsset>1500004527</ContextAsset> instead of SessionEnter -->
+    <!-- it will unlock everytime a session was entered the first time. -->
+  
+  <!-- <ModOp GUID="153271" Type="AddNextSibling"> -->
+    <!-- <Asset> -->
+      <!-- <Template>Trigger</Template> -->
+      <!-- <Values> -->
+        <!-- <Standard> -->
+          <!-- <GUID>YOUR_GUID</GUID> -->
+        <!-- </Standard> -->
+        <!-- <Trigger> -->
+          <!-- <TriggerCondition> -->
+            <!-- <Template>ConditionEvent</Template> -->
+            <!-- <Values> -->
+              <!-- <Condition/> -->
+              <!-- <ConditionEvent> -->
+                <!-- <ConditionEvent>GUIDUnlocked</ConditionEvent> -->
+                <!-- <ContextAsset>1500004527</ContextAsset> -->
+                <!-- <ContextAssetInfolayer>0</ContextAssetInfolayer> -->
+              <!-- </ConditionEvent> -->
+              <!-- <ConditionPropsNegatable/> -->
+            <!-- </Values> -->
+          <!-- </TriggerCondition> -->
+          <!-- <TriggerActions> -->
+            
+          <!-- </TriggerActions> -->
+          <!-- <ResetTrigger> -->
+            <!-- <Template>AutoCreateTrigger</Template> -->
+            <!-- <Values> -->
+              <!-- <Trigger> -->
+                <!-- <TriggerCondition> -->
+                  <!-- <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset> -->
+                  <!-- <Values> -->
+                    <!-- <Condition /> -->
+                    <!-- <ConditionAlwaysTrue /> -->
+                  <!-- </Values> -->
+                <!-- </TriggerCondition> -->
+              <!-- </Trigger> -->
+            <!-- </Values> -->
+          <!-- </ResetTrigger> -->
+        <!-- </Trigger> -->
+        <!-- <TriggerSetup> -->
+          <!-- <AutoRegisterTrigger>1</AutoRegisterTrigger> -->
+          <!-- <UsedBySecondParties>0</UsedBySecondParties> -->
+        <!-- </TriggerSetup> -->
+      <!-- </Values> -->
+    <!-- </Asset> -->
+  <!-- </ModOp> -->
+  
+  
+  <!-- ########################################### -->
+  <!-- ########################################### -->
+  <!-- ########################################### -->
+  
+  <!-- uses SerpGUIDS 1500004526 and 1500004527 -->
+  
+  <!-- This mod will spawn a invisible dummy object in each session for each human player, the player already visited. this way it can unlock 1500004527 once per session -->
+   <!-- and then remember for which session it was already done -->
+  
+  <ModOp Type="AddNextSibling" GUID='132370'>
+    <Asset>
+      <Template>BuildingDummy_WithOwner</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004526</GUID>
+          <Name>Session-Done-Marker</Name>
+        </Standard>
+      </Values>
+    </Asset>
+  </ModOp>
+  
+  <!-- Will get unlocked everytime a session was entered the first time (since this mod was activated) -->
+   <!-- it will lock itself again directly after unlock and waits for his next unlock and so on -->
+  <ModOp Type="addNextSibling" GUID="130248">
+    <Asset>
+      <Template>FeatureUnlock</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004527</GUID>
+          <Name>Event: New Session Entered First Time since Loading Savegame</Name>
+        </Standard>
+        <Locked />
+        <Trigger>
+          <!-- start after entering the first session after loading the game, otherwise code does not work if executed before -->
+          <TriggerCondition>
+            <Template>ConditionEvent</Template>
+            <Values>
+              <Condition>
+                <SubConditionCompletionOrder>Linear</SubConditionCompletionOrder>
+              </Condition>
+              <ConditionEvent>
+                <ConditionEvent>SessionEnter</ConditionEvent>
+                <ContextAssetInfolayer>0</ContextAssetInfolayer>
+              </ConditionEvent>
+              <ConditionPropsNegatable />
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionActiveSession</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionActiveSession>
+                          <ActiveSession>180039</ActiveSession>
+                          <SessionBlacklist>1</SessionBlacklist>
+                        </ConditionActiveSession>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition>
+                          <IsOptional>1</IsOptional>
+                        </Condition>
+                        <ConditionPlayerCounter>
+                          <Context>1500004526</Context>
+                          <CounterAmount>0</CounterAmount>
+                          <ComparisonOp>AtMost</ComparisonOp>
+                          <CounterScope>Session</CounterScope>
+                          <CounterScopeUseCurrentContext>1</CounterScopeUseCurrentContext>
+                          <CounterScopeUseActiveSession>1</CounterScopeUseActiveSession>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                    <TriggerActions>
+                      <Item>
+                        <TriggerAction>
+                          <Template>ActionUnlockAsset</Template>
+                          <Values>
+                            <Action />
+                            <ActionUnlockAsset>
+                              <UnlockAssets>
+                                <Item>
+                                  <Asset>1500004527</Asset>
+                                </Item>
+                              </UnlockAssets>
+                            </ActionUnlockAsset>
+                          </Values>
+                        </TriggerAction>
+                      </Item>
+                      <Item>
+                        <TriggerAction>
+                          <Template>ActionSpawnObjects</Template>
+                          <Values>
+                            <Action />
+                            <ActionSpawnObjects>
+                              <SpawnGUID>1500004526</SpawnGUID>
+                              <Amount>1</Amount>
+                              <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
+                            </ActionSpawnObjects>
+                            <SpawnArea>
+                              <SpawnContext>Random</SpawnContext>
+                            </SpawnArea>
+                            <SessionFilter>
+                              <AllowProcessingSession>0</AllowProcessingSession>
+                              <AllowParentConditionSession>1</AllowParentConditionSession>
+                              <AllowQuestSession>0</AllowQuestSession>
+                              <AllowQuestArea>0</AllowQuestArea>
+                            </SessionFilter>
+                          </Values>
+                        </TriggerAction>
+                      </Item>
+                    </TriggerActions>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <ResetTrigger>
+            <Template>AutoCreateTrigger</Template>
+            <Values>
+              <Trigger>
+                <TriggerCondition>
+                  <Template>ConditionTimer</Template>
+                  <Values>
+                    <Condition />
+                    <ConditionTimer>
+                      <TimeLimit>1000</TimeLimit>
+                    </ConditionTimer>
+                  </Values>
+                </TriggerCondition>
+                <TriggerActions>
+                  <Item>
+                    <TriggerAction>
+                      <Template>ActionLockAsset</Template>
+                      <Values>
+                        <Action />
+                        <ActionLockAsset>
+                          <LockAssets>
+                            <Item>
+                              <Asset>1500004527</Asset>
+                            </Item>
+                          </LockAssets>
+                        </ActionLockAsset>
+                      </Values>
+                    </TriggerAction>
+                  </Item>
+                </TriggerActions>
+              </Trigger>
+            </Values>
+          </ResetTrigger>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+          <AutoSelfUnlock>0</AutoSelfUnlock>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    
+    <!-- <Asset> -->
+      <!-- <Template>FeatureUnlock</Template> -->
+      <!-- <Values> -->
+        <!-- <Standard> -->
+          <!-- <GUID>1500004528</GUID> -->
+          <!-- <Name>test if it works</Name> -->
+        <!-- </Standard> -->
+        <!-- <Locked /> -->
+        <!-- <Trigger> -->
+          <!-- <TriggerCondition> -->
+            <!-- <Template>ConditionEvent</Template> -->
+            <!-- <Values> -->
+              <!-- <Condition/> -->
+              <!-- <ConditionEvent> -->
+                <!-- <ConditionEvent>GUIDUnlocked</ConditionEvent> -->
+                <!-- <ContextAsset>1500004527</ContextAsset> -->
+                <!-- <ContextAssetInfolayer>0</ContextAssetInfolayer> -->
+              <!-- </ConditionEvent> -->
+              <!-- <ConditionPropsNegatable/> -->
+            <!-- </Values> -->
+          <!-- </TriggerCondition> -->
+          <!-- <TriggerActions> -->
+            <!-- <Item> -->
+              <!-- <TriggerAction> -->
+                <!-- <Template>ActionAddResource</Template> -->
+                <!-- <Values> -->
+                  <!-- <Action /> -->
+                  <!-- <ActionAddResource> -->
+                    <!-- <Resource>1010017</Resource> -->
+                    <!-- <ResourceAmount>20011</ResourceAmount> -->
+                  <!-- </ActionAddResource> -->
+                <!-- </Values> -->
+              <!-- </TriggerAction> -->
+            <!-- </Item> -->
+          <!-- </TriggerActions> -->
+          <!-- <ResetTrigger> -->
+            <!-- <Template>AutoCreateTrigger</Template> -->
+            <!-- <Values> -->
+              <!-- <Trigger> -->
+                <!-- <TriggerCondition> -->
+                  <!-- <Template>ConditionAlwaysTrue</Template> -->
+                  <!-- <Values> -->
+                    <!-- <Condition /> -->
+                    <!-- <ConditionAlwaysTrue /> -->
+                  <!-- </Values> -->
+                <!-- </TriggerCondition> -->
+              <!-- </Trigger> -->
+            <!-- </Values> -->
+          <!-- </ResetTrigger> -->
+        <!-- </Trigger> -->
+        <!-- <TriggerSetup> -->
+          <!-- <AutoRegisterTrigger>1</AutoRegisterTrigger> -->
+          <!-- <UsedBySecondParties>0</UsedBySecondParties> -->
+        <!-- </TriggerSetup> -->
+      <!-- </Values> -->
+    <!-- </Asset> -->
+    
+    
+  </ModOp>
+  
+
+    
+    
+    
+</ModOps>
