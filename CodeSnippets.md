@@ -6,6 +6,7 @@
 - [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-once-per-island-without-uniquetype-property)
 - [Global Buffs](#global-buffs)
 - [Area wide Buff based on Area ConditionPlayerCounter conditions](#area-wide-buff-based-on-area-conditionplayercounter-conditions)
+- [Add product to Tooltip Arctic Flue Chance](#Add-product-to-tooltip-arctic-flue-chance)
 
 ###  ActionExecuteActionByChance with fixed chance
 - Usage of ActionExecuteActionByChance without a variable (vanilla xml always uses a variable for this, but we can not add custom variables. So being able to use it with a fixed value is important, but vanilla code has no example of it). 50:50 chance example:
@@ -1485,3 +1486,60 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   ```
   </details>
 
+
+###  Add product to Tooltip Arctic Flue Chance
+- Adding mod-heat-providing product to the "Arctic Flue Chance" Tooltip (see also [here](https://github.com/anno-mods/modding-guide/blob/main/documentation/infotips.md) for modding info about tooltips). Unfortunately I see no way to make the game automatically fetch this.. but adding sth to a list is most of the time fully compatible to other mods also adding to the list, so I think its ok to add mod products to this list.  
+   Using the same list-entry structure like vanilla, although I wonder why they use as diplay-condition "if the product is not locked" instead of "if the product is unlocked" :D
+- Put the following code in your mod into data/infotips/export.bin.xml and replace "YOUR_GUID" with your GUID of the product that provides heat. The code will add your product in the list below the vanilla heat provider "114890" (Cantine)
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```xml
+  <ModOps>
+  
+  <!-- Adding mod-heat-providing product to the "Arctic Flue Chance" Tooltip. Unfortunately I see no way to make the game automatically fetch this.. but adding sth to a list is most of the time fully compatible to other mods also adding to the list, so I think its ok to add mod products to this list. -->
+   <!-- Using the same list-entry structure like vanilla, although I wonder why they use as diplay-condition "if the product is not locked" instead of "if the product is unlocked" :D -->
+  <!-- Replace "YOUR_GUID" with your GUID of the product that provides heat. The code will add your product in the list below the vanilla heat provider "114890" (Cantine) -->
+   <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='116020']/InfoElement[Value/Text='[Selection Object Residence CurrentHeatForGood(114890) &gt;&gt; happiness]']">
+    <InfoElement>
+      <ElementType>4</ElementType>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator />
+          <ResultType />
+          <ExpectedValueBool>False</ExpectedValueBool>
+          <Condition>[Selection Object Area Economy NeedLocked([Selection Object Residence PopulationLevel Guid], YOUR_GUID)]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <Icon>
+        <IconGUID>YOUR_GUID</IconGUID>
+        <Style />
+      </Icon>
+      <Text>
+        <TextGUID>YOUR_GUID</TextGUID>
+        <Style />
+      </Text>
+      <Value>
+        <Text>[Selection Object Residence CurrentHeatForGood(YOUR_GUID) &gt;&gt; happiness]</Text>
+        <Style />
+      </Value>
+      <WarningType />
+      <BackgroundType />
+    </InfoElement>
+    
+    
+  </ModOp>
+    
+    
+  </ModOps>  
+
+  ```
+  </details>
