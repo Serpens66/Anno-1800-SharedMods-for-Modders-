@@ -124,6 +124,8 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   
   ```xml
   <!-- With the following code you can limit your building to only be built once per island, without the need of one of the "UniqueType" Enums, which are only available in limited number (only 20 are available, while many are already in use from other mods) -->
+  <!-- With this code it only properly works to limit it to 1 per island (not multiple ones) unfortunately. -->
+  <!-- And I tried to adjust the tooltips, to not display "missing buildmaterials" but instead "Limited to once per island", but this failed, because there are SO many locations one have to edit it, and the tooltips itself are buggy .. if you are interested in my attempt, contact me and ask for my "shared_BuildCountPerIsland" code... -->
   
   <!-- Copy the whole following code. -->
   <!-- Replace YOUR_BUILDING_GUID with the GUID of your building you want to limit to once per building. -->
@@ -620,7 +622,7 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
         </TriggerSetup>
       </Values>
     </Asset>
-    <!-- For AI: starting a savegame with already settled islands does not count for IslandSettled, so we have to add the buff once after the mod was newly added to enable the buff first time -->
+    <!-- For AI: starting a savegame with already settled islands does not count for IslandSettled, so we have to add the buff once after the mod was newly added to enable the buff first time (add your custom condition of course via SubTrigger, if you dont want the buff to be active from the start) -->
     <Asset>
       <Template>Trigger</Template>
       <Values>
@@ -638,7 +640,21 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
               <ConditionPropsNegatable />
             </Values>
           </TriggerCondition>
-          <TriggerActions />
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionBuff</Template>
+                <Values>
+                  <Action />
+                  <ActionBuff>
+                    <BuffAsset>2001000001</BuffAsset>
+                    <AddBuff>1</AddBuff>
+                    <BuffProcessingParticipant>1</BuffProcessingParticipant>
+                  </ActionBuff>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
         </Trigger>
         <TriggerSetup>
           <AutoRegisterTrigger>1</AutoRegisterTrigger>
@@ -688,801 +704,333 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   </details>
 
 ###  Area wide Buff based on Area ConditionPlayerCounter conditions
-- **WARNING:**
-  this code is currently incomplete and not optimal! I will improve it within few days.  
 - improved code from previous shared_AreaBuffsHelper, this share mod was removed, because its better as Code Snippet  
 - enable/disable Island specifc and islandwide Buffs based on ConditionPlayerCounter-Area-Scope Conditions
 - It works by spawning invisible BuffFactories on the island you want which buff all targets on the island. 
 - You can spawn/delete them as you please, eg. spawn a debuff as soon as someone reached an amount GoodsInStock and remove again when it goes below.
-- use "OwnerChangeTarget" to make the BuffFactories stay when Island was lost/changed owner, to bind the buff permanently to the island.
-- below the "ConditionMutualAreaInSubconditions" Condition yo can add any SubTrigger ConditionPlayerCounter condition with Area-Scope you want, current code spawns one per settled island, regardless of any other conditions
-- the code requires my shared mods: shared_CopyPools_AP_Kontors, shared_IsAIPlayer_Condition and shared_ObjectDummies (1.08 and higher)
-- You find usage of this in my mod Specialised islands (name may change, not released yet)
+- the code for Human players requires my shared mods: shared_Matchers (v1.0 and higher) and shared_ObjectDummies (1.08 and higher)
+- for AI the code is much more complicated, since AIs can not use Quests, which we need to be able to use "LimitToQuestArea". I will add more complex code for AIs later.
 
   <details>
-  <summary>(CLICK) CODE</summary>  
+  <summary>(CLICK) CODE for HUMAN players</summary>  
   
   ```xml
-  WARNING:
-  this code is currently incomplete and not optimal! I will improve it within some days.  
-
-
-  <ModOp Type="AddNextSibling" GUID='132370'>
-    
-    <!-- ############################################################## -->
-    <!-- BuffFactories -->
-    
-    <!-- These BuffBuildings get OwnerChangeTarget, so they are not destroyed when island is lost/changes owner, which basically means the buffs are from now on tied to the island -->
-    <!-- you can of course remove it, if you want the buildings to get destryoed on island loss/owner change -->
-    <Asset>
-      <Template>BuffFactoryDummy_WithOwner</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004685</GUID>
-          <Name>BuffBuilding</Name>
-        </Standard>
-        <Building>
-          <OwnerChangeTarget>1500004685</OwnerChangeTarget>
-        </Building>
-        <BuffFactory>
-          <BaseBuff>1500004686</BaseBuff>
-          <BaseBuffScope>Area</BaseBuffScope>
-        </BuffFactory>
-        <LogisticNode />
-        <Pausable />
-      </Values>
-    </Asset>
-    
-    <!-- Spawn Helper only required for spawning on AI islands -->
-    <Asset>
-      <Template>BuildingDummy_WithOwner</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004684</GUID>
-          <Name>BuffBuilding - Spawn Helper</Name>
-        </Standard>
-      </Values>
-    </Asset>
-    
-  </ModOp>
-  
-
-  <!-- ##############################################################################   -->
-  <!-- Buffs -->
-  <ModOp Type="AddNextSibling" GUID='190093'>
-    <Asset>
-      <Template>GuildhouseBuff</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004686</GUID>
-          <Name>Buff Island</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/specialists/systemic/icon_pearl_diver_102.png</IconFilename>
-          <InfoDescription>12513</InfoDescription>
-        </Standard>
-        <FactoryUpgrade>
-          <ProductivityUpgrade>
-            <Value>15</Value>
-            <Percental>1</Percental>
-          </ProductivityUpgrade>
-        </FactoryUpgrade>
-        <Buff>
-          <ShouldBeShownInForeignObjectMenu>1</ShouldBeShownInForeignObjectMenu>
-        </Buff>
-        <ItemEffect>
-          <EffectTargets>
-            <Item>
-              <GUID>6000018</GUID>
-            </Item>
-          </EffectTargets>
-        </ItemEffect>
-      </Values>
-    </Asset>
-    
-  </ModOp>
+  <!-- Used shared mods from https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders- : -->
+  <!-- - shared_Matchers (v1.0 and newer): GUID 1500004905, a matcher to spawn sth. at a DistributionCenter (Kontor) building from the processing player -->
+  <!-- - shared_ObjectDummies (v1.08 and newer): for the templates "BuffFactoryDummy_WithOwner" and "A7_QuestDummyQuest" -->
   
   
-  <!-- ############################## -->
-  <!-- Triggers -->
+  <!-- Carefully check your conditions! Add for testing an action like  -->
+  <!-- <Item> -->
+    <!-- <Action> -->
+      <!-- <Template>ActionAddResource</Template> -->
+      <!-- <Values> -->
+        <!-- <Action /> -->
+        <!-- <ActionAddResource> -->
+          <!-- <Resource>1010017</Resource> -->
+          <!-- <ResourceAmount>100000</ResourceAmount> -->
+        <!-- </ActionAddResource> -->
+      <!-- </Values> -->
+    <!-- </Action> -->
+  <!-- </Item> -->
+  <!-- to your helper Quests, to make sure your conditions are not endlessly triggered, but only when you want them to trigger! -->
   
-  <!-- Initial first Trigger to check if Human (1500001600) or AI (1500001601) -->
-  <ModOp Type="AddNextSibling" GUID="130248">
-    <!-- most likely we can not put the human/AI check into the same Condition like ConditionMutualAreaInSubconditions (ConditionMutualAreaInSubconditions must be main condition) -->
-     <!-- so we put this extra trigger in front of it to check it first -->
-    <Asset>
-      <Template>Trigger</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004676</GUID>
-          <Name>Check Human or AI</Name>
-        </Standard>
-        <Trigger>
-          <!-- small initial delay to make sure game is loaded -->
-          <TriggerCondition>
-            <Template>ConditionTimer</Template>
-            <Values>
-              <Condition>
-                <SubConditionCompletionOrder>MutuallyExclusive</SubConditionCompletionOrder>
-              </Condition>
-              <ConditionTimer>
-                <TimeLimit>1000</TimeLimit>
-              </ConditionTimer>
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionUnlocked</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionUnlocked>
-                          <UnlockNeeded>1500001600</UnlockNeeded>
-                        </ConditionUnlocked>
-                        <ConditionPropsNegatable />
-                      </Values>
-                    </TriggerCondition>
-                    <TriggerActions>
-                      <Item>
-                        <TriggerAction>
-                          <Template>ActionRegisterTrigger</Template>
-                          <Values>
-                            <Action />
-                            <ActionRegisterTrigger>
-                              <TriggerAsset>1500004677</TriggerAsset>
-                            </ActionRegisterTrigger>
-                          </Values>
-                        </TriggerAction>
-                      </Item>
-                    </TriggerActions>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionUnlocked</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionUnlocked>
-                          <UnlockNeeded>1500001601</UnlockNeeded>
-                        </ConditionUnlocked>
-                        <ConditionPropsNegatable />
-                      </Values>
-                    </TriggerCondition>
-                    <TriggerActions>
-                      <Item>
-                        <TriggerAction>
-                          <Template>ActionRegisterTrigger</Template>
-                          <Values>
-                            <Action />
-                            <ActionRegisterTrigger>
-                              <TriggerAsset>1500004678</TriggerAsset>
-                            </ActionRegisterTrigger>
-                          </Values>
-                        </TriggerAction>
-                      </Item>
-                      <Item>
-                        <TriggerAction>
-                          <Template>ActionRegisterTrigger</Template>
-                          <Values>
-                            <Action />
-                            <ActionRegisterTrigger>
-                              <TriggerAsset>1500004679</TriggerAsset>
-                            </ActionRegisterTrigger>
-                          </Values>
-                        </TriggerAction>
-                      </Item>
-                      <Item>
-                        <TriggerAction>
-                          <Template>ActionRegisterTrigger</Template>
-                          <Values>
-                            <Action />
-                            <ActionRegisterTrigger>
-                              <TriggerAsset>1500004680</TriggerAsset>
-                            </ActionRegisterTrigger>
-                          </Values>
-                        </TriggerAction>
-                      </Item>
-                    </TriggerActions>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>1</AutoRegisterTrigger>
-          <UsedBySecondParties>1</UsedBySecondParties>
-        </TriggerSetup>
-      </Values>
-    </Asset>
+  
+    <ModOp Type="AddNextSibling" GUID='132370'>
+  
+      <!-- Hint: add -->
+        <!-- <Building> -->
+          <!-- <OwnerChangeTarget>2001000003</OwnerChangeTarget> -->
+        <!-- </Building> -->
+       <!-- to your BuffFactory IF you want that buff to be bound PERMANENTLY to this island (without it, the BuffFactory is removed on owner change of the island) -->
+      
+      <Asset>
+        <Template>BuffFactoryDummy_WithOwner</Template>
+        <Values>
+          <Standard>
+            <GUID>2001000003</GUID>
+            <Name>Example Invisible BuffFactory</Name>
+          </Standard>
+          <BuffFactory>
+            <BaseBuff>2001000004</BaseBuff>
+            <BaseBuffScope>Area</BaseBuffScope>
+          </BuffFactory>
+          <LogisticNode />
+          <Pausable />
+        </Values>
+      </Asset>    
+    </ModOp>
+  
+    <!-- just an example buff for testing, that gives +15% productivity to all production buildings, you can use whatever buff you want of course -->
+     <!-- ShouldBeShownInForeignObjectMenu was set so I could test if it works with AI, you dont need it in your buffs (Quests wont work with AI, so different code is needed for them) -->
+    <ModOp Type="AddNextSibling" GUID='190093'>
+      <Asset>
+        <Template>GuildhouseBuff</Template>
+        <Values>
+          <Standard>
+            <GUID>2001000004</GUID>
+            <Name>Example Buff Island</Name>
+            <IconFilename>data/ui/2kimages/main/3dicons/specialists/systemic/icon_pearl_diver_102.png</IconFilename>
+            <InfoDescription>12513</InfoDescription>
+          </Standard>
+          <FactoryUpgrade>
+            <ProductivityUpgrade>
+              <Value>15</Value>
+              <Percental>1</Percental>
+            </ProductivityUpgrade>
+          </FactoryUpgrade>
+          <Buff>
+            <ShouldBeShownInForeignObjectMenu>1</ShouldBeShownInForeignObjectMenu>
+          </Buff>
+          <ItemEffect>
+            <EffectTargets>
+              <Item>
+                <GUID>6000018</GUID>
+              </Item>
+            </EffectTargets>
+          </ItemEffect>
+        </Values>
+      </Asset>
+    </ModOp>
+  
+  
+  
+    <!-- Add your Helper Quests to this pool, can be as many as you want -->
+    <!--  (since Quests will be instantly solved, so the next PreCondition can be checked nearly all the time, but make sure that the conditions are properly written, to not firely endlessly!) -->
+    <!--  You may add a PreConditionList to this pool, if you want all Helper Quest from it to only be checked if that condition is fullfilled. For more detailed conditions, use PreConditionList from the Quests instead -->
+    <!-- (Instead of a QuestPool, one can also start the Helper Quest within a Trigger, but I think a QuestPool is more straightforward) -->
+    <ModOp Type="addNextSibling" GUID="150725">
+      <Asset>
+        <Template>QuestPool</Template>
+        <Values>
+          <Standard>
+            <GUID>2001000000</GUID>
+            <Name>AlwaysTrue-Pool</Name>
+          </Standard>
+          <QuestPool>
+            <Quests>
+              <Item>
+                <Quest>2001000001</Quest>
+              </Item>
+              <Item>
+                <Quest>2001000002</Quest>
+              </Item>
+            </Quests>
+            <PoolCooldown>0</PoolCooldown>
+            <QuestCooldown>0</QuestCooldown>
+            <CooldownOnQuestStart>1</CooldownOnQuestStart>
+            <CooldownOnQuestEnd>1</CooldownOnQuestEnd>
+            <AffectedByCooldownFactor>0</AffectedByCooldownFactor>
+            <IsMainStoryPool>0</IsMainStoryPool>
+            <IsTopLevel>1</IsTopLevel>
+            <QuestLimit>1</QuestLimit>
+          </QuestPool>
+          <Locked>
+            <DefaultLockedState>0</DefaultLockedState>
+          </Locked>
+        </Values>
+      </Asset>
+    </ModOp>
     
-  </ModOp>
-  
-  <!-- Trigger Human -->
-  <!-- initial registering Trigger 1500004676 is in assets.xml -->
-  
-  <ModOp Type="AddNextSibling" GUID="130248">
-    <!-- Buff Display Building -->
-    <Asset>
-      <Template>Trigger</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004677</GUID>
-          <Name>Human check buildings and start spawn</Name>
-        </Standard>
-        <Trigger>
-          <TriggerCondition>
-            <Template>ConditionMutualAreaInSubconditions</Template>
-            <Values>
-              <Condition />
-              <ConditionMutualAreaInSubconditions />
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>700000</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004685</Context>
-                          <CounterAmount>0</CounterAmount>
-                          <ComparisonOp>AtMost</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-          <TriggerActions> 
-            <Item>
-              <TriggerAction>
-                <Template>ActionStartQuest</Template>
-                <Values>
-                  <Action />
-                  <ActionStartQuest>
-                    <Quest>1500004681</Quest>
-                    <InheritQuestArea>1</InheritQuestArea>
-                    <InheritQuestSession>1</InheritQuestSession>
-                  </ActionStartQuest>
-                </Values>
-              </TriggerAction>
-            </Item>
-          </TriggerActions>
-          <ResetTrigger>
-            <Template>AutoCreateTrigger</Template>
-            <Values>
-              <Trigger>
-                <TriggerCondition>
-                  <Template>ConditionTimer</Template>
+    <!-- only within Quests "LimitToQuestArea" works -->
+    <ModOp Type="AddNextSibling" GUID="152264">
+      <Asset>
+        <Template>A7_QuestDummyQuest</Template>
+        <Values>
+          <Standard>
+            <GUID>2001000001</GUID>
+            <Name>Spawn invisible Buff Building at Kontor, when having at least 40 Timber in stock at an island</Name>
+          </Standard>
+          <Quest>
+            <OnQuestStart>
+              <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+              <Values>
+                <ActionList>
+                  <Actions>
+                    <Item>
+                      <Action>
+                        <Template>ActionSpawnObjects</Template>
+                        <Values>
+                          <Action />
+                          <ActionSpawnObjects>
+                            <SpawnGUID>2001000003</SpawnGUID>
+                            <Amount>1</Amount>
+                            <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
+                          </ActionSpawnObjects>
+                          <SpawnArea>
+                            <SpawnContext>ForceContextPosition</SpawnContext>
+                            <MatcherGUID>1500004905</MatcherGUID>
+                            <LimitToQuestArea>1</LimitToQuestArea>
+                          </SpawnArea>
+                          <SessionFilter>
+                            <AllowProcessingSession>0</AllowProcessingSession>
+                            <AllowParentConditionSession>0</AllowParentConditionSession>
+                            <AllowQuestSession>1</AllowQuestSession>
+                            <AllowQuestArea>1</AllowQuestArea>
+                          </SessionFilter>
+                        </Values>
+                      </Action>
+                    </Item>
+                  </Actions>
+                </ActionList>
+              </Values>
+            </OnQuestStart>
+          </Quest>
+          <PreConditionList>
+            <Condition>
+              <Template>ConditionMutualAreaInSubconditions</Template>
+              <Values>
+                <Condition />
+                <ConditionMutualAreaInSubconditions />
+              </Values>
+            </Condition>
+            <SubConditions>
+              <!-- first making sure the island does not have our bufffactory already -->
+              <Item>
+                <SubCondition>
+                  <Template>PreConditionList</Template>
                   <Values>
-                    <Condition />
-                    <ConditionTimer>
-                      <TimeLimit>200</TimeLimit>
-                    </ConditionTimer>
+                    <PreConditionList>
+                      <Condition>
+                        <Template>ConditionPlayerCounter</Template>
+                        <Values>
+                          <Condition />
+                          <ConditionPlayerCounter>
+                            <Context>2001000003</Context>
+                            <CounterAmount>0</CounterAmount>
+                            <ComparisonOp>AtMost</ComparisonOp>
+                            <CounterScope>Area</CounterScope>
+                            <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                          </ConditionPlayerCounter>
+                        </Values>
+                      </Condition>
+                    </PreConditionList>
                   </Values>
-                </TriggerCondition>
-              </Trigger>
-            </Values>
-          </ResetTrigger>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>0</AutoRegisterTrigger>
-          <UsedBySecondParties>0</UsedBySecondParties>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-  </ModOp>
-  
-  <!-- only within Quests LimitToQuestArea works -->
-  <ModOp Type="AddNextSibling" GUID="152264">
-    <Asset>
-      <Template>A7_QuestDummyQuest</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004681</GUID>
-          <Name>Spawn Display Building at Kontor</Name>
-        </Standard>
-        <Quest>
-          <OnQuestStart>
-            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
-            <Values>
-              <ActionList>
-                <Actions>
-                  <Item>
-                    <Action>
-                      <Template>ActionSpawnObjects</Template>
-                      <Values>
-                        <Action />
-                        <ActionSpawnObjects>
-                          <SpawnGUID>1500004685</SpawnGUID>
-                          <Amount>1</Amount>
-                          <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
-                        </ActionSpawnObjects>
-                        <SpawnArea>
-                          <SpawnContext>ForceContextPosition</SpawnContext>
-                          <MatcherGUID>1500004687</MatcherGUID>
-                          <LimitToQuestArea>1</LimitToQuestArea>
-                        </SpawnArea>
-                        <SessionFilter>
-                          <AllowProcessingSession>0</AllowProcessingSession>
-                          <AllowParentConditionSession>0</AllowParentConditionSession>
-                          <AllowQuestSession>1</AllowQuestSession>
-                          <AllowQuestArea>1</AllowQuestArea>
-                        </SessionFilter>
-                      </Values>
-                    </Action>
-                  </Item>
-                </Actions>
-              </ActionList>
-            </Values>
-          </OnQuestStart>
-        </Quest>
-      </Values>
-    </Asset>
-  </ModOp>
-  
-  <!-- ############# -->
-  <!-- AI Triggers -->
-  
-  <ModOp Type="AddNextSibling" GUID="130248">
-   
-    <!-- AI can not use Quests and therefore can not use LimitToQuestArea. So we need a kind of Bruteforce to spawn the buildings once for each of their islands -->
-    <!-- we will spawn a unique helper building first. then check if this was by chance spawned at correct island -->
-     <!-- if it is, fine then we will spawn at this unique location the final building. -->
-     <!-- if it is not (so at this island already is a final building), remove the helper building and try spawn randomly again, until we got the correct island -->
-     
-     <!-- CheckQuestArea (in ActionDeleteObjects) does not work in Trigger, but AllowQuestSession+AllowQuestArea does work in a way that the Session is correctly chosen for spawning, which is also important -->
-     
-     <!-- eine ActionRegister-Schleife mit den drei Triggern 78,79 und 80 zu erstellen hat irgednwie nicht funktioniert, -->
-      <!-- die trigger wurden nach erstem loop einfach nicht erneut registered.. oder klappt ActionRegisterTrigger nur einmal pro Trigger?! -->
-      <!-- Deswegen jetzt nur einmal registeren und danach ResetTrigger, das funktioniert. -->
-        
-    <Asset>
-      <Template>Trigger</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004678</GUID>
-          <Name>AI check buildings and spawn helper</Name>
-        </Standard>
-        <Trigger>
-          <TriggerCondition>
-            <Template>ConditionMutualAreaInSubconditions</Template>
-            <Values>
-              <Condition />
-              <ConditionMutualAreaInSubconditions />
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>700000</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004685</Context>
-                          <CounterAmount>0</CounterAmount>
-                          <ComparisonOp>AtMost</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004684</Context>
-                          <CounterAmount>0</CounterAmount>
-                          <ComparisonOp>AtMost</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-          <TriggerActions> 
-            <Item>
-              <TriggerAction>
-                <Template>ActionSpawnObjects</Template>
-                <Values>
-                  <Action />
-                  <ActionSpawnObjects>
-                    <SpawnGUID>1500004684</SpawnGUID>
-                    <Amount>1</Amount>
-                    <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
-                  </ActionSpawnObjects>
-                  <SpawnArea>
-                    <SpawnContext>ForceContextPosition</SpawnContext>
-                    <MatcherGUID>1500004687</MatcherGUID>
-                    <LimitToQuestArea>1</LimitToQuestArea>
-                  </SpawnArea>
-                  <SessionFilter>
-                    <AllowProcessingSession>0</AllowProcessingSession>
-                    <AllowParentConditionSession>0</AllowParentConditionSession>
-                    <AllowQuestSession>1</AllowQuestSession>
-                    <AllowQuestArea>1</AllowQuestArea>
-                  </SessionFilter>
-                </Values>
-              </TriggerAction>
-            </Item>
-          </TriggerActions>
-          <ResetTrigger>
-            <Template>AutoCreateTrigger</Template>
-            <Values>
-              <Trigger>
-                <TriggerCondition>
-                  <Template>ConditionTimer</Template>
+                </SubCondition>
+              </Item>
+              <!-- then checking for any ConditionPlayerCounter you want to check for the island, in this example if having at least 40t of Timber in stock -->
+               <!-- you can add more SubCondition, all of them must be true at the same time -->
+              <Item>
+                <SubCondition>
+                  <Template>PreConditionList</Template>
                   <Values>
-                    <Condition />
-                    <ConditionTimer>
-                      <TimeLimit>200</TimeLimit>
-                    </ConditionTimer>
+                    <PreConditionList>
+                      <Condition>
+                        <Template>ConditionPlayerCounter</Template>
+                        <Values>
+                          <Condition />
+                          <ConditionPlayerCounter>
+                            <PlayerCounter>GoodsInStock</PlayerCounter>
+                            <Context>1010196</Context>
+                            <ComparisonOp>AtLeast</ComparisonOp>
+                            <CounterAmount>40</CounterAmount>
+                            <CounterScope>Area</CounterScope>
+                            <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                          </ConditionPlayerCounter>
+                        </Values>
+                      </Condition>
+                    </PreConditionList>
                   </Values>
-                </TriggerCondition>
-              </Trigger>
-            </Values>
-          </ResetTrigger>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>0</AutoRegisterTrigger>
-          <UsedBySecondParties>1</UsedBySecondParties>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-    
-    <Asset>
-      <Template>Trigger</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004679</GUID>
-          <Name>AI check spawn: failed and repeat</Name>
-        </Standard>
-        <Trigger>
-          <TriggerCondition>
-            <Template>ConditionMutualAreaInSubconditions</Template>
-            <Values>
-              <Condition />
-              <ConditionMutualAreaInSubconditions />
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>700000</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004684</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004685</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-          <TriggerActions>
-            <Item>
-              <TriggerAction>
-                <Template>ActionDeleteObjects</Template>
-                <Values>
-                  <Action />
-                  <ActionDeleteObjects />
-                  <ObjectFilter>
-                    <ObjectGUID>1500004684</ObjectGUID>
-                    <CheckParticipantID>1</CheckParticipantID>
-                    <CheckProcessingParticipantID>1</CheckProcessingParticipantID>
-                  </ObjectFilter>
-                </Values>
-              </TriggerAction>
-            </Item>
-          </TriggerActions>
-          <ResetTrigger>
-            <Template>AutoCreateTrigger</Template>
-            <Values>
-              <Trigger>
-                <TriggerCondition>
-                  <Template>ConditionTimer</Template>
+                </SubCondition>
+              </Item>
+            </SubConditions>
+          </PreConditionList>
+        </Values>
+      </Asset>
+      
+      <!-- And now the code to remove the BuffFactory again, if having less than 40 timber and island has a BuffFactory, basically the opposite conditions from the spawn Quest. -->
+      <Asset>
+        <Template>A7_QuestDummyQuest</Template>
+        <Values>
+          <Standard>
+            <GUID>2001000002</GUID>
+            <Name>Delete invisible Buff Building at Kontor, when having less than 40 timber in stock</Name>
+          </Standard>
+          <Quest>
+            <OnQuestStart>
+              <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+              <Values>
+                <ActionList>
+                  <Actions>
+                    <Item>
+                      <Action>
+                        <Template>ActionDeleteObjects</Template>
+                        <Values>
+                          <Action />
+                          <ActionDeleteObjects />
+                          <ObjectFilter>
+                            <ObjectGUID>2001000003</ObjectGUID>
+                            <CheckParticipantID>1</CheckParticipantID>
+                            <CheckProcessingParticipantID>1</CheckProcessingParticipantID>
+                          </ObjectFilter>
+                        </Values>
+                      </Action>
+                    </Item>
+                  </Actions>
+                </ActionList>
+              </Values>
+            </OnQuestStart>
+          </Quest>
+          <PreConditionList>
+            <Condition>
+              <Template>ConditionMutualAreaInSubconditions</Template>
+              <Values>
+                <Condition />
+                <ConditionMutualAreaInSubconditions />
+              </Values>
+            </Condition>
+            <SubConditions>
+              <Item>
+                <SubCondition>
+                  <Template>PreConditionList</Template>
                   <Values>
-                    <Condition />
-                    <ConditionTimer>
-                      <TimeLimit>200</TimeLimit>
-                    </ConditionTimer>
+                    <PreConditionList>
+                      <Condition>
+                        <Template>ConditionPlayerCounter</Template>
+                        <Values>
+                          <Condition />
+                          <ConditionPlayerCounter>
+                            <Context>2001000003</Context>
+                            <CounterAmount>1</CounterAmount>
+                            <ComparisonOp>AtLeast</ComparisonOp>
+                            <CounterScope>Area</CounterScope>
+                            <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                          </ConditionPlayerCounter>
+                        </Values>
+                      </Condition>
+                    </PreConditionList>
                   </Values>
-                </TriggerCondition>
-              </Trigger>
-            </Values>
-          </ResetTrigger>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>0</AutoRegisterTrigger>
-          <UsedBySecondParties>1</UsedBySecondParties>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-    
-    <Asset>
-      <Template>Trigger</Template>
-      <Values>
-        <Standard>
-          <GUID>1500004680</GUID>
-          <Name>AI check spawn: success</Name>
-        </Standard>
-        <Trigger>
-          <TriggerCondition>
-            <Template>ConditionMutualAreaInSubconditions</Template>
-            <Values>
-              <Condition />
-              <ConditionMutualAreaInSubconditions />
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>700000</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004685</Context>
-                          <CounterAmount>0</CounterAmount>
-                          <ComparisonOp>AtMost</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <Context>1500004684</Context>
-                          <CounterAmount>1</CounterAmount>
-                          <ComparisonOp>AtLeast</ComparisonOp>
-                          <CounterScope>Area</CounterScope>
-                          <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-          <TriggerActions> 
-            <!-- spawn the final object at the helpers position -->
-            <Item>
-              <TriggerAction>
-                <Template>ActionSpawnObjects</Template>
-                <Values>
-                  <Action />
-                  <ActionSpawnObjects>
-                    <SpawnGUID>1500004685</SpawnGUID>
-                    <Amount>1</Amount>
-                    <OwnerIsProcessingParticipant>1</OwnerIsProcessingParticipant>
-                  </ActionSpawnObjects>
-                  <SpawnArea>
-                    <SpawnContext>ForceContextPosition</SpawnContext>
-                    <MatcherGUID>1500004688</MatcherGUID>
-                    <LimitToQuestArea>1</LimitToQuestArea>
-                  </SpawnArea>
-                  <SessionFilter>
-                    <AllowProcessingSession>0</AllowProcessingSession>
-                    <AllowParentConditionSession>0</AllowParentConditionSession>
-                    <AllowQuestSession>1</AllowQuestSession>
-                    <AllowQuestArea>1</AllowQuestArea>
-                  </SessionFilter>
-                </Values>
-              </TriggerAction>
-            </Item>
-            <!-- delete the helper -->
-            <Item>
-              <TriggerAction>
-                <Template>ActionDeleteObjects</Template>
-                <Values>
-                  <Action />
-                  <ActionDeleteObjects />
-                  <ObjectFilter>
-                    <ObjectGUID>1500004684</ObjectGUID>
-                    <CheckParticipantID>1</CheckParticipantID>
-                    <CheckProcessingParticipantID>1</CheckProcessingParticipantID>
-                  </ObjectFilter>
-                </Values>
-              </TriggerAction>
-            </Item>
-          </TriggerActions>
-          <ResetTrigger>
-            <Template>AutoCreateTrigger</Template>
-            <Values>
-              <Trigger>
-                <TriggerCondition>
-                  <Template>ConditionTimer</Template>
+                </SubCondition>
+              </Item>
+              <Item>
+                <SubCondition>
+                  <Template>PreConditionList</Template>
                   <Values>
-                    <Condition />
-                    <ConditionTimer>
-                      <TimeLimit>200</TimeLimit>
-                    </ConditionTimer>
+                    <PreConditionList>
+                      <Condition>
+                        <Template>ConditionPlayerCounter</Template>
+                        <Values>
+                          <Condition />
+                          <ConditionPlayerCounter>
+                            <PlayerCounter>GoodsInStock</PlayerCounter>
+                            <Context>1010196</Context>
+                            <ComparisonOp>LessThan</ComparisonOp>
+                            <CounterAmount>40</CounterAmount>
+                            <CounterScope>Area</CounterScope>
+                            <CounterScopeUseCurrentContext>0</CounterScopeUseCurrentContext>
+                          </ConditionPlayerCounter>
+                        </Values>
+                      </Condition>
+                    </PreConditionList>
                   </Values>
-                </TriggerCondition>
-              </Trigger>
-            </Values>
-          </ResetTrigger>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>0</AutoRegisterTrigger>
-          <UsedBySecondParties>1</UsedBySecondParties>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-  </ModOp>
+                </SubCondition>
+              </Item>
+            </SubConditions>
+          </PreConditionList>
+        </Values>
+      </Asset>
+    </ModOp>
   
-
   ```
   </details>
 
