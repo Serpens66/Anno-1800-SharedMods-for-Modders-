@@ -962,6 +962,7 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
                             <ObjectGUID>2001000003</ObjectGUID>
                             <CheckParticipantID>1</CheckParticipantID>
                             <CheckProcessingParticipantID>1</CheckProcessingParticipantID>
+                            <CheckQuestArea>1</CheckQuestArea>
                           </ObjectFilter>
                         </Values>
                       </Action>
