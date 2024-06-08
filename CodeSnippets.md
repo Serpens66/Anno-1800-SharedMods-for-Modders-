@@ -111,6 +111,9 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   
   ```xml
   <!-- add something to a vanilla text (one can not use [AssetData(10595) Text] within Text 10595, it causes endless loop). here we add " (0%)" after the string. -->
+  <ModOp Type="add" Path="/TextExport/Texts/Text[GUID = '10595']/Text"> (0%)</ModOp>
+
+  <!-- You can also make use of "Content" to copy the text from another GUID if you want. and you can use a "contain" check to make sure sth is not already part of a string -->
   <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID = '10595']/Text[not(contains(.,' (0%)'))]"
     Content="/TextExport/Texts/Text[GUID = '10595']/Text/text()">
     <Text><ModOpContent /> (0%)</Text>
