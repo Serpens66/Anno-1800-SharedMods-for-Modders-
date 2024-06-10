@@ -1313,6 +1313,9 @@ If you want one action out of multipe actions to happen, it gets complicated. It
   <!-- </Item> -->
   <!-- to your helper Quests, to make sure your conditions are not endlessly triggered, but only when you want them to trigger! -->
   
+  <!-- And since we are using Quests as helpers here, make sure to read at least this: -->
+  <!-- https://github.com/anno-mods/modding-guide/blob/main/hier0nimus-tutorials/Quests-Tutorial/0-Properties-Quest-QuestPool.md#resetpreconditionsafterquestwastriggered -->
+  <!-- (in short: PreConditions do not change in a savegame that easily, so better test with new games or use ResetPreconditionsAfterQuestWasTriggered) -->
   
     <ModOp Type="AddNextSibling" GUID='132370'>
   
