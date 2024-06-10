@@ -12,7 +12,9 @@
   <!-- <ExpectedValueInt>118718</ExpectedValueInt> -->
   <!-- <Condition>[RefGuid]</Condition> -->
   
-
+  <!-- TODO: noch kompatibel mit meinen MoreInfoTooltips mod machen, denn da entferne ich eine unlock anzeige condition -->
+    <!-- weshalb der erste modop hier failed. -->
+    <!-- am besten mit modop condition mod-active check arbeiten -->
   <!-- make the vanilla unlocked tooltip only visible if the object has no EffectTargets defined -->
   <ModOp Type="add" Path="//InfoTipData[Guid='500057']/InfoElement[VisibilityElement/VisibilityElement[Condition='[Unlock IsUnlocked([RefGuid])]' and not(ExpectedValueBool)] and VisibilityElement/VisibilityElement[Condition='[IsGamepadModeActive]' and ExpectedValueBool='False']]/VisibilityElement">
     <VisibilityElement>
@@ -29,6 +31,7 @@
       <Condition>[ToolOneHelper ItemOrBuffEffectTargets([RefGuid]) COUNT]</Condition>
     </VisibilityElement>
   </ModOp>
+  
   
   <!-- custom tooltip to display the buffs and EffectTargets in addtion to buiildcosts if it has some -->
   <ModOp Type="add" Path="//InfoTipData[Guid='500057']">

@@ -333,7 +333,290 @@
     
     <!-- remove the not anymore needed cycletime entry from vanilla now (we can not use "replace" with modloader11 because replace does revert the order of elements we put into) -->
     <ModOp Type="remove" Path="//InfoTipData[Guid='25000020']//InfoElement[VisibilityElement/VisibilityElement[Condition='[FactoryAssetData([RefGuid]) HasProduction]']]/InfoElement/InfoElement[Value/Text='[StaticData Factory CycleTimeRespectElectricity([RefGuid]) &gt;&gt; time]' and Text/Text='[FactoryAssetData([RefGuid]) Production AT(#index0#) Text]']" />
-
+    
+    
+    
+    
+    
+    <!-- Do the very same we already did with 25000020 (ConstructionMenu) with  <GUID>500683</GUID> <Name>Production Build Module InfoTip</Name> -->
+  
+    <ModOp Type="AddPrevSibling" Path="//InfoTipData[Guid='500683']//InfoElement[VisibilityElement/VisibilityElement[Condition='[FactoryAssetData([RefGuid]) HasProduction]'] and InfoElement/InfoElement[Value/Text='[StaticData Factory CycleTime([RefGuid]) &gt;&gt; time]' and Text/Text='[FactoryAssetData([RefGuid]) Production AT(#index0#) Text]']]">
+        
+      <InfoElement>
+        <ElementType>8</ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator />
+            <ResultType />
+            <Condition>[FactoryAssetData([RefGuid]) HasProduction]</Condition>
+          </VisibilityElement>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>2</ChildCount>
+            <!-- Include factories with abstract or buff outputs (not recognized by HasProduction) -->
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>5</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[StaticData Factory Inputs([RefGuid]) AT(0)]</Condition>
+            </VisibilityElement>
+            <!-- Exclude Monuments -->
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator />
+              <ResultType />
+              <ExpectedValueBool>False</ExpectedValueBool>
+              <Condition>[ToolOneHelper IsMonument([RefGuid])]</Condition>
+            </VisibilityElement>
+            <OperatorType />
+          </VisibilityElement>
+          <OperatorType>
+            <OperatorType>1</OperatorType>
+          </OperatorType>
+        </VisibilityElement>      
+        <InfoElement>
+          <ElementType>8</ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <InfoElement>
+            <ElementType>8</ElementType>
+            <ChildCount>2</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <InfoElement>
+              <ElementType>4</ElementType>
+              <VisibilityElement>
+                <ElementType>
+                  <ElementType>2</ElementType>
+                </ElementType>
+                <OperatorType />
+              </VisibilityElement>
+              <Icon>
+                <IconGUID>500452</IconGUID>
+                <Style />
+              </Icon>
+              <Text>
+                <TextGUID>2100115950</TextGUID> <!-- use "Production cycle" instead of "produce goods" which is already displayed as InfoDescription in the infotip; all languages use the same terms now -->
+                <Style />
+              </Text>
+              <Value>
+                <Text>[StaticData Factory CycleTimeRespectElectricity([RefGuid]) &gt;&gt; time]</Text>
+                <Style />
+              </Value>
+              <WarningType />
+              <BackgroundType />
+            </InfoElement>
+          </InfoElement>
+        </InfoElement>
+        
+        <!-- Inputs formatted -->
+        <InfoElement>
+          <ElementType>8</ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>2</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>5</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[StaticData Factory Inputs([RefGuid]) AT(0)]</Condition>
+            </VisibilityElement>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>5</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[StaticData Factory Inputs([RefGuid]) AT(0) Amount]</Condition>
+            </VisibilityElement>
+            <OperatorType />
+          </VisibilityElement>
+          <InfoElement>
+            <ElementType>5</ElementType>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <Text>
+              <TextGUID>100007</TextGUID>
+              <Style />
+            </Text>
+            <BackgroundType />
+          </InfoElement>
+          
+          <!-- input untereinander mit namen und menge -->
+          <InfoElement>
+            <ElementType>7</ElementType>
+            <ChildCount>4</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <InfoElement>
+              <ElementType>4</ElementType>
+              <VisibilityElement>
+                <ElementType>
+                  <ElementType>2</ElementType>
+                </ElementType>
+                <OperatorType />
+              </VisibilityElement>
+              <Icon>
+                <IconText>[StaticData Factory Inputs([RefGuid]) AT(#index0#) Product Icon]</IconText>
+                <Style />
+              </Icon>
+              <Text>
+                <Text>[StaticData Factory Inputs([RefGuid]) AT(#index0#) Product Text]</Text>
+                <Style />
+              </Text>
+              <Value>
+                <Text>[StaticData Factory Inputs([RefGuid]) AT(#index0#) Amount &gt;&gt; storagegood]</Text>
+                <Style />
+              </Value>
+              <WarningType />
+              <BackgroundType />
+            </InfoElement>
+            <Source>[StaticData Factory Inputs([RefGuid]) Count]</Source>
+          </InfoElement>        
+        </InfoElement>
+        
+        <!-- Outputs formatted -->
+        <InfoElement>
+          <ElementType>8</ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>1</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>5</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[StaticData Factory Outputs([RefGuid]) AT(0)]</Condition>
+            </VisibilityElement>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>5</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[StaticData Factory Outputs([RefGuid]) AT(0) Amount]</Condition>
+            </VisibilityElement>
+            <OperatorType />
+          </VisibilityElement>
+          <InfoElement>
+            <ElementType>5</ElementType>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <Text>
+              <TextGUID>100006</TextGUID>
+              <Style />
+            </Text>
+            <BackgroundType />
+          </InfoElement>
+          <InfoElement>
+            <ElementType>7</ElementType>
+            <ChildCount>4</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <InfoElement>
+              <ElementType>4</ElementType>
+              <VisibilityElement>
+                <ElementType>
+                  <ElementType>2</ElementType>
+                </ElementType>
+                <OperatorType />
+              </VisibilityElement>
+              <Icon>
+                <IconText>[StaticData Factory Outputs([RefGuid]) AT(#index0#) Product Icon]</IconText>
+                <Style />
+              </Icon>
+              <Text>
+                <Text>[StaticData Factory Outputs([RefGuid]) AT(#index0#) Product Text]</Text>
+                <Style />
+              </Text>
+              <Value>
+                <Text>[StaticData Factory Outputs([RefGuid]) AT(#index0#) Amount &gt;&gt; storagegood]</Text>
+                <Style />
+              </Value>
+              <WarningType />
+              <BackgroundType />
+            </InfoElement>
+            <Source>[StaticData Factory Outputs([RefGuid]) COUNT]</Source>
+          </InfoElement>
+        </InfoElement>
+      </InfoElement>
+      
+    </ModOp>
+    
+    <!-- remove the not anymore needed cycletime entry from vanilla now (we can not use "replace" with modloader11 because replace does revert the order of elements we put into) -->
+    <ModOp Type="remove" Path="//InfoTipData[Guid='500683']//InfoElement[VisibilityElement/VisibilityElement[Condition='[FactoryAssetData([RefGuid]) HasProduction]']]/InfoElement/InfoElement[Value/Text='[StaticData Factory CycleTime([RefGuid]) &gt;&gt; time]' and Text/Text='[FactoryAssetData([RefGuid]) Production AT(#index0#) Text]']" />
+      
+    
+    
+    
   </Group>
   
 </ModOps>
