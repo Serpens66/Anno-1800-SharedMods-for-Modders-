@@ -55,7 +55,574 @@
   ```
   </details>
 If you want sth to happen with different chances based on circumstance, you may try a Trigger with multiple SubTriggers checking for your custom unlocks.
-I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Then in the trigger you check for these unlocks with MutuallyExclusive. And eg. if the 10%-unlock is unlocked, the action will be a ActionExecuteActionByChance with FloatValue 10 and your action in success (and nothing in fail). This way you can lock/unlock your UnlockableAssets however you like, to control hat what chance your actions will be executed.
+I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Then in the trigger you check for these unlocks with MutuallyExclusive. And eg. if the 10%-unlock is unlocked, the action will be a ActionExecuteActionByChance with FloatValue 10 and your action in success (and nothing in fail). This way you can lock/unlock your UnlockableAssets however you like, to control hat what chance your actions will be executed.  
+
+If you want one action out of multipe actions to happen, it gets complicated. It is "easy" if all actions should have the same chance and the total of actions is a a square of 2. Eg 16 actions all with the total chance of 1/16 (replace ACTION_1 and so on with your action code):
+  <details>
+  <summary>(CLICK) CODE (16 actions same chance, one will be executed)</summary>  
+  
+  ```xml
+  <Item>
+    <TriggerAction>
+      <Template>ActionExecuteActionByChance</Template>
+      <Values>
+        <Action />
+        <ActionExecuteActionByChance>
+          <ChanceValue>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <VariableValue>
+                <FloatValue>50</FloatValue>
+              </VariableValue>
+            </Values>
+          </ChanceValue>
+          <ActionListChanceSuccess>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <ActionList>
+                <Actions>
+                  <Item>
+                    <Action>
+                      <Template>ActionExecuteActionByChance</Template>
+                      <Values>
+                        <Action />
+                        <ActionExecuteActionByChance>
+                          <ChanceValue>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <VariableValue>
+                                <FloatValue>50</FloatValue>
+                              </VariableValue>
+                            </Values>
+                          </ChanceValue>
+                          <ActionListChanceSuccess>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <ActionList>
+                                <Actions>
+                                  <Item>
+                                    <Action>
+                                      <Template>ActionExecuteActionByChance</Template>
+                                      <Values>
+                                        <Action />
+                                        <ActionExecuteActionByChance>
+                                          <ChanceValue>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <VariableValue>
+                                                <FloatValue>50</FloatValue>
+                                              </VariableValue>
+                                            </Values>
+                                          </ChanceValue>
+                                          <ActionListChanceSuccess>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_1
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_2
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceSuccess>
+                                          <ActionListChanceFailure>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_3
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_4
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceFailure>
+                                        </ActionExecuteActionByChance>
+                                      </Values>
+                                    </Action>
+                                  </Item>
+                                </Actions>
+                              </ActionList>
+                            </Values>
+                          </ActionListChanceSuccess>
+                          <ActionListChanceFailure>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <ActionList>
+                                <Actions>
+                                  <Item>
+                                    <Action>
+                                      <Template>ActionExecuteActionByChance</Template>
+                                      <Values>
+                                        <Action />
+                                        <ActionExecuteActionByChance>
+                                          <ChanceValue>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <VariableValue>
+                                                <FloatValue>50</FloatValue>
+                                              </VariableValue>
+                                            </Values>
+                                          </ChanceValue>
+                                          <ActionListChanceSuccess>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_5
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_6
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceSuccess>
+                                          <ActionListChanceFailure>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_7
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_8
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceFailure>
+                                        </ActionExecuteActionByChance>
+                                      </Values>
+                                    </Action>
+                                  </Item>
+                                </Actions>
+                              </ActionList>
+                            </Values>
+                          </ActionListChanceFailure>
+                        </ActionExecuteActionByChance>
+                      </Values>
+                    </Action>
+                  </Item>
+                </Actions>
+              </ActionList>
+            </Values>
+          </ActionListChanceSuccess>
+          <ActionListChanceFailure>
+            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+            <Values>
+              <ActionList>
+                <Actions>
+                  <Item>
+                    <Action>
+                      <Template>ActionExecuteActionByChance</Template>
+                      <Values>
+                        <Action />
+                        <ActionExecuteActionByChance>
+                          <ChanceValue>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <VariableValue>
+                                <FloatValue>50</FloatValue>
+                              </VariableValue>
+                            </Values>
+                          </ChanceValue>
+                          <ActionListChanceSuccess>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <ActionList>
+                                <Actions>
+                                  <Item>
+                                    <Action>
+                                      <Template>ActionExecuteActionByChance</Template>
+                                      <Values>
+                                        <Action />
+                                        <ActionExecuteActionByChance>
+                                          <ChanceValue>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <VariableValue>
+                                                <FloatValue>50</FloatValue>
+                                              </VariableValue>
+                                            </Values>
+                                          </ChanceValue>
+                                          <ActionListChanceSuccess>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_9
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_10
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceSuccess>
+                                          <ActionListChanceFailure>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_11
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_12
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceFailure>
+                                        </ActionExecuteActionByChance>
+                                      </Values>
+                                    </Action>
+                                  </Item>
+                                </Actions>
+                              </ActionList>
+                            </Values>
+                          </ActionListChanceSuccess>
+                          <ActionListChanceFailure>
+                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                            <Values>
+                              <ActionList>
+                                <Actions>
+                                  <Item>
+                                    <Action>
+                                      <Template>ActionExecuteActionByChance</Template>
+                                      <Values>
+                                        <Action />
+                                        <ActionExecuteActionByChance>
+                                          <ChanceValue>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <VariableValue>
+                                                <FloatValue>50</FloatValue>
+                                              </VariableValue>
+                                            </Values>
+                                          </ChanceValue>
+                                          <ActionListChanceSuccess>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_13
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_14
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceSuccess>
+                                          <ActionListChanceFailure>
+                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                            <Values>
+                                              <ActionList>
+                                                <Actions>
+                                                  <Item>
+                                                    <Action>
+                                                      <Template>ActionExecuteActionByChance</Template>
+                                                      <Values>
+                                                        <Action />
+                                                        <ActionExecuteActionByChance>
+                                                          <ChanceValue>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <VariableValue>
+                                                                <FloatValue>50</FloatValue>
+                                                              </VariableValue>
+                                                            </Values>
+                                                          </ChanceValue>
+                                                          <ActionListChanceSuccess>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_15
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceSuccess>
+                                                          <ActionListChanceFailure>
+                                                            <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                                            <Values>
+                                                              <ActionList>
+                                                                <Actions>
+                                                                  ACTION_16
+                                                                </Actions>
+                                                              </ActionList>
+                                                            </Values>
+                                                          </ActionListChanceFailure>
+                                                        </ActionExecuteActionByChance>
+                                                      </Values>
+                                                    </Action>
+                                                  </Item>
+                                                </Actions>
+                                              </ActionList>
+                                            </Values>
+                                          </ActionListChanceFailure>
+                                        </ActionExecuteActionByChance>
+                                      </Values>
+                                    </Action>
+                                  </Item>
+                                </Actions>
+                              </ActionList>
+                            </Values>
+                          </ActionListChanceFailure>
+                        </ActionExecuteActionByChance>
+                      </Values>
+                    </Action>
+                  </Item>
+                </Actions>
+              </ActionList>
+            </Values>
+          </ActionListChanceFailure>
+        </ActionExecuteActionByChance>
+      </Values>
+    </TriggerAction>
+  </Item>
+
+  ```
+  </details>
+
+&nbsp;  
 
 ###  Delete all kontors from an AI (and therefore removing it from the game) 
   <details>
@@ -105,6 +672,8 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   ```
   </details>
 
+&nbsp;  
+
 ###  Add text to existing strings (from vanilla or other mods) 
   <details>
   <summary>(CLICK) CODE</summary>  
@@ -120,6 +689,8 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   </ModOp>
   ```
   </details>
+
+&nbsp;  
 
 ###  Limit a building to "once per Island" without UniqueType property
   <details>
@@ -338,6 +909,8 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
 
   ```
   </details>
+
+&nbsp;  
 
 ###  Global Buffs
 - Adding Global Buffs to human/AIs and make sure thay also work on new entered sessions:
@@ -705,6 +1278,8 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
 
   ```
   </details>
+
+&nbsp;  
 
 ###  Area wide Buff based on Area ConditionPlayerCounter conditions
 - improved code from previous shared_AreaBuffsHelper, this share mod was removed, because its better as Code Snippet  
@@ -1622,6 +2197,7 @@ I mean eg. you do 11 "UnlockableAsset" and call them 0%, 10%, 20% up to 100%. Th
   ```
   </details>
 
+&nbsp;  
 
 ###  Add product to Tooltip Arctic Flue Chance
 - Adding mod-heat-providing product to the "Arctic Flue Chance" Tooltip (see also [here](https://github.com/anno-mods/modding-guide/blob/main/documentation/infotips.md) for modding info about tooltips). Unfortunately I see no way to make the game automatically fetch this.. but adding sth to a list is most of the time fully compatible to other mods also adding to the list, so I think its ok to add mod products to this list.  
