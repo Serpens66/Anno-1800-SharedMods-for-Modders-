@@ -1317,6 +1317,11 @@ If you want one action out of multipe actions to happen, it gets complicated. It
   <!-- https://github.com/anno-mods/modding-guide/blob/main/hier0nimus-tutorials/Quests-Tutorial/0-Properties-Quest-QuestPool.md#resetpreconditionsafterquestwastriggered -->
   <!-- (in short: PreConditions do not change in a savegame that easily, so better test with new games or use ResetPreconditionsAfterQuestWasTriggered) -->
   
+    <!-- While using ConditionMutualAreaInSubconditions there seems to be an exception to how the Conditions are checked. -->
+     <!-- Normally, if you put several SubTrigger/SubConditions on the same level, they must NOT be true at the same time to trigger the main actions, but it is enough if each of them was true in the past at least once, regardless of the other. -->
+     <!-- But when using ConditionMutualAreaInSubconditions the subtriggers must be written on the same level, otherwise ConditionMutualAreaInSubconditions can not check if they are the same Area.  -->
+      <!-- And it seems it also makes sure that all conditions must be true at the same time -->
+
     <ModOp Type="AddNextSibling" GUID='132370'>
   
       <!-- Hint: add -->
