@@ -1317,6 +1317,13 @@ If you want one action out of multipe actions to happen, it gets complicated. It
   <!-- https://github.com/anno-mods/modding-guide/blob/main/hier0nimus-tutorials/Quests-Tutorial/0-Properties-Quest-QuestPool.md#resetpreconditionsafterquestwastriggered -->
   <!-- (in short: PreConditions do not change in a savegame that easily, so better test with new games or use ResetPreconditionsAfterQuestWasTriggered) -->
   
+  <!-- you may want to add your dummy buildings to exceptions for FunFactsCounter (texts in loading screen telling you eg. how much of an asset you have) -->
+  <!-- <ModOp Type="add" GUID="140560" Path="/Values/PlayerCounterConfig/CounterConfig/FunFactsCounter/Item[not(PlayerCounter) or PlayerCounter='ObjectDestroyed' or PlayerCounter='ObjectLost']/FilterResults/IgnoreContexts"> -->
+    <!-- <Item> -->
+      <!-- <Asset>YOUR_GUID</Asset> -->
+    <!-- </Item> -->
+  <!-- </ModOp> -->
+
     <!-- While using ConditionMutualAreaInSubconditions there seems to be an exception to how the Conditions are checked. -->
      <!-- Normally, if you put several SubTrigger/SubConditions on the same level, they must NOT be true at the same time to trigger the main actions, but it is enough if each of them was true in the past at least once, regardless of the other. -->
      <!-- But when using ConditionMutualAreaInSubconditions the subtriggers must be written on the same level, otherwise ConditionMutualAreaInSubconditions can not check if they are the same Area.  -->
