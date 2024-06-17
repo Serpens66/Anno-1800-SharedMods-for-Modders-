@@ -37,7 +37,7 @@
   <!-- ATTENTION: -->
    <!-- Human players can still own ships/islands while they already lost the game !! So for them better use the "processing has not lost" check: -->
     <!-- <UnlockNeeded>1500003868</UnlockNeeded> -->
-   <!-- eg useful if you want to spawn new ships for the processing human every x minutes, unless he always lost the game. -->
+   <!-- eg useful if you want to spawn new ships for the processing human every x minutes, unless he already lost the game. -->
     <!-- (if you want this for AI you can use the check above for ships/kontors) -->
   
   <!-- ########################################################################################################################################## -->
