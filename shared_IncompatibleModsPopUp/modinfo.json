@@ -1,8 +1,8 @@
 {
-  "Version": "1.00",
+  "Version": "1.01",
   "ModID": "shared_IncompatibleModsPopUp",
   "IncompatibleIds": null,
-  "ModDependencies": null,
+  "ModDependencies": ["shared_EventOnGameLoaded_Serp"],
   "LoadAfterIds": ["shared_EventOnGameLoaded_Serp"],
   "Category": {
     "English": "Shared"

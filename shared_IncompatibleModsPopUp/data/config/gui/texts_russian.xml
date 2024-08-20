@@ -1,14 +1,14 @@
 <ModOps>
   
-
+  
   <ModOp Type="add" Path="/TextExport/Texts">
     <Text>
       <GUID>1500005500</GUID>
-      <Text>Incompatible Mods!</Text>
+      <Text>Несовместимые моды!</Text>
     </Text>
     <Text>
       <GUID>1500005501</GUID>
-      <Text>Go back to main menu, decide for one of the mods each and load a &lt;b&gt;PREVIOUS&lt;/b&gt; savegame before both mods were active at once, if possible!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log".</Text>
+      <Text>Вернитесь в главное меню, выберите один из модов и загрузите, если возможно, &lt;b&gt;ПРЕДЫДУЩЕЕ&lt;/b&gt; сохранение до того, как оба этих мода стали активны!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log"</Text>
     </Text>    
   </ModOp>
   
