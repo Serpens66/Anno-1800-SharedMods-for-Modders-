@@ -1,19 +1,19 @@
 <ModOps>
-  
+
 
   <ModOp Type="add" Path="/TextExport/Texts">
     <Text>
       <GUID>1500005500</GUID>
-      <Text>Incompatible Mods!</Text>
+      <Text>Mod incompatibili!</Text>
     </Text>
     <Text>
       <GUID>1500005501</GUID>
-      <Text>Go back to main menu, decide for one of the mods each and load a &lt;b&gt;PREVIOUS&lt;/b&gt; savegame before both mods were active at once, if possible!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log".</Text>
-    </Text>    
+      <Text>Torna al menu principale, scegli uno dei mod e carica un &lt;b&gt;SALVATAGGIO PRECEDENTE&lt;/b&gt; creato prima che i due mod fossero attivi insieme, se possibile!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log".</Text>
+    </Text>
   </ModOp>
-  
+
   <!-- dont translate the following lines -->
   <ModOp Type="add" Path="/TextExport/Texts/Text[GUID='1500005501']/Text">&lt;br/&gt;&lt;br/&gt;[Participants Participant(8) Profile CompanyName]</ModOp>
 
-  
+
 </ModOps>
