@@ -4,11 +4,11 @@
   <ModOp Type="add" Path="/TextExport/Texts">
     <Text>
       <GUID>1500005500</GUID>
-      <Text>Incompatible Mods!</Text>
+      <Text>모드 충돌!</Text>
     </Text>
     <Text>
       <GUID>1500005501</GUID>
-      <Text>Go back to main menu, decide for one of the mods each and load a &lt;b&gt;PREVIOUS&lt;/b&gt; savegame before both mods were active at once, if possible!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log".</Text>
+      <Text>메인 메뉴로 돌아가서 이전 세이브 파일에서 다음 모드를 하나씩 활성화해서 테스트해보세요.&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log"</Text>
     </Text>    
   </ModOp>
   
