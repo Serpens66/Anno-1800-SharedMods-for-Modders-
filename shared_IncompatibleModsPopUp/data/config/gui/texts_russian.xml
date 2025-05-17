@@ -1,0 +1,19 @@
+<ModOps>
+  
+  
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <Text>
+      <GUID>1500005500</GUID>
+      <Text>Несовместимые моды!</Text>
+    </Text>
+    <Text>
+      <GUID>1500005501</GUID>
+      <Text>Вернитесь в главное меню, выберите один из модов и загрузите, если возможно, &lt;b&gt;ПРЕДЫДУЩЕЕ&lt;/b&gt; сохранение до того, как оба этих мода стали активны!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log"</Text>
+    </Text>    
+  </ModOp>
+  
+  <!-- dont translate the following lines -->
+  <ModOp Type="add" Path="/TextExport/Texts/Text[GUID='1500005501']/Text">&lt;br/&gt;&lt;br/&gt;[Participants Participant(8) Profile CompanyName]</ModOp>
+
+  
+</ModOps>

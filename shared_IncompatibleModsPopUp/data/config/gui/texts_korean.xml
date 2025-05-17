@@ -1,0 +1,19 @@
+<ModOps>
+  
+
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <Text>
+      <GUID>1500005500</GUID>
+      <Text>모드 충돌!</Text>
+    </Text>
+    <Text>
+      <GUID>1500005501</GUID>
+      <Text>메인 메뉴로 돌아가서 이전 세이브 파일에서 다음 모드를 하나씩 활성화해서 테스트해보세요.&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log"</Text>
+    </Text>    
+  </ModOp>
+  
+  <!-- dont translate the following lines -->
+  <ModOp Type="add" Path="/TextExport/Texts/Text[GUID='1500005501']/Text">&lt;br/&gt;&lt;br/&gt;[Participants Participant(8) Profile CompanyName]</ModOp>
+
+  
+</ModOps>

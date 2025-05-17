@@ -1,0 +1,19 @@
+<ModOps>
+  
+
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <Text>
+      <GUID>1500005500</GUID>
+      <Text>Niezgodne Modyfikacje!</Text>
+    </Text>
+    <Text>
+      <GUID>1500005501</GUID>
+      <Text>Wróć do głónego menu, zdecyduj się na jedną modyfikację i wczytaj &lt;b&gt;POPRZEDNI&lt;/b&gt; zapis gry zanim obie modyfikacje zostały aktywowane, jeśli to możliwe!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log"</Text>
+    </Text>
+  </ModOp>
+  
+  <!-- dont translate the following lines -->
+  <ModOp Type="add" Path="/TextExport/Texts/Text[GUID='1500005501']/Text">&lt;br/&gt;&lt;br/&gt;[Participants Participant(8) Profile CompanyName]</ModOp>
+
+  
+</ModOps>

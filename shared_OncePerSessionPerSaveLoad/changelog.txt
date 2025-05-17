@@ -1,0 +1,2 @@
+1.01:
+- made lua code a bit more secure by using pcall() (without it, if an error in lua scripts event-Function happens, the game will crash)
