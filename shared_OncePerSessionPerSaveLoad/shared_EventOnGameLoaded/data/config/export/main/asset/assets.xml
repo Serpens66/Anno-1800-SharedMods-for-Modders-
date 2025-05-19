@@ -1,5 +1,9 @@
 <ModOps>
     
+  <!-- IMPORTANT: -->
+    <!-- Load after "shared_EventOnGameLoaded_Serp". -->
+    <!-- AND also load after: "shared_LuaTools_Medium_Serp" ! Because this mod will replace shared_EventOnGameLoaded_Serp !! -->
+  
   
   <!-- HOW TO USE: xml code -->
    <!-- add your actions you want to execute on savegame load to 1500004636 this way: -->
