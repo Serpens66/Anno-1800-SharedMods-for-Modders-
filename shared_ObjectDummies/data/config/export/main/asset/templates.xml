@@ -596,6 +596,20 @@
     <!-- Although it is a workaround, it is still the best method I found, when you want reactions/rep-change for all possible combinations of participants, -->
     <!-- especially if you only want the reaction based on current reputation between the participants. (there is no other reaction involving 3 participants and allows setting a RequiredContextAsset, beside building destroyed, which is worse than shipdestryoed) -->
     
+    
+    <!-- -- TODO: -->
+    <!-- -- ts.Selection.Object.Attackable.SetAddDamagePercent(100,0) -->
+    <!-- -- im MP testen obs desynced / mehrfach ausgeführt wird -->
+    <!-- -- SetAddDamagePercent(100,Dealer) -->
+    <!-- -- könnte man das Attacker/Victim System nochmal verbessern! -->
+     <!-- -- Braucht nur noch Victim spawnen und evlt könnte man sogar AttackableType=None setzen -->
+    <!-- -- wodurch das sicher garnicht mehr interagiert mit anderen objekten! -->
+    <!-- -- wäre dann Victim Spawn via Trigger und starten von lua script -->
+     <!-- -- nur doof dass objectfinder das dann erst finden muss.. -->
+    <!-- -- victim immer in currentsession spawnen, erleichtert das finden, dauert aber trtz theoretisch n bisschen -->
+    <!-- -- .. -->
+    
+    
     <!-- for whatever reason: -->
      <!-- Attacker needs also UpgradeList, otherwise game will crash. -->
      <!-- Attackable also needs Bombarder, otherwise the airship wont be attacked. Most likely only true for airhsips, since normal ships dont have this. -->
@@ -897,18 +911,26 @@
   
   
   <!-- use this CharacterNotification_DummyCommand eg in ActionNotification to not show a notification, but simply excute -->
-   <!-- this ThirdpartyDefaultCommand textsource command for the player. -->
+   <!-- this ThirdpartyDefaultCommand textsource command for the player (ThirdpartyDefaultCommand in the template is just example, replace it with your command). -->
   <!-- Important: Will be executed for every coop player once. So 2 times executed for a 2 player-coop-team. -->
   
   <!-- A coop-save alternative might be to instead show the notification with Buttons and as soon as one coop chooses  -->
   <!-- "yes" the button gets greyed out for the others (ActiveCallback).  -->
   <!-- Example Campaign in Coop Mod Serp: https://github.com/Serpens66/Anno-1800-Mods/blob/45ee71d0da559adb2091a71e887e6b94c7c8c406/WorkInProgress-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/-AntiDesync_ALLINONE.include.xml#L82  -->
+  
+  <!-- Loading a MP game and waiting in the loading screen (while the game is already running in the background) seems to be no problem, the ThirdpartyDefaultCommand is executed fine -->
+  <!-- Executing textembeds this way roughly takes 2 ticks (200ms) or 4 ticks in Multiplayer before the result can be fetched eg from other conditions -->
+  <!-- ATTENTION: -->
+    <!-- On the start of new games, there is a time of up to ~3 seconds where no CharacterNotification can be sent for unknown reason -->
+      <!-- Therefore its best to use a Condition with ConditionUnlocked 1500005606 , which is my FeatureUnlock in assets.xml that checks when CharacterNotifications are working -->
+    <!-- (only really relevant if your CharacterNotification might be started within the first ~3 seconds of a new game, but does not hurt to check it always) -->
   <ModOp Type="addNextSibling" Template="CharacterNotification">
     <Template>
       <Name>CharacterNotification_DummyCommand</Name>
       <Properties>
         <CharacterNotification>
           <ThirdpartyDefaultCommand>[Unlock UnlockNet(120244)][Research AddGodlikeCheat(124839)]</ThirdpartyDefaultCommand>
+          <ShowDuringCameraSequence>1</ShowDuringCameraSequence>
         </CharacterNotification>
         <BaseNotification>
           <DisplayTimeout>0</DisplayTimeout>
@@ -918,6 +940,7 @@
         </BaseNotification>
         <NotificationSubtitle>
           <SubtitleGroup />
+          <Subtitle />
         </NotificationSubtitle>
       </Properties>
     </Template>    
