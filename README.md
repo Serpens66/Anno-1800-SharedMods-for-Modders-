@@ -1,6 +1,8 @@
 # Anno-1800-SharedMods--for-Modders-
  Anno 1800 shared mods for modders, helpful utility-like mods
 
+Shared mods from other modders: https://github.com/anno-mods/shared-resources
+
 How to Download  
 -
 Click on the green "Code" button on the top right and hit "download zip" to download the complete collection. Of course you can delete the mods you don't want after download (I know no way to only download a single folder from github).
