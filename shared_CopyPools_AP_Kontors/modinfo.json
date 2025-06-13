@@ -1,9 +1,9 @@
 {
-  "Version": "1.00",
+  "Version": "1.001",
   "ModID": "shared_CopyPools_AP_Kontors_Serp",
   "IncompatibleIds": null,
   "ModDependencies": null,
-  "LoadAfterIds": ["*"],
+  "LoadAfterIds": ["*","Community_Patch"],
   "Category": {
     "English": "Shared",
     "German": "Shared"

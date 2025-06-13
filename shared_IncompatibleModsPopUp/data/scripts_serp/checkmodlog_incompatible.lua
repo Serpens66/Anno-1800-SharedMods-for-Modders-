@@ -23,13 +23,17 @@ end
 
 -- invalid signs/zeichen in strings (to save it into nameable): " \ , [ ] and () if both used. and better do not use - because it might hurt gsub?
 local function replace_chars(str) -- string should not contain these characters
+  str = tostring(str)
+  -- str = str:gsub("%,", "-")
+  str = str:gsub("%,", "") -- removing , might fit better
+  str = str:gsub("%=", "-")
   str = str:gsub("%[", "*")
   str = str:gsub("%]", "*")
-  str = str:gsub("%,", "*")
+  str = str:gsub("%{", "*")
+  str = str:gsub("%}", "*")
   str = str:gsub("%(", "*")
   str = str:gsub("%)", "*") -- as soon as this bracket closes, the rest is not shown anymore for whatever reason
-  str = str:gsub("%\\", "*")
-  str = str:gsub("%\"", "*")
+  str = str:gsub("%\\", "/")
   return str
 end
 

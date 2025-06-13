@@ -20,7 +20,7 @@ end
 
 
 local function readFile()
-    DefaultPath = os.getenv("USERPROFILE")..[[\Documents\Anno 1800\log\mod-loader.log]] -- c:\User\<Username>\Documents\Anno 1800\log\mod-loader.log
+    local DefaultPath = os.getenv("USERPROFILE")..[[\Documents\Anno 1800\log\mod-loader.log]] -- c:\User\<Username>\Documents\Anno 1800\log\mod-loader.log
     local _File = io.open(DefaultPath, "r")
     if _File~=nil then
       local _content = {}
