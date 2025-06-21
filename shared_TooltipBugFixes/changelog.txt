@@ -9,3 +9,6 @@
 - making the infotip to buy a ship tell you if you can not afford the ship (the accept button in the character notification)
 1.032:
 - Fix the infotip in BuildMenu for unlocked building which require permits, to show the PermitSource as tooltip you defined in xml (instead of always showing Text of GUID 22395)
+1.033:
+- Add the ExclusiveGroup from Items to the Itemdescription text 
+- fixed removal code from lions enbesa tourism mod in regards to PermitSource

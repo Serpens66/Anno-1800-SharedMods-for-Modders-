@@ -19,6 +19,18 @@
         <Text />
       </Values>
     </Asset>
+    <!-- we can not access GUID/icon from ExclusiveGroup in tooltips, so no way to make each group their own icon. so one general for all of them -->
+    <Asset>
+      <Template>Text</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004503</GUID>
+          <Name>ExclusiveGroup text</Name>
+          <IconFilename>data/ui/2kimages/main/icons/icon_sockets.png</IconFilename>
+        </Standard>
+        <Text />
+      </Values>
+    </Asset>
   </ModOp>
 
 </ModOps>

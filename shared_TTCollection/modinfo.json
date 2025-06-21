@@ -1,0 +1,21 @@
+{
+  "Version": "1.00",
+  "ModID": "ToolTip_Collection",
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "LoadAfterIds": null,
+  "Category": {
+    "English": "Shared",
+    "German": "Shared"
+  },
+  "ModName": {
+    "English": "ToolTip_Collection",
+    "German": "ToolTip_Collection"
+  },
+  "Description": {
+    "English": "Includes -Must Have- changes/fixes to infotips to support modding. Only general changes, not modspecific text. Aiming to use general solutions instead of hardcoding GUIDs in to infotips. Collected into one mod, because this way we can better make sure everything is compatible and have a base for other mods doing very mod specific changes in their mod (but try to not alter vanilla code (except simple adding) in your mod for compatibility)"
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

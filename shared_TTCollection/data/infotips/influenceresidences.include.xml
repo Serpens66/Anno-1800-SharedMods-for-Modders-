@@ -1,0 +1,18 @@
+<ModOps>
+    <ModOp Path ="//InfoTipData[Guid='500880']/InfoElement[Text/TextGUID='2456']" Type = "merge">
+      <Icon>
+        <IconGUID>1010343</IconGUID>
+      </Icon>
+      <Text>
+        <TextGUID>1414018314</TextGUID>
+      </Text>
+    </ModOp>
+    <ModOp Path ="//InfoTipData[Guid='500056']/InfoElement/InfoElement[Text/TextGUID='2456']" Type = "merge">
+      <Icon>
+        <IconGUID>1010343</IconGUID>
+      </Icon>
+      <Text>
+        <TextGUID>1414018314</TextGUID>
+      </Text>
+    </ModOp>
+</ModOps>

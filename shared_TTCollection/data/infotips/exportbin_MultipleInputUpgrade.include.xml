@@ -1,0 +1,278 @@
+<ModOps>
+  
+  <!-- https://github.com/jakobharder/anno1800-mod-loader/blob/main/doc/modloader11.md#patching-infotip-exportbin -->
+
+  
+  <!-- guid 454144439: -->
+  <!-- Add support for multiple entries in InputAmountUpgradeCount and combinations of InputAmountUpgradeCount+ReplaceInputCount -->
+  <!-- one minor downside, see below explanation: Items like "mines use dynamite" now also display the "dynamites +1 input" tooltip. While technically it is correct, it can be confusing. --> 
+  
+  <!-- general Infos: -->
+    <!-- unfortunately it does not to seem possible to use sth like this as ExpectedValueInt: -->
+     <!-- <ExpectedValueInt>[ItemAssetData({ItemGuid}) ReplaceInputOldInput(0)]</ExpectedValueInt> -->
+     <!-- the game seems to expect only direct integers, although this would evaluate to an integer. -->
+     <!-- this limits the options to compare ReplaceInput with InputAmountUpgrade and may explain the bad implementation from the devs, only supporting one entry each. (instead of simply telling the backend devs to implement evaluation for the result -.-) -->
+     <!-- (and looping over both the same time to be able to compare each product with eachother it most likely also not possible anyways..) -->
+     <!-- This means we are unable to check if a InputAmountUpgrade-Product is the smae like a ReplaceInput-Product, which would be necessary to prevent eg. the InputAmountUpgrade-Tooltip if it is used like in the mines-dynamite-item. -->
+    
+    <!-- it seems [RefGuid] is here the same as {ItemGuid} -->
+    
+    <!-- wenn man InputAmountUpgrade und ReplaceInput kombiniert, scheint es so zu sein, dass zuerst Replace und dann amountchange passiert. -->
+    <!-- Denn Vanilla: 1 Eisen Input. Replace Eisen durhc Kufer und erhöhe Kupfer um 1 -> 2 Kupfer -->
+                                <!-- Replace Eisen durch Kupfer und erhöhe Eisen um 1 -> 1 Kupfer -->
+  
+  
+  
+  <!-- remove the too limited vanilla tooltips dealing with InputAmountUpgradeCount and/or ReplaceInputCount. They can only deal with single entries and not with specific amounts -->
+  <!-- InputAmountUpgradeCount -->
+  <ModOp Type="remove" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[ItemAssetData({ItemGuid}) InputAmountUpgradeCount]' and CompareOperator/CompareOperator='5'] and VisibilityElement/VisibilityElement[Condition='[ItemAssetData({ItemGuid}) ReplaceInputCount]']]" />
+  
+
+  <!-- display the InputAmountUpgrade regardless of any ReplaceInput and support multiple entries (we can not compare the products listed in InputAmountUpgrade with the ones in ReplaceInput. so this (showing it regardless of ReplaceInput) is the only option to properly show tooltips for upgrades that want to use both and with multiple entries) -->
+  <!-- put below the current position of ReplaceInput tooltip -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[ItemAssetData({ItemGuid}) ReplaceInputCount]' and CompareOperator/CompareOperator='5'] and VisibilityElement/VisibilityElement[Condition='[ProductAssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(0)]) IsAbstract]' and ExpectedValueBool='False']]">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>1</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>5</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData({ItemGuid}) InputAmountUpgradeCount]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconGUID>1500301995</IconGUID> <!-- Icon Input Goods -->
+          <Style />
+        </Icon>
+        <Text>
+          <TextGUID>1500301995</TextGUID> <!-- "Input Goods:" -->
+          <Style />
+        </Text>
+        <Value>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+      <InfoElement>
+      <ElementType>7</ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <!-- wenn Amount größer 0 ist, nimm zb. einen text wo wir ein "+" vor die Menge machen (andernfalls ohne zeichen)  -->
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>5</CompareOperator> <!-- bigger than #index0# == has InputAmountUpgradeAmount -->
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) InputAmountUpgradeAmount(#index0#)]</Condition>
+          </VisibilityElement>
+          <Icon>
+            <IconText>[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Icon]</IconText> <!-- Icon from Product -->
+            <Style />
+          </Icon>
+          <Text>
+            <Text>&lt;font color='0xff817f87'&gt;[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Text]&lt;/font&gt;</Text> <!-- Text from Product -->
+            <Style />
+          </Text>
+          <Value>
+            <Text>&lt;font color='0xff817f87'&gt;+[ItemAssetData([RefGuid]) InputAmountUpgradeAmount(#index0#)]/1&lt;/font&gt;</Text> <!-- Value of extra Input -->
+            <Style />
+          </Value>
+          <BackgroundType />
+        </InfoElement>
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>3</CompareOperator> <!-- smaller than #index0# == has no InputAmountUpgradeAmount -->
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) InputAmountUpgradeAmount(#index0#)]</Condition>
+          </VisibilityElement>
+          <Icon>
+            <IconText>[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Icon]</IconText> <!-- Icon from Product -->
+            <Style />
+          </Icon>
+          <Text>
+            <Text>&lt;font color='0xff817f87'&gt;[AssetData([ItemAssetData([RefGuid]) InputAmountUpgradeProduct(#index0#)]) Text]&lt;/font&gt;</Text> <!-- Text from Product -->
+            <Style />
+          </Text>
+          <Value>
+            <Text>&lt;font color='0xff817f87'&gt;[ItemAssetData([RefGuid]) InputAmountUpgradeAmount(#index0#)]/1&lt;/font&gt;</Text> <!-- Value of Input -->
+            <Style />
+          </Value>
+          <BackgroundType />
+        </InfoElement>
+        <Source>[ItemAssetData({ItemGuid}) InputAmountUpgradeCount]</Source>
+      </InfoElement>
+    </InfoElement>    
+    
+  </ModOp>
+  
+  <!-- ################################### -->
+  <!-- ## ReplaceInput -->
+  <!-- ################################### -->
+
+  <!-- The Vanilla Tooltip for ReplaceInput works with Text using "[ItemAssetData([RefGuid]) ReplaceInputNewInputsFormatted]". -->
+   <!-- This is automatically adding all Products included in ReplaceInput, regardless if they are Abstract or not (like "replaces A and B with C and D") -->
+   <!-- That means we now have 2 choices, if we don't want abstract products to be listed that they are removed: -->
+   <!-- - Either use my below code and change the Text to not use the formatted code, but instead the name of the single product in that entry (like 2 tooltips, one with "replaces A with B" and the other with "replaces C with D") -->
+   <!-- - Or do not loop through all ReplaceInput and instead only check if the first (and only) ReplaceInput is abstract or not and then show the vanilla text. -->
+     <!-- this is already the vanilla tooltip code. The downside is that this does not support mixing abstract products with normal ones within one ReplaceInput Property. -->
+   <!-- Second Option downside: if you use ReplaceInput in your Item, only have ONE entry in it, if a abstract product is replaced (oldinput). If NONE of the products listed in ReplaceInput is abstract, you can list as many as you wish.  -->
+  
+  <!-- In the end we diceded to use first option and replace the vanilla tooltip, to support multiple ReplaceInput entries, which allow mixing abstract and normal products and show icons of products. -->
+  
+  
+  <!-- ReplaceInputOldInput(0)]) IsAbstract (only supports a single entry) -->
+    <!-- vanilla: <Text>Das Gebäude verarbeitet nun [ItemAssetData([RefGuid]) ReplaceInputNewInputsFormatted].</Text> -->
+  <ModOp Type="remove" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[ItemAssetData({ItemGuid}) ReplaceInputCount]' and CompareOperator/CompareOperator='5'] and VisibilityElement/VisibilityElement[Condition='[ProductAssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(0)]) IsAbstract]' and (ExpectedValueBool='True' or not(ExpectedValueBool))]]" />
+  <!-- ReplaceInputOldInput(0)]) NOT IsAbstract -->
+    <!-- vanilla: <Text>Anstelle von [ItemAssetData({ItemGuid}) ReplaceInputOldInputsFormatted], verarbeitet das Gebäude [ItemAssetData({ItemGuid}) ReplaceInputNewInputsFormatted].</Text> -->
+  <ModOp Type="remove" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[ItemAssetData({ItemGuid}) ReplaceInputCount]' and CompareOperator/CompareOperator='5'] and VisibilityElement/VisibilityElement[Condition='[ProductAssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(0)]) IsAbstract]' and ExpectedValueBool='False']]" />
+  
+  <!-- add support for multiple entries -->
+  <ModOp Type="AddPrevSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[VisibilityElement/VisibilityElement[Condition='[ItemAssetData({ItemGuid}) InputAmountUpgradeCount]' and CompareOperator/CompareOperator='5']]">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>1</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>2</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>5</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) ReplaceInputCount]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconGUID>20081</IconGUID>
+          <Style />
+        </Icon>
+        <Text>
+          <TextGUID>20081</TextGUID>
+          <Style />
+        </Text>
+        <Value>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+      
+      <InfoElement>
+        <ElementType>7</ElementType>
+        <ChildCount>2</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <InfoElement>
+          <ElementType>5</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator />
+            <ResultType />
+            <Condition>[ProductAssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(#index0#)]) IsAbstract]</Condition>
+          </VisibilityElement>
+          <Text>
+            <TextGUID>1500301994</TextGUID>
+            <Style />
+          </Text>
+          <BackgroundType />
+        </InfoElement>
+        <InfoElement>
+          <ElementType>5</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator />
+            <ResultType />
+            <ExpectedValueBool>False</ExpectedValueBool>
+            <Condition>[ProductAssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(#index0#)]) IsAbstract]</Condition>
+          </VisibilityElement>
+          <Text>
+            <TextGUID>1500301993</TextGUID>
+            <Style />
+          </Text>
+          <BackgroundType />
+        </InfoElement>
+        <Source>[ItemAssetData({ItemGuid}) ReplaceInputCount]</Source>
+      </InfoElement>
+    </InfoElement>
+    
+  </ModOp>
+  
+  <!-- ################################### -->
+  
+  
+</ModOps>
