@@ -1,0 +1,16 @@
+{
+  "ModID": "shared_Downgrade_Keyind_Serp",
+  "Version": "1.0",
+  "LoadAfterIds": null,
+  "ModDependencies": null,
+  "IncompatibleIds": null,
+  "DeprecateIds": null,
+  "Category": {
+    "English": "Misc"
+  },
+  "ModName": {
+    "English": "Downgrade Keyind (Serp)"
+  },
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

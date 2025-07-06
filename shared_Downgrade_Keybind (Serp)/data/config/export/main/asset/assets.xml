@@ -1,0 +1,37 @@
+<ModOps>
+
+  <!-- in vanill U is upgrade and Shift+U is upgrade all. -->
+  <!-- And holding Alt while using the upgrade Tool, downgrades the targets. -->
+  <!-- So its logic that we use Alt+U for downgrade selected object -->
+	
+  <!-- Try the official way ts.Selection.Object.SetDowngrade(true), and if it does not work (eg. Warehouse/Kontor) use changeGUID  -->
+  
+	<ModOp Type="add" GUID='2001271' Path="/Values/GUIConfig/KeyBindings">
+    <Item>
+      <KeyTypes>Alt;U</KeyTypes>
+      <Command>system.start(function(); if ts.Selection.Object.Owner==ts.Participants.GetGetCurrentParticipantID() and ts.Selection.Object.Downgradability.IsUpgradable then; local downgradeGUID = ts.Selection.Object.Downgradability.UpgradeTargetGUID; if downgradeGUID~=0 then; ts.Selection.Object.SetDowngrade(true); coroutine.yield(); coroutine.yield(); if ts.Selection.Object.GUID ~= downgradeGUID then; session.getSelectedFactory():changeGUID(downgradeGUID); end; end; end; end);</Command>
+      <Active>Session</Active>
+      <AvailableOnPlatforms>PC;Xbox;PS;Stadia</AvailableOnPlatforms>
+      <AudioEvent>200634</AudioEvent>
+      <Configurable>0</Configurable>
+      <HideInOptionMenu>1</HideInOptionMenu>
+      <AllowMultipleShortcuts>1</AllowMultipleShortcuts>
+    </Item>
+  </ModOp>
+    
+<!-- system.start(function()  no need to support multiselection, since you can not multi select buildings -->
+  <!-- if ts.Selection.Object.Owner==ts.Participants.GetGetCurrentParticipantID() and ts.Selection.Object.Downgradability.IsUpgradable then -->
+    <!-- local downgradeGUID = ts.Selection.Object.Downgradability.UpgradeTargetGUID -->
+    <!-- if downgradeGUID~=0 then -->
+      <!-- ts.Selection.Object.SetDowngrade(true)   takes at least 200 ms (2 ticks) before it returns the new GUID -->
+      <!-- coroutine.yield() -->
+      <!-- coroutine.yield() -->
+      <!-- if ts.Selection.Object.GUID ~= downgradeGUID then   for some buildings official Downgrade is not supported, like Kontors -->
+        <!-- session.getSelectedFactory():changeGUID(downgradeGUID) -->
+      <!-- end -->
+    <!-- end -->
+  <!-- end -->
+<!-- end) -->
+    
+
+</ModOps> 
