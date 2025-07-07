@@ -1,0 +1,19 @@
+{
+  "Version": "1.0",
+  "ModID": "shared_Pool_BuildingExceptKontor_Serp",
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "LoadAfterIds": ["*","shared_CopyPools_AP_Kontors_Serp"],
+  "Category": {
+    "English": "Shared"
+  },
+  "ModName": {
+    "English": "Copy Pools PlayerCounter Buildings except Kontors"
+  },
+  "Description": {
+    "English": "For Modders: PlayerCounter Pool which includes all buildings except Kontor"
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

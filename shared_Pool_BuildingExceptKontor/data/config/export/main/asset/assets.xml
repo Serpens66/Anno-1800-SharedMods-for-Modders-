@@ -1,0 +1,38 @@
+<ModOps>
+    
+  <!-- uses Serp GUID 1500006066 -->
+  
+  <!-- loads after shared_CopyPools_AP_Kontors_Serp to be able to remove all kontors (found in 1500004660) -->
+  
+  <!-- Loads quite long, roughly 1.5 seconds on my fast pc -->
+   <!-- could be improved with helper objects put at the beginning of the assets.xml -->
+  
+  <ModOp Type="AddNextSibling" GUID="700000">
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500006066</GUID>
+          <Name>All Buildings except Kontors</Name>
+        </Standard>
+        <PlayerCounterContextPool>
+          <Contexts />
+          <IgnoreSerializedPool>1</IgnoreSerializedPool>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+  </ModOp>
+
+  <ModOp Type="add" Path="@1500006066/PlayerCounterContextPool/Contexts"
+    Content="//Values[Building]/Standard/GUID/text()">
+    <Item>
+      <Asset>
+        <ModOpContent />
+      </Asset>
+    </Item>
+  </ModOp>
+  
+  <ModOp Type="remove" GUID='1500006066' Path="/Values/PlayerCounterContextPool/Contexts/Item[Asset=/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1500004660']/AssetPool/AssetList/Item/Asset]" />
+
+
+</ModOps>
