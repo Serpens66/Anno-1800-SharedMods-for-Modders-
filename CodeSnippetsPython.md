@@ -8,7 +8,7 @@ If you don't know python that may be too difficult for you.
 - [create_hardlinks](#create_hardlinks)
 
 
-###  soundsforanno.py
+###  soundsforanno
 - Converting mp3 to wav and read out soundbank details from json and conert speech to text (needs https://ffmpeg.org/download.html)
 
   <details>
