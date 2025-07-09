@@ -10,7 +10,10 @@ If you don't know python that may be too difficult for you.
 
 
 ###  soundsforanno
-- Converting mp3 to wav and read out soundbank details from json and conert speech to text (needs https://ffmpeg.org/download.html)
+- Converting mp3 to wav and read out soundbank details from json and conert speech to text  
+(needs https://github.com/eXpl0it3r/bnkextr  - extract wem from bnk files  
+https://github.com/vgmstream/vgmstream/  - converts wem to was files  
+https://ffmpeg.org/download.html  - can do all other conversion stuff and read out metadata)  
 
   <details>
   <summary>(CLICK) CODE</summary>  
