@@ -736,15 +736,15 @@ If you want one action out of multipe actions to happen, it gets complicated. It
   ```xml
   <ModOp Type="addNextSibling" GUID="130248">
     
-    <!-- The following 3 Triggers will unlock your Building is at most x of them are placed on the current island -->
-     <!-- and lock the building if more than x of them are placed on current island. -->
+    <!-- The following 3 Triggers will unlock your Building if between 0 and x of them are placed on the current island -->
+     <!-- and lock the building if between x+1 and 10000 of them are placed on current island. -->
     
     <!-- We are going to use ConditionThreshold. For whatever reason this Condition is heavily buggy in super strange ways, see: https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/CodeSnippets.md#conditionthreshold -->
     <!-- Therefore and to display in the displayed unlock condition that max allowed number per island is reached, -->
      <!-- we need a third trigger, which never gets unlocked, but is used for this display. -->
      <!-- The Game always only displays the unlock conditions from the Trigger with the lowest GUID which unlocks the asset, which is still registered. -->
      <!-- Therefore use here the smallest of your Trigger GUIDs that unlocks the asset. -->
-    <!-- And we need two triggers for the lock/unlock part instead of 1, because ResetTrigger does not work with ConditionThreshold, so we have to use 2 triggers which register eachother on every execution. -->
+    <!-- And we need two triggers for the lock/unlock part instead of one, because ResetTrigger does not work with ConditionThreshold, so we have to use 2 triggers which register eachother on every execution. -->
     
     
     <Asset>
