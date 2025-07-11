@@ -3,6 +3,7 @@
 - [ActionExecuteActionByChance with fixed chance](#actionexecuteactionbychance-with-fixed-chance)
 - [Delete all kontors from an AI (and therefore removing it from the game)](#delete-all-kontors-from-an-ai-and-therefore-removing-it-from-the-game)
 - [Add text to existing strings (from vanilla or other mods)](#add-text-to-existing-strings-from-vanilla-or-other-mods)
+- [ConditionThreshold](#conditionthreshold)
 - [Limit a building to "once per Island" without UniqueType property](#limit-a-building-to-once-per-island-without-uniquetype-property)
 - [Global Buffs](#global-buffs)
 - [Area wide Buff based on Area ConditionPlayerCounter conditions](#area-wide-buff-based-on-area-conditionplayercounter-conditions)
@@ -692,9 +693,308 @@ If you want one action out of multipe actions to happen, it gets complicated. It
 
 &nbsp;  
 
-###  Limit a building to "once per Island" without UniqueType property
+###  ConditionThreshold 
   <details>
   <summary>(CLICK) CODE</summary>  
+  
+  ```xml
+
+  <!-- Limitations!! : -->
+  <!-- - All Actions with this Condition are executed 23 times! Don't ask me why, test yourself with ActionAddResource. -->
+  <!-- - It seems not to work as Condition in <ResetTrigger>, is never true. -->
+  <!-- - Do never use it as Condition in any SubTrigger, the game will be stuck in loading screen (new game or savegame). -->
+  <!-- Tested Usage: -->
+  <!-- - seems to be fine to set ThresholdDuration to 0, but most likely also works with higher values, most likely in ms. -->
+  <!-- - <DataSource>[Economy MetaStorage StorageAmount(1010017)]</DataSource> seems to work fine -->
+  <!-- - <DataSource>[AreaManager AreaObjects ObjectLists BuildingsWithGameLogicCount(YOURBUILDING_GUID)]</DataSource> requires IsAreaSpecific = 1 . -->
+  <!-- - <DataSource>[Participants GetParticipant(0) ProfileCounter Stats GetCounter(0,0,YOURBUILDING_GUID,3)]</DataSource> seems not to work (should check for amount of buildings worldwide) -->
+  <!-- - see scripting guide for more possibly working conditions: https://github.com/anno-mods/modding-guide/blob/main/Scripting/textembeds.md -->
+  
+
+  <TriggerCondition>
+    <Template>ConditionThreshold</Template>
+    <Values>
+      <Condition />
+      <ConditionThreshold>
+        <DataSource>[AreaManager AreaObjects ObjectLists BuildingsWithGameLogicCount(YOURBUILDING_GUID)]</DataSource>
+        <LowerThreshold>0</LowerThreshold>
+        <UpperThreshold>2</UpperThreshold>
+        <ThresholdDuration>0</ThresholdDuration>
+        <IsAreaSpecific>1</IsAreaSpecific>
+      </ConditionThreshold>
+    </Values>
+  </TriggerCondition>
+  ```
+  </details>
+
+&nbsp;  
+
+###  Limit a building to "once per Island" without UniqueType property
+  <details>
+  <summary>(CLICK) CODE (new easier code)</summary>  
+  
+  ```xml
+  <ModOp Type="addNextSibling" GUID="130248">
+    
+    <!-- The following 3 Triggers will unlock your Building is at most x of them are placed on the current island -->
+     <!-- and lock the building if more than x of them are placed on current island. -->
+    
+    <!-- We are going to use ConditionThreshold. For whatever reason this Condition is heavily buggy in super strange ways, see: [ConditionThreshold](#conditionthreshold) -->
+    <!-- Therefore and to display in the displayed unlock condition that max allowed number per island is reached, -->
+     <!-- we need a third trigger, which never gets unlocked, but is used for this display. -->
+     <!-- The Game always only displays the unlock conditions from the Trigger with the lowest GUID which unlocks the asset, which is still registered. -->
+     <!-- Therefore use here the smallest of your Trigger GUIDs that unlocks the asset. -->
+    <!-- And we need two triggers for the lock/unlock part instead of 1, because ResetTrigger does not work with ConditionThreshold, so we have to use 2 triggers which register eachother on every execution. -->
+    
+    
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>TRIGGER1_Smallest_GUID</GUID>
+          <Name>display custom unlock condition (lowest Trigger GUID which is not unlocked and unlocks the asset is used as displayed condition)</Name>
+        </Standard>
+        <Trigger>
+          <!-- your normal unlock condition first, eg. 50 farmers -->
+          <TriggerCondition>
+            <Template>ConditionPlayerCounter</Template>
+            <Values>
+              <Condition />
+              <ConditionPlayerCounter>
+                <PlayerCounter>PopulationByLevel</PlayerCounter>
+                <Context>15000000</Context>
+                <CounterAmount>50</CounterAmount>
+              </ConditionPlayerCounter>
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <!-- you can use whatever condition you want to be displayed here, also your custom GUID with custom text. -->
+                     <!-- but I think using this showing "Building 3/3" in unlock condition kind of makes sense -->
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <PlayerCounter>ObjectBuilt</PlayerCounter>
+                          <Context>YOURBUILDING_GUID</Context>
+                          <CounterAmount>3</CounterAmount>
+                          <ComparisonOp>LessThan</ComparisonOp>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                    <!-- finally ConditionAlwaysFalse to make sure this never triggers and just used for the display -->
+                    <SubTriggers>
+                      <Item>
+                        <SubTrigger>
+                          <Template>AutoCreateTrigger</Template>
+                          <Values>
+                            <Trigger>
+                              <TriggerCondition>
+                                <Template>ConditionAlwaysFalse</Template>
+                                <Values>
+                                  <Condition />
+                                  <ConditionAlwaysFalse />
+                                </Values>
+                              </TriggerCondition>
+                            </Trigger>
+                          </Values>
+                        </SubTrigger>
+                      </Item>
+                    </SubTriggers>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionUnlockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionUnlockAsset>
+                    <UnlockAssets>
+                      <Item>
+                        <Asset>YOURBUILDING_GUID</Asset>
+                      </Item>
+                    </UnlockAssets>
+                  </ActionUnlockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>TRIGGER2_GUID</GUID>
+          <Name>Unlock your asset if within the threshold (ConditionThreshold must be main Condition, never SubTrigger, otherwise endless loading screen)</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionThreshold</Template>
+            <Values>
+              <Condition />
+              <ConditionThreshold>
+                <DataSource>[AreaManager AreaObjects ObjectLists BuildingsWithGameLogicCount(YOURBUILDING_GUID)]</DataSource>
+                <LowerThreshold>0</LowerThreshold>
+                <UpperThreshold>2</UpperThreshold>
+                <ThresholdDuration>0</ThresholdDuration>
+                <IsAreaSpecific>1</IsAreaSpecific>
+              </ConditionThreshold>
+            </Values>
+          </TriggerCondition>
+          <!-- add your normal unlock conditions here as subtriggers, eg. 50 farmers -->
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionPlayerCounter</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionPlayerCounter>
+                          <PlayerCounter>PopulationByLevel</PlayerCounter>
+                          <Context>15000000</Context>
+                          <CounterAmount>50</CounterAmount>
+                        </ConditionPlayerCounter>
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionUnlockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionUnlockAsset>
+                    <UnlockAssets>
+                      <Item>
+                        <Asset>YOURBUILDING_GUID</Asset>
+                      </Item>
+                    </UnlockAssets>
+                  </ActionUnlockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <Item>
+              <TriggerAction>
+                <Template>ActionRegisterTrigger</Template>
+                <Values>
+                  <Action />
+                  <ActionRegisterTrigger>
+                    <TriggerAsset>TRIGGER3_GUID</TriggerAsset>
+                  </ActionRegisterTrigger>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>TRIGGER3_GUID</GUID>
+          <Name>Lock asset again if current island has x or more built</Name>
+        </Standard>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionThreshold</Template>
+            <Values>
+              <Condition />
+              <ConditionThreshold>
+                <DataSource>[AreaManager AreaObjects ObjectLists BuildingsWithGameLogicCount(YOURBUILDING_GUID)]</DataSource>
+                <LowerThreshold>3</LowerThreshold>
+                <UpperThreshold>10000</UpperThreshold>
+                <ThresholdDuration>0</ThresholdDuration>
+                <IsAreaSpecific>1</IsAreaSpecific>
+              </ConditionThreshold>
+            </Values>
+          </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionLockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionLockAsset>
+                    <LockAssets>
+                      <Item>
+                        <Asset>YOURBUILDING_GUID</Asset>
+                      </Item>
+                    </LockAssets>
+                  </ActionLockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <Item>
+              <TriggerAction>
+                <Template>ActionUnlockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionUnlockAsset>
+                    <UnhideAssets>
+                      <Item>
+                        <Asset>YOURBUILDING_GUID</Asset>
+                      </Item>
+                    </UnhideAssets>
+                  </ActionUnlockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <Item>
+              <TriggerAction>
+                <Template>ActionRegisterTrigger</Template>
+                <Values>
+                  <Action />
+                  <ActionRegisterTrigger>
+                    <TriggerAsset>TRIGGER2_GUID</TriggerAsset>
+                  </ActionRegisterTrigger>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>0</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    
+  </ModOp>
+
+  ```
+  </details>
+  <details>
+  <summary>(CLICK) CODE (OLD solution, better use the new better code)</summary>  
   
   ```xml
   <!-- With the following code you can limit your building to only be built once per island, without the need of one of the "UniqueType" Enums, which are only available in limited number (only 20 are available, while many are already in use from other mods) -->
