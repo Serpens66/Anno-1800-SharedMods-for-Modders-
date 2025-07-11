@@ -736,7 +736,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
   ```xml
   <ModOp Type="addNextSibling" GUID="130248">
     
-    <!-- The following 3 Triggers will unlock your Building if between 0 and x of them are placed on the current island -->
+    <!-- The following Triggers will unlock your Building if between 0 and x of them are placed on the current island -->
      <!-- and lock the building if between x+1 and 10000 of them are placed on current island. -->
     
     <!-- We are going to use ConditionThreshold. For whatever reason this Condition is heavily buggy in super strange ways, see: https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/CodeSnippets.md#conditionthreshold -->
@@ -745,17 +745,15 @@ If you want one action out of multipe actions to happen, it gets complicated. It
      <!-- The Game always only displays the unlock conditions from the Trigger with the lowest GUID which unlocks the asset, which is still registered. -->
      <!-- Therefore use here the smallest of your Trigger GUIDs that unlocks the asset. -->
     <!-- And we need two triggers for the lock/unlock part instead of one, because ResetTrigger does not work with ConditionThreshold, so we have to use 2 triggers which register eachother on every execution. -->
-    
-    
+
     <Asset>
       <Template>Trigger</Template>
       <Values>
         <Standard>
-          <GUID>TRIGGER1_Smallest_GUID</GUID>
-          <Name>display custom unlock condition (lowest Trigger GUID which is not unlocked and unlocks the asset is used as displayed condition)</Name>
+          <GUID>TRIGGER0_Smallest_GUID</GUID>
+          <Name>Your regular normal unlock Trigger you might already have (must be lowest GUID from all triggers) and it registers our first ConditionThreshold Trigger</Name>
         </Standard>
         <Trigger>
-          <!-- your normal unlock condition first, eg. 50 farmers -->
           <TriggerCondition>
             <Template>ConditionPlayerCounter</Template>
             <Values>
@@ -767,45 +765,78 @@ If you want one action out of multipe actions to happen, it gets complicated. It
               </ConditionPlayerCounter>
             </Values>
           </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionUnlockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionUnlockAsset>
+                    <UnlockAssets>
+                      <Item>
+                        <Asset>YOURBUILDING_GUID</Asset>
+                      </Item>
+                    </UnlockAssets>
+                  </ActionUnlockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+            <Item>
+              <TriggerAction>
+                <Template>ActionRegisterTrigger</Template>
+                <Values>
+                  <Action />
+                  <ActionRegisterTrigger>
+                    <TriggerAsset>TRIGGER2_GUID</TriggerAsset>
+                  </ActionRegisterTrigger>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>Trigger</Template>
+      <Values>
+        <Standard>
+          <GUID>TRIGGER1_SecondSmallest_GUID</GUID>
+          <Name>display custom unlock condition (lowest Trigger GUID which is not unlocked and unlocks the asset is used as displayed condition)</Name>
+        </Standard>
+        <Trigger>
+          <!-- you can use whatever condition you want to be displayed here, also your custom GUID with custom text. -->
+           <!-- but I think using this showing "Building 3/3" in unlock condition kind of makes sense -->
+          <TriggerCondition>
+            <Template>ConditionPlayerCounter</Template>
+            <Values>
+              <Condition />
+              <ConditionPlayerCounter>
+                <PlayerCounter>ObjectBuilt</PlayerCounter>
+                <Context>YOURBUILDING_GUID</Context>
+                <CounterAmount>3</CounterAmount>
+                <ComparisonOp>LessThan</ComparisonOp>
+              </ConditionPlayerCounter>
+            </Values>
+          </TriggerCondition>
           <SubTriggers>
             <Item>
               <SubTrigger>
                 <Template>AutoCreateTrigger</Template>
                 <Values>
                   <Trigger>
-                    <!-- you can use whatever condition you want to be displayed here, also your custom GUID with custom text. -->
-                     <!-- but I think using this showing "Building 3/3" in unlock condition kind of makes sense -->
+                    <!-- ConditionAlwaysFalse to make sure this never triggers and just used for the display -->
                     <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
+                      <Template>ConditionAlwaysFalse</Template>
                       <Values>
                         <Condition />
-                        <ConditionPlayerCounter>
-                          <PlayerCounter>ObjectBuilt</PlayerCounter>
-                          <Context>YOURBUILDING_GUID</Context>
-                          <CounterAmount>3</CounterAmount>
-                          <ComparisonOp>LessThan</ComparisonOp>
-                        </ConditionPlayerCounter>
+                        <ConditionAlwaysFalse />
                       </Values>
                     </TriggerCondition>
-                    <!-- finally ConditionAlwaysFalse to make sure this never triggers and just used for the display -->
-                    <SubTriggers>
-                      <Item>
-                        <SubTrigger>
-                          <Template>AutoCreateTrigger</Template>
-                          <Values>
-                            <Trigger>
-                              <TriggerCondition>
-                                <Template>ConditionAlwaysFalse</Template>
-                                <Values>
-                                  <Condition />
-                                  <ConditionAlwaysFalse />
-                                </Values>
-                              </TriggerCondition>
-                            </Trigger>
-                          </Values>
-                        </SubTrigger>
-                      </Item>
-                    </SubTriggers>
                   </Trigger>
                 </Values>
               </SubTrigger>
@@ -830,7 +861,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
           </TriggerActions>
         </Trigger>
         <TriggerSetup>
-          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <AutoRegisterTrigger>0</AutoRegisterTrigger>
           <UsedBySecondParties>0</UsedBySecondParties>
         </TriggerSetup>
       </Values>
@@ -857,29 +888,6 @@ If you want one action out of multipe actions to happen, it gets complicated. It
               </ConditionThreshold>
             </Values>
           </TriggerCondition>
-          <!-- add your normal unlock conditions here as subtriggers, eg. 50 farmers -->
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionPlayerCounter</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionPlayerCounter>
-                          <PlayerCounter>PopulationByLevel</PlayerCounter>
-                          <Context>15000000</Context>
-                          <CounterAmount>50</CounterAmount>
-                        </ConditionPlayerCounter>
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
           <TriggerActions>
             <Item>
               <TriggerAction>
@@ -910,7 +918,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
           </TriggerActions>
         </Trigger>
         <TriggerSetup>
-          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <AutoRegisterTrigger>0</AutoRegisterTrigger>
           <UsedBySecondParties>0</UsedBySecondParties>
         </TriggerSetup>
       </Values>
