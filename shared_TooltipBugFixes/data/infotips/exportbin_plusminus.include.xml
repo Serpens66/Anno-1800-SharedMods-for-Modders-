@@ -8,7 +8,16 @@
   <!-- removing the hardcoded "+" in front of buff texts in text_.xml -->
   <!-- using sth like <Text>+[AssetData(23246) Text]</Text> here in case the value is positive -->
   <!-- and keeping <TextGUID>23246</TextGUID> if it is negative (- is added by the game automatically for negative values) -->
+  
+  
+  <!-- I dont want to mess with palace/decree stuff, since I dont know it well enough, so buffs from this wont be changed for now -->
 
+  <!-- Includes: -->
+  <!-- AreaTolerance -->
+  <!-- SpecialistSpawnProbabilityIfPercent -->
+  <!-- ResolverUnitDecreaseRateInPercent (except 21528 because its hardcoded, means not in infotips, so we can not ad condition) -->
+  <!-- SpecialUnitHappinessThresholdUpgrade -->
+  
   <!-- ############################################################################################# -->
   
   <!-- AreaTolerance -->
@@ -302,7 +311,7 @@
   <ModOp Type="replace" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='21463']">
     <Text>+[AssetData(21463) Text]</Text>
   </ModOp>
-  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/TextGUID='21463']">
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(21463) Text]']">
     <InfoElement>
       <ElementType>8</ElementType>
       <ChildCount>2</ChildCount>
@@ -369,7 +378,7 @@
   <ModOp Type="replace" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='8883']">
     <Text>+[AssetData(8883) Text]</Text>
   </ModOp>
-  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/TextGUID='8883']">
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(8883) Text]']">
     <InfoElement>
       <ElementType>8</ElementType>
       <ChildCount>2</ChildCount>
@@ -433,8 +442,621 @@
     </InfoElement>
   </ModOp>
   
+  <!-- Buff 454144439 -->
+  <!-- 23251 same structure like for 21463 -->
+  <ModOp Type="replace" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='23251']">
+    <Text>+[AssetData(23251) Text]</Text>
+  </ModOp>
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(23251) Text]']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>2</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>2</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData({ItemGuid}) SpecialistSpawnProbabilityIfPercent]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconGUID>20603</IconGUID>
+          <Style />
+        </Icon>
+        <Text>
+          <TextGUID>20603</TextGUID>
+          <Style />
+        </Text>
+        <Value>
+          <TextGUID>23251</TextGUID>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+      <InfoElement>
+        <ElementType>5</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Text>
+          <TextGUID>21392</TextGUID>
+          <Style />
+        </Text>
+        <BackgroundType />
+      </InfoElement>
+    </InfoElement>
+  </ModOp>
+  
+
+  <!-- influence buff 501687 -->
+  <!-- 21464 same structure like for 21463 -->
+  <ModOp Type="replace" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='21464']">
+    <Text>+[AssetData(21464) Text]</Text>
+  </ModOp>
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(21464) Text]']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>2</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>2</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData([RefGuid]) SpecialistSpawnProbabilityIfPercent]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconGUID>20603</IconGUID>
+          <Style />
+        </Icon>
+        <Text>
+          <TextGUID>20603</TextGUID>
+          <Style />
+        </Text>
+        <Value>
+          <TextGUID>21464</TextGUID>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+      <InfoElement>
+        <ElementType>5</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Text>
+          <TextGUID>21392</TextGUID>
+          <Style />
+        </Text>
+        <BackgroundType />
+      </InfoElement>
+    </InfoElement>
+  </ModOp>
+  
+  <!-- in 269764  InfoTip Local Dept - Base Effect is also SpecialistSpawnProbabilityIfPercent, but I dont want to mess with palace/decree stuff, since I dont know it well enough -->
 
   
+<!-- ####################################################################################################### -->
+<!-- ####################################################################################################### -->
   
+  <!-- ResolverUnitDecreaseRateInPercent -->
+
+  <!-- GUID 501687 is responsible for displaying influence buffs -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[Value/TextGUID='21510']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>1</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>5</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconText>[AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings([RefGuid], false) AT(0)]) Icon] </IconText>
+          <Style />
+        </Icon>
+        <Text>
+          <Text>[ToolOneHelper InfoDescription([ToolOneHelper IncidentResolverUnitsForTargetBuildings([RefGuid], false) AT(0)]) Text] </Text>
+          <Style />
+        </Text>
+        <Value>
+          <Text>+[AssetData(21510) Text]</Text>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>2</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconText>[AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings([RefGuid], false) AT(0)]) Icon] </IconText>
+          <Style />
+        </Icon>
+        <Text>
+          <Text>[ToolOneHelper InfoDescription([ToolOneHelper IncidentResolverUnitsForTargetBuildings([RefGuid], false) AT(0)]) Text] </Text>
+          <Style />
+        </Text>
+        <Value>
+          <TextGUID>21510</TextGUID>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+    </InfoElement>
+  </ModOp>
+  <ModOp Type="remove" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[Value/TextGUID='21510']"></ModOp>
+
+  <!-- 23243 in 454144439 -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement/InfoElement[Value/TextGUID='23243']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>1</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData({ItemGuid}) ResolverUnitDecreaseRateInPercent]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>5</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) ResolverUnitDecreaseRateInPercent]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconText>[AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings({ItemGuid}, false) AT(0)]) Icon] </IconText>
+          <Style />
+        </Icon>
+        <Text>
+          <Text>[ToolOneHelper InfoDescription([ToolOneHelper IncidentResolverUnitsForTargetBuildings({ItemGuid}, false) AT(0)]) Text]</Text>
+          <Style />
+        </Text>
+        <Value>
+          <Text>+[AssetData(23243) Text]</Text>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+      <InfoElement>
+        <ElementType>4</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>2</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) ResolverUnitDecreaseRateInPercent]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <Icon>
+          <IconText>[AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings({ItemGuid}, false) AT(0)]) Icon] </IconText>
+          <Style />
+        </Icon>
+        <Text>
+          <Text>[ToolOneHelper InfoDescription([ToolOneHelper IncidentResolverUnitsForTargetBuildings({ItemGuid}, false) AT(0)]) Text]</Text>
+          <Style />
+        </Text>
+        <Value>
+          <TextGUID>23243</TextGUID>
+          <Style />
+        </Value>
+        <WarningType />
+        <BackgroundType />
+      </InfoElement>
+    </InfoElement>
+  </ModOp>
+  <ModOp Type="remove" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement/InfoElement[Value/TextGUID='23243']"></ModOp>
+
+  <!-- SpecialUnitHappinessThresholdUpgrade   IncidentResolverUnitsForTargetBuildings  -->
+
+  <!-- GUID 501687 is responsible for displaying influence buffs -->
+   <!-- related to 21584 -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[InfoElement/Value/Text='[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>2</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>1</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>8</ElementType>
+        <ChildCount>2</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>5</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Icon>
+            <IconGUID>19625</IconGUID>
+            <Style />
+          </Icon>
+          <Text>
+            <TextGUID>19625</TextGUID>
+            <Style />
+          </Text>
+          <Value>
+            <Text>+[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]</Text>
+            <Style />
+          </Value>
+          <WarningType />
+          <BackgroundType />
+        </InfoElement>
+      </InfoElement>
+      <InfoElement>
+        <ElementType>8</ElementType>
+        <ChildCount>2</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>2</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Icon>
+            <IconGUID>19625</IconGUID>
+            <Style />
+          </Icon>
+          <Text>
+            <TextGUID>19625</TextGUID>
+            <Style />
+          </Text>
+          <Value>
+            <Text>[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]</Text>
+            <Style />
+          </Value>
+          <WarningType />
+          <BackgroundType />
+        </InfoElement>
+      </InfoElement>
+      <InfoElement>
+        <ElementType>5</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Text>
+          <TextGUID>21584</TextGUID>
+          <Style />
+        </Text>
+        <BackgroundType />
+      </InfoElement>
+    </InfoElement>
+  </ModOp>
+  <ModOp Type="remove" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[InfoElement/Value/Text='[ItemAssetData([RefGuid]) SpecialUnitHappinessThresholdUpgrade]']"></ModOp>
+
+
+  <!-- GUID 454144439 -->
+   <!-- SpecialUnitHappinessThresholdUpgrade related to 23245 -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[InfoElement/Value/Text='[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>2</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>1</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>8</ElementType>
+        <ChildCount>2</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>5</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Icon>
+            <IconGUID>19625</IconGUID>
+            <Style />
+          </Icon>
+          <Text>
+            <TextGUID>19625</TextGUID>
+            <Style />
+          </Text>
+          <Value>
+            <Text>+[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]</Text>
+            <Style />
+          </Value>
+          <WarningType />
+          <BackgroundType />
+        </InfoElement>
+      </InfoElement>
+      <InfoElement>
+        <ElementType>8</ElementType>
+        <ChildCount>2</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>2</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <Condition>[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Icon>
+            <IconGUID>19625</IconGUID>
+            <Style />
+          </Icon>
+          <Text>
+            <TextGUID>19625</TextGUID>
+            <Style />
+          </Text>
+          <Value>
+            <Text>[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]</Text>
+            <Style />
+          </Value>
+          <WarningType />
+          <BackgroundType />
+        </InfoElement>
+      </InfoElement>
+      <InfoElement>
+        <ElementType>5</ElementType>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <Text>
+          <TextGUID>23245</TextGUID>
+          <Style />
+        </Text>
+        <BackgroundType />
+      </InfoElement>
+    </InfoElement>
+  </ModOp>
+  <ModOp Type="remove" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[InfoElement/Value/Text='[ItemAssetData({ItemGuid}) SpecialUnitHappinessThresholdUpgrade]']"></ModOp>
+
   
 </ModOps>

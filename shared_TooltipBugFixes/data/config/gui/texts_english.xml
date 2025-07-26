@@ -76,7 +76,83 @@
     </Text>
   </ModOp>
 
-
+  
+  <!-- ########################################################################### -->
+  
+  <!-- Includes: -->
+  <!-- AreaTolerance -->
+  <!-- SpecialistSpawnProbabilityIfPercent -->
+  <!-- ResolverUnitDecreaseRateInPercent (except 21528 because its hardcoded, means not in infotips, so we can not ad condition) -->
+  <!-- SpecialUnitHappinessThresholdUpgrade -->
+  
+  <!-- removing the "+" in front of many tooltips. Adding it instead in infotip if the value is positive -->
+  <!-- AreaTolerance -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21610']/Text">
+    <Text>[ItemAssetData([RefGuid]) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21611']/Text">
+    <Text>[ItemAssetData([ToolOneHelper ItemActiveBuff([RefGuid])]) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23246']/Text">
+    <Text>[ItemAssetData({ItemGuid}) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21521']/Text">
+    <!-- original: Reduces the number of trees needed to reach optimal productivity. -->
+    <Text>Alters the number of trees needed to reach optimal productivity.</Text>
+  </ModOp>
+  
+  <!-- SpecialistSpawnProbabilityIfPercent -->
+  <!-- festival infotip 501213 -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21463']/Text">
+    <Text>[ItemAssetData([AreaManager AreaFestival BuffGuids AT(1) GUID]) SpecialistSpawnProbabilityIfPercent] %</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='8883']/Text">
+    <Text>[ItemAssetData([AreaManager AreaFestival BuffGuids AT(0) GUID]) SpecialistSpawnProbabilityIfPercent] %</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21461']/Text">
+    <!-- original: Increases the chance of specialists visiting your island. -->
+    <Text>Alters the chance of specialists visiting your island.</Text>
+  </ModOp>
+  <!-- buff infotip 454144439 -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23251']/Text">
+    <Text>[ItemAssetData({ItemGuid}) SpecialistSpawnProbabilityIfPercent] %</Text>
+  </ModOp>
+  <!-- influencebuff infotip 501687 -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21464']/Text">
+    <Text>[ItemAssetData([RefGuid]) SpecialistSpawnProbabilityIfPercent] %</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21392']/Text">
+    <!-- original: Increases the chance of specialists visiting your island. -->
+    <Text>Alters the chance of specialists visiting your island.</Text>
+  </ModOp>
+  
+  
+  <!-- ResolverUnitDecreaseRateInPercent -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21510']/Text">
+    <Text>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent] %</Text>
+  </ModOp>
+  <!-- Problem: some texts, like 21528, are never mentioned in infotips files. So their usage is hardcoded somewhere -->
+   <!-- and we can not add conditions ><0 there... so removing the + may be misleading... -->
+  <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21528']/Text"> -->
+    <!-- <Text>[ItemAssetData([ToolOneHelper ItemActiveBuff([RefGuid])]) ResolverUnitDecreaseRateInPercent] %</Text> -->
+  <!-- </ModOp> -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23243']/Text">
+    <Text>[ItemAssetData({ItemGuid}) ResolverUnitDecreaseRateInPercent] %</Text>
+  </ModOp>
+  
+  <!-- IncidentResolverUnitsForTargetBuildings  SpecialUnitHappinessThresholdUpgrade -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21584']/Text">
+    <!-- original: Reduces the happiness required to call the [AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings([RefGuid], 1) AT(0)]) Text]. -->
+    <Text>Alters the happiness required to call the [AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings([RefGuid], 1) AT(0)]) Text].</Text>
+  </ModOp>
+  <!-- 21593 also not mentioned in infotiips file, but text change can not be mislaeding -->
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21593']/Text">
+    <!-- original: Reduces the happiness necessary for the [AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings([ToolOneHelper ItemActiveBuff([RefGuid])], 1) AT(0)]) Text] to respond to calls. -->
+    <Text>Alters the happiness necessary for the [AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings([ToolOneHelper ItemActiveBuff([RefGuid])], 1) AT(0)]) Text] to respond to calls.</Text>
+  </ModOp>
+  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23245']/Text">
+    <!-- original: Reduces the happiness required to call the [AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings({ItemGuid}, 1) AT(0)]) Text]. -->
+    <Text>Alters the happiness required to call the [AssetData([ToolOneHelper IncidentResolverUnitsForTargetBuildings({ItemGuid}, 1) AT(0)]) Text].</Text>
+  </ModOp>
     
 </ModOps>
-

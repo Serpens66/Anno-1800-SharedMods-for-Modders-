@@ -19,3 +19,7 @@
 - Generalize the Debuff Tooltip for Hotspot in regards to Tourists
 1.036:
 - Now also the Fire Incident on Ships does show the remaining duration (like illness does)
+1.037:
+- removing the hardcoded "+" in front of buff texts in text_.xml. using sth like <Text>+[AssetData(23246) Text]</Text> in infotip in case the value is positive
+  and keeping <TextGUID>23246</TextGUID> if it is negative (- is added by the game automatically for negative values)
+  Includes:  AreaTolerance  SpecialistSpawnProbabilityIfPercent  ResolverUnitDecreaseRateInPercent (except 21528 because its hardcoded, means not in infotips, so we can not ad condition)  SpecialUnitHappinessThresholdUpgrade
