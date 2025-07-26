@@ -1,0 +1,19 @@
+{
+  "Version": "1.0",
+  "ModID": "sub_WorkingCondFixr",
+  "IncompatibleIds": null,
+  "ModDependencies": [],
+  "LoadAfterIds": [],
+  "Category": {
+    "English": "Submod"
+  },
+  "ModName": {
+    "English": "Submod WorkingCondFix"
+  },
+  "Description": {
+    "English": "Adds new PlayerCounterContextPools for usage in PlayerCounter WorkingConditions to make it work with mod population (WorkingConditions checking vanilla workers does not work anymore after a mod added a new population which also uses worker workforce. this mod fixes this if all mod authors add these kind of new population to the pools)."
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

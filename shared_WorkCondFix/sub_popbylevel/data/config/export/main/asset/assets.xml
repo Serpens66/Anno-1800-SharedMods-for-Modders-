@@ -1,0 +1,68 @@
+<ModOps>
+  
+  <!-- Loads after all mods -->
+  <!-- Replace all PayerCounter WorkingConditions with the new Pools from the shared mod Pools and Definitions -->
+   <!-- found within pcounter-pools.include.xml -->
+   
+   <!-- (PopulationByLevel does CRASHES the game when using Pool for it! so dont use it there...) -->
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000000']/Context" AllowNoMatch="1">
+      <Context>1500005626</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000001']/Context" AllowNoMatch="1">
+      <Context>1500005627</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000002']/Context" AllowNoMatch="1">
+      <Context>1500005628</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000003']/Context" AllowNoMatch="1">
+      <Context>1500005629</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000004']/Context" AllowNoMatch="1">
+      <Context>1500005630</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='118745']/Context" AllowNoMatch="1">
+      <Context>1500005638</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000005']/Context" AllowNoMatch="1">
+      <Context>1500005631</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='15000006']/Context" AllowNoMatch="1">
+      <Context>1500005632</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='5403']/Context" AllowNoMatch="1">
+      <Context>1500005633</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='112642']/Context" AllowNoMatch="1">
+      <Context>1500005634</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='112643']/Context" AllowNoMatch="1">
+      <Context>1500005635</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='114329']/Context" AllowNoMatch="1">
+      <Context>1500005636</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='114330']/Context" AllowNoMatch="1">
+      <Context>1500005637</Context>
+  </ModOp>
+   
+   <ModOp Type="replace" Path="//ConditionPlayerCounter[PlayerCounter='WorkingConditions' and Context='601379']/Context" AllowNoMatch="1">
+      <Context>1500005639</Context>
+  </ModOp>
+   
+   
+
+  
+</ModOps>

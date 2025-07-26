@@ -1,0 +1,19 @@
+{
+  "Version": "1.0",
+  "ModID": "sub_WorkingCondFixLoadAfter",
+  "IncompatibleIds": null,
+  "ModDependencies": [],
+  "LoadAfterIds": ["*","NewHorizons","new_horizons_languages","shared-pools-and-definitions"],
+  "Category": {
+    "English": "Submod"
+  },
+  "ModName": {
+    "English": "Submod WorkingCondFix (should load last)"
+  },
+  "Description": {
+    "English": "Replaces all ConditionPlayerCounter WorkingConditions from vanilla and mods with the new PlayerCounterContextPools. So should load after all mods, at least those who are using these conditions."
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

@@ -1,0 +1,365 @@
+<ModOps>
+  
+  
+  <!-- reserving Serp GUIDs 1500005626 to including 1500005649 -->
+   <!-- currently used up to including 1500005639 -->
+  
+  <!-- ################## -->
+  
+  <!-- Usage for PlayerCounter WorkingConditions -->
+  
+  <!-- Add your Mod Population (PopulationLevel7) to the following Pools, depending on the Workforce they provide (PopulationOutputs) -->
+    <!-- If your population does not provide any workforce, add it to a Pool you think it fits best for Unlocking purpose. -->
+    <!-- If your population is unique (should have its own unique unlocks or new workforces) then dont add it or create a new Pool for it in your mod. -->
+     <!-- (if you want to share your new Population, consider making it a shared mod) -->
+  
+  
+  <!-- Use these Population Pools for PlayerCounter WorkingConditions (yes it uses population not workforce...) -->
+    <!-- DO NOT use it for PopulationByLevel, because this seriously does not support Pools, it crashes the game... -->
+   <!-- A included submod which loads after most mods will also replace all PlayerCounter WorkingConditions of vanilla and mods already loaded -->
+  
+  <!-- Info: PlayerCounter Conditions checking for Pools are summing up the amounts of all included assets. -->
+  
+  <!-- ################################# -->
+  
+  <!-- Important to understand: -->
+  
+  <!-- My testing results in regards to WorkingConditions: -->
+
+  <!-- One can use the console to test the return value of PlayerCounter, I set it ingame to -50 while Noblesse Oblige is enabled and both vanilla and NO Population are built (ProfileCounter does not work with Pools): -->
+  <!-- ts.Participants.GetParticipant(Participant_ID).ProfileCounter.Stats.GetCounter(counterValueType,playerCounter,context,counterScope,scopeContext) -->
+
+  <!-- NO original: -->
+  <!-- vanilla workers population: ts.Participants.GetParticipant(0).ProfileCounter.Stats.GetCounter(0,29,15000001,3) -> -0 -->
+  <!-- NO rural workers population original: ts.Participants.GetParticipant(0).ProfileCounter.Stats.GetCounter(0,29,1999005304,3) -> 50 -->
+
+  <!-- NO with changed GUID of rural worker population to 14845645: -->
+  <!-- vanilla workers population: ts.Participants.GetParticipant(0).ProfileCounter.Stats.GetCounter(0,29,15000001,3) -> -50 -->
+  <!-- NO rural workers population with GUID 14845645: ts.Participants.GetParticipant(0).ProfileCounter.Stats.GetCounter(0,29,14845645,3) -> 0 -->
+
+  <!-- This test shows: -->
+  <!-- The Population with the highest GUID which has this Workforce as PopulationOutputs will be used. (its also the one used in the "WorkforceHeader") -->
+  <!-- (which means mods should add populations with lower GUID than vanilla) -->
+
+  <!-- Savegames remember the GUID where they assigned the WorkingCondition to. So when changing this behaviour (by adjusting the GUID) the old values can still be fetched, but not changed anymore. -->
+
+  <!-- Other important result: -->
+  <!-- While the check for "15000001" (vanilla workers population) works, it returns 0 if you do not own any of 15000001. So if all your workers-workforce comes from NO, you can change the workingconditions however you want, it wont help for the Quests checking for 15000001 (vanilla and NH Quests) -->
+  
+  <!-- "Fix": -->
+  <!-- Using PlayerCounterContextPool does not fix it completely... it is still the Population with highest GUID that is counted in PlayerCounter.  -->
+   <!-- The Usage of a Pool only makes sure that the Quest (or whatever is using this WorkingCondition) can be completed in all cases.  -->
+   <!-- But it still requires you to own rural workers on all relevant islands, since only the WorkingConditions of them are relevant. -->
+  
+  
+  
+  
+  
+  <!-- ################### -->
+  
+  <ModOp Type="addNextSibling" GUID="700002">
+    
+    <!-- Old World (Moderate) -->
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005626</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010052</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_farmer.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000000</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000000</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005627</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010115</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_worker.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000001</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000001</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005628</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010116</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_artisan.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000002</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000002</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005629</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010117</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_engineer.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000003</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000003</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005630</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010128</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_investor.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000004</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000004</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <!-- Tourists -->
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005639</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 132723</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_tourist.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>601379</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>601379</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <!-- Scholar -->
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005638</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 124478</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_scholars.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>118745</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>118745</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <!-- New world (Colony01) -->
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005631</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010366</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_jornalero.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000005</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000005</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005632</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 1010367</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_obrera.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>15000006</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>15000006</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005633</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 5406</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_artista.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>5403</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>5403</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <!-- Arctic -->
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005634</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 112653</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_colony03_tier01.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>112642</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>112642</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005635</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 112654</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_colony03_tier02.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>112643</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>112643</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <!-- Enbesa (Africa) -->
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005636</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 114340</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_sheperd.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>114329</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>114329</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    <Asset>
+      <Template>PlayerCounterContextPool</Template>
+      <Values>
+        <Standard>
+          <GUID>1500005637</GUID>
+          <Name>All PopulationLevel7 with PopulationOutputs Workforce 114341</Name>
+          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_elder.png</IconFilename>
+        </Standard>
+        <Text>
+          <TextOverride>114330</TextOverride>
+        </Text>
+        <PlayerCounterContextPool>
+          <Contexts>
+            <Item>
+              <Asset>114330</Asset>
+            </Item>
+          </Contexts>
+        </PlayerCounterContextPool>
+      </Values>
+    </Asset>
+    
+    
+  </ModOp>
+  
+</ModOps>
