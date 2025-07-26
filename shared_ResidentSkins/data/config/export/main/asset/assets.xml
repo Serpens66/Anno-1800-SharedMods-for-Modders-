@@ -1,6 +1,8 @@
 <ModOps>
     
   <!-- Serp GUIDs 1500001844 bis 1500001855 belegt,  reserviert bis einschl 1500001860 für mod residences skins -->
+  
+  <!-- thanks mensmaximus for creating icons for some buildings which do not have one in vanilla  -->
 
   <ModOp Type="AddNextSibling" GUID='698'>
     <Asset>
@@ -201,7 +203,8 @@
         <Standard>
           <GUID>1500001849</GUID>
           <Name>Skin colony01_tier02</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_obrera.png</IconFilename>
+          <!-- <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_obrera.png</IconFilename> -->
+          <IconFilename>daata/modgraphics/icons/sa_tier_02.png</IconFilename>
         </Standard>
         <Skin>
           <SkinName>101255</SkinName>
@@ -231,7 +234,8 @@
         <Standard>
           <GUID>1500001850</GUID>
           <Name>Skin residence_colony01_tier03</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_artista.png</IconFilename>
+          <!-- <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_artista.png</IconFilename> -->
+          <IconFilename>daata/modgraphics/icons/sa_tier_03.png</IconFilename>
         </Standard>
         <Skin>
           <SkinName>5405</SkinName>
@@ -258,7 +262,8 @@
         <Standard>
           <GUID>1500001851</GUID>
           <Name>Skin residence_arctic_tier01</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_colony03_tier01.png</IconFilename>
+          <!-- <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_colony03_tier01.png</IconFilename> -->
+          <IconFilename>daata/modgraphics/icons/arctic_tier_01.png</IconFilename>
         </Standard>
         <Skin>
           <SkinName>112091</SkinName>
@@ -291,7 +296,8 @@
         <Standard>
           <GUID>1500001852</GUID>
           <Name>Skin residence_arctic_tier02</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_colony03_tier02.png</IconFilename>
+          <!-- <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_colony03_tier02.png</IconFilename> -->
+          <IconFilename>daata/modgraphics/icons/arctic_tier_02.png</IconFilename>
         </Standard>
         <Skin>
           <SkinName>112652</SkinName>
@@ -318,7 +324,8 @@
         <Standard>
           <GUID>1500001853</GUID>
           <Name>Skin residence_colony02_tier01</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_sheperd.png</IconFilename>
+          <!-- <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_sheperd.png</IconFilename> -->
+          <IconFilename>daata/modgraphics/icons/africa_tier_01.png</IconFilename>
         </Standard>
         <Skin>
           <SkinName>114436</SkinName>
@@ -345,7 +352,8 @@
         <Standard>
           <GUID>1500001854</GUID>
           <Name>Skin residence_colony02_tier02</Name>
-          <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_elder.png</IconFilename>
+          <!-- <IconFilename>data/ui/2kimages/main/3dicons/resident/icon_resident_elder.png</IconFilename> -->
+          <IconFilename>daata/modgraphics/icons/africa_tier_02.png</IconFilename>
         </Standard>
         <Skin>
           <SkinName>114437</SkinName>
