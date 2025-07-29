@@ -482,7 +482,7 @@ local function argstotext(sep,...)
   local ret = ""
   local sep = sep or " , "
   local args = {...}
-  for _,arg in ipairs(args) do
+  for _,arg in pairs(args) do -- pairs instead of ipairs to also allow a value of nil
     ret = ret..tostring(arg)..tostring(sep)
   end
   return ret
