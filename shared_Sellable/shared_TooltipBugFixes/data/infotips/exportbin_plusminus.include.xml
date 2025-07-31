@@ -21,6 +21,8 @@
   <!-- ############################################################################################# -->
   
   <!-- AreaTolerance -->
+  
+  <!-- Vanilla does show "+ Walddichte" for negative values! (&gt;&gt; sellShipPrice in 23246 inverts the value) -->
 
   <!-- GUID 454144439 is responsible for displaying buffs -->
   <!-- uses {ItemGuid} -->
@@ -87,7 +89,7 @@
             <Style />
           </Text>
           <Value>
-            <Text>+[AssetData(23246) Text]</Text>
+            <TextGUID>23246</TextGUID>
             <Style />
           </Value>
           <WarningType />
@@ -134,7 +136,7 @@
             <Style />
           </Text>
           <Value>
-            <TextGUID>23246</TextGUID>
+            <Text>+[AssetData(23246) Text]</Text>
             <Style />
           </Value>
           <WarningType />
@@ -226,7 +228,7 @@
             <Style />
           </Text>
           <Value>
-            <Text>+[AssetData(21610) Text]</Text>
+            <TextGUID>21610</TextGUID>
             <Style />
           </Value>
           <WarningType />
@@ -273,7 +275,7 @@
             <Style />
           </Text>
           <Value>
-            <TextGUID>21610</TextGUID>
+            <Text>+[AssetData(21610) Text]</Text>
             <Style />
           </Value>
           <WarningType />
@@ -591,6 +593,7 @@
   <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[Value/TextGUID='21510']">
     <InfoElement>
       <ElementType>8</ElementType>
+      <ChildCount>2</ChildCount>
       <VisibilityElement>
         <ElementType>
           <ElementType>2</ElementType>
@@ -690,6 +693,7 @@
   <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement/InfoElement[Value/TextGUID='23243']">
     <InfoElement>
       <ElementType>8</ElementType>
+      <ChildCount>1</ChildCount>
       <VisibilityElement>
         <ElementType>
           <ElementType>2</ElementType>
