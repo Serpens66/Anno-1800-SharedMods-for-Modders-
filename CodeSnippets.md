@@ -861,7 +861,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
           </TriggerActions>
         </Trigger>
         <TriggerSetup>
-          <AutoRegisterTrigger>0</AutoRegisterTrigger>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
           <UsedBySecondParties>0</UsedBySecondParties>
         </TriggerSetup>
       </Values>
