@@ -10,6 +10,11 @@
   <!-- and keeping <TextGUID>23246</TextGUID> if it is negative (- is added by the game automatically for negative values) -->
   
   
+  <!-- Important Info: -->
+   <!-- <Text>+[AssetData(21610) Text]</Text> does not forward the variable ItemGuid, while TextGUID=21610 does -->
+    <!-- so I should not use it. Either add a new Text GUID for the "+" variant of the text or copy paste the final text into this infotip file -->
+  
+  
   <!-- I dont want to mess with palace/decree stuff, since I dont know it well enough, so buffs from this wont be changed for now -->
 
   <!-- Includes: -->
@@ -89,7 +94,7 @@
             <Style />
           </Text>
           <Value>
-            <TextGUID>23246</TextGUID>
+            <Text>[ItemAssetData({ItemGuid}) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
             <Style />
           </Value>
           <WarningType />
@@ -136,7 +141,7 @@
             <Style />
           </Text>
           <Value>
-            <Text>+[AssetData(23246) Text]</Text>
+            <TextGUID>23246</TextGUID>
             <Style />
           </Value>
           <WarningType />
@@ -228,7 +233,7 @@
             <Style />
           </Text>
           <Value>
-            <TextGUID>21610</TextGUID>
+            <Text>[ItemAssetData([RefGuid]) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
             <Style />
           </Value>
           <WarningType />
@@ -275,7 +280,7 @@
             <Style />
           </Text>
           <Value>
-            <Text>+[AssetData(21610) Text]</Text>
+            <TextGUID>21610</TextGUID>
             <Style />
           </Value>
           <WarningType />
@@ -309,11 +314,8 @@
   <!-- there are 7 occurances of SpecialistSpawnProbabilityIfPercent in infotips, all checking for bigger than 0 -->
    <!-- GUID 501213 is responsible for displaying festival buffs -->
    <!-- SpecialistSpawnProbabilityIfPercent already checks for "bigger 0" and does not display anything, if smaller than 0 -->
-    <!-- so we only have to add the + and our "smaller than 0" element -->
-  <ModOp Type="replace" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='21463']">
-    <Text>+[AssetData(21463) Text]</Text>
-  </ModOp>
-  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(21463) Text]']">
+    <!-- so we only have to add our "smaller than 0" element -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/TextGUID='21463']">
     <InfoElement>
       <ElementType>8</ElementType>
       <ChildCount>2</ChildCount>
@@ -354,7 +356,7 @@
           <Style />
         </Text>
         <Value>
-          <TextGUID>21463</TextGUID>
+          <Text>[ItemAssetData([AreaManager AreaFestival BuffGuids AT(1) GUID]) SpecialistSpawnProbabilityIfPercent] %</Text>
           <Style />
         </Value>
         <WarningType />
@@ -376,11 +378,9 @@
       </InfoElement>
     </InfoElement>
   </ModOp>
+  
   <!-- 8883 same structure like for 21463 -->
-  <ModOp Type="replace" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='8883']">
-    <Text>+[AssetData(8883) Text]</Text>
-  </ModOp>
-  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(8883) Text]']">
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501213']/InfoElement/InfoElement[InfoElement/Value/TextGUID='8883']">
     <InfoElement>
       <ElementType>8</ElementType>
       <ChildCount>2</ChildCount>
@@ -421,7 +421,7 @@
           <Style />
         </Text>
         <Value>
-          <TextGUID>8883</TextGUID>
+          <Text>[ItemAssetData([AreaManager AreaFestival BuffGuids AT(0) GUID]) SpecialistSpawnProbabilityIfPercent] %</Text>
           <Style />
         </Value>
         <WarningType />
@@ -446,10 +446,7 @@
   
   <!-- Buff 454144439 -->
   <!-- 23251 same structure like for 21463 -->
-  <ModOp Type="replace" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='23251']">
-    <Text>+[AssetData(23251) Text]</Text>
-  </ModOp>
-  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(23251) Text]']">
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='454144439']/InfoElement/InfoElement[InfoElement/Value/TextGUID='23251']">
     <InfoElement>
       <ElementType>8</ElementType>
       <ChildCount>2</ChildCount>
@@ -489,7 +486,7 @@
           <Style />
         </Text>
         <Value>
-          <TextGUID>23251</TextGUID>
+          <Text>[ItemAssetData({ItemGuid}) SpecialistSpawnProbabilityIfPercent] %</Text>
           <Style />
         </Value>
         <WarningType />
@@ -515,10 +512,7 @@
 
   <!-- influence buff 501687 -->
   <!-- 21464 same structure like for 21463 -->
-  <ModOp Type="replace" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement/InfoElement/Value/TextGUID[text()='21464']">
-    <Text>+[AssetData(21464) Text]</Text>
-  </ModOp>
-  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[InfoElement/Value/Text='+[AssetData(21464) Text]']">
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501687']/InfoElement/InfoElement[InfoElement/Value/TextGUID='21464']">
     <InfoElement>
       <ElementType>8</ElementType>
       <ChildCount>2</ChildCount>
@@ -558,7 +552,7 @@
           <Style />
         </Text>
         <Value>
-          <TextGUID>21464</TextGUID>
+          <Text>[ItemAssetData([RefGuid]) SpecialistSpawnProbabilityIfPercent] %</Text>
           <Style />
         </Value>
         <WarningType />
@@ -643,7 +637,7 @@
           <Style />
         </Text>
         <Value>
-          <Text>+[AssetData(21510) Text]</Text>
+          <TextGUID>21510</TextGUID>
           <Style />
         </Value>
         <WarningType />
@@ -679,7 +673,7 @@
           <Style />
         </Text>
         <Value>
-          <TextGUID>21510</TextGUID>
+          <Text>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent] %</Text>
           <Style />
         </Value>
         <WarningType />
@@ -743,7 +737,7 @@
           <Style />
         </Text>
         <Value>
-          <Text>+[AssetData(23243) Text]</Text>
+          <TextGUID>23243</TextGUID>
           <Style />
         </Value>
         <WarningType />
@@ -779,7 +773,7 @@
           <Style />
         </Text>
         <Value>
-          <TextGUID>23243</TextGUID>
+          <Text>[ItemAssetData({ItemGuid}) ResolverUnitDecreaseRateInPercent] %</Text>
           <Style />
         </Value>
         <WarningType />

@@ -88,23 +88,8 @@
   <!-- ResolverUnitDecreaseRateInPercent (except 21528 because its hardcoded, means not in infotips, so we can not ad condition) -->
   <!-- SpecialUnitHappinessThresholdUpgrade -->
   
-  <!-- We have to use [RefGuid] instead of {ItemGuid} if we use <Text>+[AssetData(23246) Text]</Text> within infotip code (what we do), instead of TextGUID=23246 -->
-    <!-- while [RefGuid] seems to work in both cases -->
-  <!-- sellShipPrice multiplies the value with -1, since AreaTolerance (NeededAreaPercentUpgrade) has negative values but shows "+" -->
-  
-  <!-- removing the "+" in front of many tooltips. Adding it instead in infotip if the value is positive -->
+  <!-- More neutral Text to allow positive and negative values for the buffs -->
   <!-- AreaTolerance -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21610']/Text">
-    <Text>[ItemAssetData([RefGuid]) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
-  </ModOp>
-  <!-- 21611 not mentioned in infotips, so dont change it, since it can be misleading otherwise -->
-  <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21611']/Text"> -->
-    <!-- <Text>[ItemAssetData([ToolOneHelper ItemActiveBuff([RefGuid])]) AreaTolerance &gt;&gt; sellShipPrice] %</Text> -->
-  <!-- </ModOp> -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23246']/Text">
-    <!-- <Text>[ItemAssetData({ItemGuid}) AreaTolerance &gt;&gt; sellShipPrice] %</Text> -->
-    <Text>[ItemAssetData([RefGuid]) AreaTolerance &gt;&gt; sellShipPrice] %</Text>
-  </ModOp>
   <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21521']/Text"> -->
     <!-- original: Reduces the number of trees needed to reach optimal productivity. -->
     <!-- <Text>Alters the number of trees needed to reach optimal productivity.</Text> -->
@@ -112,25 +97,11 @@
   
   <!-- SpecialistSpawnProbabilityIfPercent -->
   <!-- festival infotip 501213 -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21463']/Text">
-    <Text>[ItemAssetData([AreaManager AreaFestival BuffGuids AT(1) GUID]) SpecialistSpawnProbabilityIfPercent] %</Text>
-  </ModOp>
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='8883']/Text">
-    <Text>[ItemAssetData([AreaManager AreaFestival BuffGuids AT(0) GUID]) SpecialistSpawnProbabilityIfPercent] %</Text>
-  </ModOp>
   <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21461']/Text"> -->
     <!-- original: Increases the chance of specialists visiting your island. -->
     <!-- <Text>Alters the chance of specialists visiting your island.</Text> -->
   <!-- </ModOp> -->
   <!-- buff infotip 454144439 -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23251']/Text">
-    <!-- <Text>[ItemAssetData({ItemGuid}) SpecialistSpawnProbabilityIfPercent] %</Text> -->
-    <Text>[ItemAssetData([RefGuid]) SpecialistSpawnProbabilityIfPercent] %</Text>
-  </ModOp>
-  <!-- influencebuff infotip 501687 -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21464']/Text">
-    <Text>[ItemAssetData([RefGuid]) SpecialistSpawnProbabilityIfPercent] %</Text>
-  </ModOp>
   <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21392']/Text"> -->
     <!-- original: Increases the chance of specialists visiting your island. -->
     <!-- <Text>Alters the chance of specialists visiting your island.</Text> -->
@@ -139,21 +110,6 @@
     <!-- original: Increased Visits -->
     <!-- <Text>Altered Visits</Text> -->
   <!-- </ModOp> -->
-  
-  
-  <!-- ResolverUnitDecreaseRateInPercent -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21510']/Text">
-    <Text>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent] %</Text>
-  </ModOp>
-  <!-- Problem: some texts, like 21528, are never mentioned in infotips files. So their usage is hardcoded somewhere -->
-   <!-- and we can not add conditions ><0 there... so removing the + may be misleading... -->
-  <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21528']/Text"> -->
-    <!-- <Text>[ItemAssetData([ToolOneHelper ItemActiveBuff([RefGuid])]) ResolverUnitDecreaseRateInPercent] %</Text> -->
-  <!-- </ModOp> -->
-  <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='23243']/Text">
-    <!-- <Text>[ItemAssetData({ItemGuid}) ResolverUnitDecreaseRateInPercent] %</Text> -->
-    <Text>[ItemAssetData([RefGuid]) ResolverUnitDecreaseRateInPercent] %</Text>
-  </ModOp>
   
   <!-- IncidentResolverUnitsForTargetBuildings  SpecialUnitHappinessThresholdUpgrade -->
   <!-- <ModOp Type="replace" Path="/TextExport/Texts/Text[GUID='21584']/Text"> -->
