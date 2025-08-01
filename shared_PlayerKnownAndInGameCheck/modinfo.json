@@ -2,7 +2,7 @@
   "Version": "1.02",
   "ModID": "shared_PlayerKnownAndInGameCheck_Serp",
   "IncompatibleIds": null,
-  "ModDependencies": null,
+  "ModDependencies": ["CopyPools_CP_KontorShips_Serp"],
   "LoadAfterIds": null,
   "DeprecateIds": [ "shared_PlayerInGameCheck_Serp" ],
   "Category": {
