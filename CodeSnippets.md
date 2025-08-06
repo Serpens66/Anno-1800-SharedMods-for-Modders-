@@ -731,7 +731,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
 
 ###  Limit a building to "once per Island" without UniqueType property
   <details>
-  <summary>(CLICK) CODE (new easier code)</summary>  
+  <summary>(CLICK) CODE (new easier code works with any amount!)</summary>  
   
   ```xml
   <ModOp Type="addNextSibling" GUID="130248">
