@@ -13,7 +13,6 @@
    <!-- display input output amounts from factories -->
   <!-- ############################################################################################## -->
   
-  <!-- evlt als shared mod machen, weils auch von mods benögtigt werden könnte, die mengen ändern -->
           
   <!-- BUGS mit den input/outputmengen: -->
    <!-- wenn man zb. einstellt man braucht input 2 A und 1 B um output 2 C herzustellen, -->
@@ -22,10 +21,6 @@
     <!-- deswegen ist es leider unwahrscheinlich, dass mods die inputmengen direkt ändern,  -->
      <!-- stattdessen nehmen sie wie kurila workarounds, dass das gebäude einen extra buff bekommt mit additiongoods jeden 2ten zyklus, -->
       <!-- damit effektiv nur halbe verbraucht wird, doch das können wir leider nicht anzeigen... -->
-  
-  
-  <!-- also available within my mod MoreInfoTooltips_Serp, so do nothing if that mod is also loaded -->
-  <Group Condition="!#MoreInfoTooltips_Serp">
     
     <ModOp Type="AddPrevSibling" Path="//InfoTipData[Guid='25000020']//InfoElement[VisibilityElement/VisibilityElement[Condition='[FactoryAssetData([RefGuid]) HasProduction]'] and InfoElement/InfoElement[Value/Text='[StaticData Factory CycleTimeRespectElectricity([RefGuid]) &gt;&gt; time]' and Text/Text='[FactoryAssetData([RefGuid]) Production AT(#index0#) Text]']]">
       
@@ -617,6 +612,5 @@
     
     
     
-  </Group>
   
 </ModOps>

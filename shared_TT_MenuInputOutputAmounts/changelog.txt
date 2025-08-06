@@ -1,0 +1,2 @@
+1.12:
+- improved compatibility to my WIP mod MoreInfoTooltips (by simply removing a Group Condition, no code changes)

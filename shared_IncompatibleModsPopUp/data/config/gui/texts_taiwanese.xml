@@ -4,11 +4,11 @@
   <ModOp Type="add" Path="/TextExport/Texts">
     <Text>
       <GUID>1500005500</GUID>
-      <Text>Incompatible Mods!</Text>
+      <Text>檢測到模組不兼容</Text>
     </Text>
     <Text>
       <GUID>1500005501</GUID>
-      <Text>Go back to main menu, decide for one of the mods each and load a &lt;b&gt;PREVIOUS&lt;/b&gt; savegame before both mods were active at once, if possible!&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log".</Text>
+      <Text>返回主選單，選擇留存的模組後重新載入存檔。建議加載上列模組同時啟用前最後儲存的存檔以降低物件缺失或存檔崩潰的風險。&lt;br/&gt;"\Documents\Anno 1800\log\mod-loader.log".</Text>
     </Text>    
   </ModOp>
   

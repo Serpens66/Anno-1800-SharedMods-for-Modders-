@@ -1,5 +1,5 @@
 {
-  "Version": "1.022",
+  "Version": "1.023",
   "ModID": "shared_IncompatibleModsPopUp",
   "IncompatibleIds": null,
   "ModDependencies": ["shared_EventOnGameLoaded_Serp"],
