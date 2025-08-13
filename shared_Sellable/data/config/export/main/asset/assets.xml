@@ -51,8 +51,9 @@
     </Item>
   </ModOp>
   <!-- buy ship (affordable is tested in our lua fn instead, assuming ActiveCallback can not handle 2 textembeds) -->
+   <!-- allow "not sellable" here, since eg. vanilla wants you to be able to buy the flagship from neutral traders -->
   <ModOp Type="merge" Condition="#shared_LuaTools_Light_Serp" Path="//Values/Notification/NotificationType/Values/CharacterNotification/ThirdpartyNotificationButtons/Item[Command='[NotificationContext Value(Ship) Object Sellable BuyNet([NotificationContext Value(PlayerIndex) Int])]']">
-    <Command>[Unlock RelockNet(1500005600)];[Participants Participant(121) Profile SetCompanyName(g_sellable_serp.t_SimpleBuySelected|1500005608|false|false|nil)];[Conditions RegisterTriggerForCurrentParticipant(1500005600)]</Command>
+    <Command>[Unlock RelockNet(1500005600)];[Participants Participant(121) Profile SetCompanyName(g_sellable_serp.t_SimpleBuySelected|1500005608|true|false|nil)];[Conditions RegisterTriggerForCurrentParticipant(1500005600)]</Command>
     <ActiveCallback>[Unlock IsUnlocked(1500005600)]</ActiveCallback>
   </ModOp>
   <!-- The mod TooltipBugFixes_Serp 1.031 adds to the "buy ship" button the infotip if you can not afford the ship -->

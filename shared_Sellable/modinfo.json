@@ -1,9 +1,17 @@
 {
-  "Version": "1.0",
+  "Version": "1.01",
   "ModID": "shared_Sellable_Serp",
   "IncompatibleIds": null,
-  "ModDependencies": ["shared_LuaTools_Light_Serp","TooltipBugFixes_Serp"],
-  "LoadAfterIds": ["*","NewHorizons","new_horizons_languages","shared_EventOnGameLoaded_Serp","shared_LuaTools_Medium_Serp"],
+  "ModDependencies": [
+    "shared_LuaTools_Light_Serp",
+    "TooltipBugFixes_Serp",
+    "shared_EventOnGameLoaded_Serp"
+  ],
+  "LoadAfterIds": ["*","NewHorizons",
+    "new_horizons_languages",
+    "shared_EventOnGameLoaded_Serp",
+    "shared_LuaTools_Medium_Serp"
+  ],
   "Category": {
     "English": "Shared",
     "German": "Shared"
