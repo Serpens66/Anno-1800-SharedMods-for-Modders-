@@ -709,6 +709,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
   <!-- - <DataSource>[AreaManager AreaObjects ObjectLists BuildingsWithGameLogicCount(YOURBUILDING_GUID)]</DataSource> requires IsAreaSpecific = 1 . -->
   <!-- - <DataSource>[Participants GetParticipant(0) ProfileCounter Stats GetCounter(0,0,YOURBUILDING_GUID,3)]</DataSource> seems not to work (should check for amount of buildings worldwide) -->
   <!-- - see scripting guide for more possibly working conditions: https://github.com/anno-mods/modding-guide/blob/main/Scripting/textembeds.md -->
+  <!-- - and of course usage of eg. AreaManager or so may be incompatible to multiplayer, where "the player" is on several islands at once  -->
   
 
   <TriggerCondition>
@@ -731,7 +732,7 @@ If you want one action out of multipe actions to happen, it gets complicated. It
 
 ###  Limit a building to "once per Island" without UniqueType property
   <details>
-  <summary>(CLICK) CODE (new easier code works with any amount!)</summary>  
+  <summary>(CLICK) CODE (new easier code works with any amount! BUT MULTIPLAYER INCOMPATIBLE)</summary>  
   
   ```xml
   <ModOp Type="addNextSibling" GUID="130248">
