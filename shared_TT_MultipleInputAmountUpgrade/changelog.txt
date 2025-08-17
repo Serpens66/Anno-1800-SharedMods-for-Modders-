@@ -1,0 +1,7 @@
+1.01:
+- adjusted text formating and added translations by Kurila
+1.02:
+- Adjustments from Lion053:
+- Change InputAmountUpgrade formation in items from a TextGUID entry to Text, Icon and Value entries to adapt to vanilla UI (icon first, then text, then the value right-aligned)
+- "Input Goods" text in locas is changed to "Input Goods:" (like vanilla "Extra Goods:")
+

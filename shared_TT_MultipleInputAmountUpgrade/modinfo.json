@@ -1,0 +1,22 @@
+{
+  "Version": "1.02",
+  "ModID": "TT_MultipleInputAmountUpgrade",
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "LoadAfterIds": null,
+  "Category": {
+    "English": "Shared",
+    "German": "Shared"
+  },
+  "ModName": {
+    "English": "Tooltips Support multiple InputAmountUpgrade (Serp)",
+    "German": "Tooltips unterstützen mehrere InputAmountUpgrade (Serp)"
+  },
+  "Description": {
+    "English": "Tooltips for Items/Buffs using multiple entries within InputAmountUpgrade are now properly and with amount displayed, also together with ReplaceInput.",
+    "German": "Tooltips für Items/Buffs die mehrere Eintröge bei InputAmountUpgrade nutzen, werden nun korrekt und mit Menge angezeigt, auch zusammen mit ReplaceInput"
+  },
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

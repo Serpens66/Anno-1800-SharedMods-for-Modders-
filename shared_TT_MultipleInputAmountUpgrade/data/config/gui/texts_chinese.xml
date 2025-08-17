@@ -1,0 +1,28 @@
+<ModOps>
+  <!-- 1500301992 reserved but not yet used -->
+
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <!-- InputAmountUpgrade title -->
+    <Text>
+      <GUID>1500301995</GUID>
+      <Text>输入货物:</Text>
+    </Text>
+    <!-- InputAmountUpgrade Text found in infotip code directly, since it needs no translation -->
+
+    <!-- ReplaceInput remains GUID 20081 -->
+    <!-- ReplaceInput not abstract -->
+    <Text>
+      <GUID>1500301993</GUID>
+      <Text>&lt;b&gt;[AssetData([ItemAssetData({ItemGuid}) ReplaceInputNewInput(#index0#)]) Text]&lt;/b&gt; &lt;img height='24' width='24' src="[ItemAssetData([ItemAssetData({ItemGuid}) ReplaceInputNewInput(#index0#)]) Icon]"/&gt;&lt;font overrideTextColor="true" color='#eadd99'&gt;&#xD;&#xA;代替&lt;/font&gt;&#xD;&#xA;&lt;b&gt;[AssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(#index0#)]) Text]&lt;/b&gt; &lt;img height='24' width='24' src="[ItemAssetData([ItemAssetData({ItemGuid}) ReplaceInputOldInput(#index0#)]) Icon]"/&gt;</Text>
+    </Text>
+    <!-- replace input abstract -->
+    <Text>
+      <GUID>1500301994</GUID>
+      <Text>&lt;b&gt;[AssetData([ItemAssetData({ItemGuid}) ReplaceInputNewInput(#index0#)]) Text]&lt;/b&gt; &lt;img height='24' width='24' src="[ItemAssetData([ItemAssetData({ItemGuid}) ReplaceInputNewInput(#index0#)]) Icon]"/&gt; 正在处理中。</Text>
+    </Text>
+
+  </ModOp>
+
+
+
+</ModOps>
