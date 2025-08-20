@@ -1,0 +1,228 @@
+<ModOps>
+    <!-- https://github.com/anno-mods/modding-guide/blob/main/documentation/infotips.md -->
+  
+  <!-- Add diplay of buffs when hovering over the unfinished ItemSet (the buffs from SetBuff) -->
+  
+  <!-- "501233 DiscoveredItemSetInfotip" vs "501301 CompletedItemSetInfotip" -->
+  <!-- When the ItemSet gets completed, the Object (ItemSet) you are hovering over gets replaced with the SetBuff -->
+   <!-- thats why 501301 can access the Buff, while 501233 can not -->
+  
+   <!-- See assets.xml for explanation why we use Costs and ItemOrBuffEffectTargets to display the Buffs from Itemsets -->
+  <ModOp Type="AddNextSibling" Path="//InfoTipData[Guid='501233']/InfoElement[SubText/TextGUID='15782']">
+    <InfoElement>
+      <ElementType>8</ElementType>
+      <ChildCount>1</ChildCount>
+      <VisibilityElement>
+        <ElementType>
+          <ElementType>2</ElementType>
+        </ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>1</ElementType>
+          </ElementType>
+          <CompareOperator>
+            <CompareOperator>1</CompareOperator>
+          </CompareOperator>
+          <ResultType>
+            <ResultType>1</ResultType>
+          </ResultType>
+          <Condition>[ToolOneHelper BuildCost([RefGuid]) Costs COUNT]</Condition>
+        </VisibilityElement>
+        <OperatorType />
+      </VisibilityElement>
+      <InfoElement>
+        <ElementType>8</ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <ChildCount>1</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>1</ElementType>
+            </ElementType>
+            <CompareOperator>
+              <CompareOperator>0</CompareOperator>
+            </CompareOperator>
+            <ResultType>
+              <ResultType>1</ResultType>
+            </ResultType>
+            <ExpectedValueInt>0</ExpectedValueInt>
+            <Condition>[ToolOneHelper ItemOrBuffEffectTargets([RefGuid]) COUNT]</Condition>
+          </VisibilityElement>
+          <OperatorType />
+        </VisibilityElement>
+        <!-- header with Buffscope if there are no different regions saved in ItemOrBuffEffectTargets -->
+        <InfoElement>
+          <ElementType>4</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Icon>
+            <IconText>[AssetData([RefGuid]) Icon]</IconText>
+            <Style />
+          </Icon>
+          <Text>
+            <TextGUID>1500006101</TextGUID>
+            <Style />
+          </Text>
+          <Value>
+            <!-- Buffscope is always in the very first Amount and the same for all buffs from this ItemSet -->
+            <Text>[AssetForValue(1500006101, [ToolOneHelper BuildCost([RefGuid]) Costs AT(0) Amount]) Text]</Text>
+            <Style />
+          </Value>
+          <BackgroundType />
+        </InfoElement>
+        <InfoElement>
+          <ElementType>6</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Text>
+            <Style />
+          </Text>
+        </InfoElement>
+      </InfoElement>
+      <!-- looping over all costs -->
+      <InfoElement>
+        <ElementType>7</ElementType>
+        <ChildCount>1</ChildCount>
+        <VisibilityElement>
+          <ElementType>
+            <ElementType>2</ElementType>
+          </ElementType>
+          <OperatorType />
+        </VisibilityElement>
+        <!-- header (either with region or just the Buffscope) -->
+        <InfoElement>
+          <ElementType>8</ElementType>
+          <ChildCount>2</ChildCount>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>1</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>1</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[ToolOneHelper ItemOrBuffEffectTargets([RefGuid]) COUNT]</Condition>
+            </VisibilityElement>
+            <OperatorType />
+          </VisibilityElement>
+          <InfoElement>
+            <ElementType>4</ElementType>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <Icon>
+              <IconText>[AssetData([ToolOneHelper ItemOrBuffEffectTargets([RefGuid]) AT(#index0#)]) Icon]</IconText>
+              <Style />
+            </Icon>
+            <Text>
+              <Text>[AssetData([ToolOneHelper ItemOrBuffEffectTargets([RefGuid]) AT(#index0#)]) Text]</Text>
+              <Style />
+            </Text>
+            <Value>
+              <!-- Buffscope is always in the very first Amount and the same for all buffs from this ItemSet -->
+              <Text>[AssetForValue(1500006101, [ToolOneHelper BuildCost([RefGuid]) Costs AT(0) Amount]) Text]</Text>
+              <Style />
+            </Value>
+            <BackgroundType />
+          </InfoElement>
+          <InfoElement>
+            <ElementType>6</ElementType>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>2</ElementType>
+              </ElementType>
+              <OperatorType />
+            </VisibilityElement>
+            <Text>
+              <Style />
+            </Text>
+          </InfoElement>
+        </InfoElement>
+        
+        <InfoElement>
+          <ElementType>19</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <ChildCount>1</ChildCount>
+            <VisibilityElement>
+              <ElementType>
+                <ElementType>1</ElementType>
+              </ElementType>
+              <CompareOperator>
+                <CompareOperator>1</CompareOperator>
+              </CompareOperator>
+              <ResultType>
+                <ResultType>1</ResultType>
+              </ResultType>
+              <Condition>[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) ProductGUID]</Condition>
+            </VisibilityElement>
+            <OperatorType />
+          </VisibilityElement>
+          <TemplateGUID>454144439</TemplateGUID>
+          <Variables>
+            <None>
+              <Name>ItemGuid</Name>
+              <Source>[ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) ProductGUID]</Source>
+            </None>
+          </Variables>
+        </InfoElement>
+        
+        <!-- EffectTargets -->
+        <InfoElement>
+          <ElementType>5</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Text>
+            <Text>[ItemAssetData([ToolOneHelper BuildCost([RefGuid]) Costs AT(#index0#) ProductGUID]) ItemOrBuffEffectTargetsFormatted]</Text>
+            <Style />
+          </Text>
+          <BackgroundType />
+        </InfoElement>
+        
+        <InfoElement>
+          <ElementType>6</ElementType>
+          <VisibilityElement>
+            <ElementType>
+              <ElementType>2</ElementType>
+            </ElementType>
+            <OperatorType />
+          </VisibilityElement>
+          <Text>
+            <Style />
+          </Text>
+        </InfoElement>
+        <Source>[ToolOneHelper BuildCost([RefGuid]) Costs COUNT]</Source>
+      </InfoElement>
+    </InfoElement>
+  
+  </ModOp>
+
+</ModOps>

@@ -1,0 +1,26 @@
+<ModOps>
+
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <Text>
+      <GUID>1500006101</GUID>
+      <Text>지역 독립적</Text>
+    </Text>
+    <Text>
+      <GUID>1500006102</GUID>
+      <Text>현지의</Text>
+    </Text>
+    <Text>
+      <GUID>1500006103</GUID>
+      <Text>반지름</Text>
+    </Text>
+    <Text>
+      <GUID>1500006104</GUID>
+      <Text>섬</Text>
+    </Text>
+    <Text>
+      <GUID>1500006105</GUID>
+      <Text>세션</Text>
+    </Text>
+  </ModOp>
+  
+</ModOps>

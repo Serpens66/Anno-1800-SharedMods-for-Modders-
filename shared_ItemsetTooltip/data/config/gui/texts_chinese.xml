@@ -1,0 +1,26 @@
+<ModOps>
+
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <Text>
+      <GUID>1500006101</GUID>
+      <Text>区域无关</Text>
+    </Text>
+    <Text>
+      <GUID>1500006102</GUID>
+      <Text>当地的</Text>
+    </Text>
+    <Text>
+      <GUID>1500006103</GUID>
+      <Text>半径</Text>
+    </Text>
+    <Text>
+      <GUID>1500006104</GUID>
+      <Text>岛</Text>
+    </Text>
+    <Text>
+      <GUID>1500006105</GUID>
+      <Text>会议</Text>
+    </Text>
+  </ModOp>
+  
+</ModOps>

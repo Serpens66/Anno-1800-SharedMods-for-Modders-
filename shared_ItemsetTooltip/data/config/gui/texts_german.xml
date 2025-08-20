@@ -1,0 +1,26 @@
+<ModOps>
+
+  <ModOp Type="add" Path="/TextExport/Texts">
+    <Text>
+      <GUID>1500006101</GUID>
+      <Text>Regionsunabhängig</Text>
+    </Text>
+    <Text>
+      <GUID>1500006102</GUID>
+      <Text>Lokal</Text>
+    </Text>
+    <Text>
+      <GUID>1500006103</GUID>
+      <Text>Radius</Text>
+    </Text>
+    <Text>
+      <GUID>1500006104</GUID>
+      <Text>Insel</Text>
+    </Text>
+    <Text>
+      <GUID>1500006105</GUID>
+      <Text>Session</Text>
+    </Text>
+  </ModOp>
+  
+</ModOps>

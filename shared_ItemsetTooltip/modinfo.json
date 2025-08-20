@@ -1,0 +1,30 @@
+{
+  "Version": "1.0",
+  "ModID": "shared_ItemsetTooltip_Serp",
+  "IncompatibleIds": null,
+  "ModDependencies": null,
+  "LoadAfterIds": ["*","mod_adjustments_production_works_kurila"],
+  "Category": {
+    "English": "Shared"
+  },
+  "ModName": {
+    "English": "shared_ItemsetTooltip (Serp) (should load after all mods which change ItemSets)"
+  },
+  "Description": {
+    "English": "Hovering over uncompleted ItemSets in your ItemSet-Overview will show you the buffscope (island or session wide) and buff effects you will reveice when completing the set (in vanilla you dont see the buffs before completing it)"
+  },
+  "KnownIssues": [
+    {
+      "English": "Does not display buffs if a mod or more likely 'creative mode' removed the costs of assets (I add costs to the ItemSet to use this as helper for the display, has no impact to the game)"
+    },
+    {
+      "English": "The mod needs quite 'long' to load: 0.6 seconds on my fast PC, which is quite long for such a tiny mod"
+    },
+    {
+      "English": "Mods adding new ItemSets have to add support for this to also show the Tooltip for their ItemSets (see assets.xml for an HowTo). Mods which just change the buffs should automatically be compatible as long this mod loads after them."
+    }
+  ],
+  "DLCDependencies": null,
+  "CreatorName": "Serp",
+  "CreatorContact": "https://github.com/Serpens66"
+}

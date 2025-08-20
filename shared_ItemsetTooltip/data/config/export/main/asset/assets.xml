@@ -1,0 +1,227 @@
+<ModOps>
+  
+  <!-- uses Serp GUIDs 1500006101 to including 1500006105 -->
+  
+  <!-- The devs unfortuntely did not implement a textsource function to fetch information about the Buff used in an ItemSet (textsourcelist.json) -->
+    <!-- In the UI that displays the ItemSet and later the Buff from it, the object you are hovering over is replaced from the ItemSet to the actual -->
+     <!-- Buff object as soon as you complete the ItemSet. That is why the completed Set is able to show the Buff, while the incompleted is not. -->
+    
+    <!-- But we are able to fetch eg. Costs and ItemEffect/EffectTargets with textsource. Therefore I decided to add all the info about the buffs -->
+     <!-- into these properties instead. -->
+     <!-- Unfortunately ModOps are in 1800 not powerful enough to do this automatically and efficient for every asset which contains ItemSet property. -->
+    <!-- (especially since "Content" can not access the current asset when using "//" in Path...) -->
+    <!-- Thats why we are forced to hardcode all ItemSet GUIDs here and therefore only directly support vanilla ItemSets -->
+     <!-- (and the code needs roughly 0.6 seconds on my fast PC to load, which is quite long for a tiny mod like this) -->
+    
+    
+  <!-- ######################## -->
+    
+  <!-- To make your new mod ItemSets compatible, you add a Cost and an ItemEffect Property to your ItemSets -->
+  <!-- Load BEFORE this mod, so its fine to leave LoadafterIds emtpy -->
+  
+  <!-- For a ItemSet with just one SetBuff (no RegionSetBuff) you just add 1 Ingredient in Costs with GUID of the SetBuff -->
+  <!-- BuffScope as Amount of the first Cost entry: 1 for Local, 2 for Radius, 3 for Area and 4 for Session -->
+
+  <!-- To support multiple SetBuff which are sorted in RegionSetBuff, you add one Ingredient per Buff to the Costs -->
+   <!-- the amount of the first Ingredient is again the BuffScope (the amount of the others does not matter, but has to be at least 1, so just use 1 or BuffScope_ID for all of them) -->
+  <!-- And EffectTargets you add the GUID of the Header Text which should be used above this buff, usually the Region GUID -->
+    <!-- Moderate 5000000, Colony01 5000001, Arctic 160001, Africa 114327, Mod2 133700001 -->
+    
+  <!-- <Cost> -->
+    <!-- <Costs> -->
+      <!-- <Item> -->
+        <!-- <Ingredient>SetBuff_GUID</Ingredient> -->
+        <!-- <Amount>BuffScope_ID</Amount> -->
+      <!-- </Item> -->
+    <!-- </Costs> -->
+    <!-- <InfluenceCostPoints>0</InfluenceCostPoints> -->
+  <!-- </Cost> -->
+  <!-- <ItemEffect> -->
+    <!-- <EffectTargets> -->
+      <!-- <Item> -->
+        <!-- <GUID>Header_GUID</GUID> -->
+      <!-- </Item> -->
+    <!-- </EffectTargets> -->
+  <!-- </ItemEffect> -->
+  
+  <!-- ### -->
+  
+  <!-- In case you added a new Region Mod1 or Mod3: -->
+  <!-- I used the header GUID 1111111 and 3333333 for them as placeholder. -->
+   <!-- You should make a submod that loads after this one and replaces all ItemEffect/EffectTargets/Item/GUID with 1111111 or 3333333 -->
+    <!-- with your new Region GUID -->
+  
+  
+  <!-- ######################################################################################## -->
+
+  <ModOp Type="merge" Path="//Values[ItemSocketSet]">
+    <Cost>
+      <!-- Ingredient = SetBuff, Amount=BuffScope (Amount=1 then its not mentioned in assets.xml and therefore the default Local -->
+      <Costs />
+      <InfluenceCostPoints>0</InfluenceCostPoints>
+    </Cost>
+    <ItemEffect>
+      <!-- EffectTargets = header text -->
+      <EffectTargets />
+    </ItemEffect>
+  </ModOp>
+
+  <!-- ########## -->
+  <!-- RegionSetBuff -->
+   <!-- 2 ModOps for every region, because we have to make sure that the first Ingredient matches to the first EffectTarget (which is not possible with Content="/Values/ItemSocketSet/RegionSetBuff/*/SetBuff/text()") -->
+  <!-- Moderate -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Moderate/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Moderate/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Moderate/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>5000000</GUID>
+    </Item>
+  </ModOp>
+  <!-- Colony01 -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Colony01/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Colony01/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Colony01/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>5000001</GUID>
+    </Item>
+  </ModOp>
+  <!-- Arctic -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Arctic/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Arctic/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Arctic/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>160001</GUID>
+    </Item>
+  </ModOp>
+  <!-- Africa -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Africa/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Africa/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Africa/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>114327</GUID>
+    </Item>
+  </ModOp>
+  <!-- Mod1 -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Mod1/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Mod1/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Mod1/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>1111111</GUID>
+    </Item>
+  </ModOp>
+  <!-- Mod2 -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Mod2/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Mod2/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Mod2/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>133700001</GUID>
+    </Item>
+  </ModOp>
+  <!-- Mod3 -->
+  <ModOp Type="add" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/RegionSetBuff/Mod3/SetBuff/text()" Condition="/Values/ItemSocketSet/RegionSetBuff/Mod3/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="add" Path="/Values/ItemEffect/EffectTargets" Condition="/Values/ItemSocketSet/RegionSetBuff/Mod3/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <GUID>3333333</GUID>
+    </Item>
+  </ModOp>
+
+  <!-- SetBuff -->
+  <ModOp Type="merge" Path="/Values/Cost/Costs" Content="/Values/ItemSocketSet/SetBuff/text()" Condition="/Values/ItemSocketSet/SetBuff/text()" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Ingredient><ModOpContent /></Ingredient>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  
+  <!-- BuffScope -->
+  <!-- (1 for Local, 2 for Radius, 3 for Area and 4 for Session) -->
+  <ModOp Type="merge" Path="/Values/Cost/Costs" Condition="/Values/ItemSocketSet/BuffScope[text()='Local']" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Amount>1</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="merge" Path="/Values/Cost/Costs" Condition="/Values/ItemSocketSet/BuffScope[text()='Radius']" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Amount>2</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="merge" Path="/Values/Cost/Costs" Condition="/Values/ItemSocketSet/BuffScope[text()='Area']" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Amount>3</Amount>
+    </Item>
+  </ModOp>
+  <ModOp Type="merge" Path="/Values/Cost/Costs" Condition="/Values/ItemSocketSet/BuffScope[text()='Session']" GUID="191114,191115,191116,191122,191118,191120,191121,191117,193193,193401,193403,191119,193773,191130,191127,191129,191128,191124,191126,191131,191125,191123,193405,193408,193774,193776,193653,193655,193657,193658,193660,193662,193665,193670,193672,124196,124197,124198,124199,124200,124905,124906,124907,124908">
+    <Item>
+      <Amount>4</Amount>
+    </Item>
+  </ModOp>
+  
+  <!-- ############### -->
+
+  <ModOp Type="AddNextSibling" GUID="500424">
+    <Asset>
+      <Template>ValueAssetMap</Template>
+      <Values>
+        <Standard>
+          <GUID>1500006101</GUID>
+          <Name>Convert BuffScope_ID to BuffScope Text GUID</Name>
+        </Standard>
+        <ValueAssetMap>
+          <ValueAssetMap>
+            <Item>
+              <ValidFrom>0</ValidFrom>
+              <Asset>0</Asset>
+            </Item>
+            <Item>
+              <ValidFrom>1</ValidFrom>
+              <Asset>1500006102</Asset>
+            </Item>
+            <Item>
+              <ValidFrom>2</ValidFrom>
+              <Asset>1500006103</Asset>
+            </Item>
+            <Item>
+              <ValidFrom>3</ValidFrom>
+              <Asset>1500006104</Asset>
+            </Item>
+            <Item>
+              <ValidFrom>4</ValidFrom>
+              <Asset>1500006105</Asset>
+            </Item>
+          </ValueAssetMap>
+        </ValueAssetMap>
+      </Values>
+    </Asset>
+  </ModOp>
+
+
+</ModOps>
