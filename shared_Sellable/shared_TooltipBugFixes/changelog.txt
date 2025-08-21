@@ -34,6 +34,8 @@
 - Fix vanilla typo in ItemStorageInfotip
 1.042:
 - Add the Advanced Resolver Units to the IncidentResolverUnitTextMapping, so buffs do not show the "+1 Doctor" twice in tooltips.
+1.043:
+- fix syntax error in code from last update
 
 
 

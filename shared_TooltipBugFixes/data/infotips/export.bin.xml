@@ -31,7 +31,7 @@
   
   
   <!-- fix typo: missing closing bracket -->
-  <ModOp Type="replace" Path="///InfoTipData[Guid='25000083']/InfoElement/InfoElement/InfoElement/VisibilityElement/VisibilityElement/Condition[text()='[ToolOneHelper IsItemRarityQuest([RefGuid])']">
+  <ModOp Type="replace" Path="//InfoTipData[Guid='25000083']/InfoElement/InfoElement/InfoElement/VisibilityElement/VisibilityElement/Condition[text()='[ToolOneHelper IsItemRarityQuest([RefGuid])']">
     <Condition>[ToolOneHelper IsItemRarityQuest([RefGuid])]</Condition>
   </ModOp>
   
