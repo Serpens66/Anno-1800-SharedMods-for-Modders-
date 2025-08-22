@@ -4,3 +4,5 @@
 - added icons for alls residences, thanks mensmaximus for creating them.
 1.021:
 - update icons
+1.022:
+- fix path to mod icons
