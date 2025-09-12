@@ -7,6 +7,7 @@ If you don't know python that may be too difficult for you.
 - [soundsforanno](#soundsforanno)
 - [upload_modio](#upload_modio)
 - [create_hardlinks](#create_hardlinks)
+- [(Un-)Pack Savegames](#un-pack_savegames)
 
 
 ###  soundsforanno
@@ -1075,3 +1076,444 @@ https://ffmpeg.org/download.html  - can do all other conversion stuff and read o
   </details>
 
 
+### Un-Pack_Savegames  
+- A python script to unpack and repack an Anno 1800 savegame file:
+
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```python
+  
+  # Requires FileDBReader: https://github.com/anno-mods/FileDBReader/tree/master
+  # The FileFormat for savegame files: https://github.com/NiHoel/Anno1800SavegameVisualizer/tree/main/tools/FileDBReader/FileFormats
+  # And RDAConsole https://github.com/anno-mods/RdaConsole
+
+  # after testing and writing all of this, I remember this tool, which already solved most of this :D: 
+  # https://github.com/olescheller/anno1800-retroactive-dlc-activation/blob/main/v2/main.py
+  # https://github.com/BoSoeborgPetersen/anno1800-retroactive-dlc-activation
+
+  import zlib # https://docs.python.org/3/library/zlib.html#zlib.compress
+  import pathlib
+  import subprocess
+  import shutil
+  from lxml import etree
+  import traceback
+
+  # IMOPRTANT
+  # Make sure the used FileFormat file always uses correct Type for everything that it converts!
+  # If it is not, it will cause issues in the game! 
+  # Most easily spottable if eg. PlayableArea has wrong type, then loading the save crashes.
+   # But there may be other wrong behaviours not easy to notice for other values!
+  # So when you want to edit a savegame, at best only include Converts you are sure about
+  # So do not simply use the format from "Anno1800SavegameVisualizer", but remove everything from it you dont want to edit and you arent sure about.
+
+
+
+  # relative path to the files based on this script, or absolute path
+  # Set None if you want to input them on runtime of the script
+
+  # savegamefile = "savegames/singlesandbox3AI.a7s"
+  # savegamefile = "savegames/elnino.a7s"
+  # savegamefile = "savegames/Scenario04.a7s"
+  # savegamefile = "savegames/MP_alone_3AI.a7s"
+  # savegamefile = "savegames/MP_alone_0AI.a7s"
+  # savegamefile = "savegames/MP_alone_Scen4Map.a7s"
+  # savegamefile = "savegames/test.a7s"
+  savegamefile = None
+  # savegamefile = "savegames/Autosave 0.a7s"
+  # fileformat = "FileFormats/a7s_hex.xml"
+  # fileformat = "FileFormats/a7s_test.xml"
+  fileformat = None
+  # unpackedfolder = "savegames/unpacked" # gets deleted and created on each Unpack execution
+  unpackedfolder = None # gets deleted and created on each Unpack execution
+
+
+
+  ################################################
+
+  # helper functions
+
+  def rename_file(filename,newfilename,replace=True):# ACHTUNG replace=False, also "rename" funktioniert nur auf Windows. Auf Linux wird immer replaced
+    # filename mit Dateiendung übergeben!
+    fileobj = pathlib.Path(filename)
+    if fileobj.is_file():
+      if replace:
+        fileobj.replace(newfilename) # durch replace: wenn es newfilename bereits gibt, wird sie dadurch überschrieben
+      else:
+        fileobj.rename(newfilename) # gibt FileExistsError auf Windows wenn es newfilename bereits gibt. Auf Linux wirds aber dennoch replaced!
+    else:
+      print(f"rename_file: {filename} existiert nicht, kann daher auch nicht umbenannt werden")
+
+  def delete_pathfilefolder(pathname,missing_ok=True): # löscht die Datei oder Ordner an diesem Pfad. Ordner muss leer sein
+    path = pathlib.Path(pathname)
+    if path.is_file():
+      path.unlink(missing_ok=missing_ok) # mit missing_ok=False gäbe es ein FileNotFoundError wenns die Datei nicht gibt
+    elif path.is_dir():
+      try:
+        path.rmdir()
+      except:
+        shutil.rmtree(str(path)) # also deletes filled folders
+
+  def create_Folder(foldername,parents=True,exist_ok=True):
+    pathlib.Path(foldername).mkdir(parents=parents, exist_ok=exist_ok) # create folder     
+
+  def folder_is_empty(foldername):
+    return not any(pathlib.Path(foldername).iterdir())
+
+  def doxpath(node,path,listentrynumber=0,default=None):
+    try:
+      r = node.xpath(path)
+      if r:
+        if listentrynumber is not None:
+          return r[listentrynumber]
+        else:
+          return r
+      else:
+        return default
+    except Exception as err:
+      print(f"Fehler: bei path {path}, {err}\n{traceback.format_exc()}")
+
+  def list_get(l, idx, default=None):
+    # if len(l)>idx: # ist durchschnittlich schneller als mit except (sofern beide fälle gleich häufig sind)
+      # return l[idx]
+    # else:
+      # return default
+    try:
+      return l[idx]
+    except IndexError: # so eine except loesung ist im fehlerfall sehr langsam. Daher nur machen, wenn es sehr selten passiert
+      return default
+
+  ##############################################################################
+
+  # Unpacking
+  # extracted relevant code from Anno1800SavegameVisualizerv5.0\tools\a7s_model.py
+
+  def a7s_savefile_to_a7s_components(path,out_path):
+    subprocess.call(f"..\\RDAConsole.exe extract -f \"{path}\" -o \"{out_path}\" -y -n") # unpack save.a7s file into multiple .a7s files (data,gamesetup,header,meta)
+
+  # file is pathlib Path object
+  def a7s_components_to_bin(file):
+    content = open(file, 'rb').read()
+    content = zlib.decompress(content)
+    with open(file.with_suffix(".bin"), 'wb') as f:
+        f.write(content)
+        
+  # file is pathlib Path object
+  def bin_to_xml(file,fileformat):
+    if fileformat=="": # bzw besser mit a7s_hex.xml (replaced nodes mit leerzeichen zwischen und belässt es sonst unverändert)
+      subprocess.call(f".\\FileDBReader.exe decompress -f \"{str(file.with_suffix('.bin'))}\" -y")
+    else:
+      subprocess.call(f".\\FileDBReader.exe decompress -i \"{fileformat}\" -f \"{str(file.with_suffix('.bin'))}\" -y")
+
+
+  def Unpack_Process():
+    global savegamefile
+    global fileformat
+    global unpackedfolder
+    if not savegamefile:
+      savegamefile = input("Enter path to the a7s file with filename and extension (eg. savegames/Scenario04.a7s )\n") # savegames/Scenario04.a7s
+    pathobj = pathlib.Path(savegamefile)
+    if pathobj.is_file():
+      if ".a7s" in pathobj.name:
+        if not fileformat:
+          fileformat = input("enter the path to the FileFormat you want to use (eg. FileFormats/a7s_all_serp.xml )\n") # eg.: FileFormats/a7s_all_serp.xml
+        if fileformat=="" or (pathlib.Path(fileformat).is_file() and "xml" in pathlib.Path(fileformat).name):
+          if not unpackedfolder:
+            unpackedfolder = input("Enter folder to unpack to (data,gamesetup,header,meta)\n(gets deleted and created on each Unpack execution)\n") # savegames/unpacked
+          out_path = pathlib.Path(unpackedfolder)
+          delete_pathfilefolder(out_path) # delete unpacked folder, because it causes trouble if already filled
+          create_Folder(out_path,exist_ok=False)
+          a7s_savefile_to_a7s_components(savegamefile,out_path)
+          files = list(out_path.glob("*.a7s"))
+          for file in files:
+            a7s_components_to_bin(file)
+            bin_to_xml(file,fileformat)
+        else:
+          print("FileFormat file not found / not an xml file")
+      else:
+        print("file is not a .a7s file")
+    else:
+      print("file not found")
+
+
+  ##############################################################################
+
+  # Packing:
+
+  # file is pathlib Path object, fileformat is path to the FileDBReader FileFormat file 
+  def xml_to_bin(file,fileformat):
+    if fileformat=="":
+      subprocess.call(f".\\FileDBReader.exe compress -f \"{str(file)}\" -y -c 3")
+    else:
+      subprocess.call(f".\\FileDBReader.exe compress -i \"{fileformat}\" -f \"{str(file)}\" -y -c 3")
+    newfilename = file.with_suffix('.bin')
+    rename_file(f"{file.with_suffix('.filedb')}",newfilename) # rename to .bin file
+
+  # file is pathlib Path object
+  # end of the file figuered out by "meow", the dev of the initial anno1800 modloader (https://github.com/magicalcookie)
+  def bin_to_a7s_component(file):
+    content = open(file, 'rb').read()
+    decompressed_size = len(content) 
+    content = zlib.compress(content,level=9)
+    content += zlib.compress(b"", level=9)
+    content += decompressed_size.to_bytes(4, byteorder='little')
+    a7s_file = file.with_suffix(".a7s")
+    with open(a7s_file, 'wb') as f:
+      f.write(content)
+    return a7s_file
+
+  # input_files a python list of pathes to the input files (data,gamesetup,header,meta)
+  def pack_a7s_components_to_a7s_savefile(input_files,out_path):
+    input_files = '" "'.join(input_files)
+    subprocess.call(f"..\\RDAConsole.exe pack -f \"{input_files}\" -o \"{out_path}\" -y -n -v 2")
+
+
+  def Pack_Process():
+    global savegamefile
+    global fileformat
+    global unpackedfolder
+    if not unpackedfolder:
+      unpackedfolder = input("Enter folder to xml savegame files to pack (data,gamesetup,header,meta)\n(gets deleted and created on each Unpack execution)\n") # savegames/unpacked
+    if unpackedfolder=="":
+      unpackedfolder = "savegames/unpacked"
+    pathobj = pathlib.Path(unpackedfolder)
+    if pathobj.is_dir():
+      if not fileformat:
+        fileformat = input("enter the path to the FileFormat you want to use (eg. FileFormats/a7s_all_serp.xml )\n") # eg.: FileFormats/a7s_all_serp.xml
+      for file in pathobj.rglob("*.xml"): # all xml files
+        xml_to_bin(file,fileformat)
+      input_files = []
+      for file in pathobj.rglob("*.bin"): # compress all created bin files to a7s files
+        a7s_file = bin_to_a7s_component(file)
+        input_files.append(str(a7s_file))
+      
+      # out_path = f"{unpackedfolder}/savefile.a7s"
+      
+      out_path = r"C:\Users\Serpens66\Documents\Anno 1800\accounts\94262d09-5b57-41ea-9844-d8341ac750a5\packsaveText/savefile.a7s"
+      delete_pathfilefolder(f"{pathlib.Path(out_path).parent}/Session Backup.a7s")
+      
+      pack_a7s_components_to_a7s_savefile(input_files,out_path)
+    else:
+      print(f"{path} is no valid folder")
+
+  ##############################################################################
+  # loops through the xml files and makes them MP
+  def make_multiplayer():
+    global savegamefile
+    global fileformat
+    global unpackedfolder
+    
+    PIDtoLogo = {23:500986,24:500967,25:500982,26:500980,27:500988,28:500969,29:92,30:500975,31:500966,32:500977,72:111838} # das savegame nutzt nicht die console PID, sondern die Id aus datasets.xml, also ist Bente hier 23 und nicht 25!
+    # PIDtoColor = {23:4,24:7,25:2,26:2,27:1,28:6,29:3,30:5,31:0,32:7,72:0} # colour ist glaub ich egal und wenn dann nur relevant, dass keine 2 dieselbe haben (macht spiel ja von allein, wenn eine schon vergeben ist, dann eine andere geben)
+    
+    if not unpackedfolder:
+      unpackedfolder = input("Enter folder to xml savegame files (data,gamesetup,header,meta)\n") # savegames/unpacked
+    if unpackedfolder=="":
+      unpackedfolder = "savegames/unpacked"
+    pathobj = pathlib.Path(unpackedfolder)
+    if pathobj.is_dir():
+      for file in pathobj.rglob("*.xml"): # all xml files
+        if "gamesetup" in file.name or "header" in file.name:
+          tree = etree.parse(file,parser=etree.XMLParser(remove_blank_text=True,huge_tree=True))
+          if "gamesetup" in file.name:
+            node = doxpath(tree,f".//GameSetupManager",listentrynumber=0,default=None)
+            if node is not None:
+              if doxpath(node,f"./IsMultiPlayerGame",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<IsMultiPlayerGame>True</IsMultiPlayerGame>".encode()))
+              if doxpath(node,f"./AllowInvites",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<AllowInvites>True</AllowInvites>".encode()))
+              # for whatever reason there Savegame values are required and not in singleplayer saves
+               # hope that these fixed values always work!?
+              if doxpath(node,f"./SavegameStepcount",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<SavegameStepcount>399</SavegameStepcount>".encode()))
+              if doxpath(node,f"./SavegameChecksum",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<SavegameChecksum>-380752810381276792</SavegameChecksum>".encode()))
+              
+              subnodes = doxpath(node,f"./SecondParties/Participant/value/id",listentrynumber=None,default=[])
+              secondparties = []
+              for subnode in subnodes:
+                PID = int(subnode.text) # das savegame nutzt nicht die console PID, sondern die Id aus datasets.xml, also ist Bente hier 23 und nicht 25!
+                secondparties.append(PID)
+              peernodes = doxpath(node,f"./Peers/Peer",listentrynumber=None,default=[])
+              peernodevalues = doxpath(node,f"./Peers/Peer/Values",listentrynumber=None,default=[])
+              for i,peernode in enumerate(peernodes):
+                if i==0: # skip the human player peer
+                  continue
+                PID = list_get(secondparties,i-1)
+                if PID is not None:
+                  Logo = PIDtoLogo[PID]
+                  peernodes[i].replace(peernodevalues[i], etree.XML(f"<Values><Available><ParticipantType><Template>Computer</Template><Values><Computer><AIParticipantID><value><id>{PID}</id></value></AIParticipantID><AILogoGuid>{Logo}</AILogoGuid></Computer></Values></ParticipantType><Team><value><id>{i}</id></value></Team><CompanyColor><value><id>{i}</id></value></CompanyColor><PlayerPossessions>12336</PlayerPossessions></Available></Values>".encode()) )
+                else:
+                  peernodes[i].replace(peernodevalues[i], etree.XML(f"<Values />".encode()))
+                  if doxpath(peernodes[i],f"./Template[text()='Closed']",listentrynumber=0,default=None) is None:
+                    peernodes[i].append(etree.XML(f"<Template>Closed</Template>".encode()))
+              
+            node = doxpath(tree,f".//Available[ParticipantType/Values/Human/CompanyName]",listentrynumber=0,default=None)
+            if node is not None:
+              subnode = doxpath(node,f"./Coop",listentrynumber=0,default=None)
+              if subnode is None: # for whatever reason singleplayer sandbox already has this set, but alone-MP not?!
+                node.append(etree.XML(f"<Coop>True</Coop>".encode()))
+              elif subnode.text=="False":
+                subnode.text = "True".encode()
+            
+          if "header" in file.name:
+            node1 = doxpath(tree,f".//CorporationProfile",listentrynumber=0,default=None)
+            if node1 is not None:
+              if doxpath(node1,f"./Multiplayer",listentrynumber=0,default=None) is None:
+                node1.append(etree.XML(f"<Multiplayer>True</Multiplayer>".encode()))
+            
+            node = doxpath(tree,f".//GameSetup",listentrynumber=0,default=None)
+            if node is not None:
+              if doxpath(node,f"./DebugAllCoop",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<DebugAllCoop>True</DebugAllCoop>".encode()))
+              if doxpath(node,f"./AllowInvites",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<AllowInvites>True</AllowInvites>".encode()))
+              if doxpath(node,f"./Coop",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<Coop>True</Coop>".encode()))
+              # for whatever reason there Savegame values are required and not in singleplayer saves
+               # hope that these fixed values always work!?
+              if doxpath(node,f"./SavegameStepcount",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<SavegameStepcount>399</SavegameStepcount>".encode()))
+              if doxpath(node,f"./SavegameChecksum",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<SavegameChecksum>-380752810381276792</SavegameChecksum>".encode()))
+              
+              # same code like for gamesetup.xml, except the xpath for the subnodes
+              subnodes = doxpath(node1,f"./Difficulty/SecondParties/Participant/value/id",listentrynumber=None,default=[])
+              secondparties = []
+              for subnode in subnodes:
+                PID = int(subnode.text) # das savegame nutzt nicht die console PID, sondern die Id aus datasets.xml, also ist Bente hier 23 und nicht 25!
+                secondparties.append(PID)
+              peernodes = doxpath(node,f"./Peers/Peer",listentrynumber=None,default=[])
+              peernodevalues = doxpath(node,f"./Peers/Peer/Values",listentrynumber=None,default=[])
+              for i,peernode in enumerate(peernodes):
+                if i==0: # skip the human player peer
+                  continue
+                PID = list_get(secondparties,i-1)
+                if PID is not None:
+                  Logo = PIDtoLogo[PID]
+                  peernodes[i].replace(peernodevalues[i], etree.XML(f"<Values><Available><ParticipantType><Template>Computer</Template><Values><Computer><AIParticipantID><value><id>{PID}</id></value></AIParticipantID><AILogoGuid>{Logo}</AILogoGuid></Computer></Values></ParticipantType><Team><value><id>{i}</id></value></Team><CompanyColor><value><id>{i}</id></value></CompanyColor><PlayerPossessions>12336</PlayerPossessions></Available></Values>".encode()) )
+                else:
+                  peernodes[i].replace(peernodevalues[i], etree.XML(f"<Values />".encode()))
+                  if doxpath(peernodes[i],f"./Template[text()='Closed']",listentrynumber=0,default=None) is None:
+                    peernodes[i].append(etree.XML(f"<Template>Closed</Template>".encode()))
+                  
+                  
+          root = tree.getroot()
+          etree.ElementTree(root).write(file, pretty_print=True)
+          
+  # loops through the xml files and makes them scenario
+  def make_scenario(ScenGUID=5858):
+    # Scenario04==5858 , Scenario02==24961
+    scen_to_DLC_Diff = {24719:{"DLCs":[24961],"GameSetupDifficulty":13},5858:{"DLCs":[24963],"GameSetupDifficulty":16},}
+    DLCs = scen_to_DLC_Diff[ScenGUID]["DLCs"]
+    GameSetupDifficulty = scen_to_DLC_Diff[ScenGUID]["GameSetupDifficulty"]
+    global savegamefile
+    global fileformat
+    global unpackedfolder
+    
+    if not unpackedfolder:
+      unpackedfolder = input("Enter folder to xml savegame files (data,gamesetup,header,meta)\n") # savegames/unpacked
+    if unpackedfolder=="":
+      unpackedfolder = "savegames/unpacked"
+    pathobj = pathlib.Path(unpackedfolder)
+    if pathobj.is_dir():
+      for file in pathobj.rglob("*.xml"): # all xml files
+        if "gamesetup" in file.name or "header" in file.name:
+          tree = etree.parse(file,parser=etree.XMLParser(remove_blank_text=True,huge_tree=True))
+          
+          if "gamesetup" in file.name:
+            node = doxpath(tree,f".//GameSetupManager",listentrynumber=0,default=None)
+            if node is not None:
+              if doxpath(node,f"./EnableScenario",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<EnableScenario>True</EnableScenario>".encode()))
+              subnnode = doxpath(node,f"./Customizable",listentrynumber=0,default=None)
+              if subnnode is not None:
+                node.remove(subnnode)
+              subnnode = doxpath(node,f"./GameSetupDifficulty/value/id",listentrynumber=0,default=None)
+              if subnnode is not None:
+                subnnode.text = str(GameSetupDifficulty).encode()
+              if len(DLCs)>0:
+                actnode = doxpath(node,f"./ActiveDLCs",listentrynumber=0,default=None)
+                node.replace(actnode,etree.XML(f"<ActiveDLCs><count>{len(DLCs)}</count></ActiveDLCs>".encode()))
+                actnode = doxpath(node,f"./ActiveDLCs",listentrynumber=0,default=None) # have to save it again after replacing
+                for DLC in DLCs:
+                  actnode.append(etree.XML(f"<DLC>{DLC}</DLC>".encode()))
+            
+          if "header" in file.name:
+
+            node = doxpath(tree,f".//GameSetup",listentrynumber=0,default=None)
+            if node is not None:
+              if doxpath(node,f"./EnableScenario",listentrynumber=0,default=None) is None:
+                node.append(etree.XML(f"<EnableScenario>True</EnableScenario>".encode()))
+              subnnode = doxpath(node,f"./Customizable",listentrynumber=0,default=None)
+              if subnnode is not None:
+                node.remove(subnnode)
+              subnnode = doxpath(node,f"./GameSetupDifficulty/value/id",listentrynumber=0,default=None)
+              if subnnode is not None:
+                subnnode.text = str(GameSetupDifficulty).encode()
+              if len(DLCs)>0:
+                actnode = doxpath(node,f"./ActiveDLCs",listentrynumber=0,default=None)
+                node.replace(actnode,etree.XML(f"<ActiveDLCs><count>{len(DLCs)}</count></ActiveDLCs>".encode()))
+                actnode = doxpath(node,f"./ActiveDLCs",listentrynumber=0,default=None) # have to save it again after replacing
+                for DLC in DLCs:
+                  actnode.append(etree.XML(f"<DLC>{DLC}</DLC>".encode()))
+                
+            node = doxpath(tree,f".//CorporationProfile",listentrynumber=0,default=None)
+            if node is not None:
+              if doxpath(node,f"./Scenario/value/ScenarioGUID",listentrynumber=0,default=None) is None:
+                scennode = doxpath(node,f"./Scenario",listentrynumber=0,default=None)
+                node.replace(scennode,etree.XML(f"<Scenario><value><ScenarioGUID>{ScenGUID}</ScenarioGUID></value></Scenario>".encode()))
+              
+              for DLC in DLCs:
+                subnode = doxpath(node,f"./SavegameHistory/None/RequiredUnlocks",listentrynumber=0,default=None)
+                if doxpath(subnode,f"./None[text()='{DLC}']",listentrynumber=0,default=None) is None:
+                  subnode.append(etree.XML(f"<None>{DLC}</None>".encode()))
+                  
+          root = tree.getroot()
+          etree.ElementTree(root).write(file, pretty_print=True)
+
+
+  ##############################################################################
+    
+
+  if __name__ == '__main__':
+
+    todo = input("(U)npack / (P)ack savegame?\n Make sure to use the same FileFormat file for both actions and this file should only include values you are 100% sure that they have the correct Type assigned, otherwise the repacking will fail.\n")
+    if todo.upper()=="U":
+      Unpack_Process()
+    elif todo.upper()=="P": # Pack
+      Pack_Process()
+    elif todo.lower()=="both":
+      Unpack_Process()
+      Pack_Process()
+    elif todo.lower()=="bin": # only pack the .bin files in savegames/unpacked to a7s
+      
+      path = "savegames/unpacked"
+      input_files = []
+      for file in pathlib.Path(path).rglob("*.bin"): # compress all created bin files to a7s files
+        a7s_file = bin_to_a7s_component(file)
+        input_files.append(str(a7s_file))
+      out_path = f"{path}/savefile.a7s"
+      pack_a7s_components_to_a7s_savefile(input_files,out_path)
+    
+    elif todo.lower()=="xml": # only pack the .xml files in savegames/unpacked to bin
+      
+      path = "savegames/unpacked"
+      fileformat = input("enter the path to the FileFormat you want to use (eg. FileFormats/a7s_all_serp.xml )\n") # eg.: FileFormats/a7s_all_serp.xml
+      for file in pathlib.Path(path).rglob("*.xml"): # all xml files
+        xml_to_bin(file,fileformat)
+    
+    elif todo.upper()=="MP":
+      make_multiplayer()
+      
+    elif todo.lower()=="all": # unpack, make_multiplayer and pack again
+      Unpack_Process()
+      make_multiplayer()
+      Pack_Process()
+    
+    elif todo.lower()=="scen":
+      make_scenario()
+
+
+  ```
+  </details>
