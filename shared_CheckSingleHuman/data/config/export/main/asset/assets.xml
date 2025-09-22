@@ -12,16 +12,14 @@
   
   <!-- usage: -->
   <!-- <TriggerCondition> -->
-    <!-- <Template>ConditionUnlocked</Template> -->
-    <!-- <Values> -->
-      <!-- <Condition /> -->
-      <!-- <ConditionUnlocked> -->
-        <!-- <UnlockNeeded>1500003811</UnlockNeeded> -->
-      <!-- </ConditionUnlocked> -->
-      <!-- <ConditionPropsNegatable /> -->
-    <!-- </Values> -->
+    <!-- <Template>OnlySingleHumanSlot</Template> -->
+    <!-- <Values /> -->
   <!-- </TriggerCondition> -->
   
+  <!-- <TriggerCondition> -->
+    <!-- <Template>NOT_OnlySingleHumanSlot</Template> -->
+    <!-- <Values /> -->
+  <!-- </TriggerCondition> -->
 
   
   <!-- (unfortunately ConditionMetagameLoaded/HumanPlayerCount also counts the coop human players, so we have to check each human slot individually instead) -->
@@ -34,7 +32,9 @@
           <GUID>1500003810</GUID>
           <Name>OnlySingleHumanSlot</Name>
         </Standard>
-        <Locked />
+        <Locked>
+          <DefaultLockedState>0</DefaultLockedState>
+        </Locked>
         <Trigger>
           <TriggerCondition>
             <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
@@ -399,11 +399,28 @@
               </SubTrigger>
             </Item>
           </SubTriggers>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionLockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionLockAsset>
+                    <LockAssets>
+                      <Item>
+                        <Asset>1500003810</Asset>
+                      </Item>
+                    </LockAssets>
+                  </ActionLockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
         </Trigger>
         <TriggerSetup>
           <AutoRegisterTrigger>1</AutoRegisterTrigger>
           <UsedBySecondParties>1</UsedBySecondParties>
-          <AutoSelfUnlock>1</AutoSelfUnlock>
+          <AutoSelfUnlock>0</AutoSelfUnlock>
         </TriggerSetup>
       </Values>
     </Asset>
@@ -420,55 +437,9 @@
           <GUID>1500003811</GUID>
           <Name>OnlySingleHumanSlot_Safe</Name>
         </Standard>
-        <Locked />
-        <Trigger>
-          <TriggerCondition>
-            <Template>ConditionTimer</Template>
-            <Values>
-              <Condition />
-              <ConditionTimer>
-                <TimeLimit>1000</TimeLimit>
-              </ConditionTimer>
-            </Values>
-          </TriggerCondition>
-          <SubTriggers>
-            <Item>
-              <SubTrigger>
-                <Template>AutoCreateTrigger</Template>
-                <Values>
-                  <Trigger>
-                    <TriggerCondition>
-                      <Template>ConditionUnlocked</Template>
-                      <Values>
-                        <Condition />
-                        <ConditionUnlocked>
-                          <UnlockNeeded>1500003810</UnlockNeeded>
-                        </ConditionUnlocked>
-                        <ConditionPropsNegatable />
-                      </Values>
-                    </TriggerCondition>
-                  </Trigger>
-                </Values>
-              </SubTrigger>
-            </Item>
-          </SubTriggers>
-        </Trigger>
-        <TriggerSetup>
-          <AutoRegisterTrigger>1</AutoRegisterTrigger>
-          <UsedBySecondParties>1</UsedBySecondParties>
-          <AutoSelfUnlock>1</AutoSelfUnlock>
-        </TriggerSetup>
-      </Values>
-    </Asset>
-    
-    <Asset>
-      <Template>FeatureUnlock</Template>
-      <Values>
-        <Standard>
-          <GUID>1500003812</GUID>
-          <Name>NOT_OnlySingleHumanSlot_Safe</Name>
-        </Standard>
-        <Locked />
+        <Locked>
+          <DefaultLockedState>0</DefaultLockedState>
+        </Locked>
         <Trigger>
           <TriggerCondition>
             <Template>ConditionTimer</Template>
@@ -502,16 +473,98 @@
               </SubTrigger>
             </Item>
           </SubTriggers>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionLockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionLockAsset>
+                    <LockAssets>
+                      <Item>
+                        <Asset>1500003811</Asset>
+                      </Item>
+                    </LockAssets>
+                  </ActionLockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
         </Trigger>
         <TriggerSetup>
           <AutoRegisterTrigger>1</AutoRegisterTrigger>
           <UsedBySecondParties>1</UsedBySecondParties>
-          <AutoSelfUnlock>1</AutoSelfUnlock>
+          <AutoSelfUnlock>0</AutoSelfUnlock>
         </TriggerSetup>
       </Values>
     </Asset>
     
-    
+    <Asset>
+      <Template>FeatureUnlock</Template>
+      <Values>
+        <Standard>
+          <GUID>1500003812</GUID>
+          <Name>NOT_OnlySingleHumanSlot_Safe</Name>
+        </Standard>
+        <Locked>
+          <DefaultLockedState>0</DefaultLockedState>
+        </Locked>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionTimer</Template>
+            <Values>
+              <Condition />
+              <ConditionTimer>
+                <TimeLimit>1000</TimeLimit>
+              </ConditionTimer>
+            </Values>
+          </TriggerCondition>
+          <SubTriggers>
+            <Item>
+              <SubTrigger>
+                <Template>AutoCreateTrigger</Template>
+                <Values>
+                  <Trigger>
+                    <TriggerCondition>
+                      <Template>ConditionUnlocked</Template>
+                      <Values>
+                        <Condition />
+                        <ConditionUnlocked>
+                          <UnlockNeeded>1500003810</UnlockNeeded>
+                        </ConditionUnlocked>
+                        <ConditionPropsNegatable />
+                      </Values>
+                    </TriggerCondition>
+                  </Trigger>
+                </Values>
+              </SubTrigger>
+            </Item>
+          </SubTriggers>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionLockAsset</Template>
+                <Values>
+                  <Action />
+                  <ActionLockAsset>
+                    <LockAssets>
+                      <Item>
+                        <Asset>1500003812</Asset>
+                      </Item>
+                    </LockAssets>
+                  </ActionLockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoRegisterTrigger>1</AutoRegisterTrigger>
+          <UsedBySecondParties>1</UsedBySecondParties>
+          <AutoSelfUnlock>0</AutoSelfUnlock>
+        </TriggerSetup>
+      </Values>
+    </Asset>
     
     
   </ModOp>

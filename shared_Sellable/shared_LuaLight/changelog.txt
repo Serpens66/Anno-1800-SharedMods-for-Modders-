@@ -13,3 +13,13 @@
 - improved the GetGameObjectPath function to also be able to call functions
 1.006:
 - added parameter maxemptycount to GetActiveQuestInstances
+1.007:
+- add "_nodouble_" to threadname of start_thread function, to allow you to prevent double execution of an already running thread
+- add "comma_value" function to display numbers as string like: 10000 -> 10.000
+- add Languages dataset info
+1.008
+- add GetItemOrBuffEffectTargets (add GUIDs as ItemEffectTarget to an asset to be able to loop over them in lua, since looping over AssetPools in lua does not work)
+- add GetAssetCosts (also as AssetPool alternative for lua, here you can combine Ingredient and Amount for 2 values which are ment to belong together)
+1.009:
+- add GetEffectivities function
+- add GetActiveMods function

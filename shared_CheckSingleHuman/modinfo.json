@@ -1,9 +1,9 @@
 {
-  "Version": "1.01",
+  "Version": "1.02",
   "ModID": "CheckSingleHuman_Serp",
   "IncompatibleIds": null,
   "ModDependencies": null,
-  "LoadAfterIds": ["StoryQuestsInCoop_Serp"],
+  "LoadAfterIds": ["StoryQuestsInCoop_Serp","CampaignInCoop_Serp"],
   "Category": {
     "Chinese": "Shared",
     "English": "Shared",
@@ -34,16 +34,7 @@
   },
   "KnownIssues": [
     {
-      "Chinese": null,
-      "English": null,
-      "French": null,
-      "German": null,
-      "Italian": null,
-      "Korean": null,
-      "Polish": null,
-      "Russian": null,
-      "Spanish": null,
-      "Taiwanese": null
+      "English": "Loads after my Coop mods, because these are replacing the IsMultiplayer Conditions from everything loaded before"
     }
   ],
   "DLCDependencies": null,

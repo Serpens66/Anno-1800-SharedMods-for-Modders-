@@ -1,3 +1,5 @@
+-- Anno 1800 uses a sligly custom version of Lua 5.3
+
 -- Uses CompanyName from Scenario3_Challenger3 for DoForSessionGameObject (they exist in every vanilla game in every session)
 -- Uses CompanyName from Scenario3_Challenger4 for t_FnViaTextEmbed functionality
 -- Scenario3_Challenger3  GUID: 100939 , PID: 120
@@ -6,6 +8,14 @@
 -- (I think the only Participant with Queen Template where I do not use the Nameable yet (besides Void Trader and Queen) is Scenario02_Actuary)
 
 local ModID = "shared_LuaTools_Light_Serp"
+
+
+
+-- TODO:
+ -- ein save system wie in ultratools einbauen, was aber nur im Singleplayer funktioniert (denn für MP, zumindest coop
+  -- brauchen wir die ultra tools um zu wissen wer welcher peer ist)
+ -- dann kann ich zumindest für singleplayer save nutzen
+
 
 
 -- usage:
@@ -393,6 +403,20 @@ local function GetPairAtIndSortedKeys(t,i,f)
   end
 end
 
+-- credit http://richard.warburton.it
+-- convert a number to a string like 1000000000 -> 1.000.000.000
+local function comma_value(n,sep)
+  sep = sep or ","
+  local left,num,right = string.match(n,'^([^%d]*%d)(%d*)(.-)$')
+  return left..(num:reverse():gsub('(%d%d%d)','%1'..tostring(sep)):reverse())..right
+end
+
+
+local function GetOS()
+  return package.config:sub(1,1) == "\\" and "win" or "unix"
+end
+
+
 -- ##################################################################################################################
 
 -- TableToHex and HexToTable
@@ -423,7 +447,7 @@ end
   user giving functions or threads is a stupid idea
   userdata is normally from c, no need to test
 ]]
-function _ValueToString(_value)
+local function _ValueToString(_value)
   if type(_value) == 'number' then
     return _value
   elseif type(_value) == 'string' then
@@ -439,7 +463,7 @@ function _ValueToString(_value)
     return 'nil'
   end
 end
-function _IndexToString(_index)
+local function _IndexToString(_index)
   if type(_index) == 'number' then
     return "[".._index.."]"
   elseif type(_index) == 'string' then
@@ -449,7 +473,7 @@ function _IndexToString(_index)
     return 'nil'
   end
 end
-function _TableToString(_table)
+local function _TableToString(_table)
   local _string = "{"
   if type(_table) ~= 'table' then
     return ""
@@ -550,7 +574,10 @@ local function start_thread(threadname,_ModID,fn,...)
   end
   local final_threadname = tostring(_ModID)..": "..tostring(threadname)
   if system.internal.coroutines[final_threadname]~=nil then -- no need to check status, because done threads are already set nil again
-    g_LTL_Serp.modlog("WARNING start_thread: A thread with the name "..tostring(final_threadname).." is currently running. Are you sure you want to overwrite it? Choose a unique threadname if you dont want this (you can include _random_ in the threadname to add random number)",_ModID)
+    g_LTL_Serp.modlog("WARNING start_thread: A thread with the name "..tostring(final_threadname).." is currently running. Are you sure you want to overwrite it? Choose a unique threadname if you dont want this (you can include _random_ in the threadname to add random number or include _nodouble_ to not overwrite a previous thread and so nothing)",_ModID)
+    if string.find(threadname,"_nodouble_") then -- if we dont want to overwrite previous thread
+      return false
+    end
   end
   return system.start(function()
     local status,err = xpcall(fn,g_LTL_Serp.log_error,table.unpack(args))
@@ -959,9 +986,11 @@ end
         for i=0,count-1 do  -- i starts at 0 (so use pairs() when looping), just like the slots when doing eg EquipSlot
           results[i] = {}
           for info,typ in pairs(InfoToInclude) do
-            results[i][info] = g_LTL_Serp.my_to_type(g_LTL_Serp.DoForSessionGameObject(string.gsub(ts_embed_string, "Count", "At("..tostring(i)..") "..info),true),typ)
+            results[i][info] = g_LTL_Serp.my_to_type(g_LTL_Serp.DoForSessionGameObject(string.gsub(ts_embed_string, "Count", "At("..tostring(i)..") "..info),true,true),typ)
           end
         end
+      else
+        g_LTL_Serp.modlog("GetVectorGuidsFromSessionObject: count is "..tostring(count).." for "..tostring(ts_embed_string),ModID)
       end
     end
     return results
@@ -991,6 +1020,45 @@ end
       return nil
     end
     return peerints
+  end
+  
+  -- eg. flamethrower ship against woodenships
+  local function GetEffectivities(GUID)
+    local Effectivities = {}
+    if ts.ToolOneHelper.GetHasEffectivitiy(GUID) then
+      local EffectivityPercentages
+      local EffectivityTargetGroups = g_LTL_Serp.GetVectorGuidsFromSessionObject("[ToolOneHelper EffectivityTargetGroups("..tostring(GUID)..") Count]",{[""]="integer"})
+      if next(EffectivityTargetGroups) then
+        EffectivityPercentages = g_LTL_Serp.GetVectorGuidsFromSessionObject("[ToolOneHelper EffectivityPercentages("..tostring(GUID)..") Count]",{[""]="integer"})
+      end
+      for k,info in pairs(EffectivityTargetGroups) do
+        Effectivities[EffectivityTargetGroups[k]] = EffectivityPercentages[k]
+      end
+    end
+    return Effectivities -- key is the pool (eg all wooden ships) and value is the percentage, eg. 510 (%)
+  end
+  
+  -- add GUIDs as ItemEffectTarget to an asset to be able to loop over them in lua, since looping over AssetPools in lua is not possible
+  local function GetItemOrBuffEffectTargets(GUID)
+    local _ItemOrBuffEffectTargets = g_LTL_Serp.GetVectorGuidsFromSessionObject("[ToolOneHelper ItemOrBuffEffectTargets("..tostring(GUID)..") Count]",{[""]="integer"})
+    local ItemOrBuffEffectTargets = {}
+    for _,PGinfo in pairs(_ItemOrBuffEffectTargets) do
+      local Product = PGinfo[""] -- ItemOrBuffEffectTargets directly returns a list of integers, so we used empty string as InfoToInclude
+      table.insert(ItemOrBuffEffectTargets,Product)
+    end
+    return ItemOrBuffEffectTargets -- index,Product, starts at 1, so works with ipairs and pairs
+  end
+  -- also as AssetPool alternative for lua, here you can combine Ingredient and Amount for 2 values which are ment to belong together
+  -- Beware: Amount can be at max 100.000, so not be used for GUIDs!
+  local function GetAssetCosts(GUID)
+    local _Costs = g_LTL_Serp.GetVectorGuidsFromSessionObject("[ToolOneHelper BuildCost("..tostring(GUID)..") Costs Count]",{ProductGUID="integer",Amount="integer"})
+    local Costs = {}
+    for _,info in pairs(_Costs) do
+      local Product = info["ProductGUID"]
+      local Amount = info["Amount"]
+      Costs[Product] = Amount
+    end
+    return Costs
   end
   
   
@@ -1401,7 +1469,62 @@ end
   -- I fear checking other buffs is not possible in lua...
 
 
-
+  -- #############
+  -- [2025-09-18 16:38:52.387] [info] Load mods
+  -- [2025-09-18 16:39:05.302] [info] Load Cheat Mortar (unversioned, Cheat Mortar) from C:\Users\Serpens66\Documents/Anno 1800/mods/Cheat Mortar
+  -- [2025-09-18 16:39:05.830] [info] Load [Fix] Bar Flag fixed (Taludas) (1.0.0, Taludas_FixedBarFlag) from E:\Spiele\mod.io\4169\mods\3358529\Serp Modpack\[Fix] Community Bugfixes\shared\[Fix] Bar Flag fixed (Taludas)
+  local function GetModloaderlog() -- written by pnski , may fail on Linux I guess?
+    local DefaultPath = os.getenv("USERPROFILE")..[[\Documents\Anno 1800\log\mod-loader.log]] -- c:\User\<Username>\Documents\Anno 1800\log\mod-loader.log
+    -- if g_LTL_Serp.GetOS()~="win" then
+      -- DefaultPath =  -- any way to get the path for all linux installations?!
+    -- end
+    local _File = io.open(DefaultPath, "r")
+    if _File~=nil then
+      local _content = {}
+      for k in _File:lines() do
+          table.insert(_content,k)
+      end
+      _File:close()
+      return _content
+    else
+      g_LTL_Serp.modlog("GetModloaderlog: failed to load mod-loader.log (not at the default path)",ModID)
+    end
+    return {}
+  end
+  
+  -- will not work for Linux
+  local function GetActiveMods()
+    -- GetVectorGuidsFromSessionObject("[Mods ActiveAccountMods Count]",{Text="string"}) returns the english names (Text), while replacing eg [] brackets.
+    -- dont know if there is a way to get the ModID.., it is not called: ModID,ModID,Value,ID,Name,Guid
+    -- AND it only returns mods you activated yourself, so no submods!
+    -- So it is better to use the modloader.log to get ModID .. but that is difficulty on Linux I guess?
+    
+    -- local ModNames = {}
+    -- local _ModNames = g_LTL_Serp.GetVectorGuidsFromSessionObject("[Mods ActiveAccountMods Count]",{Text="string"})
+    -- for _,mod in pairs(_ModNames) do
+      -- table.insert(ModNames,mod.Text)
+    -- end
+    -- return ModNames
+    
+    local ModIDs = {}
+    local modloaderlines = g_LTL_Serp.GetModloaderlog()
+    local latestmodloadingline = 0
+    for i,line in ipairs(modloaderlines) do
+      if string.find(line," %[info%] Load mods") then
+        latestmodloadingline = i
+      end
+    end
+    for i,line in ipairs(modloaderlines) do
+      if i >= latestmodloadingline then
+        if string.find(line," %[info%] Load %[") then -- successfully loaded
+          table.insert(ModIDs,string.match(line,"%, (.-)%)")) -- characters between ", " and ")"
+        end
+      end
+    end
+    return ModIDs
+  end
+  
+  
 -- ##################################################################################################################
 -- ##################################################################################################################
 
@@ -1424,6 +1547,8 @@ g_LTL_Serp = {
   myeval = myeval,
   SortFnBigToSmall = SortFnBigToSmall,
   pairsByKeys = pairsByKeys,
+  comma_value = comma_value,
+  GetOS = GetOS,
   GetPairAtIndSortedKeys = GetPairAtIndSortedKeys,
   TableToHex = TableToHex,
   HexToTable = HexToTable,
@@ -1495,6 +1620,7 @@ g_LTL_Serp = {
     [20570]=1,[20571]=1,[20572]=1,[20573]=1,[20574]=1,[20575]=1,[20576]=1,[20577]=1,[20578]=1,[20579]=1,[20580]=1,[20581]=1,
     [20582]=1,[20583]=1,[20584]=1,[20585]=1,[20586]=1,[20587]=1,
   },
+  Languages = {[0]="English",[1]="French",[2]="Polish",[3]="Russian",[4]="Spanish",[5]="German",[6]="Chinese",[7]="Taiwanese",[8]="Japanese",[9]="Korean",[10]="Italian"},
   -- GetTopLevelDiplomacyStateTo only returns 0 to 3. to check CeaseFire/NonAttack use GetCheckDiplomacyStateTo
   DiplomacyState = {War=0,Peace=1,TradeRights=2,Alliance=3,CeaseFire=4,NonAttack=5}, -- from datasets.xml
    -- for StatisticsMenu UIState = 176, for ships it is 119 (it is called RefGuid in infotips for whatever reason), get them eg with adding your log function to table event.OnLeaveUIState and log the one paramater of this function
@@ -1513,6 +1639,9 @@ g_LTL_Serp = {
   GetFertilitiesOrLodesFromArea_CurrentSession = GetFertilitiesOrLodesFromArea_CurrentSession,
   GetVectorGuidsFromSessionObject = GetVectorGuidsFromSessionObject,
   GetCoopPeersAtMarker = GetCoopPeersAtMarker,
+  GetEffectivities = GetEffectivities,
+  GetItemOrBuffEffectTargets = GetItemOrBuffEffectTargets,
+  GetAssetCosts = GetAssetCosts,
   GetGameObjectPath = GetGameObjectPath,
   GetActiveQuestInstances = GetActiveQuestInstances,
   GetCurrentSessionObjectsFromLocaleByProperty = GetCurrentSessionObjectsFromLocaleByProperty,
@@ -1533,5 +1662,17 @@ g_LTL_Serp = {
   NeedsBuildPermit = NeedsBuildPermit,
   AffectedByStatusEffect = AffectedByStatusEffect,
   
+  GetModloaderlog = GetModloaderlog,
+  GetActiveMods = GetActiveMods,
+  
 }
+-- ######
+-- Very helpful vanilla commands:
+
+-- ts.Participants.GetParticipant(Participant_ID).ProfileCounter.Stats.GetCounter(counterValueType,playerCounter,context,counterScope,scopeContext)
+-- can not handle PlayerCounterContextPool unfortunately
+
+-- ts.Conditions.GetCurrentConditionAmount(TriggerGUID) (most likely also QuestGUID?) can get the current and desired amount of 
+-- Trigger Conditions. This can also circumvent the issue that ProfileCounter can not handle Pools. If you know what pool you want to track,
+ -- you can make a Trigger for it and can this way get the current amount via lua
 
