@@ -12,7 +12,7 @@ If you don't know python that may be too difficult for you.
 
 
 ### Get_Buildingsize
-- Get the building blocker size from ifo file
+- Get the building blocker size from ifo file (you have to adjust all paths to yours)
 
   <details>
   <summary>(CLICK) CODE</summary>  
