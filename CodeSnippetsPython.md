@@ -3,11 +3,55 @@
 The code is made for my own purposes, so you may need to adjust it for your purpose.  
 If you don't know python that may be too difficult for you.  
 
+- [Get Building Size from Ifo](#get_buildingsize)
 - [Add Anno 1404 Voice Sounds to Anno 1800](https://github.com/Serpens66/Anno1404SoundsTo1800/tree/main)
 - [soundsforanno](#soundsforanno)
 - [upload_modio](#upload_modio)
 - [create_hardlinks](#create_hardlinks)
 - [(Un-)Pack Savegames](#un-pack_savegames)
+
+
+### Get_Buildingsize
+- Get the building blocker size from ifo file
+
+  <details>
+  <summary>(CLICK) CODE</summary>  
+  
+  ```python
+  
+  from xml.etree import cElementTree as ET
+  import subprocess
+  import pathlib
+  import numpy as np
+
+  def get_buildsize(): # calculation from DuxVitae
+      size = None
+      datapath = "D:/CDesktopLink/Unterlagen/Mods/Anno 1800/Anno1800 RDA unpacked"
+      ifo_part = "data/graphics/buildings/production/coastal_01/coastal_01.ifo"
+  
+      if ifo_part is not None:
+          ifo_path = f"{datapath}/data0bis27/{ifo_part}" # ist jetzt alles gesammelt in diesem ordner
+          corners = []
+          ifo_tree = ET.parse(ifo_path)
+          for corner in ifo_tree.findall(".//BuildBlocker/Position"):
+              corners.append([
+                  float(corner.find("xf").text),
+                  float(corner.find("zf").text)
+              ])
+          corners = np.array(corners).transpose()
+          if len(corners[0]) >= 8:# skip second building blocker of mines - scheint tatsächlich noetig, Mine ist dan 3x3 anstatt die kompletten 5x8 und die Pos eines Eisenminenstempels ist 0,0 ,was heißt size muss ungerade ungerade sein, also ist 3x3 wohl richtig in diesem Kontext.
+              diag0 = np.linalg.norm(np.max(corners[:, 0:4], axis=1) - np.min(corners[:, 0:4], axis=1))
+              diag1 = np.linalg.norm(np.max(corners[:, 4:8], axis=1) - np.min(corners[:, 4:8], axis=1))
+              if diag1 > diag0 + 0.1:
+                  corners = corners[:, 0:4]
+          to_int = lambda arr: np.array([int(round(val)) for val in arr])
+          size = list( to_int((np.max(corners, axis=1) - np.min(corners, axis=1))[::-1]) )
+      return size # return das letzte, also neuste
+
+  print(get_buildsize())
+
+  ```
+  </details>
 
 
 ###  soundsforanno
