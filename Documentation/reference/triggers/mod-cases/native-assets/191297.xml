@@ -1,0 +1,48 @@
+<Asset>
+                  <Template>ItemEffectTargetPool</Template>
+                  <Values>
+                    <Standard>
+                      <GUID>191297</GUID>
+                      <Name>all moderate kontors</Name>
+                      <IconFilename>data/ui/2kimages/main/icons/icon_arrowpoint_right.png</IconFilename>
+                    </Standard>
+                    <Text>
+                      <LocaText>
+                        <English>
+                          <Text>All Trading Posts</Text>
+                          <Status>Exported</Status>
+                        </English>
+                      </LocaText>
+                      <LineID>17991</LineID>
+                    </Text>
+                    <ItemEffectTargetPool>
+                      <EffectTargetGUIDs>
+                        <Item>
+                          <GUID>1010517</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>100510</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>100511</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>269867</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>1010540</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>100514</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>100515</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>269879</GUID>
+                        </Item>
+                      </EffectTargetGUIDs>
+                    </ItemEffectTargetPool>
+                  </Values>
+                </Asset>
+                

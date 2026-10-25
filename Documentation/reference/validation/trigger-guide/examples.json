@@ -1,0 +1,115 @@
+[
+  {
+    "id": "custom-population",
+    "kind": "complete-modops",
+    "sha256": "e2a9428a312915ae258dbc74d160e53f9e5a5d177828c62531bdf0fc88c90b0d",
+    "source": "Native 130221 counter and audited once recipe",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ]
+  },
+  {
+    "id": "once",
+    "kind": "complete-modops",
+    "sha256": "6a9a74cb6ea94a30782a8a1a2b8fa51cca55f595c19d6b1d950a5b231f9b2360",
+    "source": "Documentation\\reference\\triggers\\examples\\once.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "repeat",
+    "kind": "complete-modops",
+    "sha256": "c997f5b9f55dc99eaa939b8e12cd8206a11b8b9287be913e1757a83a0e17106c",
+    "source": "Documentation\\reference\\triggers\\examples\\repeat.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "simultaneous",
+    "kind": "complete-modops",
+    "sha256": "9a0ebbf5de2f71b51090e8e4ed49879084d7ef418998b20c1fc771c6612b193a",
+    "source": "Documentation\\reference\\triggers\\examples\\simultaneous.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "GATE_B_GUID",
+      "GATE_C_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "sequence",
+    "kind": "complete-modops",
+    "sha256": "443f34aead91a4d18adb966e37ddf508b30c86b278f9fd5b5bbcf7b27249f7c2",
+    "source": "Documentation\\reference\\triggers\\examples\\sequence.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "GATE_B_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "priority",
+    "kind": "complete-modops",
+    "sha256": "aff0432b1063d92c2eca56f6ecf83ac0a3f4c9d15c0e4aa1a80b673ba7bde810",
+    "source": "Documentation\\reference\\triggers\\examples\\priority.xml",
+    "tokens": [
+      "ALTERNATE_RESULT_GUID",
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "GATE_B_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "optional",
+    "kind": "complete-modops",
+    "sha256": "0d51fee68fe2aed20436f7a169b40a84764192caa5e486b4eaf533c8d158b31e",
+    "source": "Documentation\\reference\\triggers\\examples\\optional.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "OPTIONAL_RESULT_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "removal-safe",
+    "kind": "complete-modops",
+    "sha256": "f627291c41d3b9dce816b591e4dc9e1876beb25813da07e5e3676e57a80db70e",
+    "source": "Documentation\\reference\\triggers\\examples\\removal-safe.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "PRESENCE_GUID",
+      "RESULT_GUID"
+    ],
+    "external": []
+  },
+  {
+    "id": "human-session",
+    "kind": "complete-modops",
+    "sha256": "d70f2b33c99f6939bb8533571c075761d157994b4ef9c748e360115753f69ce5",
+    "source": "Documentation\\reference\\triggers\\examples\\human-session.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [
+      "WhichPlayer_Serp",
+      "1500001613",
+      "180023"
+    ]
+  }
+]

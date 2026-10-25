@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-03",
+  "cases": [
+    {
+      "guid": "1500003013",
+      "source_structure_passed": true,
+      "exact_payload_preserved": true
+    },
+    {
+      "guid": "1500003820",
+      "source_structure_passed": true,
+      "exact_payload_preserved": true
+    },
+    {
+      "guid": "1500003835",
+      "source_structure_passed": true,
+      "exact_payload_preserved": true
+    },
+    {
+      "guid": "1500001103",
+      "source_structure_passed": true,
+      "exact_payload_preserved": true
+    },
+    {
+      "guid": "1500004302",
+      "source_structure_passed": true,
+      "exact_payload_preserved": true
+    },
+    {
+      "guid": "1500004332",
+      "source_structure_passed": true,
+      "exact_payload_preserved": true
+    }
+  ],
+  "source_hashes_verified": 183,
+  "evaluator_sha256": "d977d9ad3ee1f2a446f3d62f5126e52811458552d4e8a63aefaa301fa51d751f",
+  "command": [
+    "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+    "-c",
+    "patch",
+    "-m",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\mod-trigger-cases\\fixture",
+    "-o",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\mod-trigger-cases\\patched.xml",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\mod-trigger-cases\\original.xml",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\mod-trigger-cases\\fixture\\data\\config\\export\\main\\asset\\assets.xml"
+  ],
+  "caller_consumer_assertions": [
+    "Quest OnQuestEnd preserves native unregister and adds delayed 1500001103 registration",
+    "150721 listens to 1500004234 and enters session after 1000 ms",
+    "150594 listens to 1500004302 and retains ActionUnloadSession",
+    "both insertion anchors unchanged",
+    "Story dependency provides comment-only game-speed scripts"
+  ],
+  "limits": "Scoped real-source fixture only; no complete mod/dependency load, inheritance serialization, timing, saved-state, Lua C-function or MP execution. Three questions remain unanswered."
+}

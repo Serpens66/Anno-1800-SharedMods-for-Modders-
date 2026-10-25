@@ -1,0 +1,22 @@
+<Asset>
+                  <Template>InfoLayerIcon</Template>
+                  <Values>
+                    <Standard>
+                      <GUID>2001386</GUID>
+                      <Name>(DELETE) Quest A6</Name>
+                    </Standard>
+                    <InfoLayerIcon>
+                      <Config>data/graphics/ui/infolayer3d/important_questobject.cfg</Config>
+                      <PopupDelay>0</PopupDelay>
+                    </InfoLayerIcon>
+                    <Text>
+                      <LocaText>
+                        <English>
+                          <Text>Assigment Object</Text>
+                        </English>
+                      </LocaText>
+                      <LineID>4227</LineID>
+                    </Text>
+                  </Values>
+                </Asset>
+                

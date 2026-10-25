@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-03",
+  "xml_blocks_checked": 298,
+  "local_links_checked": 1908,
+  "lua_snippets": [
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\lua\\api-and-timing-1.lua",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\lua\\execution-and-lifecycle-2.lua",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\lua\\shared-light-1.lua",
+    "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\lua\\basic-workflows-3.lua"
+  ],
+  "findings": [],
+  "crlf_normalized_files": 12,
+  "limits": "XML well-formedness and file links only; no runtime/API/MP claim; Lua compiler separately required."
+}

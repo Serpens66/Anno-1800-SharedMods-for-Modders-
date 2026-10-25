@@ -1,0 +1,253 @@
+{
+  "1500003013": {
+    "source": "Anno-1800-Mods/Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml",
+    "sha256": "bd4bcef264387d2e3f1323148e210a3731e7fe889089088386b749201eb84ccb",
+    "encoding": "utf-8",
+    "line": 24,
+    "name": "3rdPartyTradeShipChange Archi Schooner",
+    "modop": {
+      "Type": "AddNextSibling",
+      "GUID": "130221"
+    },
+    "comments": [],
+    "templates": [
+      "ActionDelayedActions",
+      "ActionSetObjectGUID",
+      "AutoCreateTrigger",
+      "ConditionObjectPosition",
+      "ConditionPlayerCounter",
+      "ConditionUnlocked",
+      "Trigger"
+    ],
+    "properties": [
+      "Action",
+      "ActionDelayedActions",
+      "ActionList",
+      "ActionSetObjectGUID",
+      "Condition",
+      "ConditionObjectPosition",
+      "ConditionPlayerCounter",
+      "ConditionPropsNegatable",
+      "ConditionPropsSessionSettings",
+      "ConditionUnlocked",
+      "ObjectFilter",
+      "ObjectTargetFilter",
+      "Standard",
+      "Trigger",
+      "TriggerSetup"
+    ],
+    "numeric_references_to_inspect": [
+      "1500000041",
+      "1500003001",
+      "1500003005",
+      "1500003009",
+      "1500003013",
+      "1500003070",
+      "1500003071",
+      "1500003072",
+      "193897"
+    ]
+  },
+  "1500003820": {
+    "source": "Anno-1800-SharedMods (for Modders)/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+    "sha256": "53beabe0a5e85aa22b66d440c0a9c3c82be6529ec1136e83af32b90a630f7c11",
+    "encoding": "utf-8",
+    "line": 17,
+    "name": "SpawnShipsIfHarlowIsWeakLongTime",
+    "modop": {
+      "Type": "addNextSibling",
+      "GUID": "130248"
+    },
+    "comments": [],
+    "templates": [
+      "ActionDelayedActions",
+      "ActionRegisterTrigger",
+      "AutoCreateTrigger",
+      "ConditionIsDiscovered",
+      "ConditionPlayerCounter",
+      "ConditionTimer",
+      "Harlow_Currently_NOT_Defeated",
+      "Trigger"
+    ],
+    "properties": [
+      "Action",
+      "ActionDelayedActions",
+      "ActionList",
+      "ActionRegisterTrigger",
+      "Condition",
+      "ConditionIsDiscovered",
+      "ConditionPlayerCounter",
+      "ConditionPropsNegatable",
+      "ConditionTimer",
+      "ParticipantRelation",
+      "Standard",
+      "Trigger",
+      "TriggerSetup"
+    ],
+    "numeric_references_to_inspect": [
+      "1500003820",
+      "1500003835",
+      "30000",
+      "3600000",
+      "700138"
+    ]
+  },
+  "1500003835": {
+    "source": "Anno-1800-SharedMods (for Modders)/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+    "sha256": "53beabe0a5e85aa22b66d440c0a9c3c82be6529ec1136e83af32b90a630f7c11",
+    "encoding": "utf-8",
+    "line": 438,
+    "name": "SpawnShips Harlow",
+    "modop": {
+      "Type": "addNextSibling",
+      "GUID": "130248"
+    },
+    "comments": [
+      {
+        "line": 437,
+        "text": " using IsOptional on each subtrigger level is important if we want the main trigger to clear, regardless if anything is true or not.  "
+      }
+    ],
+    "templates": [
+      "ActionExecuteScript",
+      "AutoCreateTrigger",
+      "ConditionIsDiscovered",
+      "Harlow_Currently_NOT_Defeated",
+      "Trigger"
+    ],
+    "properties": [
+      "Action",
+      "ActionExecuteScript",
+      "Condition",
+      "ConditionIsDiscovered",
+      "ConditionPropsNegatable",
+      "ParticipantRelation",
+      "Standard",
+      "Trigger",
+      "TriggerSetup"
+    ],
+    "numeric_references_to_inspect": [
+      "1500003835"
+    ]
+  },
+  "1500001103": {
+    "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/data/config/export/main/asset/ComebackFleet.include.xml",
+    "sha256": "e2c169738e4acf9415d5c7f93f3cf36df23da02a557576c3920e7553b861e2f4",
+    "encoding": "utf-8",
+    "line": 131,
+    "name": "Delete now useless comebackfleet on load - Harlow",
+    "modop": {
+      "GUID": "130248",
+      "Type": "AddNextSibling"
+    },
+    "comments": [],
+    "templates": [
+      "ActionDeleteObjects",
+      "AutoCreateTrigger",
+      "ConditionPlayerCounter",
+      "ConditionUnlocked",
+      "Trigger"
+    ],
+    "properties": [
+      "Action",
+      "ActionDeleteObjects",
+      "Condition",
+      "ConditionPlayerCounter",
+      "ConditionPropsNegatable",
+      "ConditionUnlocked",
+      "ObjectFilter",
+      "Standard",
+      "Trigger",
+      "TriggerSetup"
+    ],
+    "numeric_references_to_inspect": [
+      "100681",
+      "1500001103",
+      "1500001613",
+      "180023"
+    ]
+  },
+  "1500004302": {
+    "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+    "sha256": "584a8e423b55a2980e2fad185e54052901142f355f10544781186fd503bfa120",
+    "encoding": "utf-8",
+    "line": 223,
+    "name": "Played Campaign_MF_600170",
+    "modop": {
+      "Type": "addNextSibling",
+      "GUID": "130248"
+    },
+    "comments": [],
+    "templates": [
+      "ActionDelayedActions",
+      "ActionExecuteScript",
+      "ActionLockAsset",
+      "ActionPlayMovie",
+      "ActionRegisterTrigger",
+      "ConditionEvent",
+      "FeatureUnlock"
+    ],
+    "properties": [
+      "Action",
+      "ActionDelayedActions",
+      "ActionExecuteScript",
+      "ActionList",
+      "ActionLockAsset",
+      "ActionPlayMovie",
+      "ActionRegisterTrigger",
+      "Condition",
+      "ConditionEvent",
+      "ConditionPropsNegatable",
+      "Locked",
+      "Standard",
+      "Trigger",
+      "TriggerSetup"
+    ],
+    "numeric_references_to_inspect": [
+      "1500004202",
+      "1500004234",
+      "1500004302",
+      "1500004332",
+      "1500004391",
+      "219000"
+    ]
+  },
+  "1500004332": {
+    "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+    "sha256": "584a8e423b55a2980e2fad185e54052901142f355f10544781186fd503bfa120",
+    "encoding": "utf-8",
+    "line": 352,
+    "name": "Dont play Campaign_MF_600170",
+    "modop": {
+      "Type": "addNextSibling",
+      "GUID": "130248"
+    },
+    "comments": [],
+    "templates": [
+      "ActionDelayedActions",
+      "ActionLockAsset",
+      "ActionRegisterTrigger",
+      "ConditionEvent",
+      "FeatureUnlock"
+    ],
+    "properties": [
+      "Action",
+      "ActionDelayedActions",
+      "ActionList",
+      "ActionLockAsset",
+      "ActionRegisterTrigger",
+      "Condition",
+      "ConditionEvent",
+      "ConditionPropsNegatable",
+      "Locked",
+      "Standard",
+      "Trigger",
+      "TriggerSetup"
+    ],
+    "numeric_references_to_inspect": [
+      "1500004234",
+      "1500004302",
+      "1500004332"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+<ModOps>
+  <ModOp Type="merge" GUID="2001241" Path="/Values/BuildingBaseTiles">
+    <!-- Merge preserves the other heights, colors and creative-mode radius. -->
+    <HarbourConstructionAreaRadius>40</HarbourConstructionAreaRadius>
+  </ModOp>
+</ModOps>

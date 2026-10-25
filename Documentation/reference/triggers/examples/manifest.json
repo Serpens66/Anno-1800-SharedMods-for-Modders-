@@ -1,0 +1,97 @@
+[
+  {
+    "case": "once",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\once.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "repeat",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\repeat.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "simultaneous",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\simultaneous.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "GATE_B_GUID",
+      "GATE_C_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "sequence",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\sequence.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "GATE_B_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "priority",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\priority.xml",
+    "tokens": [
+      "ALTERNATE_RESULT_GUID",
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "GATE_B_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "optional",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\optional.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "GATE_A_GUID",
+      "OPTIONAL_RESULT_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "removal-safe",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\removal-safe.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "PRESENCE_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  },
+  {
+    "case": "human-session",
+    "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\triggers\\examples\\human-session.xml",
+    "tokens": [
+      "CUSTOM_TRIGGER_GUID",
+      "RESULT_GUID"
+    ],
+    "external": [
+      "WhichPlayer_Serp",
+      "1500001613",
+      "180023"
+    ],
+    "runtime_evidence": "Source-based design, not a newly executed runtime test"
+  }
+]

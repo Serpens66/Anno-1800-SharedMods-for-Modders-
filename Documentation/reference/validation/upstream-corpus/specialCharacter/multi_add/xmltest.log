@@ -1,0 +1,11 @@
+[2026-10-03 18:19:40.128] [debug] Target: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\specialCharacter\multi_add_input.xml
+[2026-10-03 18:19:40.129] [debug] Patch: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\specialCharacter\multi_add_patch.xml
+[2026-10-03 18:19:40.129] [debug] Mod path: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\specialCharacter
+[2026-10-03 18:19:40.129] [debug] Game Path: multi_add_patch.xml
+[2026-10-03 18:19:40.129] [debug] Looking up /Test/Node/Meow[GUID>1]
+[2026-10-03 18:19:40.129] [debug] Time: 0ms ModOp (multi_add_patch.xml:2)
+[2026-10-03 18:19:40.129] [debug] Looking up /Test/Node/Meow[GUID<=1]
+[2026-10-03 18:19:40.129] [debug] Time: 0ms ModOp (multi_add_patch.xml:5)
+[2026-10-03 18:19:40.129] [debug] Time: 0ms Group (multi_add_patch.xml:0)
+xmltest using modloader GU17.1
+ModOp time: 0.000s

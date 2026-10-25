@@ -1,0 +1,30 @@
+<Asset>
+                          <Template>FeatureUnlock</Template>
+                          <Values>
+                            <Standard>
+                              <GUID>137108</GUID>
+                              <Name>Player has 50 Quartz Sand Asset</Name>
+                            </Standard>
+                            <Locked/>
+                            <Trigger>
+                              <TriggerCondition>
+                                <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                <Values>
+                                  <Condition/>
+                                  <ConditionAlwaysTrue/>
+                                </Values>
+                              </TriggerCondition>
+                              <ResetTrigger>
+                                <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                <Values>
+                                  <EmptyAutoCreateValue/>
+                                </Values>
+                              </ResetTrigger>
+                            </Trigger>
+                            <TriggerSetup>
+                              <AutoRegisterTrigger>0</AutoRegisterTrigger>
+                              <UsedBySecondParties>0</UsedBySecondParties>
+                            </TriggerSetup>
+                          </Values>
+                        </Asset>
+                        

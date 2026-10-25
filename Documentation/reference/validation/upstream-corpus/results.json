@@ -1,0 +1,2493 @@
+{
+  "date": "2026-10-03",
+  "source_commit": "8326b7c5a7648787c52f1252cd6e8ae60e593d1c",
+  "executable": "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+  "scope": "Offline installed GU17.1 evaluator; not compiled upstream Catch2 suite, game or multiplayer",
+  "disabled_specs": [
+    "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_multi_node_content_2.json_"
+  ],
+  "cases": [
+    {
+      "case": "add/add_multiple_nodes.json",
+      "name": "Add Multiple Nodes",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_nodes.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_nodes_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_nodes_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Cat='10']",
+        "/Test/Node[Cat2='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_multiple_nodes\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_nodes_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_nodes_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat='10']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat2='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_multiple_nodes\\xmltest.log"
+    },
+    {
+      "case": "add/add_multiple_with_comments.json",
+      "name": "Add Multiple Nodes with comments",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_with_comments.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_with_comments_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_with_comments_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[NodeToChange='x']",
+        "/Test/Node[NodeToChange='xx']",
+        "/Test/Node[NodeToChange='xxx']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_multiple_with_comments\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_with_comments_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_multiple_with_comments_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[NodeToChange='x']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[NodeToChange='xx']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[NodeToChange='xxx']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_multiple_with_comments\\xmltest.log"
+    },
+    {
+      "case": "add/add_with_child.json",
+      "name": "Add With Child Test",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_child.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_child_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_child_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node/Cat",
+        "/Test/Node/Cat/Fur"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_child\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_child_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_child_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Cat",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Cat/Fur",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_child\\xmltest.log"
+    },
+    {
+      "case": "add/add_with_guid_helper.json",
+      "name": "Add With GUID Helper",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper_patch.xml",
+      "expected_paths": [
+        "/AssetList",
+        "/AssetList/Groups",
+        "/AssetList/Groups/Group",
+        "/AssetList/Groups/Group/Groups",
+        "/AssetList/Groups/Group/Groups/Group",
+        "/AssetList/Groups/Group/Groups/Group/Groups",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Standard",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_guid_helper\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Standard",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_guid_helper\\xmltest.log"
+    },
+    {
+      "case": "add/add_with_guid_helper2.json",
+      "name": "Add With GUID Helper 2",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper2.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper2_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper2_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_guid_helper2\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper2_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_guid_helper2_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_guid_helper2\\xmltest.log"
+    },
+    {
+      "case": "add/add_with_template_helper.json",
+      "name": "Add With Template Helper",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_template_helper.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_template_helper_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_template_helper_patch.xml",
+      "expected_paths": [
+        "/Templates",
+        "/Templates/Group",
+        "/Templates/Group/Template",
+        "/Templates/Group/Template/Properties",
+        "/Templates/Group/Template/Properties/Trigger",
+        "/Templates/Group/Template/Properties/Trigger/TriggerCondition",
+        "/Templates/Group/Template/Properties/Trigger/TriggerCondition/Item[Vehicle='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_template_helper\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_template_helper_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\add_with_template_helper_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Templates",
+          "passed": true
+        },
+        {
+          "expression": "/Templates/Group",
+          "passed": true
+        },
+        {
+          "expression": "/Templates/Group/Template",
+          "passed": true
+        },
+        {
+          "expression": "/Templates/Group/Template/Properties",
+          "passed": true
+        },
+        {
+          "expression": "/Templates/Group/Template/Properties/Trigger",
+          "passed": true
+        },
+        {
+          "expression": "/Templates/Group/Template/Properties/Trigger/TriggerCondition",
+          "passed": true
+        },
+        {
+          "expression": "/Templates/Group/Template/Properties/Trigger/TriggerCondition/Item[Vehicle='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\add_with_template_helper\\xmltest.log"
+    },
+    {
+      "case": "add/simple_add.json",
+      "name": "Simple Add Test",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\simple_add.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\simple_add_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\simple_add_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node/Cat"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\simple_add\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\simple_add_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\add\\simple_add_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Cat",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\add\\simple_add\\xmltest.log"
+    },
+    {
+      "case": "addNextSibling/multi_add.json",
+      "name": "Add multiple next siblings",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\multi_add.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\multi_add_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\multi_add_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='1']",
+        "/Test/Node/Meow[GUID='2']",
+        "/Test/Node/Meow[GUID='3']",
+        "/Test/Node/Meow[GUID='4']",
+        "/Test/Node/Meow[GUID='1']/following-sibling::Meow[GUID='3']",
+        "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='4']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addNextSibling\\multi_add\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\multi_add_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\multi_add_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='1']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='2']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='4']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='1']/following-sibling::Meow[GUID='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='4']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addNextSibling\\multi_add\\xmltest.log"
+    },
+    {
+      "case": "addNextSibling/simple_add_sibling.json",
+      "name": "Simple add next sibling",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='1']",
+        "/Test/Node/Meow[GUID='2']",
+        "/Test/Node/Meow[GUID='3']",
+        "/Test/Node/Meow[GUID='1']/following-sibling::Meow[GUID='3']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addNextSibling\\simple_add_sibling\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='1']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='2']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='1']/following-sibling::Meow[GUID='3']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addNextSibling\\simple_add_sibling\\xmltest.log"
+    },
+    {
+      "case": "addNextSibling/simple_add_sibling_root.json",
+      "name": "Simple add next sibling root",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_root.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_root_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_root_patch.xml",
+      "expected_paths": [
+        "//Asset[Values/Standard/GUID='1010521']/following-sibling::Meow[GUID='3']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addNextSibling\\simple_add_sibling_root\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_root_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addNextSibling\\simple_add_sibling_root_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "//Asset[Values/Standard/GUID='1010521']/following-sibling::Meow[GUID='3']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addNextSibling\\simple_add_sibling_root\\xmltest.log"
+    },
+    {
+      "case": "addPrevSibling/multi_add.json",
+      "name": "Add multiple prev siblings",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\multi_add.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\multi_add_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\multi_add_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='1']",
+        "/Test/Node/Meow[GUID='2']",
+        "/Test/Node/Meow[GUID='3']",
+        "/Test/Node/Meow[GUID='4']",
+        "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='4']",
+        "/Test/Node/Meow[GUID='4']/following-sibling::Meow[GUID='1']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addPrevSibling\\multi_add\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\multi_add_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\multi_add_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='1']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='2']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='4']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='4']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='4']/following-sibling::Meow[GUID='1']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addPrevSibling\\multi_add\\xmltest.log"
+    },
+    {
+      "case": "addPrevSibling/simple_add_sibling.json",
+      "name": "Simple add prev sibling",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\simple_add_sibling.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\simple_add_sibling_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\simple_add_sibling_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='1']",
+        "/Test/Node/Meow[GUID='2']",
+        "/Test/Node/Meow[GUID='3']",
+        "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='1']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addPrevSibling\\simple_add_sibling\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\simple_add_sibling_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\addPrevSibling\\simple_add_sibling_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='1']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='2']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='1']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\addPrevSibling\\simple_add_sibling\\xmltest.log"
+    },
+    {
+      "case": "at_guid_helper/add_with_guid_helper_at.json",
+      "name": "Add With GUID Helper @",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\add_with_guid_helper_at.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\add_with_guid_helper_at_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\add_with_guid_helper_at_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\at_guid_helper\\add_with_guid_helper_at\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\add_with_guid_helper_at_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\add_with_guid_helper_at_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\at_guid_helper\\add_with_guid_helper_at\\xmltest.log"
+    },
+    {
+      "case": "at_guid_helper/condition_with_guid_helper_at.json",
+      "name": "Condition With GUID Helper @",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\condition_with_guid_helper_at.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\condition_with_guid_helper_at_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\condition_with_guid_helper_at_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\at_guid_helper\\condition_with_guid_helper_at\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\condition_with_guid_helper_at_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\condition_with_guid_helper_at_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\at_guid_helper\\condition_with_guid_helper_at\\xmltest.log"
+    },
+    {
+      "case": "at_guid_helper/content_with_guid_helper_at.json",
+      "name": "Content with GUID Helper @",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\content_with_guid_helper_at.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\content_with_guid_helper_at_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\content_with_guid_helper_at_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Shipyard/AssemblyOptions"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\at_guid_helper\\content_with_guid_helper_at\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\content_with_guid_helper_at_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\at_guid_helper\\content_with_guid_helper_at_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Shipyard/AssemblyOptions",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\at_guid_helper\\content_with_guid_helper_at\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_match.json",
+      "name": "Condition Match",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_patch.xml",
+      "expected_paths": [
+        "/Test/Node[Meow='5']",
+        "/Test/Node[Meow='3']",
+        "!/Test/Node[Meow='2']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_match\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node[Meow='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='3']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='2']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_match\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_match_include.json",
+      "name": "Condition Match Include",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_include.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_include_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_include_patch.xml",
+      "expected_paths": [
+        "!/Test/Node[Meow='5']",
+        "!/Test/Node[Meow='3']",
+        "/Test/Node[Meow='2']",
+        "!/Test/Node[Meow='7']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_match_include\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_include_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_match_include_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Node[Meow='5']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='2']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='7']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_match_include\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_modid.json",
+      "name": "Condition ModID",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_modid.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_modid_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_modid_patch.xml",
+      "expected_paths": [
+        "!/Test/Asset/Values[Standard/GUID='1']",
+        "/Test/Asset/Values[Standard/GUID='2']",
+        "/Test/Asset/Values[Standard/GUID='3']",
+        "!/Test/Asset/Values[Standard/GUID='4']"
+      ],
+      "status": "not executed",
+      "reason": "Upstream runner supplies an active ModID set; inspected CLI Apply call does not. Do not treat a different context as this test."
+    },
+    {
+      "case": "condition/condition_no_match.json",
+      "name": "Condition No Match",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_patch.xml",
+      "expected_paths": [
+        "/Test/Node[Meow='5']",
+        "/Test/Node[Meow='3']",
+        "!/Test/Node[Meow='2']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_no_match\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node[Meow='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='3']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='2']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_no_match\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_no_match_include.json",
+      "name": "Condition No Match Include",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_include.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_include_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_include_patch.xml",
+      "expected_paths": [
+        "!/Test/Node[Meow='5']",
+        "/Test/Node[Meow='3']",
+        "/Test/Node[Meow='7']",
+        "!/Test/Node[Meow='2']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_no_match_include\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_include_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_no_match_include_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Node[Meow='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='7']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='2']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_no_match_include\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_with_guid_helper.json",
+      "name": "Condition With GUID Helper",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Cost"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Cost",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_with_guid_helper2.json",
+      "name": "Condition With GUID Helper 2",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper2.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper2_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper2_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper2\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper2_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper2_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper2\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_with_guid_helper3.json",
+      "name": "Condition With GUID Helper 3",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper3.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper3_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper3_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper3\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper3_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper3_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper3\\xmltest.log"
+    },
+    {
+      "case": "condition/condition_with_guid_helper4.json",
+      "name": "Condition With GUID Helper 4",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper4.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper4_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper4_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Cost"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper4\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper4_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\condition\\condition_with_guid_helper4_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Cost",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\condition\\condition_with_guid_helper4\\xmltest.log"
+    },
+    {
+      "case": "content/simple_content.json",
+      "name": "Simple content",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_patch.xml",
+      "expected_paths": [
+        "/Test/Target/Building/InfluencedVariationDirection/Item[Type='Mid']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\simple_content\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Target/Building/InfluencedVariationDirection/Item[Type='Mid']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\simple_content\\xmltest.log"
+    },
+    {
+      "case": "content/simple_content_multiple.json",
+      "name": "Simple content multiple",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_multiple.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_multiple_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_multiple_patch.xml",
+      "expected_paths": [
+        "/Test/Target[Building='0']",
+        "/Test/Target[Building='1']",
+        "/Test/Target[Building='2']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\simple_content_multiple\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_multiple_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_multiple_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Target[Building='0']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Target[Building='1']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Target[Building='2']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\simple_content_multiple\\xmltest.log"
+    },
+    {
+      "case": "content/simple_content_warning.json",
+      "name": "Simple content warning",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_warning.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_warning_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_warning_patch.xml",
+      "expected_paths": [
+        "!/Test/Target/Building/InfluencedVariationDirection/Item[Type='Mid']",
+        "!//ModOpTemp"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\simple_content_warning\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_warning_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\simple_content_warning_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Target/Building/InfluencedVariationDirection/Item[Type='Mid']",
+          "passed": true
+        },
+        {
+          "expression": "!//ModOpTemp",
+          "passed": true
+        }
+      ],
+      "issues": true,
+      "expected_issues": true,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\simple_content_warning\\xmltest.log"
+    },
+    {
+      "case": "content/wrapped_content_multiple.json",
+      "name": "Wrapped content multiple",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\wrapped_content_multiple.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\wrapped_content_multiple_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\wrapped_content_multiple_patch.xml",
+      "expected_paths": [
+        "!/Test/Target[GUID='0']",
+        "/Test/Target[GUID='1']",
+        "/Test/Target[GUID='2']",
+        "!//ModOpTemp"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\wrapped_content_multiple\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\wrapped_content_multiple_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\content\\wrapped_content_multiple_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Target[GUID='0']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Target[GUID='1']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Target[GUID='2']",
+          "passed": true
+        },
+        {
+          "expression": "!//ModOpTemp",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\content\\wrapped_content_multiple\\xmltest.log"
+    },
+    {
+      "case": "group/condition_match_include.json",
+      "name": "Group Condition Match Include",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_match_include.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_match_include_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_match_include_patch.xml",
+      "expected_paths": [
+        "!/Test/Node[Meow='5']",
+        "!/Test/Node[Meow='3']",
+        "/Test/Node[Meow='2']",
+        "!/Test/Node[Meow='7']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\group\\condition_match_include\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_match_include_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_match_include_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Node[Meow='5']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='2']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='7']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\group\\condition_match_include\\xmltest.log"
+    },
+    {
+      "case": "group/condition_no_match_include.json",
+      "name": "Group Condition No Match Include",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_no_match_include.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_no_match_include_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_no_match_include_patch.xml",
+      "expected_paths": [
+        "!/Test/Node[Meow='5']",
+        "/Test/Node[Meow='3']",
+        "/Test/Node[Meow='7']",
+        "!/Test/Node[Meow='2']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\group\\condition_no_match_include\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_no_match_include_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_no_match_include_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Node[Meow='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='3']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='7']",
+          "passed": true
+        },
+        {
+          "expression": "!/Test/Node[Meow='2']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\group\\condition_no_match_include\\xmltest.log"
+    },
+    {
+      "case": "group/condition_with_guid_helper.json",
+      "name": "Group Condition With GUID Helper",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_with_guid_helper.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_with_guid_helper_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_with_guid_helper_patch.xml",
+      "expected_paths": [
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Building"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\group\\condition_with_guid_helper\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_with_guid_helper_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\group\\condition_with_guid_helper_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Cost",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values[Standard/GUID='1010521']/Building",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\group\\condition_with_guid_helper\\xmltest.log"
+    },
+    {
+      "case": "include/include_absolute_path.json",
+      "name": "Include from absolute path",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_absolute_path.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_absolute_path_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_absolute_path_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Cat='10']",
+        "/Test/Node[Cat2='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_absolute_path\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_absolute_path_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_absolute_path_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat='10']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat2='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_absolute_path\\xmltest.log"
+    },
+    {
+      "case": "include/include_add_nodes.json",
+      "name": "Include Add Multiple Nodes",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_add_nodes.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_add_nodes_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_add_nodes_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Cat='10']",
+        "/Test/Node[Cat2='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_add_nodes\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_add_nodes_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_add_nodes_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat='10']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat2='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_add_nodes\\xmltest.log"
+    },
+    {
+      "case": "include/include_nested_include.json",
+      "name": "Include nested within included file",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nested_include.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nested_include_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nested_include_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Cat3='5']",
+        "/Test/Node[Cat='10']",
+        "/Test/Node[Cat2='5']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_nested_include\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nested_include_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nested_include_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat3='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat='10']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat2='5']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_nested_include\\xmltest.log"
+    },
+    {
+      "case": "include/include_nested_nontrivial.json",
+      "name": "Include nested with nontrivial path within included file",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nested_nontrivial.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nested_nontrivial_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nested_nontrivial_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Cat3='5']",
+        "/Test/Node[Cat='10']",
+        "/Test/Node[Cat2='5']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_nested_nontrivial\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nested_nontrivial_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nested_nontrivial_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat3='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat='10']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat2='5']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_nested_nontrivial\\xmltest.log"
+    },
+    {
+      "case": "include/include_nontrivial_path.json",
+      "name": "Include from non-trivial path",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_nontrivial_path.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nontrivial_path_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nontrivial_path_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Cat='10']",
+        "/Test/Node[Cat2='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_nontrivial_path\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nontrivial_path_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\config\\export\\include_nontrivial_path_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat='10']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Cat2='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_nontrivial_path\\xmltest.log"
+    },
+    {
+      "case": "include/include_order.json",
+      "name": "Include with Correct Order",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_order.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_order_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_order_patch.xml",
+      "expected_paths": [
+        "/Test/Node[Cat='3']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_order\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_order_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\include\\include_order_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node[Cat='3']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\include\\include_order\\xmltest.log"
+    },
+    {
+      "case": "merge/merge_add_content.json",
+      "name": "Merge add content",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_add_content.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_add_content_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_add_content_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Building[BuildingCategoryName='0']",
+        "/Test/Node/Building[AssociatedRegions='Moderate;Colony01']",
+        "/Test/Node/Skins/SkinList/Item[SkinAssetGuid='1500010407']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\merge_add_content\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_add_content_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_add_content_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Building[BuildingCategoryName='0']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Building[AssociatedRegions='Moderate;Colony01']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Skins/SkinList/Item[SkinAssetGuid='1500010407']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\merge_add_content\\xmltest.log"
+    },
+    {
+      "case": "merge/merge_complex_add.json",
+      "name": "Merge complex add",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_complex_add.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_complex_add_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_complex_add_patch.xml",
+      "expected_paths": [
+        "!//Values/Maintenance/Maintenances"
+      ],
+      "status": "not executed",
+      "reason": "Original fixture is missing or not well-formed XML",
+      "detail": "Opening and ending tag mismatch: Groups line 2 and Group, line 15, column 9 (file:/C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/anno-mod-loader/tests/xml/merge/merge_complex_add_input.xml, line 15)"
+    },
+    {
+      "case": "merge/merge_empty.json",
+      "name": "Merge empty",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_empty.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_empty_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_empty_patch.xml",
+      "expected_paths": [],
+      "status": "not executed",
+      "reason": "Original fixture is missing or not well-formed XML",
+      "detail": "Opening and ending tag mismatch: Groups line 2 and Group, line 33, column 9 (file:/C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/anno-mod-loader/tests/xml/merge/merge_empty_input.xml, line 33)"
+    },
+    {
+      "case": "merge/merge_list.json",
+      "name": "Merge ordered list items",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list_patch.xml",
+      "expected_paths": [
+        "//Values/Maintenance/Maintenances/Item[Product='1010017' and Amount='50000' and InactiveAmount='30000']",
+        "//Values/Maintenance/Maintenances/Item[Product='1010117' and ShutdownThreshold='1']"
+      ],
+      "status": "not executed",
+      "reason": "Original fixture is missing or not well-formed XML",
+      "detail": "Opening and ending tag mismatch: Groups line 2 and Group, line 33, column 9 (file:/C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/anno-mod-loader/tests/xml/merge/merge_list_input.xml, line 33)"
+    },
+    {
+      "case": "merge/merge_list2.json",
+      "name": "Merge ordered list items 2",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list2.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list2_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list2_patch.xml",
+      "expected_paths": [
+        "//Values/FactoryBase/FactoryInputs/Item[Product='1010240' and StorageAmount='2']",
+        "//Values/FactoryBase/FactoryInputs/Item[Product='120044' and StorageAmount='4']"
+      ],
+      "status": "not executed",
+      "reason": "Original fixture is missing or not well-formed XML",
+      "detail": "Opening and ending tag mismatch: Groups line 2 and Group, line 39, column 13 (file:/C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/anno-mod-loader/tests/xml/merge/merge_list2_input.xml, line 39)"
+    },
+    {
+      "case": "merge/merge_list3.json",
+      "name": "Merge ordered list items 3",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list3.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list3_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_list3_patch.xml",
+      "expected_paths": [
+        "//Values/FactoryBase/FactoryInputs/Item[Product='120008' and position()=1]",
+        "//Values/FactoryBase/FactoryInputs/Item[Product='1010241' and position()=2]"
+      ],
+      "status": "not executed",
+      "reason": "Original fixture is missing or not well-formed XML",
+      "detail": "Opening and ending tag mismatch: Groups line 2 and Group, line 40, column 13 (file:/C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/anno-mod-loader/tests/xml/merge/merge_list3_input.xml, line 40)"
+    },
+    {
+      "case": "merge/merge_multi_node_content.json",
+      "name": "Multi node merge content",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_multi_node_content.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_multi_node_content_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_multi_node_content_patch.xml",
+      "expected_paths": [
+        "/Test/Node/FullSatisfactionDistance",
+        "/Test/Node/NoSatisfactionDistance",
+        "/Test/Node[FullSatisfactionDistance='60']",
+        "/Test/Node[NoSatisfactionDistance='90']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\merge_multi_node_content\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_multi_node_content_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_multi_node_content_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/FullSatisfactionDistance",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/NoSatisfactionDistance",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[FullSatisfactionDistance='60']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[NoSatisfactionDistance='90']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\merge_multi_node_content\\xmltest.log"
+    },
+    {
+      "case": "merge/merge_single_child_only.json",
+      "name": "Merge single child only",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_single_child_only.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_single_child_only_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_single_child_only_patch.xml",
+      "expected_paths": [
+        "//Values/Cost/Costs/Item[Ingredient='1010017' and Amount='100']",
+        "//Values/Cost/Costs/Item[Ingredient='1010196' and Amount='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\merge_single_child_only\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_single_child_only_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_single_child_only_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "//Values/Cost/Costs/Item[Ingredient='1010017' and Amount='100']",
+          "passed": true
+        },
+        {
+          "expression": "//Values/Cost/Costs/Item[Ingredient='1010196' and Amount='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\merge_single_child_only\\xmltest.log"
+    },
+    {
+      "case": "merge/merge_strange_updated.json",
+      "name": "Merge strange updated",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_strange_updated.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_strange_updated_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\merge_strange_updated_patch.xml",
+      "expected_paths": [
+        "//Values/Maintenance/Maintenances/Item[Product='1010017' and Amount='50000' and InactiveAmount='30000']",
+        "//Values/Maintenance/Maintenances/Item[Product='1010367' and ShutdownThreshold='1']"
+      ],
+      "status": "not executed",
+      "reason": "Original fixture is missing or not well-formed XML",
+      "detail": "Opening and ending tag mismatch: Groups line 2 and Group, line 33, column 9 (file:/C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/anno-mod-loader/tests/xml/merge/merge_strange_updated_input.xml, line 33)"
+    },
+    {
+      "case": "merge/simple_merge_attribute.json",
+      "name": "Simple merge",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_attribute.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_attribute_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_attribute_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[@Attr='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\simple_merge_attribute\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_attribute_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_attribute_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[@Attr='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\simple_merge_attribute\\xmltest.log"
+    },
+    {
+      "case": "merge/simple_merge_content.json",
+      "name": "Simple merge content",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_content.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_content_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_content_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Meow='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\simple_merge_content\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_content_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_content_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\simple_merge_content\\xmltest.log"
+    },
+    {
+      "case": "merge/simple_merge_unordered.json",
+      "name": "Merge unordered content",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_unordered.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_unordered_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_unordered_patch.xml",
+      "expected_paths": [
+        "/Test/Node[Meow1='4']",
+        "/Test/Node[Meow2='5']",
+        "/Test/Node[Meow3='6']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\simple_merge_unordered\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_unordered_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\merge\\simple_merge_unordered_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node[Meow1='4']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow2='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow3='6']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\merge\\simple_merge_unordered\\xmltest.log"
+    },
+    {
+      "case": "noMatchWarning/no_match_allow.json",
+      "name": "Add No Allow",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_allow.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_allow_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_allow_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='1']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\noMatchWarning\\no_match_allow\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_allow_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_allow_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='1']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\noMatchWarning\\no_match_allow\\xmltest.log"
+    },
+    {
+      "case": "noMatchWarning/no_match_warning.json",
+      "name": "Add No Match",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_warning.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_warning_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_warning_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='1']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\noMatchWarning\\no_match_warning\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_warning_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\noMatchWarning\\no_match_warning_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='1']",
+          "passed": true
+        }
+      ],
+      "issues": true,
+      "expected_issues": true,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\noMatchWarning\\no_match_warning\\xmltest.log"
+    },
+    {
+      "case": "path/add_with_guid_helper.json",
+      "name": "Add With GUID Helper, No Slash",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\add_with_guid_helper.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\add_with_guid_helper_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\add_with_guid_helper_patch.xml",
+      "expected_paths": [
+        "/AssetList",
+        "/AssetList/Groups",
+        "/AssetList/Groups/Group",
+        "/AssetList/Groups/Group/Groups",
+        "/AssetList/Groups/Group/Groups/Group",
+        "/AssetList/Groups/Group/Groups/Group/Groups",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Standard",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\path\\add_with_guid_helper\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\add_with_guid_helper_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\add_with_guid_helper_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Standard",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Asset/Values/Shipyard/AssemblyOptions/Item[Vehicle='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\path\\add_with_guid_helper\\xmltest.log"
+    },
+    {
+      "case": "path/simple_add.json",
+      "name": "Simple Add Test, No Slash",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\simple_add.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\simple_add_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\simple_add_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node/Cat"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\path\\simple_add\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\simple_add_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\path\\simple_add_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Cat",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\path\\simple_add\\xmltest.log"
+    },
+    {
+      "case": "remove/simple_remove.json",
+      "name": "Simple remove",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\remove\\simple_remove.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\remove\\simple_remove_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\remove\\simple_remove_patch.xml",
+      "expected_paths": [
+        "!/Test/Node/Meow"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\remove",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\remove\\simple_remove\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\remove\\simple_remove_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\remove\\simple_remove_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Node/Meow",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\remove\\simple_remove\\xmltest.log"
+    },
+    {
+      "case": "replace/replace_guid_helper_root.json",
+      "name": "Replace With GUID Helper root path",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_guid_helper_root.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_guid_helper_root_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_guid_helper_root_patch.xml",
+      "expected_paths": [
+        "/AssetList",
+        "/AssetList/Groups",
+        "/AssetList/Groups/Group",
+        "/AssetList/Groups/Group/Groups",
+        "/AssetList/Groups/Group/Groups/Group",
+        "/AssetList/Groups/Group/Groups/Group/Groups",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Item",
+        "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Item[Vehicle='Meow']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\replace\\replace_guid_helper_root\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_guid_helper_root_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_guid_helper_root_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/AssetList",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Item",
+          "passed": true
+        },
+        {
+          "expression": "/AssetList/Groups/Group/Groups/Group/Groups/Group/Assets/Item[Vehicle='Meow']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\replace\\replace_guid_helper_root\\xmltest.log"
+    },
+    {
+      "case": "replace/replace_with_childs.json",
+      "name": "Replace with childs",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_with_childs.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_with_childs_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_with_childs_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node",
+        "/Test/Node/Meow[Cat='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\replace\\replace_with_childs\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_with_childs_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\replace_with_childs_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[Cat='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\replace\\replace_with_childs\\xmltest.log"
+    },
+    {
+      "case": "replace/simple_replace.json",
+      "name": "Simple replace",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\simple_replace.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\simple_replace_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\simple_replace_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow",
+        "/Test/Node[Meow='10']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\replace\\simple_replace\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\simple_replace_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\replace\\simple_replace_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node[Meow='10']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\replace\\simple_replace\\xmltest.log"
+    },
+    {
+      "case": "skip/simple_skip.json",
+      "name": "Simple Skip",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\simple_skip.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\simple_skip_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\simple_skip_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\skip\\simple_skip\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\simple_skip_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\simple_skip_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\skip\\simple_skip\\xmltest.log"
+    },
+    {
+      "case": "skip/skip_include.json",
+      "name": "Skip Include",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\skip_include.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\skip_include_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\skip_include_patch.xml",
+      "expected_paths": [
+        "/Test/Node[Meow='1']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\skip\\skip_include\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\skip_include_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\skip\\skip_include_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node[Meow='1']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\skip\\skip_include\\xmltest.log"
+    },
+    {
+      "case": "specialCharacter/multi_add.json",
+      "name": "Special Characters < and >",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\specialCharacter\\multi_add.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\specialCharacter\\multi_add_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\specialCharacter\\multi_add_patch.xml",
+      "expected_paths": [
+        "/Test/Node/Meow[GUID='5']",
+        "/Test/Node/Meow[GUID='6']",
+        "/Test/Node/Meow[GUID='1']/following-sibling::Meow[GUID='6']",
+        "/Test/Node/Meow[GUID='6']/following-sibling::Meow[GUID='2']",
+        "/Test/Node/Meow[GUID='2']/following-sibling::Meow[GUID='5']",
+        "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='5']",
+        "/Test/Node/Meow[GUID='4']/following-sibling::Meow[GUID='5']"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\specialCharacter",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\specialCharacter\\multi_add\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\specialCharacter\\multi_add_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\specialCharacter\\multi_add_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "/Test/Node/Meow[GUID='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='6']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='1']/following-sibling::Meow[GUID='6']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='6']/following-sibling::Meow[GUID='2']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='2']/following-sibling::Meow[GUID='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='3']/following-sibling::Meow[GUID='5']",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Node/Meow[GUID='4']/following-sibling::Meow[GUID='5']",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\specialCharacter\\multi_add\\xmltest.log"
+    },
+    {
+      "case": "xpath_or/xpath_or.json",
+      "name": "XPath | Behavior",
+      "source_spec": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\xpath_or\\xpath_or.json",
+      "source_input": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\xpath_or\\xpath_or_input.xml",
+      "source_patch": "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\xpath_or\\xpath_or_patch.xml",
+      "expected_paths": [
+        "!/Test/Asset/Values[Standard/GUID='5']/Meow",
+        "/Test/Asset/Values[Standard/GUID='4']/Meow"
+      ],
+      "status": "passed",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-v",
+        "-m",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\xpath_or",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\xpath_or\\xpath_or\\patched.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\xpath_or\\xpath_or_input.xml",
+        "C:\\Users\\Serpens66\\AppData\\Local\\Temp\\anno1800-documentation-research-20261003\\anno-mod-loader\\tests\\xml\\xpath_or\\xpath_or_patch.xml"
+      ],
+      "exit_code": 0,
+      "assertions": [
+        {
+          "expression": "!/Test/Asset/Values[Standard/GUID='5']/Meow",
+          "passed": true
+        },
+        {
+          "expression": "/Test/Asset/Values[Standard/GUID='4']/Meow",
+          "passed": true
+        }
+      ],
+      "issues": false,
+      "expected_issues": false,
+      "log": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\upstream-corpus\\xpath_or\\xpath_or\\xmltest.log"
+    }
+  ]
+}

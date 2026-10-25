@@ -1,0 +1,9 @@
+[2026-10-03 18:19:39.589] [debug] Target: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\add\simple_add_input.xml
+[2026-10-03 18:19:39.589] [debug] Patch: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\add\simple_add_patch.xml
+[2026-10-03 18:19:39.589] [debug] Mod path: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\add
+[2026-10-03 18:19:39.589] [debug] Game Path: simple_add_patch.xml
+[2026-10-03 18:19:39.590] [debug] Looking up /Test/Node
+[2026-10-03 18:19:39.590] [debug] Time: 0ms ModOp (simple_add_patch.xml:2)
+[2026-10-03 18:19:39.590] [debug] Time: 0ms Group (simple_add_patch.xml:0)
+xmltest using modloader GU17.1
+ModOp time: 0.000s

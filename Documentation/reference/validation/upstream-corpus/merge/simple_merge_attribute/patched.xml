@@ -1,0 +1,5 @@
+<Test>
+  <Node Attr="Meow">
+    <Meow />
+  </Node>
+</Test>

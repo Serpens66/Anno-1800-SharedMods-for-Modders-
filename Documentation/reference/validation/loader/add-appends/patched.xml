@@ -1,0 +1,22 @@
+<Assets>
+  <Asset>
+    <Template>Example</Template>
+    <Values>
+      <Standard>
+        <GUID>1</GUID>
+        <Name>old</Name>
+      </Standard>
+      <List>
+        <Item>
+          <A>1</A>
+        </Item>
+        <Item>
+          <A>2</A>
+        </Item>
+        <Item>
+          <A>9</A>
+        </Item>
+      </List>
+    </Values>
+  </Asset>
+</Assets>

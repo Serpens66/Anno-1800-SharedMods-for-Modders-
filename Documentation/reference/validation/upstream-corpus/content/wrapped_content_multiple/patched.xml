@@ -1,0 +1,10 @@
+<Test>
+  <Source>
+    <Building>1</Building>
+    <Building>2</Building>
+  </Source>
+  <Target>
+    <GUID>1</GUID>
+    <GUID>2</GUID>
+  </Target>
+</Test>

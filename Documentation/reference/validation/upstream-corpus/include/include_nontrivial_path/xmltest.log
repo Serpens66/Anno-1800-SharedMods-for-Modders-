@@ -1,0 +1,11 @@
+[2026-10-03 18:19:39.911] [debug] Target: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\include\config\export\include_nontrivial_path_input.xml
+[2026-10-03 18:19:39.912] [debug] Patch: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\include\config\export\include_nontrivial_path_patch.xml
+[2026-10-03 18:19:39.912] [debug] Mod path: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\include
+[2026-10-03 18:19:39.912] [debug] Game Path: config\export\include_nontrivial_path_patch.xml
+[2026-10-03 18:19:39.912] [debug] Include: config\export\include_nontrivial_input.xml
+[2026-10-03 18:19:39.912] [debug] Looking up /Test/Node
+[2026-10-03 18:19:39.912] [debug] Time: 0ms ModOp (config/export/include_nontrivial_input.xml:2)
+[2026-10-03 18:19:39.912] [debug] Time: 0ms Group (config/export/include_nontrivial_path_patch.xml:2)
+[2026-10-03 18:19:39.912] [debug] Time: 0ms Group (config/export/include_nontrivial_path_patch.xml:0)
+xmltest using modloader GU17.1
+ModOp time: 0.000s

@@ -1,0 +1,55 @@
+<Asset>
+                          <Template>QuestLighthouse</Template>
+                          <Values>
+                            <Standard>
+                              <GUID>100707</GUID>
+                              <Name>HB QuestObject (Harlow - Eur Pirate)</Name>
+                              <IconFilename>data/ui/2kimages/main/profiles/3rd_party_03.png</IconFilename>
+                              <InfoDescription>2676</InfoDescription>
+                            </Standard>
+                            <Blocking/>
+                            <Mesh/>
+                            <Object>
+                              <Variations>
+                                <Item>
+                                  <Filename>data/graphics/buildings/3rd_party/3rd_party_questobject/3rd_party_questobject.cfg</Filename>
+                                </Item>
+                                <Item>
+                                  <Filename>data/graphics/buildings/3rd_party/3rd_party_questobject/3rd_party_questobject_lighthouse.cfg</Filename>
+                                </Item>
+                              </Variations>
+                            </Object>
+                            <AmbientMoodProvider/>
+                            <Constructable/>
+                            <Selection>
+                              <OnSelection>
+                                <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                                <Values>
+                                  <ActionList/>
+                                </Values>
+                              </OnSelection>
+                              <Colors>
+                                <SelectionColorType>PropertySelectionColor</SelectionColorType>
+                                <SelectionColor>-337045</SelectionColor>
+                                <WeakSelectionColorType>NoColor</WeakSelectionColorType>
+                              </Colors>
+                            </Selection>
+                            <Text>
+                              <LocaText>
+                                <English>
+                                  <Text>Anne Harlow's Lighthouse</Text>
+                                  <Status>Exported</Status>
+                                </English>
+                              </LocaText>
+                              <LineID>7034</LineID>
+                            </Text>
+                            <Cost/>
+                            <Infolayer/>
+                            <QuestObject/>
+                            <SoundEmitter/>
+                            <Maintenance/>
+                            <Locked/>
+                            <Building/>
+                          </Values>
+                        </Asset>
+                        

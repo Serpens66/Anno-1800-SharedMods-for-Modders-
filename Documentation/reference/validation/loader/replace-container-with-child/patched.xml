@@ -1,0 +1,16 @@
+<Assets>
+  <Asset>
+    <Template>Example</Template>
+    <Values>
+      <Name>new</Name>
+      <List>
+        <Item>
+          <A>1</A>
+        </Item>
+        <Item>
+          <A>2</A>
+        </Item>
+      </List>
+    </Values>
+  </Asset>
+</Assets>

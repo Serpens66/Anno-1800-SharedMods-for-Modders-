@@ -3,6 +3,14 @@
 
 Shared mods from other modders: https://github.com/anno-mods/shared-resources
 
+## Documentation
+
+- [Modding knowledge base](Documentation/README.md)
+- [Trigger Guide](Trigger_Guide.md)
+- [Reward Pool Guide](Guide_RewardPools.md)
+
+The knowledge base includes historical evidence and qualified research results. Links marked "local workspace only" require the surrounding local workspace and are unavailable on GitHub.
+
 ## Code
 1) [xml Anno codesnippets](./CodeSnippets.md)
 2) [python tools codesnippets](./CodeSnippetsPython.md)

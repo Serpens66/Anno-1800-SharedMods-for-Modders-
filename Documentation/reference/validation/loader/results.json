@@ -1,0 +1,169 @@
+{
+  "date": "2026-10-03",
+  "scope": "Synthetic offline XML; not an in-game or multiplayer test",
+  "executable": "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+  "sha256": "d977d9ad3ee1f2a446f3d62f5126e52811458552d4e8a63aefaa301fa51d751f",
+  "reported_build": "GU17.1",
+  "cases": [
+    {
+      "case": "scalar-condition",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\scalar-condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\scalar-condition\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\scalar-condition\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "string(//Standard/Name)",
+      "expected": "old",
+      "actual": "old",
+      "expected_error": true,
+      "passed": true
+    },
+    {
+      "case": "nodes-condition",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\nodes-condition",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\nodes-condition\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\nodes-condition\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "string(//Standard/Name)",
+      "expected": "new",
+      "actual": "new",
+      "expected_error": false,
+      "passed": true
+    },
+    {
+      "case": "replace-container-with-child",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\replace-container-with-child",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\replace-container-with-child\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\replace-container-with-child\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "count(//Standard)",
+      "expected": 0.0,
+      "actual": 0.0,
+      "expected_error": false,
+      "passed": true
+    },
+    {
+      "case": "replace-container-correct",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\replace-container-correct",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\replace-container-correct\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\replace-container-correct\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "string(//Standard/Name)",
+      "expected": "new",
+      "actual": "new",
+      "expected_error": false,
+      "passed": true
+    },
+    {
+      "case": "merge-empty-does-not-clear",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\merge-empty-does-not-clear",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\merge-empty-does-not-clear\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\merge-empty-does-not-clear\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "count(//List/Item)",
+      "expected": 2.0,
+      "actual": 2.0,
+      "expected_error": false,
+      "passed": true
+    },
+    {
+      "case": "merge-occurrence",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\merge-occurrence",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\merge-occurrence\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\merge-occurrence\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "string(//List/Item[2]/A)",
+      "expected": "2",
+      "actual": "2",
+      "expected_error": false,
+      "passed": true
+    },
+    {
+      "case": "add-appends",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\add-appends",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\add-appends\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\add-appends\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "count(//List/Item)",
+      "expected": 3.0,
+      "actual": 3.0,
+      "expected_error": false,
+      "passed": true
+    },
+    {
+      "case": "at-values-context",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\at-values-context",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\at-values-context\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\loader\\at-values-context\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "exit_code": 0,
+      "assertion": "string(//Standard/Name)",
+      "expected": "new",
+      "actual": "new",
+      "expected_error": false,
+      "passed": true
+    }
+  ]
+}

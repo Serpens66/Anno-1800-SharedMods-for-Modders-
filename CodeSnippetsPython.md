@@ -975,7 +975,7 @@ https://ffmpeg.org/download.html  - can do all other conversion stuff and read o
   github_recom_path = r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\mods bei github\Anno-1800-Mods\Recommended-Mods"
   github_ykwyd_path = r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\mods bei github\Anno-1800-Mods\YouKnowWhatYouDo-Mods"
   github_wip_path = r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\mods bei github\Anno-1800-Mods\WorkInProgress-Mods"
-  github_shared_path = r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\mods bei github\Anno-1800-SharedMods (for Modders)"
+  github_shared_path = r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\mods bei github\SharedMods"
 
   modsfolder = r"C:\Users\Serpens66\Documents\Anno 1800\mods"
 

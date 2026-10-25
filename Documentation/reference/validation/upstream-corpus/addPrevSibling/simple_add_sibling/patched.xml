@@ -1,0 +1,13 @@
+<Test>
+  <Node>
+    <Meow>
+      <GUID>3</GUID>
+    </Meow>
+    <Meow>
+      <GUID>1</GUID>
+    </Meow>
+    <Meow>
+      <GUID>2</GUID>
+    </Meow>
+  </Node>
+</Test>

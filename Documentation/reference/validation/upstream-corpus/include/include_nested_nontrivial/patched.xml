@@ -1,0 +1,8 @@
+<Test>
+  <Node>
+    <Meow />
+    <Cat>10</Cat>
+    <Cat2>5</Cat2>
+    <Cat3>5</Cat3>
+  </Node>
+</Test>

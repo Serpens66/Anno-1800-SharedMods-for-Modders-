@@ -1,0 +1,60 @@
+{
+  "verified_on": "2026-10-03",
+  "method": "GitHub connector fetch_file; verified owning Asset and GUID line in public source",
+  "records": [
+    {
+      "guid": "1500003013",
+      "path": "Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml",
+      "asset_line": 24,
+      "guid_line": 28,
+      "blob_sha": "4509f4410445616344595b2a6c8f66b63cf4570a",
+      "url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/Recommended-Mods/BT%20Passive%20Trading%20(Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml#L24",
+      "guid_url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/Recommended-Mods/BT%20Passive%20Trading%20(Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml#L28"
+    },
+    {
+      "guid": "1500003820",
+      "path": "shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+      "asset_line": 17,
+      "guid_line": 21,
+      "blob_sha": "0fdc4e4f7c9d35f2e455a58555c4ffacf4a222d1",
+      "url": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L17",
+      "guid_url": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L21"
+    },
+    {
+      "guid": "1500003835",
+      "path": "shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+      "asset_line": 438,
+      "guid_line": 442,
+      "blob_sha": "0fdc4e4f7c9d35f2e455a58555c4ffacf4a222d1",
+      "url": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L438",
+      "guid_url": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L442"
+    },
+    {
+      "guid": "1500001103",
+      "path": "YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/data/config/export/main/asset/ComebackFleet.include.xml",
+      "asset_line": 131,
+      "guid_line": 135,
+      "blob_sha": "9139a585db1f161b59af8937fe685850f1c7d1e3",
+      "url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/P%20PirateComebackFleetFix%20(Serp)/data/config/export/main/asset/ComebackFleet.include.xml#L131",
+      "guid_url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/P%20PirateComebackFleetFix%20(Serp)/data/config/export/main/asset/ComebackFleet.include.xml#L135"
+    },
+    {
+      "guid": "1500004302",
+      "path": "YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+      "asset_line": 223,
+      "guid_line": 227,
+      "blob_sha": "b03326bb49d781e43f38a5e3573a96a9700ce65c",
+      "url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L223",
+      "guid_url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L227"
+    },
+    {
+      "guid": "1500004332",
+      "path": "YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+      "asset_line": 352,
+      "guid_line": 356,
+      "blob_sha": "b03326bb49d781e43f38a5e3573a96a9700ce65c",
+      "url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L352",
+      "guid_url": "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L356"
+    }
+  ]
+}

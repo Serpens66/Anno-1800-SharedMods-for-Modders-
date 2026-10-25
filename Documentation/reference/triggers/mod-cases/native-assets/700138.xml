@@ -1,0 +1,33 @@
+<Asset>
+                  <Template>PlayerCounterContextPool</Template>
+                  <Values>
+                    <Standard>
+                      <GUID>700138</GUID>
+                      <Name>All Pirate Ships</Name>
+                    </Standard>
+                    <PlayerCounterContextPool>
+                      <Contexts>
+                        <Item>
+                          <Asset>102429</Asset>
+                        </Item>
+                        <Item>
+                          <Asset>102430</Asset>
+                        </Item>
+                        <Item>
+                          <Asset>102431</Asset>
+                        </Item>
+                        <Item>
+                          <Asset>102432</Asset>
+                        </Item>
+                      </Contexts>
+                    </PlayerCounterContextPool>
+                    <Text>
+                      <LocaText>
+                        <English>
+                          <Text>All Pirate Ships</Text>
+                        </English>
+                      </LocaText>
+                    </Text>
+                  </Values>
+                </Asset>
+              

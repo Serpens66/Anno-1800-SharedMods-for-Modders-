@@ -1,0 +1,1169 @@
+{
+  "date": "2026-10-25",
+  "scope": "Local repository/documentation relocation and path maintenance only; no mod/save changes, staging, commit, push, publication, starter-kit transfer or game/MP execution.",
+  "workspace": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github",
+  "repository_folder": "SharedMods",
+  "github_repository": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-",
+  "moves": [
+    {
+      "from": "Anno-1800-SharedMods (for Modders)",
+      "to": "SharedMods"
+    },
+    {
+      "from": "Documentation",
+      "to": "SharedMods/Documentation"
+    },
+    {
+      "from": "Trigger_Guide.md",
+      "to": "SharedMods/Trigger_Guide.md"
+    },
+    {
+      "from": "Guide_RewardPools.md",
+      "to": "SharedMods/Guide_RewardPools.md"
+    }
+  ],
+  "code_review": "CodeReview remains in the workspace root; links to it and workspace AGENTS.md are local only.",
+  "baseline": {
+    "physical_files": 6584,
+    "manifest_sha256": "3632981b5f527d76e1ff3948f561d573fcad6120617a6ccf4289505141ca9203",
+    "documentation_files": 393
+  },
+  "checks": {
+    "physical_files_preserved": 6584,
+    "unchanged_file_hashes": 6550,
+    "expected_content_changes": 34,
+    "new_files": [
+      "SharedMods\\Documentation\\reference\\validation\\relocation\\results.json",
+      "SharedMods\\Documentation\\tools\\workspace_paths.py"
+    ],
+    "historical_json_files_byte_identical": 41,
+    "json_files_parsed": 42,
+    "python_files_compiled_without_execution": 32,
+    "path_resolution_scenarios": 10,
+    "targeted_modules_imported_without_main": 6,
+    "historical_review_ids_preserved": 994,
+    "junctions_checked": 146,
+    "retargeted_junctions": 86,
+    "relative_markdown_links_checked": 2012,
+    "existing_published_urls_preserved_in_edited_files": 1129
+  },
+  "historical_evidence": "Existing JSON inventories and validation receipts retain original IDs, dates, paths and hashes byte-for-byte. workspace_paths.source_path resolves moved sources at read time; current_source_id matches review records without rewriting their historical keys.",
+  "content_changes": [
+    {
+      "file": "AGENTS.md",
+      "before": "19aba09bdf793fdaa9c1cda2b634a6868157db554e6f52000597aeaf5a9bd961",
+      "after": "ea42c30ee8b2996d7b67e6a83d8cc75879db69f094be3e0207839f7f66d6cce6",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "CodeReview\\README.md",
+      "before": "a096355337f0c3003acc37bf4c69abbe2d895adaf9c547364c27e0b25e81c8a9",
+      "after": "651046d7d10cc126648b136a4380cf962caccc86f78a50bda3b45d0aaa2fda8b",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\CodeSnippetsPython.md",
+      "before": "29f4221a76328750679d79a500b33547efd0258fb3ea8defbc791d170068dd42",
+      "after": "d705ad3fd8dcbea563c5cfeb82b1320a26785da123831901aa780e1c0a399cf0",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\README.md",
+      "before": "712bfcfe9cdcb247e02da8be92ede03dcd8640d145ef0c492b7f4f59d4ac9c39",
+      "after": "ae2129afc7e0bfa841bd8d5957dc31b1a016ab08cf02862ebd57f8873455dd36",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\gameplay\\savegames.md",
+      "before": "f3b32910f32607c9bcef772c0cb7508e667839f41498e77599e0607ac3bc89ab",
+      "after": "9740c8d3eb73df81a2006177288699db20f45a1ec0488de15712294d19ffc922",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\gameplay\\triggers.md",
+      "before": "cf20120695084df4765d2befea225817abd29940011867bf4562d3b5cb6b2119",
+      "after": "82efaff2df8b089bf94cf1e5f3a5fa380901446c1ac88d3e186e3d955e713021",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\lua\\shared-light.md",
+      "before": "9da67b04f3a5e53df4922c82c583d5075dbeec533539579e7723c9967a520014",
+      "after": "a6773a2d29d373fa1332ac061d04199e20996c86e30a6aa212eb56ac5c577629",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\multiplayer\\synchronization.md",
+      "before": "e785618c25f78d76e6a82ab2b18fa36237e74e08d4f4e9226c4ca4d4d35593e9",
+      "after": "23e29d245b1971aabf49df42981a1746c4bc752fc09a6203f6030b3bf90649c7",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\coverage.md",
+      "before": "53ad08a3b4c2b1ab25ef5d02e655130fbab803695ede7e0453d6efed8bf04da6",
+      "after": "55cf2d40b91e864aa7ab410cb84bc7676cee7eb29175db3200db6344b6ac0f9a",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\discrepancies.md",
+      "before": "976a6c739a80712357d97dd0f2b5c676a3a6c2573b89130df309fcb74f969a51",
+      "after": "d3db1a5885720e2700cb0620f0d4dd82c9d6fc192bd41a3c978a989355f51846",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\kit-transfer.md",
+      "before": "d67428d5ba4611d7e8387d9f945ef84072619cc37769af8be68af51a9e4ac1fa",
+      "after": "45bcb02e1f9158769825a7520be465fe91becde07f1d2015847681c245f7925a",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\personal-test-evidence.md",
+      "before": "2f3c83b30d46d6679b5ebf420a72ad06985ec20fa289ca54a98edafaea497879",
+      "after": "4fdb589e4ee1642d43007e232419383cd87a1b8d6627b211c43d4cf5ba910e82",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\sources.md",
+      "before": "e18ee39f358d4adf734ef689a4d01fe9192f61397e1a1b393323aaacd65b9e58",
+      "after": "714524ff1cb17d03e69ffffa4ff73522770b5e45ef0a635afc9e73eaa5dcebd6",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\trigger-audit.md",
+      "before": "f38fd791a426f235d850b9549866d72af98d5da366c257a08e83362dcd7bff85",
+      "after": "abfcbd5a309400cc5e3ee87ab529318d5bfc052f63c850d8b81635940d3a1e14",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\trigger-mod-walkthroughs.md",
+      "before": "8ac41f722814269bdc257b412d368784594a469ffdedaa3b8d6be2befa25f83e",
+      "after": "baa3bc5a25d606bc7d8ec6f1d300c306f47549d4d52d433bfc4d0a9165183e50",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\reference\\triggers\\prose-evidence.md",
+      "before": "24cea43c56bfd6cbb8ba3171c117c03f751dcb30256d37fbc1a63727dcbbefe2",
+      "after": "ec8378ba2402251e58e521926e9a7bc50784cc129845f3b13c68caea8ccdd45a",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\audit_trigger_guide.py",
+      "before": "56276a94494ef46e1ea3899d451f4c36a2cffdcaa601d1b1b84ed831c9c2408c",
+      "after": "a08dac359714489f0f5d896a09871157ebd2ba53e6aee7d373baa440fcdff5fb",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\audit_triggers.py",
+      "before": "29f583a1adbccc14040f5bb19f2c0173d390eb88e2868ae8423afebace2d4af6",
+      "after": "8859b97d4cca02675b76b5e462fc543cd2c028be0a0da8c09ad87cb73d3dbd8a",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\capture_mod_case_integration.py",
+      "before": "dfcff4dbc8f9df2f836e1607462968ce1d44184c360f61fdf85d2922d0f6b922",
+      "after": "edee3e8c751d3fe31a0a973457084d41e507a2ea0024e0fea80fae92fdf77753",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\complete_trigger_guide.py",
+      "before": "47bda836fda8517c98fa275367fa5ef67a52109caa0cfd87494d60db051ef7c3",
+      "after": "f0dad6e23b94ab04dd0cbaeddcead42df329145a23f1991a55b7c76858b6ed43",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\inspect_mod_trigger_cases.py",
+      "before": "9571300a5f47d0636a128963875d6c82470d35d76c682653caf139265d822824",
+      "after": "c26d176ab465d513ba754cc17371d4b66f8f631bc6dc6b171eec11b3bef08d84",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\inventory.py",
+      "before": "f0eebfdfff14b2c96c31e9854643ea1317c6a8f623f40d8798bbf9c0055a734a",
+      "after": "06082c10ec3940f6de7b1ccd1d488dab3d04b113543ad75d4bb228497f917e39",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\make_trigger_guide_standalone.py",
+      "before": "028ea7b7beaeda00b16105d0b3a1deeb80435d58955e59129f84f52b8ea84fc4",
+      "after": "236de08145948534dc84c45440ea56c078f3223061152e7a9d1035ce86c88035",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\reconcile_trigger_condition_answers.py",
+      "before": "2f35d9e12f78b2f10d04ac9df8aec6a5519f379c180e7327bc4657355553f50c",
+      "after": "efd097673d9b9d3f5453acceb66b76d73989a681ef3ca6aa025dcf647c114986",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\reconcile_trigger_mp_answers.py",
+      "before": "13552af8e8ebff74d5002ba7962fd1a7a64509caab4e5ea1ccc1b0c5e36eec42",
+      "after": "9961259f98674257c15fc91a233c34290d584d32826777bbf05378461a0e753e",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\record_mod_trigger_review.py",
+      "before": "f728135add1842810318e3411dd2f45fd6b27d90eb3772c5128484ef1623818c",
+      "after": "8ae829b459d700e02991914493dd9c0d174b91ecfbf4b262426fa86f9157e793",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\review_ledger.py",
+      "before": "c61c14c35118c20838f2a48180a95051fec0af2929b89292794fbc4fb731e325",
+      "after": "bb3f743eea07360e904790a385125c383113816c48cfa1ae70ac951d4e7e3983",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\validate_mod_trigger_cases.py",
+      "before": "7b25756edc66701b2aff347a42600542301006b57b262f74d0c15c15c9f45fa4",
+      "after": "90332af12dec41de64fe2cb1a8a000e1dd91e74e3934a102c040111feec8d8f2",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\validate_trigger_guide.py",
+      "before": "250f52dec053137ebac98210bf1e3021c817b01fe798bd5691a6b68facabb289",
+      "after": "7afbb581cc36b166e7e7243218cca946df562acf52eb499ec06b22e15f19dcf3",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\validate_triggers.py",
+      "before": "9de6bf9a29fe4e1fd3a14785d7c44c765256422ee1d6e1ac87e3d7325d9d973d",
+      "after": "d069f2c195a1d1c14f83b970bc944c7b56d4b11dcc9e2266e38998720a2bdbc7",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\verify_trigger_documentation.py",
+      "before": "f107f90182614a0a33a0508b6c1be7b21b7f4b08291d57714a93a3283ed868a5",
+      "after": "686e179418a5bda66279371498407f8177aa0b423d000844be246e59614b0faf",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\tools\\workspace_paths.py",
+      "before": "f82c2905791b3e67b32c97cd722d4cc5db000039354a1fead6737e4767824a98",
+      "after": "7b5c6ab73e44de4571c09b4cae2a2cbf32153c70cf7534d18ad44b694cf59257",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\Documentation\\ui-and-resources\\binary-formats.md",
+      "before": "8987e60d8b7fa7bc24311db4995ff3f81dc94941a32d4e6d3a1f93f00f8e4c20",
+      "after": "26991d1b20445e0ff6d76462182f45c840f52e4f0f080ab72ca2034dccb0c656",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "SharedMods\\README.md",
+      "before": "e48eb423b55d7912420403584269f18cc0e17200da4f14516f4db04436e863da",
+      "after": "0aa1e6255be6b808ff400d98138128a6e5f99d5d9ba2ce5e0fff2b1e11dd870f",
+      "encoding": "utf-8"
+    },
+    {
+      "file": "create_hardlinks.py",
+      "before": "52df029d33746e73faad6790df513249a21f257e2398025c57304120d5040cbe",
+      "after": "3ab47531013aff5f555ca40834fef139aa21b1f2c614e65458774131246e8f26",
+      "encoding": "utf-8"
+    }
+  ],
+  "junctions": [
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\AI Buffed AI Ships (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\AI Buffed GeneralEnemy Ships (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\BT Quests Instead Preferred (Serp)\\shared_CopyPools_CP_KontorShips",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_CP_KontorShips",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_CP_KontorShips",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\BT Quests Instead Preferred (Serp)\\shared_CopyPools_CP_Preferred",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_CP_Preferred",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_CP_Preferred",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\BT Quests Instead Preferred (Serp)\\shared_CopyPools_CP_Products",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_CP_Products",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_CP_Products",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\Flagship Great Eastern (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\MoreInfoTooltips (Serp)\\shared_TooltipBugFixes",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_TooltipBugFixes",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_TooltipBugFixes",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P Buffed Pirate Ships (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P RewardDestroyPirate (Serp)\\shared_LuaLight",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_LuaLight",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_LuaLight",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P RewardDestroyPirate (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P RewardDestroyPirate (Serp)\\shared_PirateDefeatHelpers",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_PirateDefeatHelpers",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_PirateDefeatHelpers",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P Stronger Pirates (Serp)\\bugfix_MP_LaFortune_Peace",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\bugfix_MP_LaFortune_Peace",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\bugfix_MP_LaFortune_Peace",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P Stronger Pirates (Serp)\\shared_PirateExtraSpawn",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_PirateExtraSpawn",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_PirateExtraSpawn",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\P Stronger Pirates (Serp)\\shared_PirateWarFirstCeaseFre",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_PirateWarFirstCeaseFre",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_PirateWarFirstCeaseFre",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\Recommended-Mods\\Unhide All (Serp)\\shared_CopyPools_AP_ConstrBuild",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_AP_ConstrBuild",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_AP_ConstrBuild",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Honor (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Honor (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Honor (Serp)\\shared_OncePerSessionPerSaveLoad",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_OncePerSessionPerSaveLoad",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_OncePerSessionPerSaveLoad",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Honor (Serp)\\shared_ShipyardForBuffsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShipyardForBuffsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShipyardForBuffsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Research (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Research (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Research (Serp)\\shared_OncePerSessionPerSaveLoad",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_OncePerSessionPerSaveLoad",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_OncePerSessionPerSaveLoad",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Research (Serp)\\shared_ShipyardForBuffsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShipyardForBuffsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShipyardForBuffsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_AttackerEverything (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_AttackerEverything (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_AttackerEverything (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_FertilityBuffs",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_FertilityBuffs",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_FertilityBuffs",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_Matchers",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_Matchers",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_Matchers",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_NatureParticipant",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_NatureParticipant",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_NatureParticipant",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_TooltipBugFixes",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_TooltipBugFixes",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_TooltipBugFixes",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Disasters (Serp)\\shared_WhichPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_WhichPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_WhichPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Honor (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Honor (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Honor (Serp)\\shared_OncePerSessionPerSaveLoad",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_OncePerSessionPerSaveLoad",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_OncePerSessionPerSaveLoad",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Honor (Serp)\\shared_ShipyardForBuffsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShipyardForBuffsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShipyardForBuffsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Research (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Research (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Research (Serp)\\shared_OncePerSessionPerSaveLoad",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_OncePerSessionPerSaveLoad",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_OncePerSessionPerSaveLoad",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Research (Serp)\\shared_ShipyardForBuffsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShipyardForBuffsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShipyardForBuffsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Item_Hijack_Ships (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Item_Hijack_Ships (Serp)\\shared_WhichPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_WhichPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_WhichPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Limited Preferred Profits (Serp)\\shared_CheckSingleHuman",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CheckSingleHuman",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CheckSingleHuman",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Limited Preferred Profits (Serp)\\shared_CoopCount",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CoopCount",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CoopCount",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_DifficultySettings\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_DifficultySettings\\shared_OncePerSessionPerSaveLoad",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_OncePerSessionPerSaveLoad",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_OncePerSessionPerSaveLoad",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_DifficultySettings\\shared_ShipyardForBuffsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShipyardForBuffsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShipyardForBuffsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_DifficultySettings\\shared_WhichPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_WhichPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_WhichPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_Honor\\shared_CopyPools_CP_Exp",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_CP_Exp",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_CP_Exp",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_Honor\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_Honor\\shared_ShipyardForBuffsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShipyardForBuffsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShipyardForBuffsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\shared_Honor\\shared_ShowBuffTargetsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShowBuffTargetsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShowBuffTargetsTooltip",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Specialised Islands (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Specialised Islands (Serp)\\shared_Matchers",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_Matchers",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_Matchers",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\WorkInProgress-Mods\\Specialised Islands (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\AI AIs at Peace (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\AI Allied AIs (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\Campaign in Coop (Serp)\\Story Quests in Coop (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\Story Quests in Coop (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\Story Quests in Coop (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\No AI Merchant Trade (Serp)\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\P PirateComebackFleetFix (Serp)\\shared_PirateDefeatHelpers",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_PirateDefeatHelpers",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_PirateDefeatHelpers",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\P PirateComebackFleetFix (Serp)\\shared_WhichPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_WhichPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_WhichPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\Story Quests in Coop (Serp)\\shared_CheckSingleHuman",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CheckSingleHuman",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CheckSingleHuman",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\Outdated_shared_AreaBuffsHelper (Serp)\\shared_CopyPools_AP_Kontors",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_AP_Kontors",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_AP_Kontors",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\Outdated_shared_AreaBuffsHelper (Serp)\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_CoopCount\\shared_EventOnGameLoaded",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_EventOnGameLoaded",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_EventOnGameLoaded",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_CoopCount\\shared_LuaLight",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_LuaLight",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_LuaLight",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_IncompatibleModsPopUp\\shared_EventOnGameLoaded",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_EventOnGameLoaded",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_EventOnGameLoaded",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_LuaLight\\shared_WhichPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_WhichPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_WhichPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_ObjectDummies\\shared_Matchers",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_Matchers",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_Matchers",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_ObjectDummies\\shared_NatureParticipant",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_NatureParticipant",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_NatureParticipant",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_OncePerSessionPerSaveLoad\\shared_EventOnGameLoaded",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_EventOnGameLoaded",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_EventOnGameLoaded",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_OncePerSession_xml\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_PirateDefeatHelpers\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_PirateExtraSpawn\\shared_PirateDefeatHelpers",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_PirateDefeatHelpers",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_PirateDefeatHelpers",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_PirateWarFirstCeaseFre\\bugfix_MP_LaFortune_Peace",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\bugfix_MP_LaFortune_Peace",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\bugfix_MP_LaFortune_Peace",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_PirateWarFirstCeaseFre\\shared_CopyPools_CP_KontorShips",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_CP_KontorShips",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_CP_KontorShips",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_PlayerKnownAndInGameCheck\\shared_CopyPools_CP_KontorShips",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_CP_KontorShips",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_CP_KontorShips",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_Pool_BuildingExceptKontor\\shared_CopyPools_AP_Kontors",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_CopyPools_AP_Kontors",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_CopyPools_AP_Kontors",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_Sellable\\shared_EventOnGameLoaded",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_EventOnGameLoaded",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_EventOnGameLoaded",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_Sellable\\shared_LuaLight",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_LuaLight",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_LuaLight",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_Sellable\\shared_TooltipBugFixes",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_TooltipBugFixes",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_TooltipBugFixes",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_TickActions\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_WhichModPlayer\\shared_ObjectDummies",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ObjectDummies",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ObjectDummies",
+      "valid": true
+    },
+    {
+      "path": "SharedMods\\shared_WhichPlayer_Condition\\shared_IsAIPlayer_Condition",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IsAIPlayer_Condition",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IsAIPlayer_Condition",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\AI Settle1stIslandDelay (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Settle1stIslandDelay (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Settle1stIslandDelay (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\Better Pipette Stamp Tool (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Better Pipette and Stamp Tool (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Better Pipette and Stamp Tool (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\bugfix_MP_LaFortune_Peace",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\bugfix_MP_LaFortune_Peace",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\bugfix_MP_LaFortune_Peace",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\Harder WinConditions (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Harder WinConditions (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Harder WinConditions (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\IncompatibleModsPopUp",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_IncompatibleModsPopUp",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_IncompatibleModsPopUp",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\MoreInfoTooltips (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\MoreInfoTooltips (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\MoreInfoTooltips (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\NumericSuccessChance (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\NumericSuccessChance (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\NumericSuccessChance (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\Repair All Ruins Key (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Repair All Ruins Key (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Repair All Ruins Key (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\shared_Downgrade_Keybind (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_Downgrade_Keybind (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_Downgrade_Keybind (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\shared_ItemsetTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ItemsetTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ItemsetTooltip",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\Shorter Notification Time (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Shorter Notification Time (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Shorter Notification Time (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\ShowBuffTargetsTooltip",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_ShowBuffTargetsTooltip",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_ShowBuffTargetsTooltip",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\TradeRoute MinAmount 0 (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\TradeRoute MinAmount 0 (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\TradeRoute MinAmount 0 (Serp)",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\TT_MenuInputOutputAmounts",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_TT_MenuInputOutputAmounts",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_TT_MenuInputOutputAmounts",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\TT_ModPalaceMinistryHacienda",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_TT_ModPalaceMinistryHacienda",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_TT_ModPalaceMinistryHacienda",
+      "valid": true
+    },
+    {
+      "path": "BugFixes\\[Fix] Community Bugfixes\\shared\\TT_MultipleInputAmountUpgrade",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_TT_MultipleInputAmountUpgrade",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods\\shared_TT_MultipleInputAmountUpgrade",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\AI Everyone Hard AI (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Everyone Hard AI (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Everyone Hard AI (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\AI FasterEnbesa",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI FasterEnbesa",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI FasterEnbesa",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\AI Requests CeaseFire",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Requests CeaseFire",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Requests CeaseFire",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\AI Settle1stIslandDelay (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Settle1stIslandDelay (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI Settle1stIslandDelay (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\AI-P Free_Beg_CeaseFire (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI-P Free_Beg_CeaseFire (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI-P Free_Beg_CeaseFire (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\AI-P Shorter CeaseFire NonAttack (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI-P Shorter CeaseFire NonAttack (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\AI-P Shorter CeaseFire NonAttack (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Attainments by Research (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Research (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\WorkInProgress-Mods\\Attainments by Research (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Balanced Free Farm Placement",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Balanced Free Farm Placement",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Balanced Free Farm Placement",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Bright Harvest Nerf",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Bright Harvest Nerf",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Bright Harvest Nerf",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Balanced Prices (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Balanced Prices (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Balanced Prices (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Balanced Profits (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Balanced Profits (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Balanced Profits (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Display Offered-Preferred Always (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Display Offered-Preferred Always (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Display Offered-Preferred Always (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Higher Trade Storage (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Higher Trade Storage (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Higher Trade Storage (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Merchants Offering More Goods (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Merchants Offering More Goods (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Merchants Offering More Goods (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Merchants Produce Session Goods (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Merchants Produce Session Goods (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Merchants Produce Session Goods (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Passive Trading (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Passive Trading (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Passive Trading (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Preferred Goods Merchants",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Preferred Goods Merchants",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Preferred Goods Merchants",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\BT Quests Yield More Money (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Quests Yield More Money (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\BT Quests Yield More Money (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\CharacterItems Expedition (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\CharacterItems Expedition (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\CharacterItems Expedition (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Depot Land 100t (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Depot Land 100t (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Depot Land 100t (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Distinct PlayerColors (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Distinct PlayerColors (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Distinct PlayerColors (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Doubled Advanced Production (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Doubled Advanced Production (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Doubled Advanced Production (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Early Research Balanced (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Early Research Balanced (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Early Research Balanced (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Faster Piers (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Faster Piers (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Faster Piers (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Flagship Great Eastern (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Flagship Great Eastern (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Flagship Great Eastern (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Green-Red Street Overlay",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Green-Red Street Overlay",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Green-Red Street Overlay",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Harbour Activity Buff (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Harbour Activity Buff (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Harbour Activity Buff (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\InfluenceBuffs by Research (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Research (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\WorkInProgress-Mods\\InfluenceBuffs by Research (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\InfluenceSpeedBuffAllShips (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\InfluenceSpeedBuffAllShips (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\InfluenceSpeedBuffAllShips (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Irrigation Spread Canal",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Irrigation Spread Canal",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Irrigation Spread Canal",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Irrigation Spread Lake",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Irrigation Spread Lake",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Irrigation Spread Lake",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Irrigation Spread River",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Irrigation Spread River",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Irrigation Spread River",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Kaiserdom",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Kaiserdom",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Kaiserdom",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Nerf Electric Transporters",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Nerf Electric Transporters",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Nerf Electric Transporters",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Nerf Flame-Armor-Towers (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Nerf Flame-Armor-Towers (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Nerf Flame-Armor-Towers (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\One Free Reroll (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\One Free Reroll (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\One Free Reroll (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\P PirateComebackFleetFix (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\P PirateComebackFleetFix (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\P PirateComebackFleetFix (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\P RewardDestroyPirate (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\P RewardDestroyPirate (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\P RewardDestroyPirate (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\P Sarmento Shoot Pirates",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\P Sarmento Shoot Pirates",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\YouKnowWhatYouDo-Mods\\P Sarmento Shoot Pirates",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\P Stronger Pirates (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\P Stronger Pirates (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\P Stronger Pirates (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Paloma_EnableDLC11Story",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Paloma_EnableDLC11Story",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Paloma_EnableDLC11Story",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\PinButton Preset (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\PinButton Preset (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\PinButton Preset (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Robust Kontor (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Robust Kontor (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Robust Kontor (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Small Powerplant",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Small Powerplant",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Small Powerplant",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Stronger Steamships (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Stronger Steamships (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Stronger Steamships (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Viable Warehouses Upgrades (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Viable Warehouses Upgrades (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Viable Warehouses Upgrades (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\Zoom Out-In Further (Serp)",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Zoom Out-In Further (Serp)",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-Mods\\Recommended-Mods\\Zoom Out-In Further (Serp)",
+      "valid": true
+    },
+    {
+      "path": "Serp Modpack folder\\Serp Modpack\\[Fix] Community Bugfixes",
+      "old_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\BugFixes\\[Fix] Community Bugfixes",
+      "current_target": "\\\\?\\D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\BugFixes\\[Fix] Community Bugfixes",
+      "valid": true
+    }
+  ],
+  "problems": [],
+  "git_checks": {
+    "SharedMods": {
+      "head": true,
+      "remotes": true,
+      "staged": true,
+      "original_changes_still_present": true,
+      "new_documentation_visible_to_git": true,
+      "tracked_edit_whitespace_check": true
+    },
+    "Anno-1800-Mods": {
+      "head": true,
+      "remotes": true,
+      "staged": true,
+      "working_changes_preserved": true
+    },
+    "BugFixes": {
+      "head": true,
+      "remotes": true,
+      "staged": true,
+      "working_changes_preserved": true
+    }
+  },
+  "github_desktop": {
+    "status": "manual locate pending",
+    "action": "Select the existing repository in GitHub Desktop, click Locate and choose D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\SharedMods. No application database was edited."
+  },
+  "limitations": "Historical source hashes can legitimately differ from current local Campaign/Story revisions or intentionally adjusted path snippets. This relocation does not revalidate those game contracts or supersede their dated checks."
+}

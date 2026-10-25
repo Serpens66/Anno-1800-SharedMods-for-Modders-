@@ -1,0 +1,100 @@
+<Asset>
+      <Template>FeatureUnlock</Template>
+      <Values>
+        <Standard>
+          <GUID>1500004332</GUID>
+          <Name>Dont play Campaign_MF_600170</Name>
+        </Standard>
+        <Locked>
+          <DefaultLockedState>0</DefaultLockedState>
+        </Locked>
+        <Trigger>
+          <TriggerCondition>
+            <Template>ConditionEvent</Template>
+            <Values>
+              <Condition/>
+              <ConditionEvent>
+                <ConditionEvent>GUIDLocked</ConditionEvent>
+                <ContextAsset>1500004332</ContextAsset>
+              </ConditionEvent>
+              <ConditionPropsNegatable/>
+            </Values>
+          </TriggerCondition>
+          <TriggerActions>
+            <Item>
+              <TriggerAction>
+                <Template>ActionRegisterTrigger</Template>
+                <Values>
+                  <Action/>
+                  <ActionRegisterTrigger>
+                    <TriggerAsset>1500004302</TriggerAsset>
+                    <UnregisterTrigger>1</UnregisterTrigger>
+                  </ActionRegisterTrigger>
+                </Values>
+              </TriggerAction>
+            </Item>
+            
+            <Item>
+              <TriggerAction>
+                <Template>ActionLockAsset</Template>
+                <Values>
+                  <Action/>
+                  <ActionLockAsset>
+                    <LockAssets>
+                      <Item>
+                        <Asset>1500004234</Asset>
+                      </Item>
+                    </LockAssets>
+                  </ActionLockAsset>
+                </Values>
+              </TriggerAction>
+            </Item>
+
+            <!-- a delay, because it seems game crashes quite often when we skip the movie, maybe a delay helps -->
+            <!-- must be higher than the delay in in TriggerActions of 150721, because 1500004302 unloads the previous session -->
+             <!-- while TriggerAction in 150721 enters the 180023 session, and it crashes if we unload while still in previous session -->
+            <Item>
+              <TriggerAction>
+                <Template>ActionDelayedActions</Template>
+                <Values>
+                  <Action/>
+                  <ActionDelayedActions>
+                    <ExecutionDelay>4000</ExecutionDelay>
+                    <DelayedActions>
+                      <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                      <Values>
+                        <ActionList>
+                          <Actions>
+                            <Item>
+                              <Action>
+                                <Template>ActionLockAsset</Template>
+                                <Values>
+                                  <Action/>
+                                  <ActionLockAsset>
+                                    <LockAssets>
+                                      <Item>
+                                        <Asset>1500004302</Asset>
+                                      </Item>
+                                    </LockAssets>
+                                  </ActionLockAsset>
+                                </Values>
+                              </Action>
+                            </Item>
+                          </Actions>
+                        </ActionList>
+                      </Values>
+                    </DelayedActions>
+                  </ActionDelayedActions>
+                </Values>
+              </TriggerAction>
+            </Item>
+          </TriggerActions>
+        </Trigger>
+        <TriggerSetup>
+          <AutoSelfUnlock>0</AutoSelfUnlock>
+          <UsedBySecondParties>0</UsedBySecondParties>
+        </TriggerSetup>
+      </Values>
+    </Asset>
+    
+    

@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-03",
+  "source": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\Anno1800 RDA unpacked\\dataAlle\\data\\config\\export\\main\\asset\\assets.xml",
+  "source_sha256": "08b6cc7023aa1d834f2e6c2042848a3b3e2f13fcc44735a6248f6b6622d42c6a",
+  "full_source_guid_matches": {
+    "2001241": 1,
+    "130248": 1
+  },
+  "fixture_guid": "2001000000",
+  "scope": "Full-source selection check; isolated exact-asset offline patch, no deployment or runtime test",
+  "cases": [
+    {
+      "case": "change-radius",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\change-radius",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\change-radius\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\change-radius\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\change-radius\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertion": "Radius 28 -> 40; all other original asset nodes and attributes retained",
+      "passed": true
+    },
+    {
+      "case": "new-trigger",
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\new-trigger",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\new-trigger\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\new-trigger\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\recipes\\new-trigger\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertion": "One new Trigger; original sibling preserved; inline condition/action and second-party override intact",
+      "passed": true
+    }
+  ]
+}

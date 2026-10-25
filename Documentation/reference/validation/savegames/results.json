@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-25",
+  "timezone": "Europe/Berlin",
+  "scope": "Documentation/reader/source preservation; no game, save repair, repacking or multiplayer execution.",
+  "documentation_files_checked": 12,
+  "relative_links_checked": 168,
+  "encoding": "UTF-8 without BOM; CRLF",
+  "account_identifier_scan_passed": true,
+  "protected_files_hashed": 140,
+  "protected_files_unchanged": true,
+  "prior_kit_content_preserved": true,
+  "kit_transfer_status": "KIT017 open; no adoption/publication",
+  "powershell_examples": {
+    "count": 3,
+    "syntax_errors": 0,
+    "parser": "System.Management.Automation.Language.Parser; checked via PowerShell tool call"
+  },
+  "python_examples": {
+    "actual_v3_saves": [
+      {
+        "save": "campaign_vornewworld.a7s",
+        "rows": 11100,
+        "all_pairs_equal": true,
+        "pair_sha256": "a08fea088bd4574494603e5f0258b8cbcfcd82366a14f1f1f93eec3b80846782"
+      },
+      {
+        "save": "Autosave 59.a7s",
+        "rows": 11116,
+        "all_pairs_equal": true,
+        "pair_sha256": "6a3bf5879d62307a7a8ca49eeb502de462af68c8c471c5ed777159cc121ab32e"
+      },
+      {
+        "save": "Autosave 78.a7s",
+        "rows": 12404,
+        "all_pairs_equal": true,
+        "pair_sha256": "02714e5e2eeb3640547e4c86028db4f3816c3f8ac895c8b3a0fa42a672d786b8"
+      }
+    ],
+    "v2_fixture": {
+      "source": "unittests/FileDBReader-Tests/unittest_files/Testfiles/version/version2.bin",
+      "sha256": "ad6193cc9b1ff56baeb9b50e524a80b2035977b75b4d21417bc7258cb70d4ea1",
+      "parsed": true,
+      "selected_managers": 0
+    },
+    "negative_cases": [
+      {
+        "case": "truncated-footer",
+        "rejected": true,
+        "fixture_storage": "memory"
+      },
+      {
+        "case": "invalid-dictionary-offsets",
+        "rejected": true,
+        "fixture_storage": "memory"
+      },
+      {
+        "case": "not-filedb",
+        "rejected": true,
+        "fixture_storage": "memory"
+      }
+    ],
+    "python_examples_compile": true
+  },
+  "findings": [],
+  "changes": [
+    {
+      "file": "README.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          1
+        ],
+        [
+          "insert",
+          0,
+          2
+        ]
+      ],
+      "bytes": 9011
+    },
+    {
+      "file": "gameplay/triggers.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          2
+        ]
+      ],
+      "bytes": 22601
+    },
+    {
+      "file": "ui-and-resources/binary-formats.md",
+      "edits": [
+        [
+          "replace",
+          1,
+          1
+        ],
+        [
+          "insert",
+          0,
+          2
+        ]
+      ],
+      "bytes": 13378
+    },
+    {
+      "file": "reference/coverage.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          2
+        ],
+        [
+          "insert",
+          0,
+          8
+        ]
+      ],
+      "bytes": 14310
+    },
+    {
+      "file": "reference/discrepancies.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          10
+        ]
+      ],
+      "bytes": 19709
+    },
+    {
+      "file": "reference/sources.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          7
+        ]
+      ],
+      "bytes": 9173
+    },
+    {
+      "file": "reference/kit-transfer.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          9
+        ]
+      ],
+      "bytes": 11845
+    },
+    {
+      "file": "multiplayer/synchronization.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          2
+        ]
+      ],
+      "bytes": 9527
+    },
+    {
+      "file": "reference/trigger-mod-walkthroughs.md",
+      "edits": [
+        [
+          "replace",
+          1,
+          1
+        ]
+      ],
+      "bytes": 22527
+    },
+    {
+      "file": "gameplay/savegames.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          229
+        ]
+      ],
+      "bytes": 17361
+    },
+    {
+      "file": "reference/savegame-campaign-audit.md",
+      "edits": [
+        [
+          "insert",
+          0,
+          83
+        ]
+      ],
+      "bytes": 12456
+    },
+    {
+      "file": "reference/savegame-audit.json",
+      "edits": [
+        [
+          "insert",
+          0,
+          2116
+        ]
+      ],
+      "bytes": 126499
+    }
+  ]
+}

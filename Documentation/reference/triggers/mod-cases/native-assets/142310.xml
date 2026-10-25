@@ -1,0 +1,33 @@
+<Asset>
+                  <Template>FeatureUnlock</Template>
+                  <Values>
+                    <Standard>
+                      <GUID>142310</GUID>
+                      <Name>PrologueCompleted</Name>
+                      <IconFilename>data/ui/2kimages/main/icons/icon_attractiveness_castle_big.png</IconFilename>
+                      <ID>PrologueCompleted</ID>
+                    </Standard>
+                    <Locked>
+                      <DefaultLockedState>0</DefaultLockedState>
+                    </Locked>
+                    <Trigger>
+                      <TriggerCondition>
+                        <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                        <Values>
+                          <Condition/>
+                          <ConditionAlwaysTrue/>
+                        </Values>
+                      </TriggerCondition>
+                      <ResetTrigger>
+                        <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>
+                        <Values>
+                          <EmptyAutoCreateValue/>
+                        </Values>
+                      </ResetTrigger>
+                    </Trigger>
+                    <TriggerSetup>
+                      <AutoSelfUnlock>0</AutoSelfUnlock>
+                    </TriggerSetup>
+                  </Values>
+                </Asset>
+                

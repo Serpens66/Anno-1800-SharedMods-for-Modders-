@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-03",
+  "answer_source": "Serp direct user reply in this chat",
+  "new_game_or_mp_tests": false,
+  "mod_source_changes": false,
+  "answers": [
+    {
+      "id": "T001",
+      "topic": "MutualArea simultaneous subconditions",
+      "certainty": "very likely, not absolutely certain",
+      "answer": "Serp thinks the original comment is correct.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\Outdated_shared_AreaBuffsHelper (Serp)\\data\\config\\export\\main\\asset\\assets.xml",
+          "line": 50,
+          "end_line": 53,
+          "sha256": "4c046e12653b04baf8dca564f681f2c60762ad4fa4d88739e57b4a9f390d448c"
+        },
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\HowTo.xml",
+          "line": 859,
+          "end_line": 859,
+          "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb"
+        }
+      ]
+    },
+    {
+      "id": "T002",
+      "topic": "Quest-linking minimum flags",
+      "certainty": "unresolved",
+      "answer": "Still unclear whether both flags are required or one suffices.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\HowTo.xml",
+          "line": 1142,
+          "end_line": 1143,
+          "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb"
+        }
+      ]
+    },
+    {
+      "id": "T003",
+      "topic": "Threshold comments",
+      "certainty": "original certainty retained; likely remains probable",
+      "answer": "All CodeSnippets comments remain current, including the likely statements.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\CodeSnippets.md",
+          "line": 702,
+          "end_line": 710,
+          "sha256": "2978ad45ab6fe1675a3aa4c728687198ea4e34aacc1c29adaba778dd7a16afe0"
+        }
+      ]
+    },
+    {
+      "id": "T004",
+      "topic": "Has the hypothesis that QuestStarted only works for pool-started quests, rather than ActionStartQuest, been tested?",
+      "certainty": "reasoned hypothesis, not further tested",
+      "answer": "QuestStarted pool-versus-ActionStartQuest distinction remains a reasoned hypothesis.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\HowTo.xml",
+          "line": 1659,
+          "end_line": 1660,
+          "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb"
+        }
+      ],
+      "answer_source": "Serp direct follow-up reply in this chat",
+      "date": "2026-10-03"
+    },
+    {
+      "id": "T005",
+      "topic": "Was one ForceBuild ship per script invocation observed in Coop/multiplayer, including peers in different sessions, or is this inferred from once-per-tick behavior?",
+      "certainty": "conditional author assessment; no new controlled test supplied",
+      "answer": "ForceBuild can be practical through direct single ActionExecuteScript calls repeated separately if every client executes in exactly the same tick. Once-per-tick limitation does not itself prove peer tick alignment; different-session behavior was not established.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Anno-1800-SharedMods (for Modders)\\shared_PirateExtraSpawn\\data\\scripts_serp\\forcebuild_harlow.lua",
+          "line": 3,
+          "end_line": 7,
+          "sha256": "2ee4b071be4e20e9f5068be317b76131f1da65bedbb34933fa72b991ec2092cc"
+        }
+      ],
+      "answer_source": "Serp direct follow-up reply in this chat",
+      "date": "2026-10-03"
+    },
+    {
+      "id": "T006",
+      "topic": "Does ConditionCorporationDifficulty still appear not to work in multiplayer; is there a more precise tested scope?",
+      "certainty": "probably fails in multiplayer, not further tested",
+      "answer": "ConditionCorporationDifficulty probably does not work in multiplayer; no further test or Coop-versus-participant scope supplied.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\HowTo.xml",
+          "line": 2616,
+          "end_line": 2616,
+          "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb"
+        }
+      ],
+      "answer_source": "Serp direct follow-up reply in this chat",
+      "date": "2026-10-03"
+    },
+    {
+      "id": "T007",
+      "topic": "Does ConditionAttractiveness/CountAllTypes sum attraction types or check individual types? Was the proposed Area PlayerCounter Attractiveness alternative actually tested?",
+      "certainty": "unresolved; original HowTo qualifications retained",
+      "answer": "Serp has no newer findings; the HowTo text remains the latest known state. This is not confirmation of the tentative mechanism or proposed alternative.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\HowTo.xml",
+          "line": 1844,
+          "end_line": 1848,
+          "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb"
+        }
+      ],
+      "date": "2026-10-03",
+      "answer_source": "Serp direct reply in this chat"
+    },
+    {
+      "id": "T008",
+      "topic": "Is the possible need for two full trigger executions when adding goods/items to third-party ships still current, or was its readiness/context cause resolved?",
+      "certainty": "unresolved; original HowTo qualifications retained",
+      "answer": "Serp has no newer findings; the HowTo text remains the latest known state. This is not confirmation of the tentative mechanism or proposed alternative.",
+      "sources": [
+        {
+          "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\HowTo.xml",
+          "line": 1857,
+          "end_line": 1857,
+          "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb"
+        }
+      ],
+      "date": "2026-10-03",
+      "answer_source": "Serp direct reply in this chat"
+    }
+  ],
+  "pending_questions": [],
+  "clarification_status": "All eight submitted condition questions answered; qualified runtime uncertainties remain. No further clarification required for these scoped findings."
+}

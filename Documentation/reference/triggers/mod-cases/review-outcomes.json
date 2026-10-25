@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-03",
+  "cases": [
+    {
+      "guid": "1500003013",
+      "source": "Anno-1800-Mods/Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml",
+      "line": 24,
+      "sha256": "bd4bcef264387d2e3f1323148e210a3731e7fe889089088386b749201eb84ccb",
+      "classification": "explainable; parent gating confirmed by Serp",
+      "questions": [],
+      "documentation": "reference/trigger-mod-walkthroughs.md#1500003013--bt-passive-trading",
+      "scope": "Complete selected definition, relevant includes/own templates/helper references/callers/consumers, native field/default/base/pool audit and scoped evaluator patch; not game/MP verification.",
+      "clarification": {
+        "id": "M001",
+        "date": "2026-10-03",
+        "source": "Serp direct user reply in this chat",
+        "certainty": "confirmed by Serp",
+        "answer": "Parent gates all subordinate execution; MutuallyExclusive chooses the first matching complete child branch from top to bottom. Radius 115 gates the GUID change."
+      }
+    },
+    {
+      "guid": "1500003820",
+      "source": "Anno-1800-SharedMods (for Modders)/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+      "line": 17,
+      "sha256": "53beabe0a5e85aa22b66d440c0a9c3c82be6529ec1136e83af32b90a630f7c11",
+      "classification": "explainable registration chain; timer restart probable, not confirmed",
+      "questions": [],
+      "documentation": "reference/trigger-mod-walkthroughs.md#1500003820--shared_pirateextraspawn",
+      "scope": "Complete selected definition, relevant includes/own templates/helper references/callers/consumers, native field/default/base/pool audit and scoped evaluator patch; not game/MP verification.",
+      "clarification": {
+        "id": "M002",
+        "date": "2026-10-03",
+        "source": "Serp direct user reply in this chat",
+        "certainty": "probable, not confirmed",
+        "answer": "Serp expects a full timer restart when an ancestor becomes false; no certain restart/pause contract."
+      }
+    },
+    {
+      "guid": "1500003835",
+      "source": "Anno-1800-SharedMods (for Modders)/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+      "line": 438,
+      "sha256": "53beabe0a5e85aa22b66d440c0a9c3c82be6529ec1136e83af32b90a630f7c11",
+      "classification": "dispatch explainable; owning-main optionality author-assessed, later XML registration clarified by active/completed state",
+      "questions": [],
+      "documentation": "reference/trigger-mod-walkthroughs.md#1500003835--shared_pirateextraspawn",
+      "scope": "Complete selected definition, relevant includes/own templates/helper references/callers/consumers, native field/default/base/pool audit and scoped evaluator patch; not game/MP verification.",
+      "clarification": {
+        "id": "M003",
+        "date": "2026-10-03",
+        "source": "Serp direct user reply in this chat",
+        "certainty": "author assessment, not a controlled test",
+        "answer": "Serp thinks IsOptional has no effect and is harmless without a parent; this does not establish failed-main consumption or fresh registration."
+      }
+    },
+    {
+      "guid": "1500001103",
+      "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/data/config/export/main/asset/ComebackFleet.include.xml",
+      "line": 131,
+      "sha256": "e2c169738e4acf9415d5c7f93f3cf36df23da02a557576c3920e7553b861e2f4",
+      "classification": "conditional quest-end cleanup explainable; active XML registration no-op, later completed instance can be registered again",
+      "questions": [],
+      "documentation": "reference/trigger-mod-walkthroughs.md#1500001103--piratecomebackfleetfix",
+      "scope": "Complete selected definition, relevant includes/own templates/helper references/callers/consumers, native field/default/base/pool audit and scoped evaluator patch; not game/MP verification."
+    },
+    {
+      "guid": "1500004302",
+      "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+      "line": 223,
+      "sha256": "584a8e423b55a2980e2fad185e54052901142f355f10544781186fd503bfa120",
+      "classification": "synchronized play/completion protocol explainable; source timing/save/MP limits retained",
+      "questions": [],
+      "documentation": "reference/trigger-mod-walkthroughs.md#1500004302--campaign-in-coop",
+      "scope": "Complete selected definition, relevant includes/own templates/helper references/callers/consumers, native field/default/base/pool audit and scoped evaluator patch; not game/MP verification."
+    },
+    {
+      "guid": "1500004332",
+      "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+      "line": 352,
+      "sha256": "584a8e423b55a2980e2fad185e54052901142f355f10544781186fd503bfa120",
+      "classification": "synchronized skip/completion protocol explainable; source timing/save/MP limits retained",
+      "questions": [],
+      "documentation": "reference/trigger-mod-walkthroughs.md#1500004332--campaign-in-coop",
+      "scope": "Complete selected definition, relevant includes/own templates/helper references/callers/consumers, native field/default/base/pool audit and scoped evaluator patch; not game/MP verification."
+    }
+  ],
+  "pending_user_clarifications": [],
+  "mod_source_changes": false,
+  "new_game_or_mp_tests": false,
+  "remaining_runtime_uncertainties": [
+    "M002 timer restart versus pause",
+    "M003 owning-main optionality author assessment",
+    "Q005 optional descendant exemption very likely but not absolutely certain",
+    "direct self-registration during own action list",
+    "source-qualified ForceBuild peer/session and movie/session timing"
+  ],
+  "lifecycle_followup": {
+    "date": "2026-10-03",
+    "source": "Serp direct follow-up reply in this chat",
+    "optional_descendant_depth": {
+      "certainty": "very likely, not absolutely certain",
+      "answer": "One main condition can complete with two optional level-two children, even with non-optional unfulfilled descendants at level three."
+    },
+    "registration": {
+      "certainty": "confirmed by Serp",
+      "answer": "XML ActionRegisterTrigger is a no-op while registered; after full completion it is no longer registered and can be registered again. Lua can register multiple concurrent copies."
+    },
+    "self_registration": {
+      "certainty": "possible but unconfirmed",
+      "answer": "Direct self-registration from own actions may work; prefer ActionResetTrigger or ResetTrigger."
+    },
+    "saved_code": {
+      "certainty": "confirmed by Serp",
+      "answer": "Fresh registration snapshots the code present at that time; later fresh registration uses updated code."
+    }
+  }
+}

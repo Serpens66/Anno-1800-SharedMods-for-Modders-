@@ -1,0 +1,48 @@
+<Asset>
+                  <Template>ItemEffectTargetPool</Template>
+                  <Values>
+                    <Standard>
+                      <GUID>190797</GUID>
+                      <Name>all kontors EU &amp; SA + Africa</Name>
+                      <IconFilename>data/ui/2kimages/main/icons/icon_arrowpoint_right.png</IconFilename>
+                    </Standard>
+                    <Text>
+                      <LocaText>
+                        <English>
+                          <Text>All Trading Posts</Text>
+                          <Status>Exported</Status>
+                        </English>
+                      </LocaText>
+                      <LineID>15251</LineID>
+                    </Text>
+                    <ItemEffectTargetPool>
+                      <EffectTargetGUIDs>
+                        <Item>
+                          <GUID>191297</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>191298</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>114626</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>114627</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>114628</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>114629</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>114630</GUID>
+                        </Item>
+                        <Item>
+                          <GUID>114631</GUID>
+                        </Item>
+                      </EffectTargetGUIDs>
+                    </ItemEffectTargetPool>
+                  </Values>
+                </Asset>
+              

@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-03",
+  "source_hashes_checked": 3890,
+  "linked_heading_fragments_checked": 1825,
+  "utf8_crlf_files_checked": 377,
+  "findings": [],
+  "limitations": "No game, Lua C-function, dependency-loader or MP execution; source preservation is measured against this extraction."
+}

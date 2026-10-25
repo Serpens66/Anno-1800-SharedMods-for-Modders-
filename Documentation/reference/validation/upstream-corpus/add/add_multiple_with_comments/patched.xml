@@ -1,0 +1,8 @@
+<Test>
+  <Node>
+    <Meow />
+    <NodeToChange>x</NodeToChange>
+    <NodeToChange>xx</NodeToChange>
+    <NodeToChange>xxx</NodeToChange>
+  </Node>
+</Test>

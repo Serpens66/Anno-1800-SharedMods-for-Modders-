@@ -1,0 +1,1 @@
+<ModOps><ModOp Type="merge" GUID="1" Path="/Values/Standard" Condition="//Asset[Values/Standard/GUID='1']"><Name>new</Name></ModOp></ModOps>

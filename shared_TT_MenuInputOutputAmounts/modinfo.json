@@ -13,7 +13,7 @@
     "German": "Tooltips: Menü Eingang/Ausgang Mengen (Serp)"
   },
   "Description": {
-    "English": "Tooltips showing when hovering over factories in the build menu will dsiplay input and output amounts of the used goods. (in vanilla they are always 1, but mods can change these numbers)",
+    "English": "Tooltips showing when hovering over factories in the build menu will display input and output amounts of the used goods. (in vanilla they are always 1, but mods can change these numbers)",
     "German": "Tooltips die beim hovern über Fabriken im Baumenü angezeigt werden, zeigen Eingangs- und Ausgangsmengen der genutzten Waren. (in vanilla immer 1, aber Mods können ja beliebige Werte nutzen)"
   },
   "DLCDependencies": null,

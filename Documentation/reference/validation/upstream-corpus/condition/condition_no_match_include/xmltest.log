@@ -1,0 +1,16 @@
+[2026-10-03 18:19:39.733] [debug] Target: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\condition\condition_no_match_include_input.xml
+[2026-10-03 18:19:39.734] [debug] Patch: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\condition\condition_no_match_include_patch.xml
+[2026-10-03 18:19:39.734] [debug] Mod path: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\condition
+[2026-10-03 18:19:39.734] [debug] Game Path: condition_no_match_include_patch.xml
+[2026-10-03 18:19:39.734] [debug] Include: include.xml
+[2026-10-03 18:19:39.734] [debug] Include: include2.xml
+[2026-10-03 18:19:39.735] [debug] Looking up /Test/Node[Meow='5']
+[2026-10-03 18:19:39.735] [debug] Time: 0ms ModOp (condition_no_match_include_patch.xml:2)
+[2026-10-03 18:19:39.735] [debug] Condition not matching /Test/Node[Meow='3'] in xmltest (condition_no_match_include_patch.xml:5)
+[2026-10-03 18:19:39.735] [debug] Time: 0ms Group (condition_no_match_include_patch.xml:5)
+[2026-10-03 18:19:39.735] [debug] Looking up /Test/Node
+[2026-10-03 18:19:39.735] [debug] Time: 0ms ModOp (include2.xml:2)
+[2026-10-03 18:19:39.735] [debug] Time: 0ms Group (condition_no_match_include_patch.xml:6)
+[2026-10-03 18:19:39.735] [debug] Time: 0ms Group (condition_no_match_include_patch.xml:0)
+xmltest using modloader GU17.1
+ModOp time: 0.000s

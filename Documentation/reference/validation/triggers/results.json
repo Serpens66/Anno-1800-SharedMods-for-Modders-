@@ -1,0 +1,255 @@
+{
+  "date": "2026-10-03",
+  "scope": "Offline source/structure/patch assertions; no gameplay, timing, dependency loading or MP execution",
+  "vanilla_sha256": "08b6cc7023aa1d834f2e6c2042848a3b3e2f13fcc44735a6248f6b6622d42c6a",
+  "evaluator_sha256": "d977d9ad3ee1f2a446f3d62f5126e52811458552d4e8a63aefaa301fa51d751f",
+  "anchor_matches_in_full_vanilla": 1,
+  "cases": [
+    {
+      "case": "once",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000100",
+        "RESULT_GUID": "2001000101"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\once",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\once\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\once\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "repeat",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000110",
+        "RESULT_GUID": "2001000111"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\repeat",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\repeat\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\repeat\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "simultaneous",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000120",
+        "GATE_A_GUID": "2001000121",
+        "GATE_B_GUID": "2001000122",
+        "GATE_C_GUID": "2001000123",
+        "RESULT_GUID": "2001000124"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\simultaneous",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\simultaneous\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\simultaneous\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "sequence",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000130",
+        "GATE_A_GUID": "2001000131",
+        "GATE_B_GUID": "2001000132",
+        "RESULT_GUID": "2001000133"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\sequence",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\sequence\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\sequence\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "priority",
+      "passed": true,
+      "bindings": {
+        "ALTERNATE_RESULT_GUID": "2001000140",
+        "CUSTOM_TRIGGER_GUID": "2001000141",
+        "GATE_A_GUID": "2001000142",
+        "GATE_B_GUID": "2001000143",
+        "RESULT_GUID": "2001000144"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\priority",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\priority\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\priority\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "optional",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000150",
+        "GATE_A_GUID": "2001000151",
+        "OPTIONAL_RESULT_GUID": "2001000152",
+        "RESULT_GUID": "2001000153"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\optional",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\optional\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\optional\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "removal-safe",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000160",
+        "PRESENCE_GUID": "2001000161",
+        "RESULT_GUID": "2001000162"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\removal-safe",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\removal-safe\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\removal-safe\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": []
+    },
+    {
+      "case": "human-session",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000170",
+        "RESULT_GUID": "2001000171"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\human-session",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\human-session\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\triggers\\human-session\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native template/property/field and enum contracts",
+        "action targets have Locked",
+        "unique private identities",
+        "exact full anchor preservation",
+        "complete insertion payload retained"
+      ],
+      "external_contracts_not_executed": [
+        "WhichPlayer_Serp",
+        "1500001613",
+        "180023"
+      ]
+    }
+  ],
+  "negative_contract_cases": [
+    {
+      "case": "misplaced-completion-mode",
+      "rejected": true
+    },
+    {
+      "case": "invalid-event-token",
+      "rejected": true
+    },
+    {
+      "case": "template-property-name-confusion",
+      "rejected": true
+    }
+  ],
+  "intent_structure_checks_passed": true
+}

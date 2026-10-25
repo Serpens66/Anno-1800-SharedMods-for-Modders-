@@ -1,0 +1,13 @@
+<Asset>
+                      <Template>UnlockableAsset</Template>
+                      <Values>
+                        <Standard>
+                          <GUID>116915</GUID>
+                          <Name>SirJohnsNotes_Unlock_Page1</Name>
+                        </Standard>
+                        <Locked>
+                          <DefaultLockedState>0</DefaultLockedState>
+                        </Locked>
+                      </Values>
+                    </Asset>
+                    

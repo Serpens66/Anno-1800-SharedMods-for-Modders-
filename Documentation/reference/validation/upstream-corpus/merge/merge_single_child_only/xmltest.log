@@ -1,0 +1,9 @@
+[2026-10-03 18:19:39.962] [debug] Target: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\merge\merge_single_child_only_input.xml
+[2026-10-03 18:19:39.963] [debug] Patch: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\merge\merge_single_child_only_patch.xml
+[2026-10-03 18:19:39.963] [debug] Mod path: C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml\merge
+[2026-10-03 18:19:39.963] [debug] Game Path: merge_single_child_only_patch.xml
+[2026-10-03 18:19:39.963] [debug] Looking up //Asset[Values/Standard/GUID='1010371']/Values/Cost/Costs/Item[Ingredient='1010017']
+[2026-10-03 18:19:39.964] [debug] Time: 0ms ModOp (merge_single_child_only_patch.xml:2)
+[2026-10-03 18:19:39.964] [debug] Time: 0ms Group (merge_single_child_only_patch.xml:0)
+xmltest using modloader GU17.1
+ModOp time: 0.000s

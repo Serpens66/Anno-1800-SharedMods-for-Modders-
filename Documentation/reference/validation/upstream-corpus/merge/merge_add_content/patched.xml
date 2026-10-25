@@ -1,0 +1,15 @@
+<Test>
+  <Node>
+    <Building>
+      <BuildingCategoryName>0</BuildingCategoryName>
+      <AssociatedRegions>Moderate;Colony01</AssociatedRegions>
+    </Building>
+    <Skins>
+      <SkinList>
+        <Item>
+          <SkinAssetGuid>1500010407</SkinAssetGuid>
+        </Item>
+      </SkinList>
+    </Skins>
+  </Node>
+</Test>

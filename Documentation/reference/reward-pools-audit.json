@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-05",
+  "scope": "Reward-pool guide data-contract audit; main assets only. Not engine-code or game execution verification.",
+  "sources": {
+    "assets.xml": {
+      "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\Anno1800 RDA unpacked\\dataAlle\\data\\config\\export\\main\\asset\\assets.xml",
+      "sha256": "08b6cc7023aa1d834f2e6c2042848a3b3e2f13fcc44735a6248f6b6622d42c6a"
+    },
+    "templates.xml": {
+      "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\Anno1800 RDA unpacked\\dataAlle\\data\\config\\export\\main\\asset\\templates.xml",
+      "sha256": "099e887c72f97e3a443944e90d45ea544a3d83dd3dd440bf1e420ed709a187f8"
+    },
+    "properties-toolone.xml": {
+      "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\Anno1800 RDA unpacked\\dataAlle\\data\\config\\export\\main\\asset\\properties-toolone.xml",
+      "sha256": "bf8b81d19a54ab1e7086bc7d47e0239857335422cec6e299b527ef77d462593b"
+    },
+    "properties.xml": {
+      "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\Anno1800 RDA unpacked\\dataAlle\\data\\config\\export\\main\\asset\\properties.xml",
+      "sha256": "a9d10e0c450908ab8f7fb15d29852996a912eea536ccda7855f175cfd972c200"
+    },
+    "datasets.xml": {
+      "path": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\Anno1800 RDA unpacked\\dataAlle\\data\\config\\export\\main\\asset\\datasets.xml",
+      "sha256": "814e866f3bd38b271e0aa4fa91a1080e9e64121d54431d98c74d916739c30a48"
+    }
+  },
+  "reviewed_contracts": [
+    "RewardPool",
+    "RewardItemPool",
+    "ResourcePool",
+    "RegionRewardPool",
+    "Reward",
+    "Product",
+    "Locked",
+    "Region dataset"
+  ],
+  "native_example_chain": [
+    "151562",
+    "151049",
+    "151062",
+    "1010192 / 1010193"
+  ],
+  "other_examples": [
+    "150038 -> 1010017",
+    "ItemGroup 902574339",
+    "Insertion anchor 112574"
+  ],
+  "inheritance": "Named example assets and anchor have no BaseAssetGUID. Product template supplies Product; both ordinary pool templates supply RewardPool and Locked/DefaultLockedState=0.",
+  "defaults": {
+    "RewardPool.ItemsPool.Item": [
+      "ItemLink=0",
+      "MinAmount=1",
+      "MaxAmount=1",
+      "Weight=1"
+    ],
+    "RewardPool.GenerateUniqueRewards": 1,
+    "ResourceRewardPool.PossibleRewards.Item.Weight": 1
+  },
+  "findings": [
+    "ItemLink and RewardAssets/Item/Reward have different declared target-property lists.",
+    "ItemGroup is used only when ItemLink is empty; schema assigns equal weight to each folder item.",
+    "Amounts on links to pools are ignored by the documented contract.",
+    "No RegionRewardPool template/property instance found in main assets.",
+    "No ItemGroup reference to a GUID-bearing ancestor group of anchor 112574 was found."
+  ],
+  "limits": [
+    "Flat probability example is the ordinary relative-weight model with eligible candidates; no native sampler implementation was inspected.",
+    "Nested normalization, flattening, duplicate handling, cycles, nonpositive weights, unlock-control precedence and missing-region fallback remain unverified.",
+    "Schema restrictions are authoring declarations; enforcement is not tested.",
+    "No game, multiplayer, savegame or loader-executable test."
+  ],
+  "validation": {
+    "xml_blocks_parsed": 2,
+    "placeholders": "Substituted in memory only; temporary unused GUID 1999999999 and parent 151062.",
+    "checks": [
+      "Insertion anchor resolves to an asset inside Assets.",
+      "Parent ItemsPool target exists explicitly.",
+      "Leaf GUIDs resolve to Product assets.",
+      "New GUID is unused; both examples reference it consistently.",
+      "Native quest-to-parent-to-child chain resolves.",
+      "UTF-8 and CRLF checked."
+    ],
+    "guide_sha256": "7bc6dc4f88d64bdb094940cb7c28419a3e7763ef516638cbad28fa6a6cdfd167"
+  }
+}

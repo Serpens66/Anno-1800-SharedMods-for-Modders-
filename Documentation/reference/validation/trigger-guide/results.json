@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-03",
+  "guide": "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Trigger_Guide.md",
+  "guide_sha256": "62162a594df33503b65773d5029f7087c8cfc31308dc4b6d6afcc368e2737472",
+  "utf8_crlf": true,
+  "xml_blocks_checked": 430,
+  "collapsible_sections": 461,
+  "local_links_checked": 795,
+  "heading_fragments_checked": 795,
+  "catalogue_templates": 91,
+  "standalone_reference_checks": {
+    "properties": 115,
+    "templates": 105,
+    "datasets": 52
+  },
+  "optional_public_repository_links": [
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/Recommended-Mods/BT%20Passive%20Trading%20(Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml#L24",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/Recommended-Mods/BT%20Passive%20Trading%20(Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml#L28",
+    "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L17",
+    "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L21",
+    "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L438",
+    "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/main/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml#L442",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/P%20PirateComebackFleetFix%20(Serp)/data/config/export/main/asset/ComebackFleet.include.xml#L131",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/P%20PirateComebackFleetFix%20(Serp)/data/config/export/main/asset/ComebackFleet.include.xml#L135",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L223",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L227",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L352",
+    "https://github.com/Serpens66/Anno-1800-Mods/blob/master/YouKnowWhatYouDo-Mods/Campaign%20in%20Coop%20(Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml#L356",
+    "https://github.com/Serpens66/Anno-1800-Mods",
+    "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-"
+  ],
+  "other_file_links": 0,
+  "cases": [
+    {
+      "case": "custom-population",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000100",
+        "RESULT_GUID": "2001000101"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\custom-population",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\custom-population\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\custom-population\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "once",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000120",
+        "RESULT_GUID": "2001000121"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\once",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\once\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\once\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "repeat",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000140",
+        "RESULT_GUID": "2001000141"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\repeat",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\repeat\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\repeat\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "simultaneous",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000160",
+        "GATE_A_GUID": "2001000161",
+        "GATE_B_GUID": "2001000162",
+        "GATE_C_GUID": "2001000163",
+        "RESULT_GUID": "2001000164"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\simultaneous",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\simultaneous\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\simultaneous\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "sequence",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000180",
+        "GATE_A_GUID": "2001000181",
+        "GATE_B_GUID": "2001000182",
+        "RESULT_GUID": "2001000183"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\sequence",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\sequence\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\sequence\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "priority",
+      "passed": true,
+      "bindings": {
+        "ALTERNATE_RESULT_GUID": "2001000200",
+        "CUSTOM_TRIGGER_GUID": "2001000201",
+        "GATE_A_GUID": "2001000202",
+        "GATE_B_GUID": "2001000203",
+        "RESULT_GUID": "2001000204"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\priority",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\priority\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\priority\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "optional",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000220",
+        "GATE_A_GUID": "2001000221",
+        "OPTIONAL_RESULT_GUID": "2001000222",
+        "RESULT_GUID": "2001000223"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\optional",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\optional\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\optional\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "removal-safe",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000240",
+        "PRESENCE_GUID": "2001000241",
+        "RESULT_GUID": "2001000242"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\removal-safe",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\removal-safe\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\removal-safe\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": []
+    },
+    {
+      "case": "human-session",
+      "passed": true,
+      "bindings": {
+        "CUSTOM_TRIGGER_GUID": "2001000260",
+        "RESULT_GUID": "2001000261"
+      },
+      "command": [
+        "C:\\Users\\Serpens66\\.vscode\\extensions\\jakobharder.anno-modding-tools-2.3.1\\external\\xmltest.exe",
+        "-c",
+        "patch",
+        "-m",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\human-session",
+        "-o",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\human-session\\patched.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\original.xml",
+        "D:\\CDesktopLink\\Unterlagen\\Mods\\Anno 1800\\mods bei github\\Documentation\\reference\\validation\\trigger-guide\\human-session\\data\\config\\export\\main\\asset\\assets.xml"
+      ],
+      "assertions": [
+        "native schema and enum membership",
+        "all result action references resolve to Locked assets",
+        "unique fixture identities",
+        "complete anchor and insertion payload preserved"
+      ],
+      "external": [
+        "WhichPlayer_Serp",
+        "1500001613",
+        "180023"
+      ]
+    }
+  ],
+  "reader_scenarios": [
+    "nested complex live-state combination",
+    "prioritized complete alternatives",
+    "main timer plus reset timer",
+    "presence guard and documented save/Coop workflow"
+  ],
+  "real_asset_presentations_checked": 7,
+  "findings": [],
+  "evaluator_sha256": "d977d9ad3ee1f2a446f3d62f5126e52811458552d4e8a63aefaa301fa51d751f",
+  "limits": "Offline XML/schema/patch and source-preservation checks; authored reader walkthroughs, not an independent agent test; no game, Lua API, save migration, dependency selector or MP timing test."
+}

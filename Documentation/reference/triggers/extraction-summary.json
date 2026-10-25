@@ -1,0 +1,12 @@
+{
+  "condition_templates": 91,
+  "property_contracts": 169,
+  "datasets": 76,
+  "owning_assets_and_bases": 202,
+  "workspace_sources": 3885,
+  "unique_source_groups": 879,
+  "unique_comments": 12766,
+  "keyword_comments": 1899,
+  "trigger_shapes": 3648,
+  "standalone_xml_parse_diagnostics": 1
+}
