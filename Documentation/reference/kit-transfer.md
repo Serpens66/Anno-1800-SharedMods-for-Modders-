@@ -76,6 +76,14 @@ No additional research transfer was identified when initializing this register o
 - Candidate portable lesson: a milestone gate intended to stay open after an optional quest starts must not accept only transient Active; include the relevant completion/abort states while excluding pre-active Triggered. Parent prerequisites and late quest-pool evaluation prevent assuming that every listener remembered Active. Preserve native DLC/population/timer requirements.
 - Boundaries: state names/flags checked against native contracts/examples, actual whole-asset XML patch and exact four-asset follow-up diff verified. No game/MP test or attribution to the recalled user report. Serp's belief that a prior movie experiment left background simulation speed unchanged is recorded as recollection; it is not a new verified command guarantee.
 
+### KIT021: Mod composition and empty-container preparation (2026-10-25)
+
+- Status: open; no kit adaptation, publication or synchronization.
+- Evidence: [compatibility chapter](../foundations/mod-compatibility.md), [classified source/claim record](validation/mod-compatibility/sources.json) and [actual evaluator results](validation/mod-compatibility/results.json).
+- Candidate portable scope: prepare singleton list containers with an empty merge from an existing parent, then append entries; distinguish container preservation from entry deduplication. Preserve scoped selectors, anchors, shared-component contracts and resource/Lua names. Separate loader composition from save/MP safety.
+- Relationship: extends the existing KIT006/KIT007/KIT008 ModOp/XPath/list topics and complements KIT018's native condition/cancellation cautions. Prior IDs, evidence and adoption/exclusion receipts remain intact.
+- Boundaries: ten GU17.1 fixtures and a complete 96,272-asset unchanged-semantics comparison; no runtime/game/Coop test or general compatibility certification. Historical statements and invalid community code remain classified; no automatic starter-kit transfer.
+
 ## Maintenance receipt
 
 - 2026-10-04: initialized this register and the portable kit research-state page. The initial research-source hashes remain historical and unchanged.

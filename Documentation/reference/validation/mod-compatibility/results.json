@@ -1,0 +1,372 @@
+{
+  "date": "2026-10-25",
+  "scope": "Offline XML composition; no game/save/MP execution",
+  "tool": "xmltest GU17.1 bundled with vscode-anno 2.3.1",
+  "tool_sha256": "d977d9ad3ee1f2a446f3d62f5126e52811458552d4e8a63aefaa301fa51d751f",
+  "campaign_version": "1.023",
+  "cases": [
+    {
+      "case": "missing",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "10000"
+      ],
+      "runs": [
+        {
+          "name": "missing-0",
+          "exit_code": 0,
+          "input_sha256": "20e62712265b827dac086405b8dba1250cc0aa779e45f959fc02e1ff2e6dadca",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "bb1e2c368a14f922fb0a9fcdd9d5d1dc1854bfa5f041486f8ffdd2f693bd9e20",
+          "log_sha256": "fa8cefae5cb49915c8abfdc7e9d720948ef66ccbe406538a5266cb5ab90e3049",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "empty",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "10000"
+      ],
+      "runs": [
+        {
+          "name": "empty-0",
+          "exit_code": 0,
+          "input_sha256": "77913b0548162398dd8af039f9b52ef98f4adcf0d4e9704facd00dc14e6f47cf",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "bb1e2c368a14f922fb0a9fcdd9d5d1dc1854bfa5f041486f8ffdd2f693bd9e20",
+          "log_sha256": "174a6e1be9360b344c63fc9a36007a0afc2fd563224bbdd98a9c9b910176c6d2",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "populated",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "777",
+        "10000"
+      ],
+      "runs": [
+        {
+          "name": "populated-0",
+          "exit_code": 0,
+          "input_sha256": "8dcf4b3d6ea68bb163eacd2fd62a3866c8f2b45efd4967814bb687bd2a43fb23",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "f7aed4e8928292b138ac602714c72a09eeeae47b3d0fe8d1862852073a7db8e8",
+          "log_sha256": "e60a433cd887c3f83a2078acce152424a5273e76ace21a0d05aafbca1fe80ce7",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "foreign-before",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "777",
+        "10000"
+      ],
+      "runs": [
+        {
+          "name": "foreign-before-0",
+          "exit_code": 0,
+          "input_sha256": "20e62712265b827dac086405b8dba1250cc0aa779e45f959fc02e1ff2e6dadca",
+          "patch_sha256": "b6d1c593e333be45f03408c28363c1b6805a32efdb556f166d488137c59f965b",
+          "output_sha256": "47b9db1fa45d8a3169f94d4d947d7044e43a10d4096edb96fc078a226054370b",
+          "log_sha256": "96d9cf20e0b2791386d67b89434e9b25a8c21f6f76ae6c19bdaa7868acdd0237",
+          "diagnostics": []
+        },
+        {
+          "name": "foreign-before-1",
+          "exit_code": 0,
+          "input_sha256": "47b9db1fa45d8a3169f94d4d947d7044e43a10d4096edb96fc078a226054370b",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "f7aed4e8928292b138ac602714c72a09eeeae47b3d0fe8d1862852073a7db8e8",
+          "log_sha256": "d1e5669be0099984c3b03f0c6146d0f14b7a2d6c79ba11fcf7039bcc62439203",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "foreign-after",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "10000",
+        "777"
+      ],
+      "runs": [
+        {
+          "name": "foreign-after-0",
+          "exit_code": 0,
+          "input_sha256": "20e62712265b827dac086405b8dba1250cc0aa779e45f959fc02e1ff2e6dadca",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "bb1e2c368a14f922fb0a9fcdd9d5d1dc1854bfa5f041486f8ffdd2f693bd9e20",
+          "log_sha256": "d0b3d807ddf45eef49dd76f2e71ab9cdc3b62106b0eb89412ce203940009d381",
+          "diagnostics": []
+        },
+        {
+          "name": "foreign-after-1",
+          "exit_code": 0,
+          "input_sha256": "bb1e2c368a14f922fb0a9fcdd9d5d1dc1854bfa5f041486f8ffdd2f693bd9e20",
+          "patch_sha256": "b6d1c593e333be45f03408c28363c1b6805a32efdb556f166d488137c59f965b",
+          "output_sha256": "c0ad04ca44125daa22be5cf99a2931d6a267884d6cb060cb0dfd5a5f0ba39df0",
+          "log_sha256": "6ea37a6d41d3070b650e65f953b0993c4d55de7437ee7168060cb59fa64d95e0",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "merge-twice",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "777"
+      ],
+      "runs": [
+        {
+          "name": "merge-twice-0",
+          "exit_code": 0,
+          "input_sha256": "8dcf4b3d6ea68bb163eacd2fd62a3866c8f2b45efd4967814bb687bd2a43fb23",
+          "patch_sha256": "99aaf890f506ac4aacb232847958865605673122940a260ab7df7a0d1c0f80e2",
+          "output_sha256": "47b9db1fa45d8a3169f94d4d947d7044e43a10d4096edb96fc078a226054370b",
+          "log_sha256": "041396cf5a6f3c8a7f274a8a629094292bcb02c559f4ec23ed4d5a102e3c7552",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "repeat-add",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "10000",
+        "10000"
+      ],
+      "runs": [
+        {
+          "name": "repeat-add-0",
+          "exit_code": 0,
+          "input_sha256": "77913b0548162398dd8af039f9b52ef98f4adcf0d4e9704facd00dc14e6f47cf",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "bb1e2c368a14f922fb0a9fcdd9d5d1dc1854bfa5f041486f8ffdd2f693bd9e20",
+          "log_sha256": "caa914b5d50baf4a601bfeb67509415121f3b0ae5b44b00ae416c4eb6559c05b",
+          "diagnostics": []
+        },
+        {
+          "name": "repeat-add-1",
+          "exit_code": 0,
+          "input_sha256": "bb1e2c368a14f922fb0a9fcdd9d5d1dc1854bfa5f041486f8ffdd2f693bd9e20",
+          "patch_sha256": "b8b5c8df7d6ad03852e129444c39c6affc1afee683ac8efb27114adbb8045b5a",
+          "output_sha256": "befd848a25fe95fbf76188b82af33c7e17e458316811d8e8594273544f6f473a",
+          "log_sha256": "477cb53dfe8efccb6d5a2ef3e002eccec1a92d56b71626a61e6b0cb17a9b233a",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "positional-merge",
+      "passed": true,
+      "container_count": 1,
+      "delays_ms": [
+        "999",
+        "888"
+      ],
+      "runs": [
+        {
+          "name": "positional-merge-0",
+          "exit_code": 0,
+          "input_sha256": "b68596eb9be21b10134cfea5edd70e0d580679e5b7bf11359832a4e60cee76c8",
+          "patch_sha256": "8f50c736de0c0a26f4ca2d8df11a609da564f7ea8f58b770b68f6827e6db15d3",
+          "output_sha256": "860a0cfc07aaa007fe2ae70bea391263d61891f8f4caeea3f7ffc8593de0ed3b",
+          "log_sha256": "cb29d21f492bd19bb27bdd84397629c33e385435b76510f934605b4bcb65ba1b",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "legacy-duplicate",
+      "passed": true,
+      "container_count": 2,
+      "delays_ms": [
+        "777",
+        "10000"
+      ],
+      "runs": [
+        {
+          "name": "legacy-duplicate-0",
+          "exit_code": 0,
+          "input_sha256": "8dcf4b3d6ea68bb163eacd2fd62a3866c8f2b45efd4967814bb687bd2a43fb23",
+          "patch_sha256": "fa40b1f1e2368126fae93f415e1efeb19e55a5fdd5539753836d079fa5376586",
+          "output_sha256": "b294df80c173a29f6b5332cb9814faceeeecd756cf3a4b38cde63558957a7a7c",
+          "log_sha256": "0b59a074097c2975f037b660a575c9cbb17e17e50c7d1848fb145fa76de041bf",
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "case": "preexisting-duplicates",
+      "passed": true,
+      "container_count": 2,
+      "delays_ms": [
+        "777",
+        "888"
+      ],
+      "runs": [
+        {
+          "name": "preexisting-duplicates-0",
+          "exit_code": 0,
+          "input_sha256": "32069b29e672be82dcee1b600739a9fe5ba2be11eeb8da545c0ff88ff9b100c0",
+          "patch_sha256": "99aaf890f506ac4aacb232847958865605673122940a260ab7df7a0d1c0f80e2",
+          "output_sha256": "4797d4a55b42d3de2e32beaea7e36e73d58410d476e2d3c46e4264ea8a6e46e2",
+          "log_sha256": "64a3a7f1a40aaf6c51b7bc4741e7f9eb4ae5bdcd86c4974733b13c7bd8c7aad1",
+          "diagnostics": []
+        }
+      ]
+    }
+  ],
+  "full_chain": {
+    "stages": [
+      {
+        "stage": 0,
+        "mod": "shared_CheckSingleHuman",
+        "exit_code": 0,
+        "input_sha256": "08b6cc7023aa1d834f2e6c2042848a3b3e2f13fcc44735a6248f6b6622d42c6a",
+        "output_sha256": "932c8d8169496370b9134d9d61900f2167b0e80d58f0246400de3ead4682bd7b",
+        "log_sha256": "d1e84d82a4e0281acf9bd7ab87aec3da57631a34f6b080c9a2c4e3ada099356a",
+        "allowed_diagnostics": []
+      },
+      {
+        "stage": 1,
+        "mod": "Story Quests in Coop (Serp)",
+        "exit_code": 0,
+        "input_sha256": "932c8d8169496370b9134d9d61900f2167b0e80d58f0246400de3ead4682bd7b",
+        "output_sha256": "9137df8fa253c06b6415aa184994c922a4ccdab288a51efab48ef539fd07a76f",
+        "log_sha256": "3047411af7b6150010123ece42e830ad5037065cebb2bae1170d29cb8fb0b2a2",
+        "allowed_diagnostics": [
+          "[2026-10-25 17:53:07.308] [debug] No matching node for Path \"//ResourceSetCondition/AllowedGameTypes[contains(.,'SandboxSingleplayer') and not(contains(.,'SandboxMultilayer')) and not(contains(.,'CampaignMode'))]\"",
+          "[2026-10-25 17:53:07.366] [debug] No matching node for Path \"//RandomIsland/AllowedGameType[contains(.,'SandboxSingleplayer') and not(contains(.,'SandboxMultilayer')) and not(contains(.,'CampaignMode'))]\""
+        ]
+      },
+      {
+        "stage": 2,
+        "mod": "Campaign in Coop (Serp)",
+        "exit_code": 0,
+        "input_sha256": "9137df8fa253c06b6415aa184994c922a4ccdab288a51efab48ef539fd07a76f",
+        "output_sha256": "7957319bda323c55901d6d40bee3e40a4cbbeddbb5cd90ef38fff44c7ef8117f",
+        "log_sha256": "1b1651feef565a16dc2efcf646122f409f56180a24a19075e0c49fc5ffa6129c",
+        "allowed_diagnostics": [
+          "[2026-10-25 17:53:09.328] [debug] No matching node for Path \"//ResourceSetCondition/AllowedGameTypes[contains(.,'CampaignMode') and not(contains(.,'SandboxMultilayer'))]\"",
+          "[2026-10-25 17:53:09.348] [debug] No matching node for Path \"//ResourceSetCondition[AllowedGameTypes='SandboxMultilayer']/AllowedGameTypes\"",
+          "[2026-10-25 17:53:09.368] [debug] No matching node for Path \"//ResourceSetCondition/AllowedGameTypes[not(contains(.,'CampaignMode')) and contains(.,'SandboxMultilayer')]\"",
+          "[2026-10-25 17:53:09.387] [debug] No matching node for Path \"//RandomIsland/AllowedGameType[contains(.,'CampaignMode') and not(contains(.,'SandboxMultilayer'))]\"",
+          "[2026-10-25 17:53:09.407] [debug] No matching node for Path \"//RandomIsland[AllowedGameType='SandboxMultilayer']/AllowedGameType\""
+        ]
+      }
+    ],
+    "baseline_sha256": "7957319bda323c55901d6d40bee3e40a4cbbeddbb5cd90ef38fff44c7ef8117f",
+    "assets_compared": 96272,
+    "semantic_changes": [],
+    "allowed_no_match_count": 7
+  },
+  "limits": [
+    "Fixture foreign mods only append valid timer children; this does not certify gameplay semantics.",
+    "Repeated add and preexisting duplicate-container cases intentionally demonstrate unresolved limits.",
+    "Full proprietary asset outputs are disposable local files, not repository artifacts."
+  ],
+  "documentation_checks": {
+    "relative_links_checked": 2378,
+    "link_errors": [],
+    "workspace_github_source_targets_verified": [
+      {
+        "source_id": "S04",
+        "path": "CodeSnippets.md",
+        "commit": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+        "git_blob": "ecdb7b0bad1089ea6142686bd49add76ede5fc38",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S05",
+        "path": "CodeSnippetsPython.md",
+        "commit": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+        "git_blob": "30cdfdbefd12bdad6d2a1a6bab6fd94d39b864de",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S06",
+        "path": "README.md",
+        "commit": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+        "git_blob": "0ffa43728f5d8ce2b4acf45c6f5c19f0278a6a26",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S07",
+        "path": "Recommended-Mods/BT Merchants Offering More Goods (Serp)/data/config/export/main/asset/assets.xml",
+        "commit": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+        "git_blob": "8c3f5d869a4ac877fd520dc7c7fcd343c3588e19",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S08",
+        "path": "Recommended-Mods/BT Merchants Produce Session Goods (Serp)/data/config/export/main/asset/assets.xml",
+        "commit": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+        "git_blob": "8e19d9a5b6902c35b385a37cd957ef2268412665",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S09",
+        "path": "Recommended-Mods/BT Display Offered-Preferred Always (Serp)/data/config/export/main/asset/assets.xml",
+        "commit": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+        "git_blob": "71af1eeb3fc78c2e553c76b699e3d9d3339e84da",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S10",
+        "path": "YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions_detailed.include.xml",
+        "commit": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+        "git_blob": "cbf991d307c179db09c7ecdac43f44801b0a8862",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S11",
+        "path": "shared_AttackerEverything (Serp)/data/config/export/main/asset/assets.xml",
+        "commit": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+        "git_blob": "483a14b8a61e40ead1ec5a329b38b6ecedbf913f",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S12",
+        "path": "shared_LuaLight/data/scripts_serp/lighttools.lua",
+        "commit": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+        "git_blob": "53bb66e17642c76fa8ce145b77722d16c76db623",
+        "matches_workspace_allowing_crlf": true
+      },
+      {
+        "source_id": "S13",
+        "path": "shared_IncompatibleModsPopUp/data/scripts/search_modlog_pnski.lua",
+        "commit": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+        "git_blob": "98a91d88c80edc31b376fe73606ff9bdc0458a7a",
+        "matches_workspace_allowing_crlf": true
+      }
+    ],
+    "github_method": "Remote heads matched published commits; ls-tree membership and matching Git blob content (allowing CRLF normalization) checked. Individual URLs were not requested over HTTP.",
+    "source_excerpt_lines_verified": 23,
+    "protection": {
+      "Story_metadata_unchanged": true,
+      "other_mod_sources_unchanged": true,
+      "changelog_1022_unchanged": true,
+      "kit_history_preserved": true
+    },
+    "runner_sha256": "e147aff61ab643e9c5f129c32e3ee334804ec848f1227595c01d76c1065e8bff",
+    "kit021_status": "open",
+    "open_review_ids": [
+      "C005"
+    ],
+    "format": "UTF-8 without BOM, CRLF"
+  }
+}

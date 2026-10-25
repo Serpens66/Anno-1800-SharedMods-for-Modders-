@@ -124,3 +124,8 @@ Use the [worked recipes and walkthroughs](trigger-recipes.md). Trace initial reg
 ## Real mod walkthroughs
 
 [Six existing mod trigger walkthroughs](../reference/trigger-mod-walkthroughs.md) trace complete definitions and relevant callers/consumers. They show the single-ship invariant behind a broad GUID filter, positive pirate-state helpers, optional quest cleanup and synchronized movie start/completion. Serp confirmed parent gating and branch priority, considers timer restart probable but unconfirmed, and assesses owning-main IsOptional as ineffective without a parent. Serp also confirms XML-versus-Lua registration and code snapshots; nested optional-depth is very likely clarified, while direct self-registration remains unconfirmed. Passing offline patches adds no runtime proof.
+
+
+## Compose trigger extensions with other mods
+
+Prepare a potentially missing SubTriggers list with an empty merge, then append the new Item. Preserve existing children, native registration/cancellation and condition settings. A shared container does not make arbitrary extra children semantically compatible: completion modes, timing and action order still need review. See [Mod compatibility](../foundations/mod-compatibility.md#ensure-containers-then-append-entries).

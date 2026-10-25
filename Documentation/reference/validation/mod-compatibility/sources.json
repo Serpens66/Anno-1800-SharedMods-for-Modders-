@@ -1,0 +1,1324 @@
+{
+  "date": "2026-10-25",
+  "scope": "Mod-composition source topic; selected statements reconciled, not full semantic review of all mods.",
+  "repository_revisions": {
+    "Anno-1800-Mods": {
+      "head": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "remote_branch_matches": true
+    },
+    "SharedMods": {
+      "head": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+      "remote_branch_matches": true
+    }
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "source": "Conversation, Serp clarification on 2026-10-25",
+      "role": "Direct user requirement",
+      "sha256": "e0da9af5cb634edd7381b3831c277e58a99de2a9eca91d0e31ee669153ed06e0",
+      "hash_scope": "Exact quoted excerpt, not a file or full conversation",
+      "excerpt": "Sauberer wäre es, den SubTriggers Node erst mit \"merge\" leer zuzufügen, und erst danach \"add\" zu machen. Damit stellen wir sicher, dass der \"SubTriggers\" Node aufjedenfall nicht doppelt zugefügt wird, falls ein anderer mod auch subtriggers zufügt",
+      "github": null
+    },
+    {
+      "id": "S02",
+      "source": "PRIVATE_NOTES/HowTo.xml",
+      "sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb",
+      "bytes": 234413,
+      "role": "Serp notebook; dated/current and earlier statements distinguished",
+      "github": null,
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S03",
+      "source": "PRIVATE_NOTES/Python Modding/info.txt",
+      "sha256": "cea46ddb4827be6db0b96b9e6eb66b2c928a24cce874d4e8932260cda544c215",
+      "bytes": 67656,
+      "role": "Serp notebook; Lua inter-mod versus native-consumer boundary",
+      "github": null,
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S04",
+      "source": "SharedMods/CodeSnippets.md",
+      "sha256": "2978ad45ab6fe1675a3aa4c728687198ea4e34aacc1c29adaba778dd7a16afe0",
+      "bytes": 126230,
+      "role": "Serp snippets; qualified list-extension claim",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/CodeSnippets.md",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S05",
+      "source": "SharedMods/CodeSnippetsPython.md",
+      "sha256": "d705ad3fd8dcbea563c5cfeb82b1320a26785da123831901aa780e1c0a399cf0",
+      "bytes": 80812,
+      "role": "Serp tool snippets; source survey and illustrative changelog, not loader semantics",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/CodeSnippetsPython.md",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S06",
+      "source": "SharedMods/README.md",
+      "sha256": "0aa1e6255be6b808ff400d98138128a6e5f99d5d9ba2ce5e0fff2b1e11dd870f",
+      "bytes": 1575,
+      "role": "Serp shared-component integration contract",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/README.md",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S07",
+      "source": "Anno-1800-Mods/Recommended-Mods/BT Merchants Offering More Goods (Serp)/data/config/export/main/asset/assets.xml",
+      "sha256": "fe6bdf1ebda8bdf4e64c13e8cdab08055bbc986ae15f4ae41f1f6400c61d71d7",
+      "bytes": 151589,
+      "role": "Serp actual empty-path merge and guarded keyed additions",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Merchants%20Offering%20More%20Goods%20%28Serp%29/data/config/export/main/asset/assets.xml",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S08",
+      "source": "Anno-1800-Mods/Recommended-Mods/BT Merchants Produce Session Goods (Serp)/data/config/export/main/asset/assets.xml",
+      "sha256": "8ea42cd8184822a0617c16904c21480f4f5959f5edd6d6e0c63ebde6513862ee",
+      "bytes": 570033,
+      "role": "Serp comments explicitly favor preserving other mods over whole-list replacement",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Merchants%20Produce%20Session%20Goods%20%28Serp%29/data/config/export/main/asset/assets.xml",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S09",
+      "source": "Anno-1800-Mods/Recommended-Mods/BT Display Offered-Preferred Always (Serp)/data/config/export/main/asset/assets.xml",
+      "sha256": "f4bffa9c201bfa5bd468f9d98a2f1043d0701d71f4ca6f7fb101e4b58d6a1678",
+      "bytes": 5706,
+      "role": "Serp missing-node preparation and current-XML Content copy",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Display%20Offered-Preferred%20Always%20%28Serp%29/data/config/export/main/asset/assets.xml",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S10",
+      "source": "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions_detailed.include.xml",
+      "sha256": "1d9d6df6586a393bf8dac6eae6cbd71b5d56cb8092f13bd5b908630363aa20f6",
+      "bytes": 10370,
+      "role": "Serp intentionally bounded vanilla GUID/condition replacements",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/YouKnowWhatYouDo-Mods/Story%20Quests%20in%20Coop%20%28Serp%29/data/config/export/main/asset/Conditions_detailed.include.xml",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S11",
+      "source": "SharedMods/shared_AttackerEverything (Serp)/data/config/export/main/asset/assets.xml",
+      "sha256": "28ba41e6ebaa8dcb447e5297977dc3d3d853416cfa375156cc3342b292421eee",
+      "bytes": 2637,
+      "role": "Serp avoidance of unnecessary broad template/type changes",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_AttackerEverything%20%28Serp%29/data/config/export/main/asset/assets.xml",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S12",
+      "source": "SharedMods/shared_LuaLight/data/scripts_serp/lighttools.lua",
+      "sha256": "9e874bd55a996d8c3e427eeff16b9ffbe198bb955cad072b510d3dd8cc219f48",
+      "bytes": 108758,
+      "role": "Serp namespaced threads and ModID-keyed callback extension",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_LuaLight/data/scripts_serp/lighttools.lua",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S13",
+      "source": "SharedMods/shared_IncompatibleModsPopUp/data/scripts/search_modlog_pnski.lua",
+      "sha256": "c5336c40e3d3801e1d8f3d40084d22f97eb68d1508142fa94eaba7eb59b12830",
+      "bytes": 4438,
+      "role": "Mixed authorship Pnski/Serp implementation; reports logged incompatibilities",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_IncompatibleModsPopUp/data/scripts/search_modlog_pnski.lua",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S14",
+      "source": "UPSTREAM/modding-guide/guides/mod-compatibility.md",
+      "sha256": "5d40b6d70747168c5e1956010fca7321050a190bd420162d303653b1838b62c0",
+      "bytes": 9801,
+      "role": "Community guide, not attributed wholesale to Serp",
+      "github": "https://github.com/anno-mods/modding-guide/blob/9afc5adb6271e02282532931cf4291b9a5059268/guides/mod-compatibility.md",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S15",
+      "source": "UPSTREAM/anno-mod-loader/xml_operations.cc",
+      "sha256": "2a575c0147344c2e46e49ad39b6ee28d94367faf0842a8db75191f879b2c962f",
+      "bytes": 31010,
+      "role": "Pinned Anno 1800 loader implementation",
+      "github": "https://github.com/jakobharder/anno-mod-loader/blob/8326b7c5a7648787c52f1252cd6e8ae60e593d1c/libs/xml-operations/src/xml_operations.cc",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    },
+    {
+      "id": "S16",
+      "source": "UPSTREAM/anno-mod-loader/mod_loading_order.cc",
+      "sha256": "af32348069381e9a52269184afe3d03d522aea7d55afa6d57b6d483e7732436e",
+      "bytes": 6685,
+      "role": "Pinned Anno 1800 dependency/phase/shared-version implementation",
+      "github": "https://github.com/jakobharder/anno-mod-loader/blob/8326b7c5a7648787c52f1252cd6e8ae60e593d1c/libs/xml-operations/src/mod_loading_order.cc",
+      "review_scope": "Compatibility-relevant statements in context; not a complete semantic audit of this mod/tool."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "source": "S02",
+      "source_sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb",
+      "start_line": 289,
+      "end_line": 289,
+      "excerpt": "    Reihenfolge jetzt egal UND merge fügt jetzt auch fehlendes hinzu! (das ist unten in meiner Erklärung noch nicht der Fall gewesen)",
+      "classification": "Later notebook correction",
+      "interpretation": "Merge adds absent child nodes. Order independence between distinct names must not be generalized to repeated Item nodes.",
+      "github": null
+    },
+    {
+      "id": "C02",
+      "source": "S02",
+      "source_sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb",
+      "start_line": 484,
+      "end_line": 489,
+      "excerpt": "        add:\n            fügt etwas (meist einen vector) hinzu, auch wenns den eintrag bereits gibt.\n            wenn der Path zb Path=\"/Values/Trader/Progression, dann sollte der vector nicht mit Progression anfangen, außer man will tatsächlich einen zweiten Progression Vector haben. Aber stattdessen will man ja eher dem Progression Ast etwas zufügen.\n            ich denke \"add\" sollte man vermeiden, weil es einen eintrag doppelt zufügt, sollten die devs oder andere mods den eintrag ebenfalls zufügen.\n            besser wäre da also replace, wenn man sicher sein will, dass der eigene mod funktioniert.\n            noch besser wäre aber natürlich ein merge_add Befehl, um sowohl die eigenen dinge zuzufügen, als auch bereits vorhandene zu seiner eigenen version zu ändern.",
+      "classification": "Historical notebook advice",
+      "interpretation": "The older preference for replace predates the later merge correction. Preserve its history; use merge to prepare a unique container and add to extend its list.",
+      "github": null
+    },
+    {
+      "id": "C03",
+      "source": "S02",
+      "source_sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb",
+      "start_line": 2706,
+      "end_line": 2709,
+      "excerpt": "      <!-- Nun kann man entweder manuell alle Effekte in die ItemSets copy pasten, aber das ist viel Arbeit und auch wieder inkompatibel mit Mods. -->\n      <!-- Oder man nutzt einfach \"ModOpContent\" und automatisiert dieses copy pasten, nachdem alle anderen Mods geladen haben. -->\n      <!-- Haken: Soweit ich weiß können wir ModOpContent nicht sagen \"kopiere die Buffs aus der GUID die unter SetBuff steht. Sondern wir können nur sagen Kopiere die Buffs aus 191146 nach 191128. -->\n      <!-- Dh auch das wäre dann insofern hardcoded, dass nur diese erwähnten GUIDs zueinander zugeordnet werden. Aber immerhin werden dadurch automatisch auch Änderungen der Buffs erfasst. -->",
+      "classification": "Serp proposal with explicit limitation",
+      "interpretation": "Copy from the XML state after relevant mods; hardcoded source-target GUID pairing remains a limitation.",
+      "github": null
+    },
+    {
+      "id": "C04",
+      "source": "S02",
+      "source_sha256": "a198cdcc292067165515029a28b4cb4b36b24c5795a100c629dbcb552fc133bb",
+      "start_line": 535,
+      "end_line": 538,
+      "excerpt": "        oder:\n        <ModOp Type=\"merge\" GUID=\"167\" Path=\"/Values/Diplomacy/DiplomacyAI/SpecialTrigger/Item[TriggerAction='RequestCeaseFire' and TriggerType='ShipDestroyedByEnemy']\">\n            <AddMoney>0</AddMoney>\n        </ModOp>",
+      "classification": "Serp keyed-selector example",
+      "interpretation": "Select a semantic key rather than relying on Item[1] when the property offers a stable key.",
+      "github": null
+    },
+    {
+      "id": "C05",
+      "source": "S03",
+      "source_sha256": "cea46ddb4827be6db0b96b9e6eb66b2c928a24cce874d4e8932260cda544c215",
+      "start_line": 613,
+      "end_line": 618,
+      "excerpt": "        -- man kann funktionen zwar so überschreiben, aber das bringt nur was im bezug auf andere Mods die diese Funktion nutzen.\n         -- das Spiel nutzt das nirgends, nichtmal in textembeds , also [Economy MetaStorage AddAmount(1010017, 100000)] called das leider nicht\n        -- local old = ts.Economy.MetaStorage.AddAmount\n        -- ts.Economy.MetaStorage.AddAmount = function(a,b)\n          -- print(\"MetaStorage HIER \",a,b)\n          -- return old(a,b)",
+      "classification": "Serp experiment/consumer boundary",
+      "interpretation": "Replacing a Lua function affects Lua callers using it, not automatically native or textembed consumers. Do not treat global overrides as a universal compatibility mechanism.",
+      "github": null
+    },
+    {
+      "id": "C06",
+      "source": "S04",
+      "source_sha256": "2978ad45ab6fe1675a3aa4c728687198ea4e34aacc1c29adaba778dd7a16afe0",
+      "start_line": 2527,
+      "end_line": 2529,
+      "excerpt": "- Adding mod-heat-providing product to the \"Arctic Flue Chance\" Tooltip (see also [here](https://github.com/anno-mods/modding-guide/blob/main/documentation/infotips.md) for modding info about tooltips). Unfortunately I see no way to make the game automatically fetch this.. but adding sth to a list is most of the time fully compatible to other mods also adding to the list, so I think its ok to add mod products to this list.  \n   Using the same list-entry structure like vanilla, although I wonder why they use as diplay-condition \"if the product is not locked\" instead of \"if the product is unlocked\" :D\n- Put the following code in your mod into data/infotips/export.bin.xml and replace \"YOUR_GUID\" with your GUID of the product that provides heat. The code will add your product in the list below the vanilla heat provider \"114890\" (Cantine)",
+      "classification": "Qualified Serp assessment",
+      "interpretation": "List append often composes with other appends; the original qualification is retained and is not a gameplay guarantee.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/CodeSnippets.md#L2527-L2529"
+    },
+    {
+      "id": "C07",
+      "source": "S05",
+      "source_sha256": "d705ad3fd8dcbea563c5cfeb82b1320a26785da123831901aa780e1c0a399cf0",
+      "start_line": 693,
+      "end_line": 698,
+      "excerpt": "  # \"changelog\": {\n      # \"1.01\" : \"The game cuts the BasePrice value to integer, so I rounded my mathemtaical result now, this should fit a bit better than simply cutting it.\",\n      # \"1.02\" : \"Load after New Horizons mod\",\n      # \"1.03\" : \"Fix zip folder\"\n    # }\n  # (keep in mind that json is very strict about missing/to much commas at the end and so on. To make a linebreak use \"\\n\")",
+      "classification": "Illustrative tool snippet only",
+      "interpretation": "The example records an ordering-related changelog entry; no additional Merge/Add guarantee is inferred from this Python collection.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/CodeSnippetsPython.md#L693-L698"
+    },
+    {
+      "id": "C08",
+      "source": "S06",
+      "source_sha256": "0aa1e6255be6b808ff400d98138128a6e5f99d5d9ba2ce5e0fff2b1e11dd870f",
+      "start_line": 24,
+      "end_line": 24,
+      "excerpt": "All shared mods are intended to not be changed from other modders except the author/s. So you copy paste the desired shared mod into your mod folder, which will automatically enable the shared mod together with your mod. If you want to make iprovements to any shared mod, do a PR to this repository. If you want to change things/texts that are not suited for everyone, do this within your own mod instead, by loading your mod after my shared mod and then do ModOp changes like usual to it.  ",
+      "classification": "Serp shared-component authoring policy",
+      "interpretation": "Keep shared copies unmodified; propose shared improvements upstream and apply private integration changes from the consuming mod in a defined later order.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/README.md#L24-L24"
+    },
+    {
+      "id": "C09",
+      "source": "S07",
+      "source_sha256": "fe6bdf1ebda8bdf4e64c13e8cdab08055bbc986ae15f4ae41f1f6400c61d71d7",
+      "start_line": 44,
+      "end_line": 55,
+      "excerpt": "  <!-- add missing entries -->\n  <!-- add the path if it does not exist yet (<GoodsProduction/> does not replace it, if it already exists) -->\n  <ModOp Type='merge' GUID='45,46,77,78,76,73,29,237,119051' Path='/Values'>\n    <Trader>\n      <Progression>\n        <EarlyGame>\n          <GoodsProduction/>\n          <OfferingGoods>\n            <Item>\n              <GoodSets />\n            </Item>\n          </OfferingGoods>",
+      "classification": "Actual Serp patch and explicit explanation",
+      "interpretation": "Empty merge prepares the existing parent path without overwriting preexisting descendants; it does not deduplicate an already broken tree.",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Merchants%20Offering%20More%20Goods%20%28Serp%29/data/config/export/main/asset/assets.xml#L44-L55"
+    },
+    {
+      "id": "C10",
+      "source": "S07",
+      "source_sha256": "fe6bdf1ebda8bdf4e64c13e8cdab08055bbc986ae15f4ae41f1f6400c61d71d7",
+      "start_line": 22,
+      "end_line": 43,
+      "excerpt": "  <!-- Aluminium Fix for Sarmento (not offerend in EndGame, but before) -->\n  <!-- (ProductionPerMinute a bit nerfed in Balanced Profits mod) -->\n  <ModOp Type='add' GUID='29' Path='/Values/Trader/Progression/EndGame/OfferingGoods/Item[1]/GoodSets' \n      Condition=\"!/Values/Trader/Progression/EndGame/OfferingGoods/Item[1]/GoodSets/Item[Good='838']\">\n     <Item>\n      <Good>838</Good>\n     </Item>\n  </ModOp>\n  <ModOp Type='replace' GUID='29' \n    Condition='/Values/Trader/Progression/EndGame/GoodsProduction/Item[Good=\"838\"]'\n    Path='/Values/Trader/Progression/EndGame/GoodsProduction/Item[Good=\"838\"]/ProductionPerMinute'>\n      <ProductionPerMinute>5</ProductionPerMinute>\n  </ModOp>\n  <ModOp Type='add' GUID='29' Path='/Values/Trader/Progression/EndGame/GoodsProduction'\n    Condition=\"!/Values/Trader/Progression/EndGame/GoodsProduction/Item[Good='838']\">\n      <Item>\n        <Good>838</Good>\n        <ProductionPerMinute>5</ProductionPerMinute>\n      </Item>\n  </ModOp>\n  \n  ",
+      "classification": "Actual guarded keyed additions",
+      "interpretation": "Existing product values are targeted separately; add a list entry only when the keyed entry is absent.",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Merchants%20Offering%20More%20Goods%20%28Serp%29/data/config/export/main/asset/assets.xml#L22-L43"
+    },
+    {
+      "id": "C11",
+      "source": "S08",
+      "source_sha256": "8ea42cd8184822a0617c16904c21480f4f5959f5edd6d6e0c63ebde6513862ee",
+      "start_line": 33,
+      "end_line": 36,
+      "excerpt": "  <!-- The production is 0.3 per minute per progression this good is unlocked -->\n  <!-- production divided by 3 for Archibald, Kahina and Eli, because otherwise it would be too much in old world -->\n  <!-- we use add instead of a complete replace of GoodsProduction although it is 3 times slower, to be more compatible to other mods and not repaplace their values (and also not the ones from vanilla) -->\n",
+      "classification": "Serp explanation; performance figure not benchmarked here",
+      "interpretation": "Favor incremental list extension over replacing native/foreign values. The stated threefold cost is an author observation, not a newly measured general multiplier.",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Merchants%20Produce%20Session%20Goods%20%28Serp%29/data/config/export/main/asset/assets.xml#L33-L36"
+    },
+    {
+      "id": "C12",
+      "source": "S09",
+      "source_sha256": "f4bffa9c201bfa5bd468f9d98a2f1043d0701d71f4ca6f7fb101e4b58d6a1678",
+      "start_line": 34,
+      "end_line": 38,
+      "excerpt": "  <!-- copying the whole PreferedGoods entry from EndGame to all other progresslevels -->\n  <ModOp Type=\"merge\" GUID=\"45,46,77,78,76,73,29,237,119051\" Path=\"/Values/Trader/Progression/*\"\n    Content=\"/Values/Trader/Progression/EndGame/PreferedGoods\">\n      <ModOpContent />\n  </ModOp>",
+      "classification": "Actual Serp Content use",
+      "interpretation": "The source is the effective EndGame node when this ModOp executes; copying still needs scoped targets and a deliberate load order.",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/Recommended-Mods/BT%20Display%20Offered-Preferred%20Always%20%28Serp%29/data/config/export/main/asset/assets.xml#L34-L38"
+    },
+    {
+      "id": "C13",
+      "source": "S10",
+      "source_sha256": "1d9d6df6586a393bf8dac6eae6cbd71b5d56cb8092f13bd5b908630363aa20f6",
+      "start_line": 3,
+      "end_line": 8,
+      "excerpt": "  <!-- this file loads much slower than the Conditions file -->\n   <!-- but it is more compatible to other mods, since the GUIDs to change are hardcoded to only change vanilla conditions   -->\n\n\n  <!-- I search the assets.xml for ConditionIsMultiplayer and decide if it is good to replace this with my condition IsSingleHumanSlot. -->\n  ",
+      "classification": "Serp target-scope rationale",
+      "interpretation": "Explicit vanilla GUIDs plus precise condition predicates can be safer than a blanket replacement that also changes foreign assets. Hardcoding is not automatically incompatible.",
+      "github": "https://github.com/Serpens66/Anno-1800-Mods/blob/9858f32602891e2b562a73a1b6c8b5890bfd1f68/YouKnowWhatYouDo-Mods/Story%20Quests%20in%20Coop%20%28Serp%29/data/config/export/main/asset/Conditions_detailed.include.xml#L3-L8"
+    },
+    {
+      "id": "C14",
+      "source": "S11",
+      "source_sha256": "28ba41e6ebaa8dcb447e5297977dc3d3d853416cfa375156cc3342b292421eee",
+      "start_line": 25,
+      "end_line": 28,
+      "excerpt": "  <!-- in theory we could also change Warship or HarbourTower, since they are basically identical in vanilla. So if we customize HarbourTower, we could give all towers the Warship type instead. -->\n   <!-- but this also means we could get incompatible with other mods adding new towers.. we could load after all and also change the template of towers... -->\n    <!-- but for now I will stick to Seamine and only touch HarbourTower if there is a good reason -->\n  ",
+      "classification": "Serp tradeoff, not tested compatibility certification",
+      "interpretation": "Avoid broad type/template changes when the feature can be implemented with a smaller affected set.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_AttackerEverything%20%28Serp%29/data/config/export/main/asset/assets.xml#L25-L28"
+    },
+    {
+      "id": "C15",
+      "source": "S12",
+      "source_sha256": "9e874bd55a996d8c3e427eeff16b9ffbe198bb955cad072b510d3dd8cc219f48",
+      "start_line": 575,
+      "end_line": 580,
+      "excerpt": "  local final_threadname = tostring(_ModID)..\": \"..tostring(threadname)\n  if system.internal.coroutines[final_threadname]~=nil then -- no need to check status, because done threads are already set nil again\n    g_LTL_Serp.modlog(\"WARNING start_thread: A thread with the name \"..tostring(final_threadname)..\" is currently running. Are you sure you want to overwrite it? Choose a unique threadname if you dont want this (you can include _random_ in the threadname to add random number or include _nodouble_ to not overwrite a previous thread and so nothing)\",_ModID)\n    if string.find(threadname,\"_nodouble_\") then -- if we dont want to overwrite previous thread\n      return false\n    end",
+      "classification": "Actual Serp namespacing implementation",
+      "interpretation": "Thread identity includes the mod ID; distinguish deliberate replacement from independent work.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_LuaLight/data/scripts_serp/lighttools.lua#L575-L580"
+    },
+    {
+      "id": "C16",
+      "source": "S12",
+      "source_sha256": "9e874bd55a996d8c3e427eeff16b9ffbe198bb955cad072b510d3dd8cc219f48",
+      "start_line": 1244,
+      "end_line": 1253,
+      "excerpt": "  local EventOnObjectDeletionConfirmed = {}\n  -- add your function which should be called to the list EventOnObjectDeletionConfirmed with ModID of your mod as key.\n  local function _OnObjectDeletionConfirmed(GUID)\n    for modname,fn in pairs(EventOnObjectDeletionConfirmed) do\n      if type(fn)==\"function\" then\n        local status,err = xpcall(fn,g_LTL_Serp.log_error,GUID)\n        if status==false then\n          g_LTL_Serp.modlog(\"ERROR in _OnObjectDeletionConfirmed for mod '\"..tostring(modname)..\"': \"..tostring(err),ModID)\n        end\n      end",
+      "classification": "Actual Serp callback-extension contract",
+      "interpretation": "Register under your own ModID in the provided callback map; do not replace the whole shared map.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_LuaLight/data/scripts_serp/lighttools.lua#L1244-L1253"
+    },
+    {
+      "id": "C17",
+      "source": "S13",
+      "source_sha256": "c5336c40e3d3801e1d8f3d40084d22f97eb68d1508142fa94eaba7eb59b12830",
+      "start_line": 87,
+      "end_line": 97,
+      "excerpt": "    local incompatible_logs = SearchModLog_Pnski(\"is incompatible with:\")\n    -- print(incompatible_logs)\n    for linenumber,line in pairs(incompatible_logs) do\n      if linenumber > last_modsloaded_linenumber then\n        local inc_mod1,inc_mod2 = string.match(line,\".*%] (.*) is incompatible with: .*%] (.*)\") -- eg. \"[2024-08-15 22:35:39.877] [error] [Gameplay] testmod is incompatible with: shared_IncompatibleModsPopUp\"\n        if inc_mod2==nil then -- eg if it does not have a Category in brackets (mod1 always has brackets in front, eg [error])\n          inc_mod1,inc_mod2 = string.match(line,\".*%] (.*) is incompatible with: (.*)\")\n        end\n        -- print(inc_mod1,inc_mod2)\n        if inc_mod1~=nil and inc_mod2~=nil then\n          table.insert(inc_mods_list,{inc_mod1,inc_mod2}) -- inc_mod1 is a ModName, while inc_mod2 is a ModID",
+      "classification": "Mixed-authorship implementation evidence",
+      "interpretation": "The helper reads incompatibility messages already present in the loader log; it cannot prove absence of undisclosed logical conflicts.",
+      "github": "https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/79f10e0cc8e53d909c44dd831689ddc8d4632c99/shared_IncompatibleModsPopUp/data/scripts/search_modlog_pnski.lua#L87-L97"
+    },
+    {
+      "id": "C18",
+      "source": "S14",
+      "source_sha256": "5d40b6d70747168c5e1956010fca7321050a190bd420162d303653b1838b62c0",
+      "start_line": 13,
+      "end_line": 13,
+      "excerpt": "- Make changes to existing assets as small as possible.",
+      "classification": "Community recommendation",
+      "interpretation": "Preserve anchors/templates and use small changes. These statements are not attributed specifically to Serp.",
+      "github": "https://github.com/anno-mods/modding-guide/blob/9afc5adb6271e02282532931cf4291b9a5059268/guides/mod-compatibility.md#L13"
+    },
+    {
+      "id": "C19",
+      "source": "S14",
+      "source_sha256": "5d40b6d70747168c5e1956010fca7321050a190bd420162d303653b1838b62c0",
+      "start_line": 214,
+      "end_line": 214,
+      "excerpt": "<ModOp Type=\"remove\" Path=\"//Asset[Values/Standard/GUID='1500010714'][position() &amp; last()]\"/>",
+      "classification": "Known invalid upstream example",
+      "interpretation": "This expression has an invalid XPath operator. It is not copied as a usable recipe; retain the existing discrepancy record.",
+      "github": "https://github.com/anno-mods/modding-guide/blob/9afc5adb6271e02282532931cf4291b9a5059268/guides/mod-compatibility.md#L214-L214"
+    },
+    {
+      "id": "C20",
+      "source": "S15",
+      "source_sha256": "2a575c0147344c2e46e49ad39b6ee28d94367faf0842a8db75191f879b2c962f",
+      "start_line": 668,
+      "end_line": 670,
+      "excerpt": "                for (auto &node : content_nodes) {\n                    game_node.append_copy(node);\n                }",
+      "classification": "Loader implementation",
+      "interpretation": "Add appends payload nodes; it does not check for an identically named existing container.",
+      "github": "https://github.com/jakobharder/anno-mod-loader/blob/8326b7c5a7648787c52f1252cd6e8ae60e593d1c/libs/xml-operations/src/xml_operations.cc#L668-L670"
+    },
+    {
+      "id": "C21",
+      "source": "S15",
+      "source_sha256": "2a575c0147344c2e46e49ad39b6ee28d94367faf0842a8db75191f879b2c962f",
+      "start_line": 831,
+      "end_line": 849,
+      "excerpt": "    auto root_node = game_node;\n    std::map<std::string, int> indexer;\n    for (auto cur_node = patching_node; cur_node; cur_node = cur_node.next_sibling()) {\n        const auto name = cur_node.name();\n        indexer.try_emplace(name, 0);\n        const int index = indexer[name]++;\n\n        game_node = find_node_with_name(root_node, cur_node.name(), index);\n        if (game_node) {\n            if (cur_node.type() == pugi::xml_node_type::node_pcdata) {\n                game_node.set_value(cur_node.value());\n            } else {\n                MergeProperties(game_node, cur_node);\n                RecursiveMerge(game_node, cur_node.first_child());\n            }\n        }\n        else {\n            root_node.append_copy(cur_node);\n        }",
+      "classification": "Loader implementation",
+      "interpretation": "Recursive merge matches repeated names by occurrence, recurses into existing children and appends missing nodes. An empty payload child does not clear descendants.",
+      "github": "https://github.com/jakobharder/anno-mod-loader/blob/8326b7c5a7648787c52f1252cd6e8ae60e593d1c/libs/xml-operations/src/xml_operations.cc#L831-L849"
+    },
+    {
+      "id": "C22",
+      "source": "S16",
+      "source_sha256": "af32348069381e9a52269184afe3d03d522aea7d55afa6d57b6d483e7732436e",
+      "start_line": 158,
+      "end_line": 169,
+      "excerpt": "\n    const auto& duplicate = mods_.find(id);\n    if (duplicate != mods_.end()) {\n        if (duplicate->second.version > parsedVersion) {\n            // skip older versions\n            return;\n        }\n    }\n\n    bool loadLast = dependencyIDs.end() != std::find(dependencyIDs.begin(), dependencyIDs.end(), \"*\");\n\n    mods_[id] = Mod{ path, name, id, parsedVersion, dependencyIDs, loadLast };",
+      "classification": "Loader implementation",
+      "interpretation": "For a shared ModID the older version is skipped; equal-version/different-content copies are not a compatibility contract.",
+      "github": "https://github.com/jakobharder/anno-mod-loader/blob/8326b7c5a7648787c52f1252cd6e8ae60e593d1c/libs/xml-operations/src/mod_loading_order.cc#L158-L169"
+    },
+    {
+      "id": "C23",
+      "source": "S16",
+      "source_sha256": "af32348069381e9a52269184afe3d03d522aea7d55afa6d57b6d483e7732436e",
+      "start_line": 184,
+      "end_line": 203,
+      "excerpt": "    DependencyGraph graph;\n    for (auto& mod : alphabetical) {\n        if (!mod.second->loadLast) {\n            graph.AddPackage(mod.second->id, mod.second->dependencyIDs);\n        }\n    }\n\n    DependencyGraph loadLast;\n    for (auto& mod : mods_) {\n        if (mod.second.loadLast) {\n            loadLast.AddPackage(mod.second.id, mod.second.dependencyIDs);\n        }\n    }\n\n    // mods with normal dependencies\n    vector<string> sorted;\n    graph.Sort(sorted);\n    for (auto& id : sorted) {\n        const auto& mod = mods_.find(id);\n        if (mod != mods_.end() && !mod->second.loadLast) {",
+      "classification": "Loader implementation",
+      "interpretation": "Normal and load-last mods are ordered in separate graphs; phase boundaries matter in addition to named dependencies.",
+      "github": "https://github.com/jakobharder/anno-mod-loader/blob/8326b7c5a7648787c52f1252cd6e8ae60e593d1c/libs/xml-operations/src/mod_loading_order.cc#L184-L203"
+    }
+  ],
+  "survey": {
+    "extensions": [
+      ".xml",
+      ".lua",
+      ".md",
+      ".txt"
+    ],
+    "excluded": [
+      ".git",
+      "Documentation generated artifacts"
+    ],
+    "pattern": "compatib|kompatib|add the path if|does not replace|another mod|not overwrite",
+    "files_scanned": 5507,
+    "matching_files": 196,
+    "distinct_matching_sha256_groups": 115,
+    "boundary": "Keyword hits identify candidates, not authorship or completed reviews. Identical bundles retain their paths; selected snippets are attributed individually. JSON inventories/metadata are not treated as prose claims.",
+    "matching_groups": [
+      {
+        "sha256": "ee300f11679d64fc39a79bd8ae345a4ce8fdbf36f926caedbd3fbe0927dca5ca",
+        "sources": [
+          "Anno-1800-Mods/README.md"
+        ]
+      },
+      {
+        "sha256": "29697365ea9616e0c1f2ee3a519334bc618b22b9e7ef959e25d4e57c735f488e",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/AI Buffed AI Ships (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "9344cac12e2fb72bde5514fd030341dfa4520ca5bdda210b1e41e963545bcd28",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/AI Everyone Hard AI (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "bd7fb3cc08909dcbe57c868984a7e9b4704c6197136efb10efffd598b75752ba",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Passive Trading (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "8f4dcb3f4c3e981b2c402cc4e20238420979d9919883b5a95f444d5d1e339425",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Common Seeds (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "8422192db2a0c841abd67acffe1bab61eedecc55e01fa1e04c30abf59bd38379",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Early Research Balanced (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "95c4c83da54b1910730be169e3f36685b7901e92923a0a161b44d781ed48cca6",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Kaiserdom/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "e78852ce2d2338c57f58cf5b01c2ee625aa664ac2cdc3912b849a5bf138eea1a",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Buffed Pirate Ships (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "b854fdae9b351b8ccf6b9d2537698ee1fb19911b58ce4f3025caaffc3ba1c7cf",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P RewardDestroyPirate (Serp)/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/P RewardDestroyPirate (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "d1532100ce76b176aea281103abe915d68f7f57b5ab965cdd43fe907ed8bc6b3",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "1ffbb0e26397d0e7d4bde17e08da6bb87a0f746774f1b50fafce7ffda03bf4df",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Small Powerplant/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "a68083baae1a96261bff0f56f1a06ccef48ca9fee74387ae8150541b9adfbeca",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/AI Everyone Hard AI (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "38f39c5706c08d33176c456b9b309cf462e3b36ec507f238c5fa813919515124",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Airships Use Ship Items (Serp)/data/config/export/main/asset/templates.xml"
+        ]
+      },
+      {
+        "sha256": "098c1cbb609fadd155eead85f680a5726a9a433dc02dabae0c07a1d5fdf95e93",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Balanced Profits (Serp)/data/config/export/main/asset/MerchantPrefered.include.xml"
+        ]
+      },
+      {
+        "sha256": "f4bffa9c201bfa5bd468f9d98a2f1043d0701d71f4ca6f7fb101e4b58d6a1678",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Display Offered-Preferred Always (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "fe6bdf1ebda8bdf4e64c13e8cdab08055bbc986ae15f4ae41f1f6400c61d71d7",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Merchants Offering More Goods (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "8ea42cd8184822a0617c16904c21480f4f5959f5edd6d6e0c63ebde6513862ee",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Merchants Produce Session Goods (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "d1f57f3af25e21a45bbd9a951bcbf9d147cec44404a8df44a940bcaacb44e59e",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Preferred Goods Merchants/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "88a199951f7061e576cfb35bf1d54686cb71164655576f98bd58b2c0adf7799f",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Africa_Ketema.include.xml"
+        ]
+      },
+      {
+        "sha256": "9aa0f2bb965c8ab306466c8776d9c3315e6387d8bd2c45c42c8cdcf3f2261239",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/America_Sarmento.include.xml"
+        ]
+      },
+      {
+        "sha256": "58421e749146be25f9fa86c7a6a1fcd307e9298be0119a0be5d5239ba79b6409",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Archibald.include.xml"
+        ]
+      },
+      {
+        "sha256": "2e15dcb5741668f455bf829e3621c7bc0da3ce9aadccc7e286a6646af7c546fc",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Arctic_Inuit.include.xml"
+        ]
+      },
+      {
+        "sha256": "8de66a77dc579009076f7286bc75839d6acb6ec2be25a4cd53ff53271995dc10",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Eli.include.xml"
+        ]
+      },
+      {
+        "sha256": "21ab218726589f120bfa97c51772f2622dd6650ade887fedad4934d27f775d2a",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Harlow.include.xml"
+        ]
+      },
+      {
+        "sha256": "b28ceea0c4abff9d0e66ad2cf88a80cbf9bb9766d93491b19b3ba2b1b86c6f69",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Inuit.include.xml"
+        ]
+      },
+      {
+        "sha256": "66abd9b83d286c3a73a5204b2bbb9c48e34cdd74c3269da104ce769a2bfe34e8",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Kahina.include.xml"
+        ]
+      },
+      {
+        "sha256": "3250c878e5566265585495b0fd1ee69a4825934f59f04104532f2d1e4f19f534",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Ketema.include.xml"
+        ]
+      },
+      {
+        "sha256": "39e1591b11b7604b4d410a9845f667e5e64371dbe9f1162776e1442053f996ef",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/LaFortune.include.xml"
+        ]
+      },
+      {
+        "sha256": "e822eba05ce9cf4b5b3444ea7d1bec2df630d043f81b4496cb9c366ef089b914",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Moderate_Archibald.include.xml"
+        ]
+      },
+      {
+        "sha256": "2f871885171917f4f7cece9bd44ab493ba1936e3eea9e455e7e076971600cee8",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Nate.include.xml"
+        ]
+      },
+      {
+        "sha256": "60654d448267cd3b9fab6b08639ac3367d992572d76c479723f7ef852c879787",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/BT Quests Instead Preferred (Serp)/data/config/export/main/asset/Sarmento.include.xml"
+        ]
+      },
+      {
+        "sha256": "294672e94977ee650cb6b28b34a9f22eb2bf502dcf9faac6f28330706a4ffbba",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/CharacterItems Expedition (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "c95f9c71d1c46cd7c02c04ba0f4d05d05145a6ac912df8027e63b57c25444abd",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Early Research Balanced (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "108cc74e379a27d8a2ad98baf2e892f00bc94ca3dcba58b3b5c546ab5b65f6ed",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/InfluenceSpeedBuffAllShips (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "4a31ba389397677bf45a6e6e936f230e471c65d217138121de6254fb0676bd3a",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/MoreInfoTooltips (Serp)/data/infotips/exportbin_BuildMenu.include.xml"
+        ]
+      },
+      {
+        "sha256": "6904c213994bad7112c4087c3f8049731bdc30d3be89266f6ee95b2352421e4f",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/MoreInfoTooltips (Serp)/data/infotips/exportbin_ShipCosts.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/MoreInfoTooltips (Serp)/data/infotips/exportbin_ShipCosts.include.xml"
+        ]
+      },
+      {
+        "sha256": "ae5a0b976fc643755edd222b7d6b50232c049686b07fdade4366555f7c887b0d",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/MoreInfoTooltips (Serp)/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/MoreInfoTooltips (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "ce9b0f5f32f74c8a20d8612463e084e05475329a7abb9f70ee37c1ec870d062a",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/MoreInfoTooltips (Serp)/shared_TooltipBugFixes/data/infotips/exportbin_ExclusiveItem.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/MoreInfoTooltips (Serp)/shared_TooltipBugFixes/data/infotips/exportbin_ExclusiveItem.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_TooltipBugFixes/data/infotips/exportbin_ExclusiveItem.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_TooltipBugFixes/data/infotips/exportbin_ExclusiveItem.include.xml",
+          "SharedMods/shared_Sellable/shared_TooltipBugFixes/data/infotips/exportbin_ExclusiveItem.include.xml",
+          "SharedMods/shared_TooltipBugFixes/data/infotips/exportbin_ExclusiveItem.include.xml"
+        ]
+      },
+      {
+        "sha256": "1f661e2e7502e427d19ecb3a4ab73f5f269a1e725381f7c86c0d790ac49c21e1",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/MoreInfoTooltips (Serp)/shared_TooltipBugFixes/data/infotips/exportbin_FixTTPermitCosts.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/MoreInfoTooltips (Serp)/shared_TooltipBugFixes/data/infotips/exportbin_FixTTPermitCosts.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_TooltipBugFixes/data/infotips/exportbin_FixTTPermitCosts.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_TooltipBugFixes/data/infotips/exportbin_FixTTPermitCosts.include.xml",
+          "SharedMods/shared_Sellable/shared_TooltipBugFixes/data/infotips/exportbin_FixTTPermitCosts.include.xml",
+          "SharedMods/shared_TooltipBugFixes/data/infotips/exportbin_FixTTPermitCosts.include.xml"
+        ]
+      },
+      {
+        "sha256": "b711b2276d8fa47d6826e513b5941016bbfdd950ce3115557805a79c7b578c04",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Buffed Pirate Ships (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "09ccf68f451179b71db8a236b0db4348d9c8f5ee9f2cd3ab1cadca707c477432",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P RewardDestroyPirate (Serp)/shared_LuaLight/shared_WhichPlayer_Condition/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_WhichPlayer_Condition/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_WhichPlayer_Condition/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/Item_Hijack_Ships (Serp)/shared_WhichPlayer_Condition/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/Limited Preferred Profits (Serp)/shared_CoopCount/shared_LuaLight/shared_WhichPlayer_Condition/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_DifficultySettings/shared_WhichPlayer_Condition/changelog.txt",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/shared_WhichPlayer_Condition/changelog.txt",
+          "SharedMods/shared_WhichPlayer_Condition/changelog.txt",
+          "SharedMods/shared_CoopCount/shared_LuaLight/shared_WhichPlayer_Condition/changelog.txt",
+          "SharedMods/shared_LuaLight/shared_WhichPlayer_Condition/changelog.txt",
+          "SharedMods/shared_Sellable/shared_LuaLight/shared_WhichPlayer_Condition/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "9e874bd55a996d8c3e427eeff16b9ffbe198bb955cad072b510d3dd8cc219f48",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P RewardDestroyPirate (Serp)/shared_LuaLight/data/scripts_serp/lighttools.lua",
+          "Anno-1800-Mods/WorkInProgress-Mods/Limited Preferred Profits (Serp)/shared_CoopCount/shared_LuaLight/data/scripts_serp/lighttools.lua",
+          "SharedMods/shared_CoopCount/shared_LuaLight/data/scripts_serp/lighttools.lua",
+          "SharedMods/shared_LuaLight/data/scripts_serp/lighttools.lua",
+          "SharedMods/shared_Sellable/shared_LuaLight/data/scripts_serp/lighttools.lua"
+        ]
+      },
+      {
+        "sha256": "7549ceab4b5e9af2cfc85410dc541d6b0ae9ad03ff8c32e2a8c7e61f0ded4d56",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P RewardDestroyPirate (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/Recommended-Mods/P RewardDestroyPirate (Serp)/shared_PirateDefeatHelpers/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/shared_PirateExtraSpawn/shared_PirateDefeatHelpers/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Attainments by Honor (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Attainments by Research (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/InfluenceBuffs by Honor (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/InfluenceBuffs by Research (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Item_Hijack_Ships (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_DifficultySettings/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Specialised Islands (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/shared_PirateDefeatHelpers/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "SharedMods/Outdated_shared_AreaBuffsHelper (Serp)/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "SharedMods/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "SharedMods/shared_OncePerSession_xml/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "SharedMods/shared_PirateDefeatHelpers/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "SharedMods/shared_PirateExtraSpawn/shared_PirateDefeatHelpers/shared_ObjectDummies/data/config/export/main/asset/templates.xml",
+          "SharedMods/shared_WhichModPlayer/shared_ObjectDummies/data/config/export/main/asset/templates.xml"
+        ]
+      },
+      {
+        "sha256": "5745249b0cd01cebb004051982bf73f1f064a233a62ca0a6164534ed1b9caa1c",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P RewardDestroyPirate (Serp)/shared_PirateDefeatHelpers/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/shared_PirateExtraSpawn/shared_PirateDefeatHelpers/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_PirateDefeatHelpers/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/shared_PirateDefeatHelpers/data/config/export/main/asset/assets.xml",
+          "SharedMods/shared_PirateDefeatHelpers/data/config/export/main/asset/assets.xml",
+          "SharedMods/shared_PirateExtraSpawn/shared_PirateDefeatHelpers/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "a0ab2d3e32801f9804fff8567c6808bb12bf0ea7308f5a9e96679565320aa283",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "4881d4fe48426906b0ed2b748687d774e541ed458ef570454f6db3ec4125b378",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/data/config/export/main/asset/ComeBack.include.xml"
+        ]
+      },
+      {
+        "sha256": "2ee4b071be4e20e9f5068be317b76131f1da65bedbb34933fa72b991ec2092cc",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_harlow.lua",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_harlow.lua",
+          "SharedMods/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_harlow.lua"
+        ]
+      },
+      {
+        "sha256": "f8a81a545dc6dd7eb880c170f30167e7fa11ef0fdff3359421b0f3f20ae72af0",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/P Stronger Pirates (Serp)/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_lafortune.lua",
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_lafortune.lua",
+          "SharedMods/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_lafortune.lua"
+        ]
+      },
+      {
+        "sha256": "fc00666480de2ebec4dddad3b99639d8aea0c48650cac68a3f0bf1205b5fef46",
+        "sources": [
+          "Anno-1800-Mods/Recommended-Mods/Permanent Piratemode Item (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "fa68ebbbecc988a28e1ba6fdeb76c55040144a7147c500634d7707638073ade9",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Attainments by Honor (Serp)/shared_ShipyardForBuffsTooltip/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/Attainments by Research (Serp)/shared_ShipyardForBuffsTooltip/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/InfluenceBuffs by Honor (Serp)/shared_ShipyardForBuffsTooltip/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/InfluenceBuffs by Research (Serp)/shared_ShipyardForBuffsTooltip/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_DifficultySettings/shared_ShipyardForBuffsTooltip/changelog.txt",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_Honor/shared_ShipyardForBuffsTooltip/changelog.txt",
+          "SharedMods/shared_ShipyardForBuffsTooltip/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "b64fd17ef6387e6b18e672f1c99ee09fbe43fdc4a2d865a78c85dd6d920c0c08",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Attainments by Honor (Serp)/data/config/export/main/asset/BuffsBought.include.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Attainments by Research (Serp)/data/config/export/main/asset/BuffsBought.include.xml"
+        ]
+      },
+      {
+        "sha256": "7ee60ee58f760c6e3f9babd042304e0121e539c34eb9ca2a23a4f57acbe59cbb",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "2b2d4a52b74e353f8eaedd3af5bc729140160529b39b795bb1dd0709f7f53976",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/DiploActions_Serp/data/scripts_serp/diploactions.lua"
+        ]
+      },
+      {
+        "sha256": "304a6f2982ffcb2578e1e9e843acea9d7b26b6e11d0f22f09dde590ed228b346",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/DiploActions_Serp/data/config/export/main/asset/Actions/ShareGoods.include.xml"
+        ]
+      },
+      {
+        "sha256": "28ef322033418b4257f037f20ab2a20a6bc490eca4f9ae6066b1b4613590fedb",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/DiploActions_Serp/data/config/export/main/asset/Actions/SFleet/assets.include.xml"
+        ]
+      },
+      {
+        "sha256": "76d766879384d476fc568be5dd5caecb147b33ae1769c264b41500efa852e4e5",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/Sabotage (Serp)/data/config/export/main/asset/Audio.include.xml"
+        ]
+      },
+      {
+        "sha256": "c90a5fcedd090627d187095b91d43a026876839915cc160dc52cf7f6f2b2f1a8",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/Sabotage (Serp)/data/config/export/main/asset/Trigger.include.xml"
+        ]
+      },
+      {
+        "sha256": "00761f2fcf267b4a110b457f2aec15a7ed468de7e8c736f2dd7c6deb837d0e81",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/Sabotage (Serp)/data/config/export/main/asset/TriggerEquipItems.include - Kopie.xml"
+        ]
+      },
+      {
+        "sha256": "f9d973d88a0726411ae15197a8508a2062d27fbccc4ec0547272411b778feef7",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/Sabotage (Serp)/data/config/export/main/asset/TriggerEquipItems_lua.include.xml"
+        ]
+      },
+      {
+        "sha256": "a741a2c64dabc89e7e6bc4fb4166ff4cb1bb8cbec67ae8079e68544b5c918f35",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/MoreInfoTooltips (Serp)/data/infotips/exportbin_BuildMenu.include.xml"
+        ]
+      },
+      {
+        "sha256": "28ba41e6ebaa8dcb447e5297977dc3d3d853416cfa375156cc3342b292421eee",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_AttackerEverything (Serp)/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_AttackerEverything (Serp)/data/config/export/main/asset/assets.xml",
+          "SharedMods/shared_AttackerEverything (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "0c00f0f8870f50d5c3128135054f34f64f7af081603b513433ea0bd30dc511dc",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_LuaLight/data/scripts_serp/lighttools.lua"
+        ]
+      },
+      {
+        "sha256": "b3dbc6b157af233538e558d1921b0e3095a23f6e7170990693089b3eb161331b",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_LuaMedium/data/scripts_serp/mediumtools.lua",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_LuaMedium/data/scripts_serp/mediumtools.lua"
+        ]
+      },
+      {
+        "sha256": "a0f3a2ff6bc0337bf2f01daac37a5133bd4f24e45ec9d3b8530d6194f62cceca",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_LuaMedium/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_LuaMedium/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "b8ea62077de32bf3df82f63ad9c69e474194659379150c5e506859f24db4f43c",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Diplomacy Sabotage (Serp)/subs/shared_LuaMedium/data/config/export/main/asset/OnGameLoaded.include.xml"
+        ]
+      },
+      {
+        "sha256": "dc2cc93f3659269146fd397ed59c2362736c00b640f7838563ce86b4c089c6f3",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/data/config/export/main/asset/DifficultySettings.include - Kopie (2).xml"
+        ]
+      },
+      {
+        "sha256": "ad355526e5d23394eeb63ce7f61e7b90d3252763ddb8a363adcfe7123d3edd5e",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/data/config/export/main/asset/DifficultySettings.include - Kopie.xml"
+        ]
+      },
+      {
+        "sha256": "3ce36a559a5a67561cbb1148827fddcb503bcef59dff7860e6737ef56dbf08c9",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/data/config/export/main/asset/DifficultySettings_ALT.include.xml"
+        ]
+      },
+      {
+        "sha256": "b7a4af45de81a97d7e84fdef23d3ac9cb9142f11f669c5d22a934ce68999e523",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/data/config/export/main/asset/Volcano.include.xml"
+        ]
+      },
+      {
+        "sha256": "521397e7eb9b526c587b5b97a9d9c9225bd97957eb8674bb57c15e4506d781bb",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_FertilityBuffs/[Shared] Pools and Definitions/README.md",
+          "SharedMods/shared_FertilityBuffs/[Shared] Pools and Definitions/README.md"
+        ]
+      },
+      {
+        "sha256": "380371f39bec53d5efd8e8a63fce572c348e59b2f09fcf613f8e6560ace175ed",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Disasters (Serp)/shared_FertilityBuffs/[Shared] Pools and Definitions/data/config/export/main/asset/assets-hotel-needs.include.xml",
+          "SharedMods/shared_FertilityBuffs/[Shared] Pools and Definitions/data/config/export/main/asset/assets-hotel-needs.include.xml"
+        ]
+      },
+      {
+        "sha256": "92ebf14da71563082a9f56e6e55c63b8d75d2089cf92725de982ca6c5ae27bc6",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_Honor/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "945ce3359217f5674d249df05fd7a4aac4016fb11f7e55ec45f65733251a19fc",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_Honor/data/config/export/main/asset/PopDistribute.include.xml"
+        ]
+      },
+      {
+        "sha256": "ef3ddb84e975fc6c4a46bc296296267c6222ae9555d20e01cb0a1c0c2ec6f729",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_LuaMedium/data/config/export/main/asset/OnGameLoaded.include.xml"
+        ]
+      },
+      {
+        "sha256": "1603b555b9210224033a2d2b8dd96ad21dd90dd29cdfab344f3269aac4e42767",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_LuaUltra/data/scripts_serp/check_peers.lua"
+        ]
+      },
+      {
+        "sha256": "a699a54d45a9d96af930bdda42d0eb017b8e2402ce6740783b9ddc6667deb627",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_LuaUltra/data/scripts_serp/ultratools.lua"
+        ]
+      },
+      {
+        "sha256": "aff169cd5763af8c37ab5928d155f54ce337fb8e484534f0f6e1bc93fb92b71e",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_LuaUltra/data/config/export/main/asset/CheckPeer.include.xml"
+        ]
+      },
+      {
+        "sha256": "ff094049c8190081594482dc9c3ae03e1716053a8f34739c54f3896f7d635220",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/data/scripts_serp/sharedpopup_main.lua"
+        ]
+      },
+      {
+        "sha256": "dae48eb97a7807c02b8d6078608a44403807b48d8759630fc06b64784979b4ae",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "b4f9c6f1b590d3170e20ba78e1b1f78c1a06230c99d7a48497d91746b6b553c5",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/scripts/search_modlog_pnski.lua"
+        ]
+      },
+      {
+        "sha256": "f5b9cc455cabb43b58ae80a5bdacaf7f4b39042959fb1f37f855ddf97eabe3df",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/scripts_serp/checkmodlog_incompatible.lua"
+        ]
+      },
+      {
+        "sha256": "ad4d4d86e5dcaa3a45fc78e16b341ca5d18fada7ebeea18dfab6153eacce6d3e",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_chinese.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_english.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_french.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_italian.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_japanese.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_korean.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_polish.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_russian.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_spanish.xml",
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_taiwanese.xml"
+        ]
+      },
+      {
+        "sha256": "628405ee745a55c688aa3012f39ae0882b17b342d9cf1c7a4217bee22723419c",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/gui/texts_german.xml"
+        ]
+      },
+      {
+        "sha256": "c9bbafad4d2aad2b985beb6cbec5d68d01e3a63c4f024aba3810f4ccdf9f7b32",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_IncompatibleModsPopUp_shared/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "451c3e5b9bbc9389c9ab18f9a4271b82a17b3ff843e4313cd39e7ced859953ac",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/shared_PopUp/shared_MP_Lua_Popup/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "d021212b82cc942dcf77102042b576462b32adadc703f227e70a9d12784d73d9",
+        "sources": [
+          "Anno-1800-Mods/WorkInProgress-Mods/Towing Ships (will not work)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "874f5119a960ea29fea8a85836341ee54684b30435941d0fef49c2de400c3930",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/AI Allied AIs (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "8917cae6ef97a839c5f47b6a5b92b7066ea38368d6063ee53da0113fdf047400",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/No AI Merchant Trade (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "eaa54be368878c43de89b923908d0180c29f8718b25615ff5b37f244e32f32e8",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/[Cheat] Research All Items Identified (Serp)/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "2f35e586cff0d32cb2eed7ead7fce5b8206cbf4b4f83a23e7230e8ab8707ba76",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/AI AIs at Peace (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "192f34559cbcb4e013d328f44cf7d420f4eda587163279ee3e927eaa69a4d987",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "99fed1fb5115d98ce70db85c7e020cdf870b45fbcacce70e406197ff826ba5e1",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/ADLeaveUI.include.xml"
+        ]
+      },
+      {
+        "sha256": "2031e6177c17cf2a32e9c68c3b2604e293a205608d6770e5178f41809654d03b",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/AntiDesync.include.xml"
+        ]
+      },
+      {
+        "sha256": "abbecef5727d4b5e054e38009a551c85111cab4c77a28ab47800a6b54d801ee2",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data/config/export/main/asset/assets.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "6c9c53728af3503112d5bca1ff6f51552a4fe1b14e0ad86c73ee973c7d6293d4",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions.include.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions.include.xml"
+        ]
+      },
+      {
+        "sha256": "1d9d6df6586a393bf8dac6eae6cbd71b5d56cb8092f13bd5b908630363aa20f6",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions_detailed.include.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions_detailed.include.xml"
+        ]
+      },
+      {
+        "sha256": "154437148b9574083c0c143a0b84197147af145064ffccff23de1ece0720ea62",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data/config/export/main/asset/AntiDesync/ADLeaveUI.include.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/AntiDesync/ADLeaveUI.include.xml"
+        ]
+      },
+      {
+        "sha256": "c82b3158a3d7dc6d57dff20d37508937a968894757bdcb9010a457828cd53975",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data/config/export/main/asset/AntiDesync/AntiDesync.include.xml",
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/AntiDesync/AntiDesync.include.xml"
+        ]
+      },
+      {
+        "sha256": "a97ae30c7feda0c3d3c5beb3ad13ad65893204bef67807e1421cae3b1fc98173",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/No AI Merchant Trade (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "24daaf4824456d3f87dace7060fdf5a83717575000ddc504670a865c3435a30f",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/QuestTimelimit StartOption (Serp)/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "f961dea42f0c495bb517a6abcc8004296596bdf52d7511ca5611c6cd937eecdf",
+        "sources": [
+          "Anno-1800-Mods/YouKnowWhatYouDo-Mods/[Cheat] Research All Items Identified (Serp)/data/scripts_identify_serp/init.lua"
+        ]
+      },
+      {
+        "sha256": "2978ad45ab6fe1675a3aa4c728687198ea4e34aacc1c29adaba778dd7a16afe0",
+        "sources": [
+          "SharedMods/CodeSnippets.md"
+        ]
+      },
+      {
+        "sha256": "d705ad3fd8dcbea563c5cfeb82b1320a26785da123831901aa780e1c0a399cf0",
+        "sources": [
+          "SharedMods/CodeSnippetsPython.md"
+        ]
+      },
+      {
+        "sha256": "7bc6dc4f88d64bdb094940cb7c28419a3e7763ef516638cbad28fa6a6cdfd167",
+        "sources": [
+          "SharedMods/Guide_RewardPools.md"
+        ]
+      },
+      {
+        "sha256": "62162a594df33503b65773d5029f7087c8cfc31308dc4b6d6afcc368e2737472",
+        "sources": [
+          "SharedMods/Trigger_Guide.md"
+        ]
+      },
+      {
+        "sha256": "f7046c540cccd3b9888264d034f1e581b570868d4597f55392935baba12a618c",
+        "sources": [
+          "SharedMods/shared_TT_MenuInputOutputAmounts/changelog.txt"
+        ]
+      },
+      {
+        "sha256": "c5336c40e3d3801e1d8f3d40084d22f97eb68d1508142fa94eaba7eb59b12830",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/scripts/search_modlog_pnski.lua"
+        ]
+      },
+      {
+        "sha256": "2cecfa40d341077a8284f71052428ab407fa0197d41af39cecfedb9eb682fecf",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/scripts_serp/checkmodlog_incompatible.lua"
+        ]
+      },
+      {
+        "sha256": "69167f5ff5405c70cb1b62fd01b0c582ca4eb2d5041045f8fa76857c46de5411",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/config/gui/texts_english.xml"
+        ]
+      },
+      {
+        "sha256": "5048473d1f8eaa874f0a178ef467417a0c46b1b3814e9e8ec8594ddf51a4c981",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/config/gui/texts_french.xml"
+        ]
+      },
+      {
+        "sha256": "8deed728ce63ccbf4c565b86705ed81f30e2b1f891e7274a7c71e766c693487e",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/config/gui/texts_german.xml"
+        ]
+      },
+      {
+        "sha256": "b964d4ed512dd2fdec958472f8b24f08ecffca155c6dcba32fb993a86f87245b",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/config/gui/texts_italian.xml"
+        ]
+      },
+      {
+        "sha256": "55652c36744c3a9596dcee06c483d24a00a20ec53f615a45829d567bc776afb7",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/config/gui/texts_spanish.xml"
+        ]
+      },
+      {
+        "sha256": "4b81a20764768775faa7e47d4c4b89930a2a52e3fd9e707d5448df54bfc1d048",
+        "sources": [
+          "SharedMods/shared_IncompatibleModsPopUp/data/config/export/main/asset/assets.xml"
+        ]
+      },
+      {
+        "sha256": "2da8279fec43ad37a53deeb91c26204727eb97ca6591ce44e5ec62f1e18bd031",
+        "sources": [
+          "SharedMods/shared_ItemsetTooltip/data/config/export/main/asset/assets.xml"
+        ]
+      }
+    ]
+  },
+  "vanilla_audit": {
+    "sources": [
+      {
+        "source": "VANILLA/assets.xml",
+        "sha256": "08b6cc7023aa1d834f2e6c2042848a3b3e2f13fcc44735a6248f6b6622d42c6a",
+        "bytes": 289292488
+      },
+      {
+        "source": "VANILLA/templates.xml",
+        "sha256": "099e887c72f97e3a443944e90d45ea544a3d83dd3dd440bf1e420ed709a187f8",
+        "bytes": 1446449
+      },
+      {
+        "source": "VANILLA/properties.xml",
+        "sha256": "a9d10e0c450908ab8f7fb15d29852996a912eea536ccda7855f175cfd972c200",
+        "bytes": 629867
+      },
+      {
+        "source": "VANILLA/properties-toolone.xml",
+        "sha256": "bf8b81d19a54ab1e7086bc7d47e0239857335422cec6e299b527ef77d462593b",
+        "bytes": 3060022
+      },
+      {
+        "source": "VANILLA/datasets.xml",
+        "sha256": "814e866f3bd38b271e0aa4fa91a1080e9e64121d54431d98c74d916739c30a48",
+        "bytes": 562617
+      }
+    ],
+    "owner": [
+      [
+        151076,
+        "TriggerCampaign",
+        null,
+        "CQ101_CleanTheIsland_SuccesReRegister",
+        [
+          "Standard",
+          "Trigger",
+          "TriggerSetup"
+        ]
+      ]
+    ],
+    "native_151076_xml": "<Asset>\n <Template>TriggerCampaign</Template>\n <Values>\n  <Standard>\n   <GUID>151076</GUID>\n   <Name>CQ101_CleanTheIsland_SuccesReRegister</Name>\n  </Standard>\n  <Trigger>\n   <TriggerCondition>\n    <Template>ConditionEvent</Template>\n    <Values>\n     <Condition/>\n     <ConditionEvent>\n      <ConditionEvent>LeaveUIState</ConditionEvent>\n      <ContextData>CampaignNewspaper</ContextData>\n     </ConditionEvent>\n     <ConditionPropsNegatable/>\n    </Values>\n   </TriggerCondition>\n   <TriggerActions>\n    <Item>\n     <TriggerAction>\n      <Template>ActionRegisterTrigger</Template>\n      <Values>\n       <Action/>\n       <ActionRegisterTrigger>\n        <TriggerAsset>151077</TriggerAsset>\n       </ActionRegisterTrigger>\n      </Values>\n     </TriggerAction>\n    </Item>\n   </TriggerActions>\n   <ResetTrigger>\n    <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>\n    <Values>\n     <EmptyAutoCreateValue/>\n    </Values>\n   </ResetTrigger>\n  </Trigger>\n  <TriggerSetup/>\n </Values>\n</Asset>",
+    "contracts": {
+      "Trigger": {
+        "template": "<Template>\n <Name>Trigger</Name>\n <Properties>\n  <Standard/>\n  <Trigger>\n   <TriggerCondition>\n    <Template>ConditionAlwaysTrue</Template>\n    <Values>\n     <Condition/>\n     <ConditionAlwaysTrue/>\n    </Values>\n   </TriggerCondition>\n   <ResetTrigger>\n    <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>\n    <Values>\n     <EmptyAutoCreateValue/>\n    </Values>\n   </ResetTrigger>\n  </Trigger>\n  <TriggerSetup>\n   <AutoRegisterTrigger>1</AutoRegisterTrigger>\n   <UsedBySecondParties>1</UsedBySecondParties>\n  </TriggerSetup>\n </Properties>\n</Template>\n    ",
+        "schema": "<Property>\n <Name>Trigger</Name>\n <ValueDefinition>\n  <DataType>AutoCreateAsset</DataType>\n  <Name>TriggerCondition</Name>\n  <ForceSerialize>1</ForceSerialize>\n  <ReadOnlyDependingOnExportVersions>1</ReadOnlyDependingOnExportVersions>\n  <IsImportantValue>1</IsImportantValue>\n  <AllowedTemplates/>\n  <AllowedProperties>Condition</AllowedProperties>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Vector</DataType>\n  <Name>TriggerActions</Name>\n  <ReadOnlyDependingOnExportVersions>1</ReadOnlyDependingOnExportVersions>\n  <IsImportantValue>1</IsImportantValue>\n  <Items>\n   <ValueDefinition>\n    <DataType>AutoCreateAsset</DataType>\n    <Name>TriggerAction</Name>\n    <ReadOnlyDependingOnExportVersions>1</ReadOnlyDependingOnExportVersions>\n    <AllowedTemplates>ActionLink</AllowedTemplates>\n    <AllowedProperties>Action</AllowedProperties>\n   </ValueDefinition>\n  </Items>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Vector</DataType>\n  <Name>SubTriggers</Name>\n  <ReadOnlyDependingOnExportVersions>1</ReadOnlyDependingOnExportVersions>\n  <Items>\n   <ValueDefinition>\n    <DataType>AutoCreateAsset</DataType>\n    <Name>SubTrigger</Name>\n    <ReadOnlyDependingOnExportVersions>1</ReadOnlyDependingOnExportVersions>\n    <AllowedTemplates>AutoCreateTrigger</AllowedTemplates>\n    <AllowedProperties/>\n   </ValueDefinition>\n  </Items>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>AutoCreateAsset</DataType>\n  <Name>ResetTrigger</Name>\n  <ReadOnlyDependingOnExportVersions>1</ReadOnlyDependingOnExportVersions>\n  <AllowedTemplates>EmptyAutoCreateValue;AutoCreateTrigger</AllowedTemplates>\n  <AllowedProperties/>\n </ValueDefinition>\n</Property>\n          ",
+        "defaults": "<Trigger>\n <TriggerCondition>\n  <Template>ConditionActiveRegion</Template>\n  <Values>\n   <Condition/>\n   <ConditionActiveRegion/>\n  </Values>\n </TriggerCondition>\n <TriggerActions/>\n <SubTriggers/>\n <ResetTrigger>\n  <Template>EmptyAutoCreateValue</Template>\n  <Values>\n   <EmptyAutoCreateValue/>\n  </Values>\n </ResetTrigger>\n</Trigger>\n            "
+      },
+      "TriggerCampaign": {
+        "template": "<Template>\n <Name>TriggerCampaign</Name>\n <Properties>\n  <Standard/>\n  <Trigger>\n   <TriggerCondition>\n    <Template>ConditionAlwaysTrue</Template>\n    <Values>\n     <Condition/>\n     <ConditionAlwaysTrue/>\n    </Values>\n   </TriggerCondition>\n   <ResetTrigger>\n    <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>\n    <Values>\n     <EmptyAutoCreateValue/>\n    </Values>\n   </ResetTrigger>\n  </Trigger>\n  <TriggerSetup/>\n </Properties>\n</Template>\n  "
+      },
+      "AutoCreateTrigger": {
+        "template": "<Template>\n <Name>AutoCreateTrigger</Name>\n <IsExpertTemplate>1</IsExpertTemplate>\n <Properties>\n  <Trigger>\n   <TriggerCondition>\n    <Template>ConditionAlwaysTrue</Template>\n    <Values>\n     <Condition/>\n     <ConditionAlwaysTrue/>\n    </Values>\n   </TriggerCondition>\n   <ResetTrigger>\n    <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>\n    <Values>\n     <EmptyAutoCreateValue/>\n    </Values>\n   </ResetTrigger>\n  </Trigger>\n </Properties>\n</Template>\n    "
+      },
+      "ConditionEvent": {
+        "template": "<Template>\n <Name>ConditionEvent</Name>\n <IsExpertTemplate>1</IsExpertTemplate>\n <Properties>\n  <Condition/>\n  <ConditionEvent>\n   <ContextAssetInfolayer>2001386</ContextAssetInfolayer>\n   <EventCount>1</EventCount>\n  </ConditionEvent>\n  <ConditionPropsNegatable/>\n </Properties>\n</Template>\n      ",
+        "schema": "<Property>\n <Name>ConditionEvent</Name>\n <ValueDefinition>\n  <DataType>Choice</DataType>\n  <Name>ConditionEvent</Name>\n  <Description>The type of event that will be watched by this condition</Description>\n  <DataSet>SimpleEventType</DataSet>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>String</DataType>\n  <Name>ContextData</Name>\n  <Description>A context string that defines additional information about the event (e.g. the GUID of an asset if the event type is Object_Destroyed)</Description>\n  <IsProValue>1</IsProValue>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Asset</DataType>\n  <Name>ContextAsset</Name>\n  <Description>A context GUID that defines additional information about the event</Description>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Asset</DataType>\n  <Name>ContextAssetInfolayer</Name>\n  <IsProValue>1</IsProValue>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Integer</DataType>\n  <Name>EventCount</Name>\n  <Description>The number of events of this type that should be called. Usually 1</Description>\n </ValueDefinition>\n</Property>\n              ",
+        "defaults": "<ConditionEvent>\n <ConditionEvent>SessionLoad</ConditionEvent>\n <ContextAsset>0</ContextAsset>\n <ContextAssetInfolayer>0</ContextAssetInfolayer>\n</ConditionEvent>\n                "
+      },
+      "ConditionTimer": {
+        "template": "<Template>\n <Name>ConditionTimer</Name>\n <IsExpertTemplate>1</IsExpertTemplate>\n <Properties>\n  <Condition/>\n  <ConditionTimer/>\n </Properties>\n</Template>\n      ",
+        "schema": "<Property>\n <Name>ConditionTimer</Name>\n <ValueDefinition>\n  <DataType>Time</DataType>\n  <Name>TimeLimit</Name>\n  <Description>A time limit for the timer.</Description>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>IsPaused</Name>\n  <Description>True, when the timer is currently not ticking</Description>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>String</DataType>\n  <Name>TimerID</Name>\n  <Description>An ID by which the timer can be referenced from other conditions or actions.</Description>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>KeepTimerOnUnregister</Name>\n  <Description>timer value is not reset when condition is unregistered</Description>\n </ValueDefinition>\n</Property>\n              ",
+        "defaults": "<ConditionTimer/>\n                "
+      },
+      "Condition": {
+        "template": "<Template>\n <Name>Condition</Name>\n</Template>\n      ",
+        "schema": "<Property>\n <Name>Condition</Name>\n <HasImplementation>1</HasImplementation>\n <ValueDefinition>\n  <DataType>Choice</DataType>\n  <Name>SubConditionCompletionOrder</Name>\n  <Description>Parallel: All sub conditions can be solved at any time. Linear: The sub conditions have to be completed in order. Mutually Exclusive: Only one sub condition has to be completed and the sub conditions are solvable before the main condition.</Description>\n  <IsProValue>1</IsProValue>\n  <DataSet>SubConditionCompletionOrder</DataSet>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>IsOptional</Name>\n  <Description>Set to true, if it is not needed to satisfy this condition to satisfy the parent condition</Description>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>LinkAllActionsToQuest</Name>\n </ValueDefinition>\n</Property>\n          ",
+        "defaults": "<Condition>\n <SubConditionCompletionOrder>Parallel</SubConditionCompletionOrder>\n</Condition>\n            "
+      },
+      "TriggerSetup": {
+        "schema": "<Property>\n <Name>TriggerSetup</Name>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>AutoRegisterTrigger</Name>\n  <IsProValue>1</IsProValue>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>AutoSelfUnlock</Name>\n </ValueDefinition>\n <ValueDefinition>\n  <DataType>Boolean</DataType>\n  <Name>UsedBySecondParties</Name>\n  <Description>If true, this trigger will also be created for all second party players</Description>\n </ValueDefinition>\n</Property>\n          ",
+        "defaults": "<TriggerSetup/>\n            "
+      }
+    },
+    "retained_cancellation": "<OnQuestStart>\n <IsBaseAutoCreateAsset>1</IsBaseAutoCreateAsset>\n <Values>\n  <ActionList>\n   <Actions>\n    <Item>\n     <Action>\n      <Template>ActionRegisterTrigger</Template>\n      <Values>\n       <Action/>\n       <ActionRegisterTrigger>\n        <TriggerAsset>151076</TriggerAsset>\n        <UnregisterTrigger>1</UnregisterTrigger>\n       </ActionRegisterTrigger>\n      </Values>\n     </Action>\n    </Item>\n   </Actions>\n  </ActionList>\n </Values>\n</OnQuestStart>\n                              ",
+    "native_registration": [
+      "151076"
+    ],
+    "boundary": "Source contracts and caller/consumer topology; no native-machine-code or game/MP execution."
+  },
+  "change": {
+    "Campaign_version_before": "1.022",
+    "Campaign_version_after": "1.023",
+    "Story_version": "1.032",
+    "baseline_patch_sha256": "b6ac9d199593694f8787052bf3332460fed86c7b9ae44bf43d805350a8a408e6",
+    "current_patch_sha256": "99fed1fb5115d98ce70db85c7e020cdf870b45fbcacce70e406197ff826ba5e1",
+    "unchanged_item": "<Item><SubTrigger><Template>AutoCreateTrigger</Template><Values><Trigger><TriggerCondition><Template>ConditionTimer</Template><Values><Condition></Condition><ConditionTimer><TimeLimit>10000</TimeLimit></ConditionTimer></Values></TriggerCondition></Trigger></Values></SubTrigger></Item>",
+    "current_two_modops": "<ModOps><ModOp Type=\"merge\" GUID=\"151076\" Path=\"/Values/Trigger\">\n    <SubTriggers/>\n  </ModOp><ModOp Type=\"add\" GUID=\"151076\" Path=\"/Values/Trigger/SubTriggers\">\n    <Item>\n      <SubTrigger>\n        <Template>AutoCreateTrigger</Template>\n        <Values>\n          <Trigger>\n            <TriggerCondition>\n              <Template>ConditionTimer</Template>\n              <Values>\n                <Condition/>\n                <ConditionTimer>\n                  <TimeLimit>10000</TimeLimit>\n                </ConditionTimer>\n              </Values>\n            </TriggerCondition>\n          </Trigger>\n        </Values>\n      </SubTrigger>\n    </Item>\n  </ModOp></ModOps>",
+    "scope": "Only singleton-container preparation versus appending the Item; no change to the timer, synchronized event, registration or cancellation."
+  },
+  "reproduction": {
+    "runner": "../../../tools/validate_mod_compatibility.py",
+    "runner_sha256": "e147aff61ab643e9c5f129c32e3ee334804ec848f1227595c01d76c1065e8bff",
+    "baseline": "Full effective XML generated before editing this patch; receipt hashes verify the captured input.",
+    "baseline_stages": [
+      {
+        "stage": 0,
+        "sha256": "932c8d8169496370b9134d9d61900f2167b0e80d58f0246400de3ead4682bd7b",
+        "log_sha256": "90cd0a09d4434f0901ff8a9abd184fdfd225e9700da84ada5fcf8d867b779cfc"
+      },
+      {
+        "stage": 1,
+        "sha256": "9137df8fa253c06b6415aa184994c922a4ccdab288a51efab48ef539fd07a76f",
+        "log_sha256": "d747f02e8b48cbb8082f5343aba28158665de4d920e787dee54c5d30c5b1b6f7"
+      },
+      {
+        "stage": 2,
+        "sha256": "7957319bda323c55901d6d40bee3e40a4cbbeddbb5cd90ef38fff44c7ef8117f",
+        "log_sha256": "9f4341fa4ac652d6f41d22f764fbe488165975f821c95999623fddf61fdde37f"
+      }
+    ],
+    "results": "results.json"
+  },
+  "limits": [
+    "Add is not made generally idempotent. Existing duplicate containers are not repaired.",
+    "No broad rewrite of merchant/story/helper mods; they remain original evidence.",
+    "No game, MP, save migration, publication or kit synchronization.",
+    "This new chapter/current patch is not included in its baseline GitHub links."
+  ]
+}

@@ -71,3 +71,10 @@ Published examples may contain mistakes. XML validity, path context and the sele
 ## External links to continue
 
 The source graph includes FileDBReader and its format definitions, Modinfo, GuidRanges, shared-resources, Anno Modding Tools, iModYourAnno tweaking documentation, Pnski's Lua command documentation, graphics conversion tools, the map editor, custom-music documentation, the inheritance forum and Discord-linked tests/tutorials. Their individual status must be recorded before coverage is considered complete. Login-only Discord material, videos without a usable transcript and unavailable resources must be identified as such, not silently omitted.
+
+
+## Mod-composition source addition (2026-10-25)
+
+[The compatibility chapter](../foundations/mod-compatibility.md) links the merchant preparation/incremental-add examples, scoped Story predicates, SharedMods policy and LuaLight namespacing to their original published sources. Commit 9858f32602891e2b562a73a1b6c8b5890bfd1f68 in Anno-1800-Mods and 79f10e0cc8e53d909c44dd831689ddc8d4632c99 in SharedMods matched their remote branch refs before editing. New Campaign 1.023/chapter edits are local and are not represented as published by those baseline links.
+
+[Selected source excerpts and hashes](validation/mod-compatibility/sources.json) distinguish Serp's own statements from the community compatibility guide and mixed-authorship Pnski/Serp log helper. The pinned 1800 loader is the implementation evidence for append/recursive merge; the current standalone GU17.1 executable is separately fingerprinted. Old add/replace advice and the invalid upstream duplicate-removal XPath are not promoted to working recipes. [Actual offline results](validation/mod-compatibility/results.json) and [reproducer](../tools/validate_mod_compatibility.py) retain their game/MP limits.

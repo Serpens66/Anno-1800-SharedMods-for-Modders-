@@ -102,3 +102,6 @@ Serp's notebook records reload limitations: graphics do not refresh reliably thr
 The pinned repository contains older external-loader integration, including Python forwarding and a file watcher. Its `external-file-loader/src/mod_manager.cc` still recognizes `start_script.py`, scans only its historical folder arrangement and treats `.xml` as patchable. These remnants must not override current integrated-loader documentation about nested mods, binary patches or Lua. The reusable `xml-operations` implementation is the inspected source for ModOp semantics; provenance is recorded per component.
 
 Do not install historical replacement Python DLLs as a step in a new integrated-loader workflow. Python remains useful outside the game for extraction, XML/XPath checks, generation and analysis.
+
+
+For composition rules beyond metadata, see [Mod compatibility](mod-compatibility.md): prepare missing containers, retain foreign list entries and anchors, and distinguish declared ordering from compatible behavior.

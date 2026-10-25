@@ -71,3 +71,8 @@ Loader merge changes serialized XML. Game inheritance decides what a derived ass
 Do not use the loader's merge rules to predict how a new asset's inheritance behaves. Conversely, vector replacement at game load does not make a `merge` clear an existing XML list.
 
 `ModItem`, `ModValue`, `SkipParent` and automatic keyed merges from Anno 117 are excluded from 1800 examples.
+
+
+## Prepare containers before appending
+
+Use an empty merge from an existing parent to create a missing list container, then add Item entries into the container. Adding a complete container with add can duplicate it when another mod supplied one first. This does not deduplicate entries or repair preexisting duplicate containers. See [Mod compatibility](../foundations/mod-compatibility.md#ensure-containers-then-append-entries) for the tested Campaign example, source history and scope limits.

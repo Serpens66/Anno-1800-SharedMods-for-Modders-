@@ -22,6 +22,7 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Read property definitions, nested types and dataset values | [Properties and datasets](foundations/vanilla-research.md#reading-properties-toolonexml-and-datasetsxml) |
 | Understand assets, templates and BaseAssetGUID | [Inheritance](foundations/inheritance.md) |
 | Package and order mods or shared dependencies | [Structure and metadata](foundations/structure-and-loading.md) |
+| Make mods compose safely | [Mod compatibility](foundations/mod-compatibility.md) |
 | Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md) |
 | Configure authoring tools and inspect generated deployment | [Authoring tools](foundations/authoring-tools.md) |
 | Write an XML patch | [ModOps](xml/modops.md) and [XPath](xml/xpath.md) |
