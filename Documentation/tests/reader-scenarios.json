@@ -1,0 +1,51 @@
+{
+  "scope": "Authored source-navigation scenarios, not independent chat or gameplay execution",
+  "scenarios": [
+    {
+      "task": "Change one serialized XML field",
+      "chapters": [
+        "xml/modops.md",
+        "xml/xpath.md",
+        "foundations/inheritance.md"
+      ],
+      "native_files": [
+        "assets.xml",
+        "templates.xml",
+        "properties-toolone.xml",
+        "properties.xml",
+        "datasets.xml"
+      ]
+    },
+    {
+      "task": "Design a trigger with saved-state implications",
+      "chapters": [
+        "gameplay/triggers.md",
+        "gameplay/trigger-conditions.md",
+        "gameplay/savegames.md"
+      ],
+      "native_files": [
+        "assets.xml",
+        "templates.xml",
+        "properties-toolone.xml",
+        "properties.xml",
+        "datasets.xml"
+      ]
+    },
+    {
+      "task": "Use a shared Lua helper in Coop",
+      "chapters": [
+        "lua/shared-light.md",
+        "lua/api-and-timing.md",
+        "multiplayer/synchronization.md"
+      ],
+      "native_files": [
+        "assets.xml",
+        "templates.xml",
+        "properties-toolone.xml",
+        "properties.xml",
+        "datasets.xml",
+        "relevant native Lua/scripts and current helper dependencies"
+      ]
+    }
+  ]
+}

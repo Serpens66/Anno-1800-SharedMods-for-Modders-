@@ -1,20 +1,28 @@
 # Anno 1800 modding knowledge base
 
-This documentation is for editing and creating **Anno 1800 PC mods** in this workspace. All prose is English. The workspace's [AGENTS.md (local workspace only)](../../AGENTS.md) remains authoritative.
+This is the single maintained knowledge base for creating and editing **Anno 1800 PC mods**, for local assistants and chats reading GitHub. All prose is English; assistants answer in the user's language. Read the self-contained [chat instructions](AGENTS.md). No access to Serp's PC or surrounding workspace is required.
+
+Public mod sources are linked on GitHub. Each user supplies their **own current extracted Vanilla files** for feature audits. Historical excerpts, inventories and examples do not replace that audit.
 
 **Research is in progress.** An inventory is not a completed review. Read [coverage and next steps](reference/coverage.md) before treating this as an exhaustive reference. Unresolved statements are listed in [questions and discrepancies](reference/discrepancies.md). Existing tests documented by Serp are accepted unless contradictory; no new in-game or multiplayer tests have been performed.
 
 ## Start a new chat
 
-1. Read AGENTS.md, this index, and the coverage/discrepancy registers.
-2. Identify the feature, its mod, the active shared dependencies, and the specific documentation below.
-3. Follow the feature-specific [vanilla audit](foundations/vanilla-research.md) before proposing a game-dependent implementation. Documentation does not waive this requirement.
-4. Open the referenced source files and check whether their hashes or versions have changed. Resolve any new disagreement before acting on it.
-5. Make the smallest suitable change. Preserve encoding, CRLF, naming, structure and useful comments. Do not replace established shared helpers with an invented equivalent.
+Give the chat this README and ask:
+
+> Read README.md, AGENTS.md, reference/coverage.md and reference/discrepancies.md from this Documentation folder. Use the relevant chapters and linked public sources for my task. Before game-dependent decisions, audit my own extracted Vanilla files. Ask for files you cannot access. Preserve evidence qualifications, and record reusable findings through maintenance.md.
+
+1. For explanation/research, begin with the topic index; no local setup is required.
+2. For mod work, follow [setup](setup.md) and the [workflow](workflow.md). A path grants access only if the chat has a file tool that can read it; otherwise upload the necessary files or use a local assistant.
+3. Identify the mod, dependencies, feature and save/session context. Complete the [feature audit](foundations/vanilla-research.md) before choosing an implementation.
+4. Read referenced source content and compare versions/hashes where applicable. Missing essential sources block dependent decisions, not unrelated explanation.
+5. Preserve encoding, CRLF, structure and useful comments. Update this same knowledge base using [knowledge maintenance](maintenance.md); without write access, return a concrete proposed edit.
+
+Local users may copy [local.example.json](local.example.json) to ignored `local.json`. [Practical tools](tools/README.md), [audit template](templates/audit.md) and [empty XML mod template](templates/xml-mod/README.md) are included. No subscription, globally installed skill, complete game database or executable is bundled.
 
 ## Topic index
 
-For a progressive, human-readable introduction with collapsible code examples and a condition catalogue in one file, read the [standalone Trigger Guide](../Trigger_Guide.md).
+For a progressive, human-readable introduction with collapsible code examples and a condition catalogue in one file, read the [standalone Trigger Guide](Trigger_Guide.md).
 
 | Task | Read |
 | --- | --- |
@@ -27,9 +35,9 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Configure authoring tools and inspect generated deployment | [Authoring tools](foundations/authoring-tools.md) |
 | Write an XML patch | [ModOps](xml/modops.md) and [XPath](xml/xpath.md) |
 | Copy nodes or construct lists | [Dynamic content](xml/content-and-lists.md) |
-| Create and connect reward pools; understand weights and allowed targets | [Reward Pool Guide](../Guide_RewardPools.md), [native audit and limits](reference/reward-pools-audit.json) |
+| Create and connect reward pools; understand weights and allowed targets | [Reward Pool Guide](Guide_RewardPools.md), [native audit and limits](reference/reward-pools-audit.json) |
 | Build gameplay triggers, combine subtriggers and handle saved state | [Trigger design](gameplay/triggers.md), [condition selection](gameplay/trigger-conditions.md), [complete fields](gameplay/trigger-condition-reference.md), [datasets](gameplay/trigger-datasets.md) [recipes](gameplay/trigger-recipes.md) and [real mod walkthroughs](reference/trigger-mod-walkthroughs.md) |
-| Unpack saves, inspect stored triggers/quests and distinguish code revisions | [Reading savegames](gameplay/savegames.md), [historical Campaign evidence (local workspace only)](../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json) and [open Campaign review (local workspace only)](../../CodeReview/Campaign-in-Coop-Serp/README.md) |
+| Unpack saves, inspect stored triggers/quests and distinguish code revisions | [Reading savegames](gameplay/savegames.md), [historical Campaign evidence (historical local evidence; summary available)](reference/local-evidence.md#savegame-audit) and [open Campaign review (historical local evidence; summary available)](reference/local-evidence.md#open-review) |
 | Understand Lua entry points and lifetime | [Lua execution](lua/execution-and-lifecycle.md) |
 | Avoid synchronous-read and object-access mistakes | [Lua API and timing](lua/api-and-timing.md) |
 | Understand peer execution and synchronization | [Multiplayer and Coop](multiplayer/synchronization.md) |
@@ -74,20 +82,14 @@ The important exception is the `@GUID` lookup: it already exists in the 1800 imp
 
 [Trigger audit](reference/trigger-audit.md) records the topic-specific review and its limits. [Native trigger contracts](reference/triggers/vanilla.json), [workspace trigger evidence](reference/triggers/workspace.json) and [source-comment destinations](reference/triggers/prose-evidence.md) support the trigger chapters; extraction is not complete whole-mod integration or runtime certification.
 
-[Savegame evidence (local workspace only)](../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json) records inspected save hashes, tool/source identities, anonymized condition/quest/peer excerpts and bounded decoder checks. The evidence separates historical releases and saved definitions; the [active review (local workspace only)](../../CodeReview/Campaign-in-Coop-Serp/README.md) lists only unresolved questions/risks. No complete save or account identifier is included.
+[Savegame evidence (historical local evidence; summary available)](reference/local-evidence.md#savegame-audit) records inspected save hashes, tool/source identities, anonymized condition/quest/peer excerpts and bounded decoder checks. The evidence separates historical releases and saved definitions; the [active review (historical local evidence; summary available)](reference/local-evidence.md#open-review) lists only unresolved questions/risks. No complete save or account identifier is included.
 
-## Transfer to the starter kit
+## One knowledge base and historical evidence
 
-Maintain [the kit transfer register](reference/kit-transfer.md) when new or corrected kit-relevant knowledge is recorded. It distinguishes outstanding updates, adopted scope with commit receipts and current exclusions; it does not replace source-review coverage or the feature audit.
+Read [knowledge maintenance](maintenance.md) for new or corrected findings. The [kit transfer register](reference/kit-transfer.md) is retained as history; no further transfer to ModdingWithCodex is required. [Consolidation provenance](reference/consolidation.md) records the one-time reconciliation, original IDs and starter-only additions.
 
+[Sources](reference/sources.md) links public repositories and pinned revisions. [Local evidence summaries](reference/local-evidence.md) make reusable conclusions understandable without private reports. Original local reports, notes and saves are optional additional evidence, explicitly identified as unavailable in this download. Their summaries do not claim that the originals were published.
 
-Mod-specific defects and suspected defects are collected in [CodeReview (local workspace only)](../../CodeReview/README.md). This documentation retains reusable workflows and links to the corresponding review evidence.
+Dated JSON inventories, source hashes and validation receipts retain their historical contents. Absolute paths inside them identify historical inputs; they are not setup requirements. New runs resolve configured sources through `tools/workspace_paths.py` and write disposable research/check outputs under ignored `out/`. Old chapter generators are historical authoring utilities, not the normal update workflow; review them before deliberate use.
 
-
-For content in Serp's Anno repositories, retain the local/evidence reference and include a direct GitHub source link, preferably pinned to the inspected published commit and line. See [repository mapping and link rules](reference/sources.md#serp-repository-links-verified-2026-10-25). CodeReview reports and generated audit files currently live only in this workspace; their public mod-source links do not imply that the reports themselves are published.
-
-## Local workspace layout (2026-10-25)
-
-This knowledge base and both standalone guides now live in the local `SharedMods` repository. Run `Documentation/tools/...` commands from that repository root; source searches still cover the surrounding workspace. `CodeReview` and the authoritative workspace AGENTS.md remain outside the repository. Links marked "local workspace only" require that surrounding layout and cannot be followed on GitHub.
-
-Dated JSON inventories, source hashes, validation receipts and review/kit IDs retain their historical contents. [The relocation receipt](reference/validation/relocation/results.json) records current paths and structure checks separately. The tools resolve historical source paths through `tools/workspace_paths.py` at read time; the inventory matches preserved review IDs without rewriting old receipts or certifying changed sources. This move does not publish the documentation or reviews and does not transfer findings to the starter kit.
+Earlier [relocation](reference/validation/relocation/results.json), source-review and kit receipts remain evidence for their stated versions only. Publishing this folder is separate from editing it; local changes reach other users only after an authorized GitHub publication.

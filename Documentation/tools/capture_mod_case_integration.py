@@ -1,4 +1,5 @@
 """Record selected package/include/helper integration and source preservation hashes."""
+from workspace_paths import source_path, source_relative
 from pathlib import Path
 from collections import defaultdict
 import hashlib
@@ -26,11 +27,11 @@ def main():
     sources, metadata, includes, definitions, references = {}, [], [], [], []
     groups = defaultdict(list)
     for package in PACKAGES:
-        root = ROOT/package
+        root = source_path(package)
         for path in sorted(root.rglob('*')):
             if not path.is_file() or path.suffix.lower() not in {'.xml', '.lua', '.json', '.txt'}:
                 continue
-            rel = path.relative_to(ROOT).as_posix()
+            rel = source_relative(path).as_posix()
             if rel in sources:
                 continue
             raw = path.read_bytes()

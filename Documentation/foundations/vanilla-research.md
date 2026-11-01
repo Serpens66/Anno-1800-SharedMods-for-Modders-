@@ -2,13 +2,9 @@
 
 ## Required audit
 
-Before proposing a game-dependent implementation, complete the audit required by AGENTS.md. A GUID search or a syntactically valid patch does not establish the game's contract. The audit must explain the exact feature you will change, its inherited values, the supported data types and its relevant consumers.
+Before proposing a game-dependent implementation, complete the audit required by [AGENTS.md](../AGENTS.md). A GUID search or a syntactically valid patch does not establish the game's contract. The audit must explain the exact feature you will change, its inherited values, the supported data types and its relevant consumers.
 
-The current extracted source root is:
-
-```text
-D:\CDesktopLink\Unterlagen\Mods\Anno 1800\Anno1800 RDA unpacked\dataAlle
-```
+The source root is the user's own current extraction, configured as `vanillaPath`; see [setup](../setup.md). A GitHub-only chat must receive the required files from that user. Serp's local extraction is not required.
 
 | Source | Purpose |
 | --- | --- |
@@ -113,7 +109,7 @@ Local source anchors: properties-toolone.xml `//Property[Name='FactoryBase']`, `
 3. Read every involved property definition and its corresponding defaults. Record whether a field is a scalar, Vector, Array, Choice, Asset, Text, FileName or AutoCreateAsset. A field name alone does not establish its scope or list semantics.
 4. Follow relevant references to their actual definitions. For example, a text number may identify localized text; a participant enum is not an asset GUID; an OID identifies an instance rather than a type of object.
 5. Inspect relevant dataset entries, native scripts, infotip expressions and exported text. For Lua enum arguments, compare list position with the printed `Id` rather than assuming equality.
-6. Read the existing workspace implementation and its comments, tests, dependency metadata and savegame behavior. Inspect every non-identical shared helper version used by the mod.
+6. Read the relevant local or public mod implementation and its comments, tests, dependency metadata and savegame behavior. Inspect every non-identical shared helper version used by the mod.
 7. Write an audit outcome: explicit data, inherited data, source-tested behavior, unsupported assumptions, remaining questions, and the smallest proposed patch. Only then implement or run dependent checks.
 
 There is no requirement to read unrelated game systems for a small change. There is a requirement to follow every relevant part of the selected feature's contract; expand the audit when the proposed change introduces another system.

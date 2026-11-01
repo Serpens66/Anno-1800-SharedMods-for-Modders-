@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-04",
+  "status": "First draft checks passed",
+  "structural_and_setup_tests": {
+    "count": 16,
+    "windows_powershell_5_1": "passed",
+    "powershell_7": "passed",
+    "cases": [
+      "Default configuration location",
+      "Missing/malformed configuration",
+      "Strict JSON, types and version",
+      "Missing/empty vanilla files",
+      "Whitespace/Unicode/bracket paths",
+      "Protected path overlaps",
+      "Optional evaluator absence/presence without execution",
+      "Reject Anno 117 evaluator",
+      "Read-only setup assertions",
+      "Portable local links/content",
+      "Skill manifests and empty XML template",
+      "UTF-8/CRLF"
+    ]
+  },
+  "skill_creator_validation": "Both skills passed the bundled quick validator",
+  "fresh_zip_download": {
+    "status": "16 tests passed on an actual git-tree ZIP extracted in a separate temporary directory; CRLF bytes preserved in git blobs, no local configuration/game data or original-workspace dependency.",
+    "independent_machine": "not tested"
+  },
+  "real_machine_setup": "Required file presence checks passed; freshness/build not certified",
+  "offline_scalar_example": {
+    "date": "2026-10-04",
+    "scope": "Full local assets database, actual 1800 evaluator; no deployment or runtime execution",
+    "source_hashes": {
+      "assets.xml": "08b6cc7023aa1d834f2e6c2042848a3b3e2f13fcc44735a6248f6b6622d42c6a",
+      "templates.xml": "099e887c72f97e3a443944e90d45ea544a3d83dd3dd440bf1e420ed709a187f8",
+      "properties-toolone.xml": "bf8b81d19a54ab1e7086bc7d47e0239857335422cec6e299b527ef77d462593b",
+      "properties.xml": "a9d10e0c450908ab8f7fb15d29852996a912eea536ccda7855f175cfd972c200"
+    },
+    "xmltest_sha256": "d977d9ad3ee1f2a446f3d62f5126e52811458552d4e8a63aefaa301fa51d751f",
+    "full_asset_count": 96102,
+    "assertions": [
+      "One owner target",
+      "Radius 28 -> 40",
+      "Creative radius remains 56",
+      "Canonical structures of every full asset identical after normalizing only edited radius"
+    ],
+    "passed": true,
+    "game": "not run",
+    "save": "not run",
+    "multiplayer": "not run"
+  },
+  "in_game": "not run",
+  "save": "not run",
+  "multiplayer": "not run",
+  "independent_beginner_trial": "not run"
+}

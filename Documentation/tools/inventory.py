@@ -1,15 +1,14 @@
 """Build a read-only source inventory; scanning is not semantic review."""
+from workspace_paths import DOC, ROOT, configured_path, current_source_id, output_path
 from pathlib import Path
 import hashlib
 import json
 import re
 from collections import Counter
 
-from workspace_paths import DOC, ROOT, current_source_id
 
-OUT = DOC / "reference"
-CACHE = Path(r"C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003")
-VANILLA = Path(r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\Anno1800 RDA unpacked\dataAlle")
+OUT = output_path('research')
+VANILLA = configured_path('vanillaPath')
 TEXT_EXTENSIONS = {".xml", ".lua", ".md", ".txt", ".json", ".jsonc", ".cfg", ".ifo", ".fc", ".prp", ".sln", ".py", ".cs", ".csproj", ".rs", ".gltf", ".toml", ".yaml", ".bat", ".cmd", ".cf7", ".ts", ".ts_", ".js", ".xsd", ".fx", ".hlsl", ".glsl", ".ini", ".def", ".svg", ".csv", ".html", ".css", ".cmake", ".vcxproj", ".props", ".targets"}
 BINARY_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".dds", ".rdm", ".rdp", ".island", ".isd", ".pdf", ".blend"}
 TEXT_EXTENSIONS.update({".a7te", ".bfg", ".wwu", ".wproj", ".wsettings", ".obj"})
@@ -29,6 +28,9 @@ def write_json(path, data):
     path.write_bytes((json.dumps(data, ensure_ascii=False, indent=2) + "\n").replace("\n", "\r\n").encode("utf-8"))
 
 def main():
+    CACHE = configured_path('researchPath')
+    if ROOT == DOC:
+        raise SystemExit('Inventory requires an explicitly configured workspacePath; ordinary documentation use does not.')
     groups = [("workspace", ROOT), ("guide", CACHE / "modding-guide"),
               ("loader1800", CACHE / "anno-mod-loader"), ("loader-current", CACHE / "loader-current"),
               ("FileDBReader", CACHE / "FileDBReader"), ("Modinfo", CACHE / "Modinfo"),
@@ -75,8 +77,8 @@ def main():
             rows.append(row)
             if group == "workspace" and path.name.lower() == "modinfo.json":
                 modcards.append({"source": key, "folder": str(path.parent), "raw_metadata": text})
-    for path in [Path(r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\HowTo.xml"),
-                 Path(r"D:\CDesktopLink\Unterlagen\Mods\Anno 1800\Python Modding\info.txt")]:
+    for key in ('notes:HowTo.xml', 'notes:info.txt'):
+        path = configured_path('sources.' + key)
         raw = path.read_bytes()
         text, encoding = decode(raw)
         rows.append({"id": "notes:" + path.name, "path": str(path), "sha256": hashlib.sha256(raw).hexdigest(),
@@ -86,7 +88,7 @@ def main():
             for url in re.findall(URL_PATTERN, line_text):
                 links.append({"source": "notes:" + path.name, "line": line, "url": url.rstrip(").,;]`")})
     # Preserve explicit human review outcomes only for unchanged content.
-    ledger_path = OUT / 'review-ledger.json'
+    ledger_path = DOC / 'reference/review-ledger.json'
     ledger = json.loads(ledger_path.read_text('utf-8')) if ledger_path.exists() else {}
     # Keep historical review IDs intact when new inventory paths use SharedMods.
     indexed_ledger = {current_source_id(key): (key, value) for key, value in ledger.items()}

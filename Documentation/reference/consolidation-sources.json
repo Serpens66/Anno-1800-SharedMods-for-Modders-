@@ -1,0 +1,257 @@
+{
+  "date": "2026-11-01",
+  "sources": [
+    {
+      "source": "ModdingWithCodex/Documentation/foundations/identifiers-and-tools.md",
+      "sha256": "be2b96f26816fb3ced36117be77bf9147e8ef641a78c9209098891786f387445",
+      "destination": "foundations/identifiers-and-tools.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/foundations/inheritance.md",
+      "sha256": "f9d899d1560778c694d82cb0c360744680b169d27bb12bb20827cdfacdc0acb3",
+      "destination": "foundations/inheritance.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/foundations/structure-and-loading.md",
+      "sha256": "3790d2c5e9264911ae9cada43c045334f025dfa0d4da9a5a5704f3a03f7d006e",
+      "destination": "foundations/structure-and-loading.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/foundations/vanilla-research.md",
+      "sha256": "ee8dd4bb7be1ad7c11b3754d9cb188dbb785862a73e6ca819ca61bd063cec11a",
+      "destination": "foundations/vanilla-research.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/gameplay/reward-pools.md",
+      "sha256": "18c92951bd21f1c60e967c86dbb90179481d57c6a9b1277a7659ab1c80129055",
+      "destination": "Guide_RewardPools.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/README.md",
+      "sha256": "3b38025ca08d82c70006f2ae4354284d8bd6fdf8167dca573f83c901002c2b8a",
+      "destination": "README.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/adaptations.json",
+      "sha256": "41932391fe2b1fa6494b13543fc139b01daeb33fd1febb3d8fe61aef8d9d0163",
+      "destination": "reference/history/starter-kit/adaptations.json",
+      "treatment": "historical artifact preserved"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/coverage.md",
+      "sha256": "4c890acee33b5e9765830f52e526c7f78c0c476a002c9fe7c54e0b4e067afd5d",
+      "destination": "reference/coverage.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/discrepancies.md",
+      "sha256": "1036b8f1a33b0ade47f4f89036d6d86d474a983bc06686309ba5e272110320a3",
+      "destination": "reference/discrepancies.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/radius-audit.md",
+      "sha256": "974528a7cf92fdfad32c53a38f209f66c421d718c00e0acc21f8f534595ac942",
+      "destination": "reference/radius-audit.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/research-state.md",
+      "sha256": "b51d90cd63a079a89c545fa48dd20295da09d4e0a65daefdfffc8a5ba794dbc7",
+      "destination": "maintenance.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/reward-pools-audit.json",
+      "sha256": "a7af3df0e6fa8d3488a81556ed5b953bc7a01f20aa5b84e68a2c78ce958c753f",
+      "destination": "reference/reward-pools-audit.json",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/serp-examples.md",
+      "sha256": "bb58dcce32dac91e41d0694c13b27918c023db4021df6279e93455ab3878c4ba",
+      "destination": "reference/sources.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/sources.md",
+      "sha256": "083edfb7a6cd433a7888b94fbbd982620f9c9f99f9b43449fa91e388fb025024",
+      "destination": "reference/sources.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/validation-results.json",
+      "sha256": "01a51cb38920707b20515d6e4172f5c2dc408871258e3f9facc017351a6c1a2a",
+      "destination": "reference/history/starter-kit/validation-results.json",
+      "treatment": "historical artifact preserved"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/reference/validation.md",
+      "sha256": "03cf908ef1b45914fdf892c24c9c3f75422098e5ebbdcccac3f4b91798d6f5b6",
+      "destination": "tools/README.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/setup.md",
+      "sha256": "ebb0fd6643e78a88dbdb45e0a17bc6515b6b194e21ed5d0b59f649d073bed2cc",
+      "destination": "setup.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/workflow.md",
+      "sha256": "99c36f1585fea7d06c4038c6486606280321ade2ec3fabd19579fe1c73523974",
+      "destination": "workflow.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/xml/content-and-lists.md",
+      "sha256": "164589cd1eb9bcbe193d99fd77eb7eebe5467188138d6a4741cc796c3b644e9f",
+      "destination": "xml/content-and-lists.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/xml/modops.md",
+      "sha256": "8f6067e0c1bdf6a1458105ce6ecc3e688762a3b59b6628b30f9b424a179b711f",
+      "destination": "xml/modops.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/Documentation/xml/xpath.md",
+      "sha256": "26747d16fe64beecd2b3c9bd6335726e94fc0eb1367544b7cbd971d7fad24c45",
+      "destination": "xml/xpath.md",
+      "treatment": "reconciled with full chapter or imported practical material"
+    },
+    {
+      "source": "ModdingWithCodex/AGENTS.md",
+      "sha256": "d745b07e04faca84c36e979c88e317661692effb29acfbc4d7a93a35837b152f",
+      "destination": "README.md / AGENTS.md / setup.md / workflow.md",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "ModdingWithCodex/README.md",
+      "sha256": "ed55b53234d328967ca5e43b1d99bdf49e75d99bf9d647f7a7dd5b3650c6b244",
+      "destination": "README.md / AGENTS.md / setup.md / workflow.md",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "ModdingWithCodex/starter.example.json",
+      "sha256": "be31b920242d31fa30e48d97691aa40676abacc76381537535da22e115805a28",
+      "destination": "README.md / AGENTS.md / setup.md / workflow.md",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "ModdingWithCodex/scripts/check-setup.ps1",
+      "sha256": "e4c100a8cc067b2b1f2355ae5e06e36877e9df2b5e7d3e2ef20033961d337c63",
+      "destination": "tools/check-setup.ps1",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "ModdingWithCodex/tests/test_starter.py",
+      "sha256": "b5135d0cab3b0746d45665bcf1b9688efd6b9963a4ed06c3a73011ab8254db40",
+      "destination": "tests/test_setup.py",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "ModdingWithCodex/.agents/skills/anno1800-setup/SKILL.md",
+      "sha256": "d56cc0c45b03b3256b854d0f700620bfd67c6a0750fd3f1cec977620c9744a67",
+      "destination": "README.md / AGENTS.md / setup.md / workflow.md",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "ModdingWithCodex/.agents/skills/anno1800-create-mod/SKILL.md",
+      "sha256": "00841316a921c1b80dbea81aeb9e6f6d4ee4a08c58b91c1a458434ef489d14d6",
+      "destination": "README.md / AGENTS.md / setup.md / workflow.md",
+      "treatment": "practical workflow adapted; no dependency on the old project"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/evidence/campaign-1.022-validation.json",
+      "sha256": "053152200860d4b0dcab59aef6a426f4a3bbee6056c619656c77fe1ad59e95c7",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/evidence/campaign-trigger-comparison.json",
+      "sha256": "003b15ab896c3e339ab88727443665dc3045f5de4fc126d5f07e9d35b0d24a12",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/evidence/dlc-gates-validation.json",
+      "sha256": "d4a48b182f6b300216f2d01ed6a0233dc94f057eadf2ad161adbbb4f1706b767",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/evidence/movie-speed-callers.json",
+      "sha256": "c04c879d26ef0fcb5c36da8897f7b5bcb137da8b0ff474825d8c6ae1d8a2346a",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/evidence/review-validation.json",
+      "sha256": "cdfbe59379395e63ab3221ab826ec78aad4b8d806eb696a4e87ffbeaba331931",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json",
+      "sha256": "2c4ae2f3f00334e80999d14c3b727337494896340811211210e33a0e879fb557",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "CodeReview/Campaign-in-Coop-Serp/README.md",
+      "sha256": "f7a7505e1c0f6874d2c32cb672c45321bdfa64e1e856b4c98f95d5ca1f3d3805",
+      "destination": "reference/local-evidence.md",
+      "treatment": "reported historical conclusions summarized; original not published"
+    },
+    {
+      "source": "ModdingWithCodex/templates/audit.md",
+      "sha256": "f13527376a2798d79b13e215e458055ad962b81e3ba0f0fa2158ef9e950ed110",
+      "destination": "templates/audit.md",
+      "treatment": "imported practical template or retained attribution terms"
+    },
+    {
+      "source": "ModdingWithCodex/templates/xml-mod/modinfo.json",
+      "sha256": "65b01d42b9c9a52520e872cf17032015ee22be7e4b1da9b5e71580bad8b9d181",
+      "destination": "templates/xml-mod/modinfo.json",
+      "treatment": "imported practical template or retained attribution terms"
+    },
+    {
+      "source": "ModdingWithCodex/templates/xml-mod/README.md",
+      "sha256": "aa7d91fb2779175037521df9179acf17a44abdf4302b5eb632cf40fb0236c0fb",
+      "destination": "templates/xml-mod/README.md",
+      "treatment": "imported practical template or retained attribution terms"
+    },
+    {
+      "source": "ModdingWithCodex/templates/xml-mod/data/config/export/main/asset/assets.xml",
+      "sha256": "6171ec459ad003a8389ebabf0af084e8fe3faa21bc8fea78234e4a2ff1221975",
+      "destination": "templates/xml-mod/data/config/export/main/asset/assets.xml",
+      "treatment": "imported practical template or retained attribution terms"
+    },
+    {
+      "source": "ModdingWithCodex/LICENSE",
+      "sha256": "cc011953cbbdcd8811e284b5a4cefb43402bd373a2f16256193584ae53e1fbf6",
+      "destination": "reference/licenses / reference/consolidation.md",
+      "treatment": "imported practical template or retained attribution terms"
+    },
+    {
+      "source": "ModdingWithCodex/LICENSE-DOCS.md",
+      "sha256": "478f559dde590b5fd4b27f6f8fe725d9bff82c3c05f2f1bd8ec092a61cc6d6e9",
+      "destination": "reference/licenses / reference/consolidation.md",
+      "treatment": "imported practical template or retained attribution terms"
+    },
+    {
+      "source": "ModdingWithCodex/LICENSE.md",
+      "sha256": "1e509ca8587b84d8b03c9b8aab72f6e57a0f0dba3d4654ac56f6f8d85d894647",
+      "destination": "reference/licenses / reference/consolidation.md",
+      "treatment": "imported practical template or retained attribution terms"
+    }
+  ]
+}

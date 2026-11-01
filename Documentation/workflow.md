@@ -1,0 +1,11 @@
+# From an idea to a reviewable mod
+
+1. Establish the intended effect, targets/values, author/name, new versus existing mod, active dependencies, save context and singleplayer/multiplayer use.
+2. Follow [setup](setup.md). Confirm the chat can read the relevant mod files and the user's own extracted Vanilla. Missing essential data blocks game-dependent work; missing xmltest leaves actual loader validation unavailable.
+3. Read the relevant full chapters from [the index](README.md), then complete the [feature audit](foundations/vanilla-research.md) before deciding a patch. Keep a filled [audit record](templates/audit.md) and necessary native excerpts in ignored outputPath.
+4. Make the smallest supported change. For a new mod, copy the [empty template](templates/xml-mod/README.md) to a unique configured workPath subfolder and replace all metadata placeholders. Existing mods retain structure, encoding, comments and names. Allocate new GUIDs only for new identities, after checking the current 1800 registry and relevant sources.
+5. Check metadata/XML, selections and match counts, references and dependency order. When available, use the actual 1800 evaluator, inspect logs and assert both changed and preserved output. [Offline validation](reference/offline-validation.md) explains evidence boundaries. Neither schema completion nor an exit code alone proves behavior.
+6. Deliver the mod folder, intended behavior, evidence, limitations and concrete game/save/MP test steps. Install only when authorized and after inspecting the destination. Restart, inspect the actual loader log and test the specified effect/save/session. Record runtime observations separately from offline checks.
+7. Record reusable new/corrected knowledge once through [maintenance](maintenance.md). Without write access, return a proposed edit with sources and uncertainty.
+
+Lua, triggers, quests, graphics, binary resources and multiplayer have full reference chapters where available, but this workflow is not a complete specialist wizard or certification of those systems. Unknown essential contracts require research rather than a plausible default. A configured modsPath is not installation or publication authorization.

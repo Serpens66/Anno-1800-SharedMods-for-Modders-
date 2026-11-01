@@ -1,8 +1,8 @@
 """Inline native references into the guide; leave gameplay examples unchanged."""
+from workspace_paths import output_path, source_path
 import hashlib
 import json
 import re
-from workspace_paths import source_path
 from pathlib import Path
 from lxml import etree as ET
 from build_trigger_reference import fields, cell
@@ -10,10 +10,8 @@ from complete_trigger_guide import pretty
 from inventory import write_json
 
 DOC = Path(__file__).resolve().parents[1]
-GUIDE = DOC.parent/'Trigger_Guide.md'
-OUT = DOC/'reference/validation/trigger-guide'
-
-
+GUIDE = DOC/'Trigger_Guide.md'
+OUT = output_path('validation/trigger-guide')
 def details(summary, content, ident=None):
     return ('<a id="'+ident+'"></a>\n' if ident else '')+'<details>\n<summary>'+summary+'</summary>\n\n'+content+'\n\n</details>'
 

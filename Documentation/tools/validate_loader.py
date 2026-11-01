@@ -1,4 +1,5 @@
 """Run synthetic offline loader checks. No game or multiplayer execution."""
+from workspace_paths import configured_path, output_path
 from pathlib import Path
 import hashlib
 import json
@@ -6,8 +7,8 @@ import subprocess
 from lxml import etree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'reference' / 'validation' / 'loader'
-EXE = Path(r'C:\Users\Serpens66\.vscode\extensions\jakobharder.anno-modding-tools-2.3.1\external\xmltest.exe')
+OUT = output_path('validation/loader')
+EXE = configured_path('tools.xmltest')
 
 def write(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)

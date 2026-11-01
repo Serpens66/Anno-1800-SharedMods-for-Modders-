@@ -2,16 +2,16 @@
 
 ## Scope and evidence
 
-This is a **read-only Anno 1800 PC** workflow, checked on 2026-10-25. It explains how to inspect an existing save without launching the game or repacking it. The [historical Campaign evidence record (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json) distinguishes observed data, source contracts and inferences. It does not certify a repaired save or multiplayer execution. The [active review (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/README.md) now lists only unresolved points; retroactive save repairs are outside the requested scope.
+This is a **read-only Anno 1800 PC** workflow, checked on 2026-10-25. It explains how to inspect an existing save without launching the game or repacking it. The [historical Campaign evidence record (historical local evidence; summary available)](../reference/local-evidence.md#savegame-audit) distinguishes observed data, source contracts and inferences. It does not certify a repaired save or multiplayer execution. The [active review (historical local evidence; summary available)](../reference/local-evidence.md#open-review) now lists only unresolved points; retroactive save repairs are outside the requested scope.
 
 Follow the [feature-specific vanilla audit](../foundations/vanilla-research.md) before interpreting a gameplay field or proposing a repair. An archive converter makes bytes readable; it does not establish their gameplay meaning.
 
 ## Tools and conversion stages
 
-The installed tools used here are under:
+For this workflow, obtain the tools listed below and configure their folder as `sources.savegameTools` in local.json. These were the historical inspected files; their presence/version does not prove binary equivalence:
 
 ```text
-D:\CDesktopLink\Unterlagen\Mods\Anno 1800\Anno1800SavegameVisualizerv5.0\tools
+<configured savegameTools>
   RDAConsole.exe                         version 1.1.0
   FileDBReader\FileDBReader.exe          version 3.0.3
   FileDBReader\FileFormats\a7s_hex.xml
@@ -19,7 +19,9 @@ D:\CDesktopLink\Unterlagen\Mods\Anno 1800\Anno1800SavegameVisualizerv5.0\tools
   FileDBReader\unpack_savegame.py
 ```
 
-The portable interpreter is `D:\CDesktopLink\Portable\Python\WinPy64\python\python.exe`; the installed FileDBReader declares .NET 6.0. Binary and interpreter-file hashes are recorded in the evidence JSON. Inspected library source is separately pinned there: a source checkout is not proof that a local binary was built from that exact revision.
+Use your configured `tools.python` interpreter; the installed FileDBReader declares .NET 6.0. Binary and interpreter-file hashes are recorded in the evidence JSON. Inspected library source is separately pinned there: a source checkout is not proof that a local binary was built from that exact revision.
+
+Some historical interpreter/driver files above are Serp-specific and are not included here. Obtain the public [FileDBReader](https://github.com/anno-mods/FileDBReader/tree/349145a1c1f188d09beb61b675311ff52586e15f) and provide an appropriate verified format definition from your own tool distribution. The commands below illustrate the inspected interface; do not execute them unchanged if a named format/tool is missing. Request the missing definition or audit the available alternative. Reading this chapter and its evidence summaries requires none of those private files.
 
 | Stage | Input | Result |
 | --- | --- | --- |
@@ -40,7 +42,13 @@ if (-not [System.IO.Path]::IsPathRooted($saveFile) -or
     -not (Test-Path -LiteralPath $saveFile -PathType Leaf)) {
     throw 'Supply an existing absolute savegame path.'
 }
-$toolDir = 'D:\CDesktopLink\Unterlagen\Mods\Anno 1800\Anno1800SavegameVisualizerv5.0\tools'
+$configFile = (Resolve-Path -LiteralPath '.\local.json').Path
+$config = Get-Content -LiteralPath $configFile -Raw -Encoding UTF8 | ConvertFrom-Json
+$configBase = Split-Path -Parent $configFile
+$toolDir = $config.sources.savegameTools
+if (-not [IO.Path]::IsPathRooted($toolDir)) { $toolDir = Join-Path $configBase $toolDir }
+$pythonExe = $config.tools.python
+if (-not [IO.Path]::IsPathRooted($pythonExe)) { $pythonExe = Join-Path $configBase $pythonExe }
 $analysisDir = Join-Path ([System.IO.Path]::GetTempPath()) ('anno-save-read-' + [guid]::NewGuid())
 $unpackedDir = Join-Path $analysisDir 'components'
 New-Item -ItemType Directory -Path $unpackedDir | Out-Null
@@ -80,7 +88,7 @@ for name in ('header', 'gamesetup', 'meta', 'data'):
     with target.open('xb') as stream:
         stream.write(payload)
     print(name, len(payload), 'bytes')
-'@ | & 'D:\CDesktopLink\Portable\Python\WinPy64\python\python.exe' - $unpackedDir
+'@ | & $pythonExe - $unpackedDir
 if ($LASTEXITCODE -ne 0) { throw 'Component decompression failed.' }
 ```
 

@@ -1,16 +1,14 @@
 """Audit the guide's native opening example and reused recipe contracts."""
+from workspace_paths import output_path, source_path
 import copy
 import hashlib
 import json
-from workspace_paths import source_path
 from pathlib import Path
 from lxml import etree as ET
 from inventory import write_json
 
 DOC = Path(__file__).resolve().parents[1]
-OUT = DOC/'reference/validation/trigger-guide'
-
-
+OUT = output_path('validation/trigger-guide')
 def main():
     captured = json.loads((DOC/'reference/triggers/vanilla.json').read_text('utf-8'))
     for source in captured['sources']:

@@ -1,4 +1,5 @@
 """Evaluate unchanged upstream XML fixtures offline; preserve invalid/skipped cases."""
+from workspace_paths import configured_path, output_path
 from pathlib import Path
 import json
 import subprocess
@@ -6,9 +7,10 @@ from lxml import etree as ET
 from validate_loader import EXE, write
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = Path(r'C:\Users\Serpens66\AppData\Local\Temp\anno1800-documentation-research-20261003\anno-mod-loader\tests\xml')
-OUT = ROOT / 'reference/validation/upstream-corpus'
-
+SOURCE = configured_path('researchPath') / 'anno-mod-loader/tests/xml'
+if not SOURCE.is_dir():
+    raise SystemExit('Missing upstream XML fixtures under researchPath/anno-mod-loader/tests/xml; see setup.md.')
+OUT = output_path('validation/upstream-corpus')
 def main():
     results = []
     for spec in sorted(SOURCE.glob('*/*.json')):

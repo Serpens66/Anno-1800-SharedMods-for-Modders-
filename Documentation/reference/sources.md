@@ -1,5 +1,7 @@
 # Sources and provenance
 
+Current entry point: [README](../README.md); [setup](../setup.md) uses each user's own paths and extracted game data. Historical research counts, paths and checks below retain their original scope and dates. See [consolidation](consolidation.md).
+
 Research date: **2026-10-03**, Europe/Berlin.
 
 ## Primary upstream sources
@@ -23,9 +25,9 @@ Research date: **2026-10-03**, Europe/Berlin.
 | [Anno Modding Tools](https://github.com/anno-mods/vscode-anno) | `19cda8edc73d65a622c9c5c588953a0170c337c6`, 2026-09-24; package version 2.3.1. All 12 documentation Markdown pages and selected build/metadata/XML-test implementations read; remaining converter/linked-example review pending. |
 | [Schwubbe modding blog](https://schwubbe.de/modding_blog.php) | Retrieved 2026-10-03; historical external loader and superseded claims separated. Entire page text/code read, linked files/forums remain separate tasks. |
 
-Temporary research checkouts are located under `C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/`. They are disposable caches, not the permanent documentation. Published claims must link to upstream sources or the original workspace sources, not depend on that temporary directory surviving.
+The historical temporary research checkouts were located under `C:/Users/Serpens66/AppData/Local/Temp/anno1800-documentation-research-20261003/`. They are disposable caches, not the permanent documentation. Published claims must link to upstream sources or the original workspace sources, not depend on that temporary directory surviving.
 
-## Local sources
+## Historical local source identities
 
 | Source | Treatment |
 | --- | --- |
@@ -47,7 +49,7 @@ Keep local/evidence links and add a direct GitHub source link when the reference
 | SharedMods | [Repository](https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-) | [Inspected tree](https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/tree/3aece64f299365309aaf1f7a57f28e2f6900f106) |
 | Anno1404SoundsTo1800 | [Repository](https://github.com/Serpens66/Anno1404SoundsTo1800) | [Inspected tree](https://github.com/Serpens66/Anno1404SoundsTo1800/tree/9d1d181b9d64a49013c7aa20a82af5a971d1d07c) |
 
-Explicit workspace paths in the evidence tables now have accompanying GitHub links. [Link validation](validation/github-links/results.json) records repository trees, published branch equality, source-content checks and the scope of the mapping. This is link/provenance maintenance, not a new code or gameplay validation. The subsequent Campaign 1.022 fixes and Story 1.032 comments are local and uncommitted; these GitHub commits describe the earlier inspected source, with [current local hashes and checks (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/dlc-gates-validation.json) recorded separately.
+Explicit workspace paths in the evidence tables now have accompanying GitHub links. [Link validation](validation/github-links/results.json) records repository trees, published branch equality, source-content checks and the scope of the mapping. This is link/provenance maintenance, not a new code or gameplay validation. The subsequent Campaign 1.022 fixes and Story 1.032 comments are local and uncommitted; these GitHub commits describe the earlier inspected source, with [current local hashes and checks (historical local evidence; summary available)](local-evidence.md#dlc-gates) recorded separately.
 
 ## Key implementation entry points
 
@@ -63,9 +65,9 @@ Published examples may contain mistakes. XML validity, path context and the sele
 
 ## Savegame source addition (2026-10-25)
 
-- Local `Anno1800SavegameVisualizerv5.0/tools`: RDAConsole 1.1.0, FileDBReader 3.0.3/.NET 6, `unpack_savegame.py`, `a7s_hex.xml` and `a7s_all_serp.xml`. Exact binary/format/script hashes, named private-save hashes and selected anonymized observations are in [savegame-audit.json (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json). Account identifiers, complete saves/XML and signed redirect URLs are excluded.
+- Local `Anno1800SavegameVisualizerv5.0/tools`: RDAConsole 1.1.0, FileDBReader 3.0.3/.NET 6, `unpack_savegame.py`, `a7s_hex.xml` and `a7s_all_serp.xml`. Exact binary/format/script hashes, named private-save hashes and selected anonymized observations are in [savegame-audit.json (historical local evidence; summary available)](local-evidence.md#savegame-audit). Account identifiers, complete saves/XML and signed redirect URLs are excluded.
 - [Pinned V2 parser](https://github.com/anno-mods/FileDBReader/blob/349145a1c1f188d09beb61b675311ff52586e15f/FileDBSerializer/FileDBSerializer/IO/Parsing/Versions/BBStructureParser_V2.cs), [document parser](https://github.com/anno-mods/FileDBReader/blob/349145a1c1f188d09beb61b675311ff52586e15f/FileDBSerializer/FileDBSerializer/IO/Parsing/BBDocumentParser.cs), [version routing](https://github.com/anno-mods/FileDBReader/blob/349145a1c1f188d09beb61b675311ff52586e15f/FileDBSerializer/FileDBSerializer/IO/DependencyVersions.cs) and [reserved dictionary names](https://github.com/anno-mods/FileDBReader/blob/349145a1c1f188d09beb61b675311ff52586e15f/FileDBSerializer/FileDBSerializer/Document/TagSection.cs) establish the inspected structural reader contract. The local executable is fingerprinted separately; binary equivalence to the checkout is not claimed.
-- [Campaign mod.io page](https://mod.io/g/anno-1800/m/campaign-in-coop-serp): visible release history, 1.021 dated 2025-10-18, release file 6857871. The downloaded package hash and normalized differences from workspace are retained. The [historical case evidence (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json) preserves the release comparison; the [active review (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/README.md) now contains only unresolved points.
+- [Campaign mod.io page](https://mod.io/g/anno-1800/m/campaign-in-coop-serp): visible release history, 1.021 dated 2025-10-18, release file 6857871. The downloaded package hash and normalized differences from workspace are retained. The [historical case evidence (historical local evidence; summary available)](local-evidence.md#savegame-audit) preserves the release comparison; the [active review (historical local evidence; summary available)](local-evidence.md#open-review) now contains only unresolved points.
 - [Reading savegames](../gameplay/savegames.md) documents archive/outer compression/FileDB stages, field-specific decoding and peer/version uncertainty. These are offline observations; prior gameplay/Coop qualifications remain unchanged.
 
 ## External links to continue

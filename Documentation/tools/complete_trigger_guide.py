@@ -1,9 +1,9 @@
 """Expand authored guide markers with audited XML and native condition lookups."""
+from workspace_paths import ROOT, output_path, source_path, source_relative
 import copy
 import hashlib
 import json
 import re
-from workspace_paths import ROOT, source_path
 from pathlib import Path
 from lxml import etree as ET
 from build_trigger_reference import fields, cell
@@ -11,10 +11,8 @@ from build_trigger_examples import condition, trigger, unlock, actions
 from inventory import write_json
 
 DOC = Path(__file__).resolve().parents[1]
-GUIDE = DOC.parent/'Trigger_Guide.md'
-OUT = DOC/'reference/validation/trigger-guide'
-
-
+GUIDE = DOC/'Trigger_Guide.md'
+OUT = output_path('validation/trigger-guide')
 def pretty(node):
     n = copy.deepcopy(node)
     for x in n.iter():
@@ -65,7 +63,7 @@ def main():
         text = source_path(example['path']).read_text('utf-8').strip()
         ident = example['case']
         replacements['RECIPE_'+ident.upper().replace('-', '_')] = code(example_title(ident)+' — complete ModOps; replace GUID tokens', text)
-        records.append({'id': ident, 'kind': 'complete-modops', 'sha256': hashlib.sha256(text.encode()).hexdigest(), 'source': str(source_path(example['path']).relative_to(ROOT)), 'tokens': example['tokens'], 'external': example['external']})
+        records.append({'id': ident, 'kind': 'complete-modops', 'sha256': hashlib.sha256(text.encode()).hexdigest(), 'source': str(source_relative(source_path(example['path']))), 'tokens': example['tokens'], 'external': example['external']})
     for marker, guids in [('SOURCE_BT',['1500003013']), ('SOURCE_PIRATES',['1500003820','1500003835']), ('SOURCE_COMEBACK',['1500001103']), ('SOURCE_CAMPAIGN',['1500004302','1500004332'])]:
         parts = []
         for guid in guids:

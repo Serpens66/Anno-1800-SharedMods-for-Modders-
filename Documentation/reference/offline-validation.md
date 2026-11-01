@@ -28,7 +28,7 @@ The first execution inside the Windows sandbox ended with `0xC0000409` before lo
 Use separate arguments, for example:
 
 ```powershell
-& 'C:\Users\Serpens66\.vscode\extensions\jakobharder.anno-modding-tools-2.3.1\external\xmltest.exe' `
+& '<absolute path to your Anno 1800 xmltest.exe>' `
   -c patch -m '<absolute mod folder>' -o '<absolute output.xml>' `
   '<absolute vanilla.xml>' '<absolute patch.xml>'
 ```
@@ -49,4 +49,4 @@ Sources: pinned loader `cmd/xmltest/src/main.cc`, `parse_args.cc`, XML operation
 
 ## Trigger documentation examples
 
-[Trigger results](validation/triggers/results.json) record eight complete recipe patches using the installed 1800 evaluator, complete preservation of the exact native anchor 130248, native template/property/enum checks, private fixture GUID bindings, tree placement and rejection of three invalid contracts. Reproduce with `Documentation/tools/validate_triggers.py` after running the extraction/reference/example generators documented in [trigger audit](trigger-audit.md). No conditions/actions, dependency loader, game-save lifecycle or multiplayer session were executed.
+[Trigger results](validation/triggers/results.json) record eight complete recipe patches using the installed 1800 evaluator, complete preservation of the exact native anchor 130248, native template/property/enum checks, private fixture GUID bindings, tree placement and rejection of three invalid contracts. Reproduce with `Documentation/tools/validate_triggers.py` after deliberately reviewing the historical extraction/reference/example inputs described in [trigger audit](trigger-audit.md). No conditions/actions, dependency loader, game-save lifecycle or multiplayer session were executed.

@@ -1,5 +1,5 @@
 """Check the six source definitions and their scoped real caller/consumer patches."""
-from workspace_paths import source_path
+from workspace_paths import output_path, source_path
 import copy
 import hashlib
 import json
@@ -12,8 +12,7 @@ from inspect_mod_trigger_cases import OUT, CASES
 from validate_triggers import canonical, validate_asset_structure, validate_definition
 from validate_loader import EXE
 
-VALIDATION = DOC/'reference/validation/mod-trigger-cases'
-
+VALIDATION = output_path('validation/mod-trigger-cases')
 def tree(path):
     text, _ = decode(path.read_bytes())
     return ET.fromstring(text.encode('utf-8'), ET.XMLParser(huge_tree=True, remove_comments=True))
@@ -24,7 +23,7 @@ def main():
     for source in native['sources']+list(integration['sources'].values()):
         assert hashlib.sha256(open(source_path(source['path']), 'rb').read()).hexdigest() == source['sha256'], source['path']
     contracts = {'templates': native['templates'], 'properties': {n:{'xml':p['schema']} for n,p in native['properties'].items()}, 'datasets': native['datasets']}
-    custom = ROOT/'SharedMods/shared_PirateExtraSpawn/shared_PirateDefeatHelpers/data/config/export/main/asset/templates.xml'
+    custom = source_path('SharedMods/shared_PirateExtraSpawn/shared_PirateDefeatHelpers/data/config/export/main/asset/templates.xml')
     n = tree(custom).xpath(".//Template[Name='Harlow_Currently_NOT_Defeated']")[0]
     contracts['templates'][n.findtext('Name')] = {'xml': xml(n)}
     datasets = {k:ET.fromstring(v['xml'].encode('utf-8')) for k,v in native['datasets'].items()}
@@ -53,9 +52,9 @@ def main():
         op.append(copy.deepcopy(asset))
         patches.append(op)
     # Original sources and exact paths of the relevant additional mutations, in include order.
-    bt = ROOT/'Anno-1800-Mods/Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/assets.xml'
-    cq = ROOT/'Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/data/config/export/main/asset/ComebackFleet.include.xml'
-    campaign = ROOT/'Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync'
+    bt = source_path('Anno-1800-Mods/Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/assets.xml')
+    cq = source_path('Anno-1800-Mods/YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/data/config/export/main/asset/ComebackFleet.include.xml')
+    campaign = source_path('Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync')
     # Assets defining the selected ship/buff/signal identities are preserved exactly.
     wanted = {'1500000041','1500003001','1500003005','1500003009','1500003070','1500003071','1500003072',
               '1500004202','1500004234','1500004391'}
@@ -103,7 +102,7 @@ def main():
     assert banner.findtext('Values/Trigger/TriggerCondition/Values/ConditionEvent/ContextAsset')=='1500004302'
     assert banner.xpath('Values/Trigger/TriggerActions//ActionUnloadSession')
     # File presence and provider semantics are checked separately from game API execution.
-    script = ROOT/'Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data'
+    script = source_path('Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/Story Quests in Coop (Serp)/data')
     for name in ['gamespeed_slow_serp.lua','gamespeed_normal_serp.lua']:
         text, _ = decode((script/name).read_bytes())
         assert all(not line.strip() or line.lstrip().startswith('--') for line in text.splitlines())

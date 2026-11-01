@@ -1,4 +1,5 @@
 """Validate recipe selections against dataAlle, then patch isolated exact assets."""
+from workspace_paths import output_path
 from pathlib import Path
 import copy
 import hashlib
@@ -10,7 +11,7 @@ from validate_loader import EXE, write
 from inventory import VANILLA
 
 DOC = Path(__file__).resolve().parents[1]
-OUT = DOC / 'reference/validation/recipes'
+OUT = output_path('validation/recipes')
 SOURCE = VANILLA / 'data/config/export/main/asset/assets.xml'
 
 def main():

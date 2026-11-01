@@ -1,5 +1,5 @@
 """Read-only verification of trigger sources, documentation anchors and CRLF."""
-from workspace_paths import source_path
+from workspace_paths import output_path, source_path
 from pathlib import Path
 from collections import Counter
 import hashlib
@@ -68,7 +68,8 @@ def main():
     report = {'date': '2026-10-03', 'source_hashes_checked': hashes,
               'linked_heading_fragments_checked': fragments, 'utf8_crlf_files_checked': checked,
               'findings': findings, 'limitations': 'No game, Lua C-function, dependency-loader or MP execution; source preservation is measured against this extraction.'}
-    output = DOC/'reference/validation/triggers/documentation-integrity.json'
+    output = output_path('validation/triggers/documentation-integrity.json')
+    output.parent.mkdir(parents=True, exist_ok=True)
     # The report itself is the only file written by this verifier.
     output.write_bytes((json.dumps(report, indent=2)+'\n').replace('\n', '\r\n').encode('utf-8'))
     print(json.dumps(report))

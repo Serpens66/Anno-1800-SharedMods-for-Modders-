@@ -1,10 +1,10 @@
 """Validate the standalone guide and execute its complete ModOps offline."""
+from workspace_paths import output_path, source_path
 import copy
 import hashlib
 import json
 import re
 import subprocess
-from workspace_paths import source_path
 from pathlib import Path
 from lxml import etree as ET
 from inventory import write_json
@@ -13,10 +13,8 @@ from validate_triggers import canonical, validate_asset_structure
 from verify_trigger_documentation import anchors
 
 DOC = Path(__file__).resolve().parents[1]
-GUIDE = DOC.parent/'Trigger_Guide.md'
-OUT = DOC/'reference/validation/trigger-guide'
-
-
+GUIDE = DOC/'Trigger_Guide.md'
+OUT = output_path('validation/trigger-guide')
 def write(path, text):
     # Embedded fences are read from a CRLF Markdown file; the older fixture
     # writer expects LF input before adding CRLF itself.

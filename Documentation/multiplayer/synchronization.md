@@ -4,7 +4,7 @@
 
 A participant is a game company. A peer is a running client. Coop peers share a participant but have local cameras, sessions, selections and Lua variables. Restricting work to Human0 does not restrict it to one client of Human0.
 
-Saved setup counts are not a replacement for a live peer helper. In the [2026-10-25 savegame case evidence (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json), a 16-entry setup included AI/closed positions, while PeerToSessionMap retained historical peers even when only one human account was assigned. Account assignment plus corroborating thread state supported a solo-test inference; no definitive connection log was recovered. See [savegame peer interpretation](../gameplay/savegames.md#quest-and-peer-interpretation).
+Saved setup counts are not a replacement for a live peer helper. In the [2026-10-25 savegame case evidence (historical local evidence; summary available)](../reference/local-evidence.md#savegame-audit), a 16-entry setup included AI/closed positions, while PeerToSessionMap retained historical peers even when only one human account was assigned. Account assignment plus corroborating thread state supported a solo-test inference; no definitive connection log was recovered. See [savegame peer interpretation](../gameplay/savegames.md#quest-and-peer-interpretation).
 
 XML ActionExecuteScript runs on every active human client. A synchronized command submitted by each of three Coop peers can credit the shared participant three times. WhichPlayer's unlock check restricts the participant; it does not solve peer duplication. A keybinding runs Lua on the invoking client, but the invoked game command may still broadcast a synchronized action.
 

@@ -6,7 +6,7 @@ These procedures describe tooling, not game API contracts. Primary source: [vsco
 
 ## Configure Anno 1800 explicitly
 
-Open a folder containing complete mods. The current setup page distinguishes Anno 1800's `Anno: Rda Folder` and `Anno: Mods Folder` from the separate Anno 117 game-path settings. For this workspace the extracted-data root is `D:/CDesktopLink/Unterlagen/Mods/Anno 1800/Anno1800 RDA unpacked/dataAlle`, containing `data/config/export/main/asset/assets.xml`.
+Open a folder containing complete mods. The current setup page distinguishes Anno 1800's `Anno: Rda Folder` and `Anno: Mods Folder` from the separate Anno 117 game-path settings. Set the extracted-data root to your own configured `vanillaPath`, containing `data/config/export/main/asset/assets.xml`; see [setup](../setup.md).
 
 The metadata reader defaults to Anno 1800 unless `Anno` is 8 or a valid metadata file without Anno has a `data/base/config` directory. That latter layout is the Anno 117 detection path. Do not copy 117 metadata/schema examples into an 1800 mod.
 

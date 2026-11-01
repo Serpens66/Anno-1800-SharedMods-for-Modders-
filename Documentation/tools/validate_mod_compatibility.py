@@ -1,4 +1,5 @@
 """Offline GU17.1 compatibility checks; never launches the game or repairs saves."""
+from workspace_paths import configured_path, output_path, source_path
 import argparse
 import copy
 import hashlib
@@ -10,13 +11,13 @@ import subprocess
 from lxml import etree as ET
 
 DOC = Path(__file__).resolve().parents[1]
-ROOT = DOC.parent.parent
-CAMPAIGN = ROOT / 'Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)'
+ROOT = configured_path('workspacePath', required=False) or DOC
+CAMPAIGN = source_path('Anno-1800-Mods/YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)')
 STORY = CAMPAIGN.parent / 'Story Quests in Coop (Serp)'
-HELPER = DOC.parent / 'shared_CheckSingleHuman'
+HELPER = source_path('SharedMods/shared_CheckSingleHuman')
 PATCH = CAMPAIGN / 'data/config/export/main/asset/AntiDesync/ADLeaveUI.include.xml'
-EXE = Path(r'C:\Users\Serpens66\.vscode\extensions\jakobharder.anno-modding-tools-2.3.1\external\xmltest.exe')
-VANILLA = ROOT.parent / 'Anno1800 RDA unpacked/dataAlle/data/config/export/main/asset/assets.xml'
+EXE = configured_path('tools.xmltest')
+VANILLA = configured_path('vanillaPath') / 'data/config/export/main/asset/assets.xml'
 
 
 def digest(path):
@@ -118,13 +119,13 @@ def full_chain(work, baseline):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--work', type=Path, required=True, help='Disposable output directory outside workspace')
+    parser.add_argument('--work', type=Path, required=True, help='Disposable directory under configured outputPath')
     parser.add_argument('--baseline', type=Path, required=True, help='Full pre-change effective Campaign XML')
-    parser.add_argument('--receipt', type=Path, default=DOC / 'reference/validation/mod-compatibility/results.json')
+    parser.add_argument('--receipt', type=Path, default=output_path('validation/mod-compatibility/results.json'))
     args = parser.parse_args()
     assert args.baseline.is_file()
     work = args.work.resolve()
-    assert not work.is_relative_to(ROOT.resolve()), 'Keep full vanilla-derived outputs outside workspace'
+    assert work == output_path().resolve() or work.is_relative_to(output_path().resolve()), 'Keep native-derived work under configured outputPath'
     assert args.baseline.resolve() not in {work / ('after-stage' + str(i) + '.xml') for i in range(3)}, 'Baseline must not be overwritten by this run'
     work.mkdir(parents=True, exist_ok=True)
     tree = ET.parse(str(PATCH))

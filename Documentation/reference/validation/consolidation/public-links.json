@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-01",
+  "scope": "GitHub connector fetch of the first line verifies file availability at the pinned commit; not content re-audit or runtime certification.",
+  "files": [
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "Recommended-Mods/BT Display Offered-Preferred Always (Serp)/data/config/export/main/asset/assets.xml",
+      "isError": false,
+      "sha": "71af1eeb3fc78c2e553c76b699e3d9d3339e84da"
+    },
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "Recommended-Mods/BT Merchants Offering More Goods (Serp)/data/config/export/main/asset/assets.xml",
+      "isError": false,
+      "sha": "8c3f5d869a4ac877fd520dc7c7fcd343c3588e19"
+    },
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "Recommended-Mods/BT Merchants Produce Session Goods (Serp)/data/config/export/main/asset/assets.xml",
+      "isError": false,
+      "sha": "8e19d9a5b6902c35b385a37cd957ef2268412665"
+    },
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml",
+      "isError": false,
+      "sha": "4509f4410445616344595b2a6c8f66b63cf4570a"
+    },
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "YouKnowWhatYouDo-Mods/Campaign in Coop (Serp)/data/config/export/main/asset/AntiDesync/MovieUnlocks.include.xml",
+      "isError": false,
+      "sha": "b03326bb49d781e43f38a5e3573a96a9700ce65c"
+    },
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "YouKnowWhatYouDo-Mods/P PirateComebackFleetFix (Serp)/data/config/export/main/asset/ComebackFleet.include.xml",
+      "isError": false,
+      "sha": "9139a585db1f161b59af8937fe685850f1c7d1e3"
+    },
+    {
+      "repo": "Anno-1800-Mods",
+      "ref": "9858f32602891e2b562a73a1b6c8b5890bfd1f68",
+      "path": "YouKnowWhatYouDo-Mods/Story Quests in Coop (Serp)/data/config/export/main/asset/Conditions_detailed.include.xml",
+      "isError": false,
+      "sha": "cbf991d307c179db09c7ecdac43f44801b0a8862"
+    },
+    {
+      "repo": "Anno-1800-SharedMods-for-Modders-",
+      "ref": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+      "path": "CodeSnippets.md",
+      "isError": false,
+      "sha": "ecdb7b0bad1089ea6142686bd49add76ede5fc38"
+    },
+    {
+      "repo": "Anno-1800-SharedMods-for-Modders-",
+      "ref": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+      "path": "README.md",
+      "isError": false,
+      "sha": "0ffa43728f5d8ce2b4acf45c6f5c19f0278a6a26"
+    },
+    {
+      "repo": "Anno-1800-SharedMods-for-Modders-",
+      "ref": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+      "path": "shared_LuaLight/data/scripts_serp/lighttools.lua",
+      "isError": false,
+      "sha": "53bb66e17642c76fa8ce145b77722d16c76db623"
+    },
+    {
+      "repo": "Anno-1800-SharedMods-for-Modders-",
+      "ref": "79f10e0cc8e53d909c44dd831689ddc8d4632c99",
+      "path": "shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml",
+      "isError": false,
+      "sha": "0fdc4e4f7c9d35f2e455a58555c4ffacf4a222d1"
+    }
+  ]
+}

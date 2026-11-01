@@ -1,0 +1,18 @@
+{
+  "Anno": 7,
+  "Version": "0.1.0",
+  "ModID": "replace-me-author-feature",
+  "ModName": {
+    "English": "Replace me: mod name"
+  },
+  "Category": {
+    "English": "Gameplay"
+  },
+  "Description": {
+    "English": "Empty starter template. Replace metadata and add an audited XML patch."
+  },
+  "Creator": "Replace me: author",
+  "ModDependencies": [],
+  "LoadAfterIds": [],
+  "IncompatibleIds": []
+}

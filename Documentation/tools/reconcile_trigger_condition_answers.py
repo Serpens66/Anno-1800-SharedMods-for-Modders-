@@ -1,4 +1,5 @@
 """Apply Serp's condition clarifications, preserving tentative original findings."""
+from workspace_paths import configured_path
 import hashlib
 import json
 from pathlib import Path
@@ -44,7 +45,7 @@ Exact original paths, lines, hashes and direct-user-answer certainty: [condition
     if note not in text:
         write(coverage, text.replace('## Six real trigger cases', note + '\n## Six real trigger cases', 1))
     root = DOC.parent.parent
-    notebook = Path('D:/CDesktopLink/Unterlagen/Mods/Anno 1800/HowTo.xml')
+    notebook = configured_path('sources.notes:HowTo.xml')
     helper = root/'SharedMods/Outdated_shared_AreaBuffsHelper (Serp)/data/config/export/main/asset/assets.xml'
     snippets = root/'SharedMods/CodeSnippets.md'
     forcebuild = root/'SharedMods/shared_PirateExtraSpawn/data/scripts_serp/forcebuild_harlow.lua'

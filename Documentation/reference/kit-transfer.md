@@ -1,5 +1,7 @@
 # Starter-kit transfer register
 
+**Historical register, retired on 2026-11-01.** Documentation is now the single maintained knowledge base. Preserve all KIT IDs, original statuses and adoption receipts below as history; they do not restrict the current documentation's topic scope. Do not create new transfer entries or mark old entries adopted merely because of this consolidation. Follow [maintenance](../maintenance.md). [Reconciliation](consolidation.md) accounts for outstanding entries.
+
 This workspace retains detailed research; the starter kit receives selected, portable adaptations. Record kit-relevant new or corrected findings here so transfer decisions are not lost between chats. This register tracks adoption, not semantic review or runtime certification.
 
 ## Status and history rules
@@ -44,7 +46,7 @@ No additional research transfer was identified when initializing this register o
 ### KIT016: Reward-pool data contracts (2026-10-05)
 
 - Status: `adopted` for the bounded reward-pool guide and portable audit. Initial entry was `open` on 2026-10-05; that initial state involved no kit adoption or synchronization.
-- Evidence: [English guide](../../Guide_RewardPools.md) and [native audit, source hashes and structural checks](reward-pools-audit.json).
+- Evidence: [English guide](../Guide_RewardPools.md) and [native audit, source hashes and structural checks](reward-pools-audit.json).
 - Findings: distinguish RewardPool/RewardItemPool templates from their shared property; separate ItemLink target restrictions from the broader quest RewardAssets field; preserve entry defaults, group-ID semantics, ignored quantities on pool links and uniqueness controls.
 - Boundaries: nested sampling probabilities and runtime edge cases remain unverified; regional pools are schema-only in the inspected main asset set. XML parsing/reference checks are not a loader or game test.
 - Relationship: extends the small-XML scope of KIT012; does not change KIT014's exclusion of complete quest guidance.
@@ -54,7 +56,7 @@ No additional research transfer was identified when initializing this register o
 ### KIT017: Read-only savegame inspection and revision diagnosis (2026-10-25)
 
 - Status: `open`; no kit files changed, no adoption receipt, publication or synchronization.
-- Evidence: [savegame workflow](../gameplay/savegames.md), [Campaign New World case (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/README.md) and [anonymized source/check record (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json).
+- Evidence: [savegame workflow](../gameplay/savegames.md), [Campaign New World case (historical local evidence; summary available)](local-evidence.md#open-review) and [anonymized source/check record (historical local evidence; summary available)](local-evidence.md#savegame-audit).
 - Candidate portable scope: separate RDA extraction, outer zlib and FileDB interpretation; preserve unknown raw types; validate actual outputs; distinguish active mod identity, release package, workspace XML and saved definition snapshots. Preserve the limits of saved peer/account/session records.
 - Relationship: linked to KIT014 (complete trigger/quest guidance excluded) and KIT015 (complete binary/graphics tooling excluded). This entry does not reverse those exclusions or declare a general save editor suitable for the starter kit.
 - Pending decision: deliberately adapt a bounded read-only recipe and its evidence qualifications, or record a specific exclusion reason. Keep private saves/account identifiers out of a portable kit. Do not mark adopted before appropriate kit checks and an exact dated kit commit are recorded.
@@ -63,7 +65,7 @@ No additional research transfer was identified when initializing this register o
 ### KIT018: Preserve native condition and cancellation semantics (2026-10-25)
 
 - Status: open; no kit adaptation, publication or synchronization.
-- Evidence: [Campaign vanilla comparison (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/campaign-trigger-comparison.json) and [native/effective excerpts and source hashes (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/campaign-trigger-comparison.json).
+- Evidence: [Campaign vanilla comparison (historical local evidence; summary available)](local-evidence.md#trigger-comparison) and [native/effective excerpts and source hashes (historical local evidence; summary available)](local-evidence.md#trigger-comparison).
 - Candidate portable finding: replacing an unsafe local event must preserve owning Condition settings such as MutuallyExclusive; moving registration to support a timer must retain native cancellation and progress semantics. A correct XPath match does not prove equivalent behavior.
 - Relationship: extends KIT014's trigger topic and KIT017's distinction between current and saved definitions. It does not reverse KIT014's exclusion or provide a tested save migration.
 - Boundaries: one confirmed lost setting and one source-supported lifecycle counterexample; no new game/MP reproduction. Decide deliberately whether a bounded caution belongs in the kit; retain an exact dated commit and checks before adoption.
@@ -71,7 +73,7 @@ No additional research transfer was identified when initializing this register o
 ### KIT020: Persistent post-story gates and qualified speed recollection (2026-10-25)
 
 - Status: open; no kit adaptation, publication or synchronization.
-- Evidence: [DLC native-chain/state/validation record (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/dlc-gates-validation.json); current [open review (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/README.md).
+- Evidence: [DLC native-chain/state/validation record (historical local evidence; summary available)](local-evidence.md#dlc-gates); current [open review (historical local evidence; summary available)](local-evidence.md#open-review).
 - Relationship: follows KIT019 and KIT018; the complete trigger/Lua topics remain bounded by KIT014/KIT013. Retain previous IDs and receipts.
 - Candidate portable lesson: a milestone gate intended to stay open after an optional quest starts must not accept only transient Active; include the relevant completion/abort states while excluding pre-active Triggered. Parent prerequisites and late quest-pool evaluation prevent assuming that every listener remembered Active. Preserve native DLC/population/timer requirements.
 - Boundaries: state names/flags checked against native contracts/examples, actual whole-asset XML patch and exact four-asset follow-up diff verified. No game/MP test or attribution to the recalled user report. Serp's belief that a prior movie experiment left background simulation speed unchanged is recorded as recollection; it is not a new verified command guarantee.

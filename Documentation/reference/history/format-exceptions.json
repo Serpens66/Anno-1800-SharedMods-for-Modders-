@@ -1,0 +1,38 @@
+{
+  "reference/validation/trigger-guide/custom-population/patched.xml": {
+    "sha256": "f7b20f0868a482fe7f1323d214b5a96fe525dfe118dc8506f3c974a3d782c4ed",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/human-session/patched.xml": {
+    "sha256": "607b3906d53ef6f6fd190cc4b6d673b41395e2b92c3796db9f0ca30474b8ccee",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/once/patched.xml": {
+    "sha256": "2fee04d7c6000e588fbec3551d340e9a59b8e2a9b3c8c437f9be429c0efdeb56",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/optional/patched.xml": {
+    "sha256": "8d3bef23e49c728c5aa348db14982bed5302c5e96ed42566e4d0a5b01bcb02cc",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/priority/patched.xml": {
+    "sha256": "0e56856ffa800abdddd8b2e1f9896c8354cb1ddd7c5f952f81310751462f5692",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/removal-safe/patched.xml": {
+    "sha256": "518e15e204303d9814519e62cb38ef1783f87bd435a2a5f6bae35b708241a209",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/repeat/patched.xml": {
+    "sha256": "2bc02c7e15645cb92f4f08c4dae04eda823e56b2b169fb2b61bfcad0293e84bd",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/sequence/patched.xml": {
+    "sha256": "6dcd4eb822c552eac39581a5b3f47581b4f0e9f45a6a2fdc3b81564bfc250b49",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  },
+  "reference/validation/trigger-guide/simultaneous/patched.xml": {
+    "sha256": "6b79de60854e5ba7e5e240d007445f171946d3e80a7d1a63ee599a83c3581d05",
+    "reason": "Historical evaluator output already used mixed line endings; preserve original bytes and hash."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-04",
+  "origin": "Serp local Anno 1800 workspace knowledge base",
+  "method": "Curated original prose adaptations; raw game XML, upstream implementations, private inventories and absolute paths excluded.",
+  "sources": [
+    {
+      "relative_source": "Documentation/foundations/vanilla-research.md",
+      "sha256": "c048e374c58542090431e6f0ba1460733a9de75a176dc720291019a07ab07bab"
+    },
+    {
+      "relative_source": "Documentation/foundations/inheritance.md",
+      "sha256": "29c2c353a8c96502c8bcdde8f3abc8a61fcca371d0016c1e7cc9e861cdc556a1"
+    },
+    {
+      "relative_source": "Documentation/foundations/structure-and-loading.md",
+      "sha256": "dd4a0127b5fbdf7aa02fa9da0ee7157be93e1dcba39532892e3317df56903070"
+    },
+    {
+      "relative_source": "Documentation/foundations/identifiers-and-tools.md",
+      "sha256": "aabcb8fc1de2695655a020765facffea9f6138aa905a737023e16442f2189def"
+    },
+    {
+      "relative_source": "Documentation/foundations/authoring-tools.md",
+      "sha256": "c3319c58ea82d9120dde8aef8da218c456c3ffb1691cf09472fc6b6a0fe01058"
+    },
+    {
+      "relative_source": "Documentation/xml/modops.md",
+      "sha256": "330c9521c8822353e9c313c477437a90ef1247bbf447dfba45664f5055949f1e"
+    },
+    {
+      "relative_source": "Documentation/xml/xpath.md",
+      "sha256": "b1458e8b97330548b605acfe41c7187bb4a6900cbe35aa311e40928fc6630c16"
+    },
+    {
+      "relative_source": "Documentation/xml/content-and-lists.md",
+      "sha256": "27263407281a4d89cf18f427aaacb11546f16ae7f1a6808d8961b1e652e6e1aa"
+    },
+    {
+      "relative_source": "Documentation/reference/coverage.md",
+      "sha256": "a17ec1331754d9b91f376f9d75f00d5cae55cafa94e35d0921d43e2d075ab95f"
+    },
+    {
+      "relative_source": "Documentation/reference/discrepancies.md",
+      "sha256": "e571656e1826096aa4af8661ac5f3d12616061866a39d6a41edd2b58e9effc2f"
+    },
+    {
+      "relative_source": "Documentation/reference/offline-validation.md",
+      "sha256": "d98ca74d33475e3089c1a606b152de14720af1235a6fb26d592a7aa12f97d56b"
+    },
+    {
+      "relative_source": "Documentation/recipes/basic-workflows.md",
+      "sha256": "567d3e0539b2ab21aadae2dff8cfebfa70d21ca2d88c3a6f10cea3c21aca3383"
+    }
+  ]
+}

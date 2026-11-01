@@ -1,5 +1,5 @@
 """Extract traceable trigger evidence. Extraction never marks a semantic review complete."""
-from workspace_paths import source_path
+from workspace_paths import source_path, source_relative
 from pathlib import Path
 from collections import defaultdict, Counter
 import copy
@@ -102,10 +102,10 @@ def main():
     for path in sorted(ROOT.rglob('*')):
         if not path.is_file() or path.suffix.lower() not in {'.xml', '.lua', '.md', '.txt', '.json', '.jsonc'}:
             continue
-        if any(p in {'Documentation', '.git', '.codex', '.agents', 'node_modules', 'third_party'} for p in path.relative_to(ROOT).parts):
+        if any(p in {'Documentation', '.git', '.codex', '.agents', 'node_modules', 'third_party'} for p in source_relative(path).parts):
             continue
         if str(path.resolve()).casefold() not in known_paths:
-            rel = path.relative_to(ROOT).as_posix()
+            rel = source_relative(path).as_posix()
             rows.append({'id': 'workspace:'+rel, 'group': 'workspace', 'path': str(path)})
     sources, comments, shapes = [], {}, {}
     parse_errors = []

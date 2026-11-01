@@ -1,5 +1,5 @@
 """Capture six existing mod trigger definitions for scoped documentation review."""
-from workspace_paths import source_path
+from workspace_paths import output_path, source_path
 from pathlib import Path
 import hashlib
 import json
@@ -8,7 +8,7 @@ from lxml import etree as ET
 from inventory import DOC, ROOT, VANILLA, decode, write_json
 from audit_triggers import write, xml
 
-OUT = DOC/'reference/triggers/mod-cases'
+OUT = output_path('research/triggers/mod-cases')
 CASES = {
  '1500003013': 'Anno-1800-Mods/Recommended-Mods/BT Passive Trading (Serp)/data/config/export/main/asset/MoreTradeForHumansArchi.include.xml',
  '1500003820': 'SharedMods/shared_PirateExtraSpawn/data/config/export/main/asset/SpawnShipsIfWeak.include.xml',

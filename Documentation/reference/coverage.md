@@ -1,5 +1,7 @@
 # Coverage and continuation ledger
 
+Current entry point: [README](../README.md); [setup](../setup.md) uses each user's own paths and extracted game data. Historical research counts, paths and checks below retain their original scope and dates. See [consolidation](consolidation.md).
+
 ## Current state
 
 This is a working knowledge base, **not yet the fully completed documentation requested by Serp**. Counts describe inventory/extraction, not complete semantic understanding.
@@ -40,7 +42,7 @@ This is a working knowledge base, **not yet the fully completed documentation re
 
 ## Reward-pool topic addition (2026-10-05)
 
-- [Standalone Reward Pool Guide](../../Guide_RewardPools.md) covers pool creation, linking, group references, weights, amounts, target-property restrictions and related pool types.
+- [Standalone Reward Pool Guide](../Guide_RewardPools.md) covers pool creation, linking, group references, weights, amounts, target-property restrictions and related pool types.
 - [Native audit](reward-pools-audit.json) records source hashes, defaults and the quest 151562 -> pool 151049 -> pool 151062 -> Product chain. XML examples passed parsing/reference/target checks; no loader executable or game/save/multiplayer test was performed.
 - Nested sampling, duplicate handling, nonpositive weights, cycles, unlock precedence and missing-region fallback remain unverified. The flat probability example is a qualified relative-weight model; RegionRewardPool has schema evidence but no instance in the inspected main asset set.
 - KIT016 tracks deliberate adaptation into the starter kit; this addition does not broaden unrelated source-review statuses.
@@ -49,7 +51,7 @@ This is a working knowledge base, **not yet the fully completed documentation re
 
 The [savegame reading addition](#savegame-reading-addition-2026-10-25) below extends offline coverage only; the outstanding whole-mod and runtime reviews remain open.
 
-The [standalone English Trigger Guide](../../Trigger_Guide.md) provides a progressive 18-chapter learning path, nine complete ModOps examples, six reviewed source cases and all 91 captured Condition templates. It now embeds 115 property references with full schema/defaults, 105 native template definitions and all 52 referenced datasets. It has no private documentation references or other-file links; only internal anchors and the two user-approved optional public repository links remain. [Its native audit](validation/trigger-guide/native-audit.json) verifies the opening 130221 counter, every unlock/unhide target and base chain, and relevant templates/properties/defaults/datasets against current source hashes. [Guide validation](validation/trigger-guide/results.json) checks exact in-file reference completeness, actual offline evaluator results, source-preserving case presentations, collapsible XML, links/anchors and four authored design walkthroughs. No game, MP, dependency-loader or independent new-agent test; existing uncertainty remains qualified.
+The [standalone English Trigger Guide](../Trigger_Guide.md) provides a progressive 18-chapter learning path, nine complete ModOps examples, six reviewed source cases and all 91 captured Condition templates. It now embeds 115 property references with full schema/defaults, 105 native template definitions and all 52 referenced datasets. It has no private documentation references or other-file links; only internal anchors and the two user-approved optional public repository links remain. [Its native audit](validation/trigger-guide/native-audit.json) verifies the opening 130221 counter, every unlock/unhide target and base chain, and relevant templates/properties/defaults/datasets against current source hashes. [Guide validation](validation/trigger-guide/results.json) checks exact in-file reference completeness, actual offline evaluator results, source-preserving case presentations, collapsible XML, links/anchors and four authored design walkthroughs. No game, MP, dependency-loader or independent new-agent test; existing uncertainty remains qualified.
 
 1. Q001 is resolved for documentation purposes from implementation evidence; retain the distinction between this conclusion and an in-game test. Continue recording any new discrepancies separately.
 2. Retain review-ledger statuses when regenerating inventory; complete workspace revision and external-source provenance.
@@ -70,7 +72,7 @@ For runtime behavior, preserve the original test's limits. Offline XML/Lua check
 
 ## Savegame reading addition (2026-10-25)
 
-- Added [read-only savegame reading](../gameplay/savegames.md), the [Campaign New World case (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/README.md) and [anonymized evidence (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/savegame-audit.json). Eight source saves were extracted; selected managers were read structurally. Three saves also received FileDBReader conversion and exact agreement of all condition-key/owning-GUID pairs (11100, 11116 and 12404 rows).
+- Added [read-only savegame reading](../gameplay/savegames.md), the [Campaign New World case (historical local evidence; summary available)](local-evidence.md#open-review) and [anonymized evidence (historical local evidence; summary available)](local-evidence.md#savegame-audit). Eight source saves were extracted; selected managers were read structurally. Three saves also received FileDBReader conversion and exact agreement of all condition-key/owning-GUID pairs (11100, 11116 and 12404 rows).
 - Inspected RDAConsole 1.1.0, FileDBReader 3.0.3, local interpreter files/unpack driver, and pinned V2/V3 parser/dictionary implementation. The generated interpreter has guessed types and can produce invalid XML 1.0 character references. This addition does not certify every interpreter rule, nested session or save format.
 - Actual release 1.021 retains the wrong New World Skip/default callback, already corrected in workspace XML under the same version. Actual saved definitions retain old callbacks and an older late registration. Current one-off migration does not reconstruct missing progression. Remaining diary/DLC risks and a misplaced TriggerSetup are classified separately in the case report.
 - Saved account assignment supports solo repair-test inferences for later saves; PeerToSessionMap is not a reliable connected-peer count. Duplicated quests/listeners do not establish normal Coop duplication or confirm which manual commands were used.
@@ -79,7 +81,7 @@ For runtime behavior, preserve the original test's limits. Offline XML/Lua check
 
 ## Campaign vanilla comparison follow-up (2026-10-25)
 
-- Compared explicit-GUID condition replacements with 364 native condition matches, including 150 event matches. The [case report (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/campaign-trigger-comparison.json) and [selected definitions/hashes (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/campaign-trigger-comparison.json) record the scope and two concrete source regressions: lost MutuallyExclusive on 151434 and revival of cancelled 151076 through 150931.
+- Compared explicit-GUID condition replacements with 364 native condition matches, including 150 event matches. The [case report (historical local evidence; summary available)](local-evidence.md#trigger-comparison) and [selected definitions/hashes (historical local evidence; summary available)](local-evidence.md#trigger-comparison) record the scope and two concrete source regressions: lost MutuallyExclusive on 151434 and revival of cancelled 151076 through 150931.
 - Traced their native owners, kontor upgrade/base chains, registration/cancellation callers, event sources, resulting actions and applicable templates/defaults/property contracts. Native schema reset wording remains distinct from Q005's runtime clarification. The diary-open source comment is now explicitly retained as a qualification.
 - Documentation/evidence only. No mod or save changed, no clean-game/Coop reproduction, no runtime certification of every quest. KIT018 is open; prior KIT017 evidence and adoption/exclusion history remain intact.
 
@@ -87,16 +89,16 @@ For runtime behavior, preserve the original test's limits. Offline XML/Lua check
 ## Campaign 1.022 correction follow-up (2026-10-25)
 
 - Campaign 1.022 corrects the lost native child-completion mode, preserves the newspaper reminder's native InitCampaign/quest-cancellation lifecycle using an event-gated timer, and places worker TriggerSetup under Values. Story remains 1.031; no saved-instance migration was added at Serp's request.
-- The complete dependency chain passed the actual GU17.1 evaluator. A normalized comparison of all 96,272 resulting assets found exactly five expected changed trigger GUIDs and no added/lost identities. Original range/spawn actions and the native cancellation caller remain intact. [Current source hashes and validation (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/campaign-1.022-validation.json).
-- C004 caller investigation found 18 play triggers / 36 script call sites. Both scripts were disabled in their earliest Git revision. Author notes document slow-speed coroutine delays and a separate speed mod's multiplayer-exit guard. Comment-only bodies are not themselves a confirmed bug; no speed change was enabled. [Caller evidence (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/movie-speed-callers.json).
-- [CodeReview (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/README.md) now lists only unresolved questions/risks. Existing evidence and past validation receipts are historical snapshots. No new game/MP test or publication. KIT019 is open.
+- The complete dependency chain passed the actual GU17.1 evaluator. A normalized comparison of all 96,272 resulting assets found exactly five expected changed trigger GUIDs and no added/lost identities. Original range/spawn actions and the native cancellation caller remain intact. [Current source hashes and validation (historical local evidence; summary available)](local-evidence.md#campaign-validation).
+- C004 caller investigation found 18 play triggers / 36 script call sites. Both scripts were disabled in their earliest Git revision. Author notes document slow-speed coroutine delays and a separate speed mod's multiplayer-exit guard. Comment-only bodies are not themselves a confirmed bug; no speed change was enabled. [Caller evidence (historical local evidence; summary available)](local-evidence.md#movie-speed).
+- [CodeReview (historical local evidence; summary available)](local-evidence.md#open-review) now lists only unresolved questions/risks. Existing evidence and past validation receipts are historical snapshots. No new game/MP test or publication. KIT019 is open.
 
 
 ## Persistent DLC milestone follow-up (2026-10-25)
 
 - C006 is corrected in Campaign 1.022: all four final-campaign DLC gates accept Active and later terminal states of optional rebuild quest 153232, including manual/automatic abort. Triggered alone remains excluded. Native state-flag examples and the exact dataset support these names; no new persistent asset or save migration was added.
 - The Cape chain 112116 -> 113430 -> 111842 depends on 113818 (700 artisans). A late evaluation after rebuild completion/abort no longer fails solely because Active expired. Existing DLC activation, population/timer and Coop/story-pool requirements remain unchanged. This is a demonstrated source-state defect, not a reconstruction of the recalled external user's specific save.
-- A new complete GU17.1 pass preserves all 96,272 assets. Exactly four further gate assets differ from the preceding 1.022 output; the helper/Story XML outputs are identical. [Audit, state membership and validation (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/dlc-gates-validation.json).
+- A new complete GU17.1 pass preserves all 96,272 assets. Exactly four further gate assets differ from the preceding 1.022 output; the helper/Story XML outputs are identical. [Audit, state membership and validation (historical local evidence; summary available)](local-evidence.md#dlc-gates).
 - Both speed Lua scripts now document risks and Serp's uncertain recollection that movie-time slowdown left background speed normal. They remain entirely commented; Lua 5.3 syntax passed without executing scripts. Story metadata is 1.032 for this comment update. No new runtime test, save repair or publication. The active review now contains only C005; KIT020 is open.
 
 

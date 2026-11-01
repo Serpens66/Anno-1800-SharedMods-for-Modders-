@@ -1,0 +1,17 @@
+{
+  "configVersion": 1,
+  "gamePath": "",
+  "vanillaPath": "",
+  "modsPath": "",
+  "workPath": "work",
+  "outputPath": "out",
+  "tools": {
+    "xmltest": "",
+    "lua": "",
+    "python": ""
+  },
+  "workspacePath": "",
+  "researchPath": "",
+  "sources": {},
+  "pathAliases": {}
+}

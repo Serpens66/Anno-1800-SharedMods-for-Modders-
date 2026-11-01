@@ -1,6 +1,6 @@
 # Personal notebook evidence and unresolved runtime limits
 
-Both original notebooks were read completely on 2026-10-03: `D:/CDesktopLink/Unterlagen/Mods/Anno 1800/HowTo.xml` (2862 lines) and `D:/CDesktopLink/Unterlagen/Mods/Anno 1800/Python Modding/info.txt` (867 lines). Their hashes are in the source inventory. This register preserves important observations while the remaining feature audits and gameplay chapters are completed.
+Both original notebooks were read completely on 2026-10-03: `notes:HowTo.xml` (2862 lines) and `notes:info.txt` (867 lines). Their hashes are in the source inventory. This register preserves important observations while the remaining feature audits and gameplay chapters are completed.
 
 **Evidence policy:** an explicit Serp test is accepted unless contradicted; tentative wording remains tentative. A quoted schema description is a source contract, not proof of runtime behavior. A TODO, rejected attempt or proposed workaround is not a successful test. This register is not a blanket implementation recipe for unreviewed systems.
 
@@ -161,4 +161,4 @@ The observations above now have detailed guidance in [trigger design](../gamepla
 
 ## Movie-speed recollection (2026-10-25)
 
-Serp believes he previously tested the commented movie-speed command and found that background simulation still ran at normal speed during the movie. He explicitly presents ineffectiveness as a possibility. Record this as an uncertain historical recollection, not a newly repeated test or proof that all GameClock speed changes are ineffective. Both movie scripts remain commented and now contain the risks/recollection. [Source/change evidence (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/dlc-gates-validation.json); [original caller audit (local workspace only)](../../../CodeReview/Campaign-in-Coop-Serp/evidence/movie-speed-callers.json).
+Serp believes he previously tested the commented movie-speed command and found that background simulation still ran at normal speed during the movie. He explicitly presents ineffectiveness as a possibility. Record this as an uncertain historical recollection, not a newly repeated test or proof that all GameClock speed changes are ineffective. Both movie scripts remain commented and now contain the risks/recollection. [Source/change evidence (historical local evidence; summary available)](local-evidence.md#dlc-gates); [original caller audit (historical local evidence; summary available)](local-evidence.md#movie-speed).

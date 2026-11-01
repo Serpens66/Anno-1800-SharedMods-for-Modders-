@@ -1,5 +1,5 @@
 """Check trigger examples against native schemas and actual offline XML patch output."""
-from workspace_paths import source_path
+from workspace_paths import output_path, source_path
 from pathlib import Path
 import copy
 import hashlib
@@ -12,8 +12,7 @@ from audit_triggers import DEST, write
 from validate_loader import EXE
 
 DOC = Path(__file__).resolve().parents[1]
-OUT = DOC/'reference/validation/triggers'
-
+OUT = output_path('validation/triggers')
 def canonical(node):
     return (node.tag, tuple(sorted(node.attrib.items())), (node.text or '').strip(), tuple(canonical(x) for x in node if isinstance(x.tag, str)))
 

@@ -1,0 +1,8 @@
+local.json
+local.*.json
+!local.example.json
+work/
+out/
+.cache/
+__pycache__/
+*.pyc
