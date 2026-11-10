@@ -97,6 +97,7 @@ Exact source paths, lines and hashes: [condition clarification receipt](triggers
 These are not alternate supported APIs; never copy the defective example unchanged.
 
 - The current InfoTips reference has unmatched `ElementType` tags in its 1800 example. Compare the decoded vanilla XML rather than reproducing those tags.
+- The older infotip guide's link to the loader 11 document returns 404; use the [current InfoTips reference](https://jakobharder.github.io/anno-mod-loader/infotips/) with the 1800 syntax. The guide's statement that Vanilla only uses warning value 2 has one counterexample: layout `132172` contains `WarningType/WarningType=1`. The appearance of 1 remains unverified. See the [infotip audit](../ui-and-resources/infotips-and-text.md#source-and-verification-scope).
 - The inheritance guide's mixed-vector example contains an unmatched `Item` boundary. Its illustrated GUID `1111111111111` is also an explanatory placeholder, not a suitable 32-bit mod GUID.
 - A compatibility-guide duplicate-removal example contains `position() &amp; last()`, which decodes to an invalid XPath operator. Supported comparison syntax must be taken from a valid example and checked independently.
 - Several current-reference examples carry 1800 labels while still using short attributes, or contain a malformed XPath step such as `//ModuleOwner/[...]`. Check the actual legacy form and XPath grammar against the pinned implementation.

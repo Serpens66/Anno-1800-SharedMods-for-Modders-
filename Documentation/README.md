@@ -43,7 +43,7 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Understand peer execution and synchronization | [Multiplayer and Coop](multiplayer/synchronization.md) |
 | Use or assess the actual shared Lua interfaces | [LuaLight](lua/shared-light.md), [Medium and Ultra](lua/shared-medium-and-ultra.md) |
 | Search objects or count executing Coop peers | [ObjectFinder and CoopCount](lua/objectfinder-and-coopcount.md) |
-| Change tooltip XML and text expressions | [Infotips and text](ui-and-resources/infotips-and-text.md) |
+| Find a tooltip by UI area, text or GUID; trace its asset binding and patch the layout | [Infotips and text](ui-and-resources/infotips-and-text.md) |
 | Patch model and feedback files | [CFG and FC patches](ui-and-resources/cfg-and-fc.md) |
 | Decode binary resources and island containers | [Binary formats](ui-and-resources/binary-formats.md) |
 | Understand converters and Blender source procedures | [Graphics toolchain](ui-and-resources/graphics-toolchain.md) |

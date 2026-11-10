@@ -47,6 +47,14 @@ This is a working knowledge base, **not yet the fully completed documentation re
 - Nested sampling, duplicate handling, nonpositive weights, cycles, unlock precedence and missing-region fallback remain unverified. The flat probability example is a qualified relative-weight model; RegionRewardPool has schema evidence but no instance in the inspected main asset set.
 - KIT016 tracks deliberate adaptation into the starter kit; this addition does not broaden unrelated source-review statuses.
 
+## Infotip lookup and patching addition (2026-11-10)
+
+- [Infotips and text](../ui-and-resources/infotips-and-text.md) now traces the supplied decoded export against the configured Vanilla export, main asset names, consumer paths, selected schema/defaults and localized text. It distinguishes layout GUIDs, text GUIDs, shared layout templates and context IDs, with worked starting points by UI area.
+- The workspace pass compared 49 distinct XML contents across 184 source and bundled files, including includes and WIP variants. The chapter records what representative patches do and how to inspect their selectors and dependencies. The [lookup tool](../tools/find_infotips.py) repeats the structural GUID/text join on a user's own extraction.
+- Main XML joins and standalone XPath counts were inspected; hardcoded or scenario bindings, ordered loader evaluation of the full corpus and new game rendering tests remain outside this pass.
+
+- Factory goods follow-up traced the abstract input branch and the factory-level output binding, including the Cyanide Leacher's zero override for FakeProductWaste. See [factory input and output goods](../ui-and-resources/infotips-and-text.md#factory-input-and-output-goods). Runtime behavior for other abstract outputs remains unverified.
+
 ## Next steps, in order
 
 The [savegame reading addition](#savegame-reading-addition-2026-10-25) below extends offline coverage only; the outstanding whole-mod and runtime reviews remain open.
