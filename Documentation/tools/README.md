@@ -14,6 +14,10 @@ The Windows setup check is read-only and accepts `-ConfigPath`. Python source to
 
 For tooltip research, run `python -B tools/find_infotips.py --guid 500460 --references` from Documentation. It joins the decoded export, main assets and localization; optional reverse lookup prints exact numeric matches in asset fields, templates and defaults. See the [infotip lookup workflow](../ui-and-resources/infotips-and-text.md#find-the-layout-for-a-specific-ui-area) for text search, alternate language and how to verify a binding.
 
+## Serp GUID allocation check
+
+`python -B tools/guid_inventory.py --check NUMBER` scans the configured workspace before assigning a new Serp GUID. Read the [register](../reference/serp-guid-usage.md) for scope, exit codes and limitations. `--write` explicitly refreshes the maintained Markdown/JSON register after allocation; omit it for read-only checks. Same-ModID and declared-incompatible definition pairs are classified separately from pairs needing review.
+
 ## Source research and offline evaluator tools
 
 The existing `inventory.py`, `vanilla_audit.py`, `runtime_audit.py`, trigger audits and offline evaluator scripts are specialist maintainer tools. They require configured sources, and many require `lxml`; evaluator scripts additionally require tools.xmltest. They are not prerequisites for reading the knowledge base. Configure the relevant checkout in sources or researchPath; never rely on Serp's temporary research folder surviving.

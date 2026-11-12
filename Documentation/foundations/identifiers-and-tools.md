@@ -10,6 +10,10 @@ Some registered historical ranges are below the stated safe lower bound. Their p
 
 For a new public asset, record its purpose and allocation next to the mod's source, search the extracted vanilla and all active mods, reserve a suitable interval through the registry's process when needed, and validate every reference. A `BaseAssetGUID` clone needs a new Standard GUID; matching the source GUID replaces/duplicates identity rather than creating a separate asset. The actual inheritance contract is explained in [Inheritance](inheritance.md).
 
+## Serp workspace allocation register
+
+For work on Serp's mods, normally allocate new asset GUIDs within **1500000000-1500010000 inclusive**. The [workspace register](../reference/serp-guid-usage.md) lists occupied IDs with a repeatable scan and per-file evidence. Run the live collision check before allocating and refresh the register after adding an asset; a dated snapshot alone cannot establish availability. Same-ModID bundles and explicitly incompatible alternatives are classified separately, while unrelated reuse remains blocked. This is Serp's author-specific instruction, not permission for other authors to use the reservation.
+
 ## Enum and internal-resource reservations
 
 The [Anno 1800 enum registry](https://github.com/anno-mods/GuidRanges/blob/093505292129985db9cb818468c15cee329dc354/1800/enums.md) coordinates limited pre-existing enum slots and other scarce identifiers. It does not prove that arbitrary new enum names can be introduced into the executable. The current snapshot includes FreeAreaType, SessionType, ItemAllocation, Participant, SocketExclusive, Unique, difficulty categories, key bindings, internal model IDs and special popup constraints.

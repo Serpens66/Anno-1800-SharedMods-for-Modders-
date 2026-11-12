@@ -31,7 +31,7 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Understand assets, templates and BaseAssetGUID | [Inheritance](foundations/inheritance.md) |
 | Package and order mods or shared dependencies | [Structure and metadata](foundations/structure-and-loading.md) |
 | Make mods compose safely | [Mod compatibility](foundations/mod-compatibility.md) |
-| Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md) |
+| Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md), [Serp workspace GUID register](reference/serp-guid-usage.md) |
 | Configure authoring tools and inspect generated deployment | [Authoring tools](foundations/authoring-tools.md) |
 | Write an XML patch | [ModOps](xml/modops.md) and [XPath](xml/xpath.md) |
 | Copy nodes or construct lists | [Dynamic content](xml/content-and-lists.md) |
