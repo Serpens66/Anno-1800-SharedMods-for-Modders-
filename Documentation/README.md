@@ -32,6 +32,7 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Package and order mods or shared dependencies | [Structure and metadata](foundations/structure-and-loading.md) |
 | Make mods compose safely | [Mod compatibility](foundations/mod-compatibility.md) |
 | Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md), [Serp workspace GUID register](reference/serp-guid-usage.md) |
+| Choose external editors, viewers and converters; use and update Anno Toolbox | [Modding tools](modding-tools/README.md) |
 | Configure authoring tools and inspect generated deployment | [Authoring tools](foundations/authoring-tools.md) |
 | Write an XML patch | [ModOps](xml/modops.md) and [XPath](xml/xpath.md) |
 | Copy nodes or construct lists | [Dynamic content](xml/content-and-lists.md) |

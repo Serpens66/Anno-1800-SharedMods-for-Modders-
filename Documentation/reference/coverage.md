@@ -120,3 +120,24 @@ For runtime behavior, preserve the original test's limits. Offline XML/Lua check
 ## Serp GUID allocation inventory (2026-11-12)
 
 - Added the [workspace GUID register](serp-guid-usage.md) and repeatable live allocation check. The scan records literal occurrences, asset/text definition evidence, source hashes and nearest mod metadata; same-ModID copies and declared-incompatible pairs are classified separately. This is a conservative source inventory, not a feature audit or runtime collision certification. Serp explicitly requests normal use of the inclusive 1500000000-1500010000 reservation for Serp assets.
+
+## External modding-tools addition (2026-11-16)
+
+- Added the [modding-tools section](../modding-tools/README.md), with a task-oriented Anno Toolbox inventory, Python/MSI setup distinction, CLI examples and the local fast-forward update helper workflow.
+- Reviewed upstream 0.1.2 at `edb26301d79c7af1b497103ca5b5691451ad0946`: root README, packaging/CLI dispatch and linked app/export guides. This is a bounded documentation/source review, not a whole-code audit or an 1800 native feature audit.
+- Explicit limits: no generated output loaded by a game according to upstream; 1800 island replacement assumed, activation/profiles unverified, no 1800 save sample; Live Link is 117-only. Conflicting Mod diff claims about 117 constructs are not accepted as 1800 support. GUI/dependency installation, game/save and multiplayer checks were not performed locally.
+
+### Toolbox source runtime follow-up (2026-11-16)
+
+- Added local dependency-only venv/source launchers with UI-first startup, isolated process-local settings/cache, existing ffmpeg/texconv paths and an explicit dependency-refresh helper. Upstream tracked files remain unchanged.
+- GUI library imports and pip dependency checks passed; an offscreen UI window opened the installed Anno 1800 archives and enumerated 4,461 scenes/widgets. This is application startup/read evidence, not a native contract audit, preview-fidelity result or generated-output game test. See the [runtime instructions](../modding-tools/README.md#local-source-runtime-and-ui-editor-2026-11-16).
+
+### UI editor capability audit (2026-11-16)
+
+- Added [UI editor capabilities](../modding-tools/ui-editor.md), distinguishing new widgets from engine scene registration, UI event/action declarations from arbitrary callbacks, and whole-binary mod output from XML merge patches. Toolbox source revision is pinned.
+- [Native receipt](ui-editor-audit.json) follows confirmation/pause scene container templates through 16 complete binary documents (85,546 bytes); event declarations and hashed GameContext connections are structural evidence. Arbitrary Lua bridges/new engine actions remain unestablished. No modified UI/game/MP test was performed.
+
+### UI replacement and multiplayer follow-up (2026-11-16)
+
+- Extended the [UI editor chapter](../modding-tools/ui-editor.md) with native PauseMenu instance/shared-template boundaries, editor-side composition proposals versus missing demonstrated Phoenix loader patch support, and the local-click versus synchronized-command distinction.
+- Historical 1800 loader serializers/overlay were inspected; native scene/widget evidence is the existing dated receipt. Serp GUIEvent/command-hook observations remain qualified author evidence. No editor/loader change or game/MP test was performed.

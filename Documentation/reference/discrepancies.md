@@ -118,3 +118,12 @@ Additional discrepancies will be added as complete source review proceeds. No un
 
 
 Q009 follow-up, 2026-10-25: Campaign 1.022 includes the bounded current-source corrections verified by [the full offline evaluator receipt (historical local evidence; summary available)](local-evidence.md#campaign-validation). Serp excludes retroactive save repairs. Historical release/saved-code observations above remain evidence for their original snapshots; they are not the active review backlog. Comment-only speed scripts remain disabled after [caller/history inspection (historical local evidence; summary available)](local-evidence.md#movie-speed); the exact original intent was not recovered. No new game/Coop test.
+
+## Anno Toolbox 0.1.2: cross-game scope and incomplete instructions (2026-11-16)
+
+**Status: upstream-guide/source discrepancies recorded; 1800 runtime compatibility remains pending.** See the [tool review and pinned sources](../modding-tools/README.md).
+
+- The Mod diff guide applies 117 concepts (`ModItem`, `ModValue`, options) to 1800 while acknowledging unknown 1800 behavior. This does not supersede this knowledge base's 1800 loader evidence; Toolbox evaluation is supplementary, not actual loader validation.
+- Root README says not on PyPI, while some sub-guides use bare PyPI installation commands. Use the checkout or documented Git installation. The CLI dispatcher exposes more command groups than the root README's two-command list.
+- Suite `--app` dispatch does not forward `--games`; restrict the standalone editor with it and select the game explicitly for a suite project. No upstream behavior was changed.
+- Island replacement by path, 1800 profile activation and generic 1800 save support remain upstream assumptions/unverified scope. No new game/save/MP test is claimed.

@@ -1,0 +1,1324 @@
+{
+  "date": "2026-11-16",
+  "scope": "Native scene/widget composition and declared UI event/action interfaces; no new game action, script bridge, scene registration or render semantics are asserted.",
+  "toolbox_revision": "5e436bb0f1503cfb42ad3810ae1c4473505dbbc0",
+  "roots": [
+    "confirmationmenuscene",
+    "pausemenuscene"
+  ],
+  "sources": [
+    {
+      "path": "data/ui/studio/generated/confirmationmenuscene",
+      "sha256": "28b87d6522b8beff46734c7b6313654219e816719a8a66ad748f125939b7aca2",
+      "bytes": 1710,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "GameContext",
+          "type": 19,
+          "id": 268435458
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "ConfirmationMenuScene",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "ClickBlocker",
+          "template": "1a1e6950-beb3-4cfc-a676-750522ee75f5"
+        },
+        {
+          "kind": "image",
+          "name": "baseimage.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "baseimage.png_01",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "ConfirmPopup",
+          "template": "0b645fc8-92f4-41ef-994c-86753c8a336e"
+        }
+      ],
+      "bindings": 0,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/pausemenuscene",
+      "sha256": "7bbc07fa9bb935a90906d98acf1104c858365c1c9967a8cadd816883c92f7bcd",
+      "bytes": 6750,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "GameContext",
+          "type": 19,
+          "id": 268435458
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "PauseMenuScene",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "BlurLayer",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "ClickBlocker",
+          "template": "1a1e6950-beb3-4cfc-a676-750522ee75f5"
+        },
+        {
+          "kind": "image",
+          "name": "color_white_base.png",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "PauseMenu",
+          "template": "1d45b9de-2072-4380-bec4-2907113e42e2"
+        }
+      ],
+      "bindings": 22,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/1a1e6950-beb3-4cfc-a676-750522ee75f5",
+      "sha256": "cd864dcd6fa26b28d8e87c81c04cde1ef96fa96fa373cdf76580fe7f8ae40894",
+      "bytes": 670,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "color_white_base.png",
+          "template": null
+        }
+      ],
+      "bindings": 0,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/0b645fc8-92f4-41ef-994c-86753c8a336e",
+      "sha256": "444a7cfe23824cbba5409412a53b117a340a36d902c58ff7dd5e93a9e74d1410",
+      "bytes": 7380,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "PopupObject",
+          "type": 19,
+          "id": 358829810
+        },
+        {
+          "name": "Constant",
+          "type": 3,
+          "id": 3325407324
+        },
+        {
+          "name": "Constant_01",
+          "type": 3,
+          "id": 3221900721
+        },
+        {
+          "name": "Addition",
+          "type": 3,
+          "id": 365981629
+        },
+        {
+          "name": "Constant_03",
+          "type": 3,
+          "id": 3256022515
+        },
+        {
+          "name": "Multiplication_01",
+          "type": 3,
+          "id": 356470502
+        },
+        {
+          "name": "Constant_05",
+          "type": 3,
+          "id": 3262231650
+        },
+        {
+          "name": "Constant_06",
+          "type": 3,
+          "id": 3339257766
+        },
+        {
+          "name": "Constant_04",
+          "type": 3,
+          "id": 3473172295
+        },
+        {
+          "name": "Multiplication",
+          "type": 3,
+          "id": 525942433
+        },
+        {
+          "name": "Constant_07",
+          "type": 3,
+          "id": 3381649479
+        },
+        {
+          "name": "Multiplication_04",
+          "type": 3,
+          "id": 491672532
+        },
+        {
+          "name": "Constant_09",
+          "type": 3,
+          "id": 3334575837
+        },
+        {
+          "name": "Addition_01",
+          "type": 3,
+          "id": 518280015
+        },
+        {
+          "name": "IncreaseHeightofBG",
+          "type": 3,
+          "id": 486085494
+        },
+        {
+          "name": "TitleLineID",
+          "type": 13,
+          "id": 420727378
+        },
+        {
+          "name": "Constant_02",
+          "type": 3,
+          "id": 3474094288
+        },
+        {
+          "name": "Constant_08",
+          "type": 3,
+          "id": 3242418824
+        },
+        {
+          "name": "Constant_10",
+          "type": 3,
+          "id": 3353885034
+        },
+        {
+          "name": "Bigger",
+          "type": 0,
+          "id": 498415176
+        },
+        {
+          "name": "Constant_11",
+          "type": 3,
+          "id": 3248989942
+        },
+        {
+          "name": "IsVisible",
+          "type": 0,
+          "id": 385828716
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_system_popup.png",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "Title_01_01",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "Title_01",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "GeneralPopupButtonList",
+          "template": "e40c85e3-5da8-49b9-afa8-cc3d64e76f83"
+        },
+        {
+          "kind": "container",
+          "name": "ButtonListWrapper",
+          "template": "3abfffc4-73a9-4984-9068-0b10b4f307d6"
+        },
+        {
+          "kind": "label",
+          "name": "Description",
+          "template": null
+        }
+      ],
+      "bindings": 21,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/1d45b9de-2072-4380-bec4-2907113e42e2",
+      "sha256": "ea8b362114d1484a02afeb95d36f63156a786192e058c702f5c98a9876a389d4",
+      "bytes": 11516,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "Headline",
+          "type": 13,
+          "id": 371460722
+        },
+        {
+          "name": "ResumeButtonReleased",
+          "type": 9,
+          "id": 402179325
+        },
+        {
+          "name": "TitleButtonReleased",
+          "type": 9,
+          "id": 274838859
+        },
+        {
+          "name": "OptionsButtonReleased",
+          "type": 9,
+          "id": 385106177
+        },
+        {
+          "name": "QuitButtonReleased",
+          "type": 9,
+          "id": 389629076
+        },
+        {
+          "name": "LoadButtonReleased",
+          "type": 9,
+          "id": 383173451
+        },
+        {
+          "name": "SaveButtonReleased",
+          "type": 9,
+          "id": 411357908
+        },
+        {
+          "name": "IsTransparent",
+          "type": 0,
+          "id": 446220362
+        },
+        {
+          "name": "BGHeight_570",
+          "type": 3,
+          "id": 3406650073
+        },
+        {
+          "name": "btnSaveExit_PosY_296",
+          "type": 3,
+          "id": 3400331141
+        },
+        {
+          "name": "btnTitle_PosY_238",
+          "type": 3,
+          "id": 3282771431
+        },
+        {
+          "name": "BGHeight_",
+          "type": 3,
+          "id": 3431970902
+        },
+        {
+          "name": "btnSaveExit_PosY_212",
+          "type": 3,
+          "id": 3329977264
+        },
+        {
+          "name": "btnTitle_PosY_154",
+          "type": 3,
+          "id": 3334066335
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "OM_PauseMenu",
+          "template": "7e1db715-eacd-4ee9-9ebd-c640a86653d8"
+        },
+        {
+          "kind": "label",
+          "name": "Title_Shadow",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "Title_Light",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "btnSaveExit",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        },
+        {
+          "kind": "container",
+          "name": "btnTitle",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        },
+        {
+          "kind": "container",
+          "name": "btnStaticHelp",
+          "template": "33a48d34-a60e-433d-a43b-28e6c0e296b4"
+        },
+        {
+          "kind": "container",
+          "name": "btnOptions",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        },
+        {
+          "kind": "container",
+          "name": "btnLoad",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        },
+        {
+          "kind": "container",
+          "name": "btnSave",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        },
+        {
+          "kind": "container",
+          "name": "btnResume",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        },
+        {
+          "kind": "container",
+          "name": "HairlineDiamondWidgetSimple_03",
+          "template": "b062d9f6-c0f6-41a9-83c8-0a4ed1617999"
+        },
+        {
+          "kind": "container",
+          "name": "HairlineDiamondWidgetSimple_02",
+          "template": "b062d9f6-c0f6-41a9-83c8-0a4ed1617999"
+        },
+        {
+          "kind": "container",
+          "name": "HairlineDiamondWidgetSimple_01",
+          "template": "b062d9f6-c0f6-41a9-83c8-0a4ed1617999"
+        }
+      ],
+      "bindings": 21,
+      "event_action_properties": [
+        {
+          "name": "ResumeButtonReleased",
+          "type": 9,
+          "id": 402179325
+        },
+        {
+          "name": "TitleButtonReleased",
+          "type": 9,
+          "id": 274838859
+        },
+        {
+          "name": "OptionsButtonReleased",
+          "type": 9,
+          "id": 385106177
+        },
+        {
+          "name": "QuitButtonReleased",
+          "type": 9,
+          "id": 389629076
+        },
+        {
+          "name": "LoadButtonReleased",
+          "type": 9,
+          "id": 383173451
+        },
+        {
+          "name": "SaveButtonReleased",
+          "type": 9,
+          "id": 411357908
+        }
+      ]
+    },
+    {
+      "path": "data/ui/studio/generated/e40c85e3-5da8-49b9-afa8-cc3d64e76f83",
+      "sha256": "6af7ff1e2983676b71160b8c346f5da9c48de0e1d6afb1f5729c84eeae60acc0",
+      "bytes": 1713,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "TextButton_48",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        }
+      ],
+      "bindings": 2,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/3abfffc4-73a9-4984-9068-0b10b4f307d6",
+      "sha256": "3871a02717dbbebd969d51ae339feaffc4df9970e143bba5a09659e6e162b37f",
+      "bytes": 1651,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "SuperBtnData",
+          "type": 12,
+          "id": 401680579
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "GeneralPopupButtonList",
+          "template": "e40c85e3-5da8-49b9-afa8-cc3d64e76f83"
+        }
+      ],
+      "bindings": 1,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/7e1db715-eacd-4ee9-9ebd-c640a86653d8",
+      "sha256": "cc5e249efb42a44d08f8c9d53590faf559b0829e90a7631597bd769dba73c890",
+      "bytes": 11910,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "ObjectMenuType",
+          "type": 19,
+          "id": 517553234
+        },
+        {
+          "name": "LightBackgroundHeight",
+          "type": 3,
+          "id": 324589671
+        },
+        {
+          "name": "FooterHeight",
+          "type": 3,
+          "id": 356480521
+        },
+        {
+          "name": "MoodImage",
+          "type": 4,
+          "id": 306203777
+        },
+        {
+          "name": "MoodImageHeight",
+          "type": 3,
+          "id": 287086725
+        },
+        {
+          "name": "Constant",
+          "type": 3,
+          "id": 3388513696
+        },
+        {
+          "name": "Constant_01",
+          "type": 3,
+          "id": 3423606677
+        },
+        {
+          "name": "Multiplication",
+          "type": 3,
+          "id": 494422993
+        },
+        {
+          "name": "Constant_02",
+          "type": 3,
+          "id": 3284903951
+        },
+        {
+          "name": "Substraction",
+          "type": 3,
+          "id": 412482958
+        },
+        {
+          "name": "Constant_03",
+          "type": 3,
+          "id": 3473284400
+        },
+        {
+          "name": "Constant_04",
+          "type": 3,
+          "id": 3277695169
+        },
+        {
+          "name": "Constant_05",
+          "type": 3,
+          "id": 3353031883
+        },
+        {
+          "name": "Constant_06",
+          "type": 3,
+          "id": 3410423537
+        },
+        {
+          "name": "Substraction_01",
+          "type": 3,
+          "id": 360072107
+        },
+        {
+          "name": "Constant_07",
+          "type": 3,
+          "id": 3429831787
+        },
+        {
+          "name": "Substraction_02",
+          "type": 3,
+          "id": 436123221
+        },
+        {
+          "name": "Constant_08",
+          "type": 3,
+          "id": 3404552624
+        },
+        {
+          "name": "Constant_09",
+          "type": 3,
+          "id": 3366188266
+        },
+        {
+          "name": "MoodUVYScale",
+          "type": 3,
+          "id": 471453749
+        },
+        {
+          "name": "MoodUVYOffset",
+          "type": 3,
+          "id": 364501375
+        },
+        {
+          "name": "Constant_10",
+          "type": 3,
+          "id": 3298141023
+        },
+        {
+          "name": "Constant_11",
+          "type": 4,
+          "id": 3474951148
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_om_scaling_shadow.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_om_base_light.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_om_base_medium.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_om_footer_mask.png",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "HairlineDiamondWidgetSimple",
+          "template": "b062d9f6-c0f6-41a9-83c8-0a4ed1617999"
+        },
+        {
+          "kind": "image",
+          "name": "MoodImageNew",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_om_header_purple.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_om_border.png",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "Subline",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "TitleInput",
+          "template": "3a7650fe-0431-4cd2-a730-78262f994cca"
+        },
+        {
+          "kind": "label",
+          "name": "HeadlineShadow",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "Headline",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "btnClose",
+          "template": "c836a2cd-1d08-498f-b557-b2887e77b951"
+        },
+        {
+          "kind": "container",
+          "name": "InfoIcon",
+          "template": "ea6b0880-7e9c-448a-b1b5-46dbed752e52"
+        }
+      ],
+      "bindings": 33,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/467338cc-e409-4500-aad1-b4929557b95b",
+      "sha256": "35446adacd0df9bbd51fd15e726ac310ca47b5d53875c5edc3d9e3f30c8ca40b",
+      "bytes": 18810,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "Text",
+          "type": 4,
+          "id": 396766188
+        },
+        {
+          "name": "TextGUID",
+          "type": 13,
+          "id": 471673996
+        },
+        {
+          "name": "StaticIsVisible",
+          "type": 0,
+          "id": 330354912
+        },
+        {
+          "name": "BGWidth",
+          "type": 3,
+          "id": 347721491
+        },
+        {
+          "name": "BGHight",
+          "type": 3,
+          "id": 299928178
+        },
+        {
+          "name": "StaticInfoTipGUID",
+          "type": 1,
+          "id": 387293543
+        },
+        {
+          "name": "StaticIsDisabled",
+          "type": 0,
+          "id": 328432075
+        },
+        {
+          "name": "Constant",
+          "type": 3,
+          "id": 3239517838
+        },
+        {
+          "name": "Constant_01",
+          "type": 3,
+          "id": 3252471199
+        },
+        {
+          "name": "Constant_02",
+          "type": 3,
+          "id": 3309011033
+        },
+        {
+          "name": "IconVisible",
+          "type": 0,
+          "id": 466685228
+        },
+        {
+          "name": "IconID",
+          "type": 4,
+          "id": 327829919
+        },
+        {
+          "name": "Constant_03",
+          "type": 3,
+          "id": 3317708609
+        },
+        {
+          "name": "Constant_04",
+          "type": 3,
+          "id": 3290648749
+        },
+        {
+          "name": "Constant_06",
+          "type": 3,
+          "id": 3263774071
+        },
+        {
+          "name": "Constant_07",
+          "type": 3,
+          "id": 3315223864
+        },
+        {
+          "name": "Constant_08",
+          "type": 3,
+          "id": 3475466874
+        },
+        {
+          "name": "Constant_09",
+          "type": 3,
+          "id": 3319086338
+        },
+        {
+          "name": "Division",
+          "type": 3,
+          "id": 350034863
+        },
+        {
+          "name": "Constant_10",
+          "type": 3,
+          "id": 3363964456
+        },
+        {
+          "name": "Minus_Sum",
+          "type": 3,
+          "id": 275461481
+        },
+        {
+          "name": "Plus_Sum",
+          "type": 3,
+          "id": 401608799
+        },
+        {
+          "name": "HoverSoundGUID",
+          "type": 1,
+          "id": 436767744
+        },
+        {
+          "name": "ClickSoundGUID",
+          "type": 1,
+          "id": 285303304
+        },
+        {
+          "name": "Constant_05",
+          "type": 3,
+          "id": 3482565335
+        },
+        {
+          "name": "RequestFocus",
+          "type": 9,
+          "id": 334616990
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_text_purple",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_text_purple_disabled",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_text_brown.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_text_orange.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_text_grey.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "LightOverlay",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "DarkOverlay",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_texture_header.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "Focus",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "ButtonText_18",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "ButtonText_16",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "ImageContainer",
+          "template": "ea6b0880-7e9c-448a-b1b5-46dbed752e52"
+        }
+      ],
+      "bindings": 77,
+      "event_action_properties": [
+        {
+          "name": "RequestFocus",
+          "type": 9,
+          "id": 334616990
+        }
+      ]
+    },
+    {
+      "path": "data/ui/studio/generated/33a48d34-a60e-433d-a43b-28e6c0e296b4",
+      "sha256": "7c357db9d01396c3985cb187760e64686df1f958c7f3712b7358e79c59230edb",
+      "bytes": 1710,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "TextGuid",
+          "type": 13,
+          "id": 478759365
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "btnOptions",
+          "template": "467338cc-e409-4500-aad1-b4929557b95b"
+        }
+      ],
+      "bindings": 2,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/b062d9f6-c0f6-41a9-83c8-0a4ed1617999",
+      "sha256": "66c661841c9a7dc9c16902d4267f6e31160b9c27c865052163c6f60d86515e56",
+      "bytes": 4398,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "Constant",
+          "type": 3,
+          "id": 3362879530
+        },
+        {
+          "name": "BaseSideLength",
+          "type": 3,
+          "id": 510908038
+        },
+        {
+          "name": "Constant_04",
+          "type": 3,
+          "id": 3428825769
+        },
+        {
+          "name": "Multiplication",
+          "type": 3,
+          "id": 317530723
+        },
+        {
+          "name": "ShowGradientEnds",
+          "type": 0,
+          "id": 366984813
+        },
+        {
+          "name": "Width",
+          "type": 3,
+          "id": 415724088
+        },
+        {
+          "name": "Constant_07",
+          "type": 3,
+          "id": 3345332466
+        },
+        {
+          "name": "Constant_08",
+          "type": 3,
+          "id": 3357566596
+        },
+        {
+          "name": "Clamping",
+          "type": 3,
+          "id": 450468284
+        },
+        {
+          "name": "Hide_LeftLine",
+          "type": 0,
+          "id": 361054835
+        },
+        {
+          "name": "Hide_RightLine",
+          "type": 0,
+          "id": 319982642
+        },
+        {
+          "name": "InvertedBoolean",
+          "type": 0,
+          "id": 280614103
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_hairline_center_square.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "bgr_hairline_center_square_simple.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "LineLeft",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "LineRight",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "LineRightGradient",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "LineLeftGradient",
+          "template": null
+        }
+      ],
+      "bindings": 16,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/3a7650fe-0431-4cd2-a730-78262f994cca",
+      "sha256": "33ff9595dc94977d0b1443580e3f0442bd8eca5c172abbfb44f20368b9a86ad6",
+      "bytes": 3408,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "Padding",
+          "type": 3,
+          "id": 404836460
+        },
+        {
+          "name": "TextfieldSize",
+          "type": 5,
+          "id": 453044818
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "color_torquoise_complementary_dark_1.png",
+          "template": null
+        },
+        {
+          "kind": "label",
+          "name": "ui_textInput",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "ui_selection",
+          "template": "1e50eb5a-ce6e-418a-8f6e-27aee75c1f38"
+        },
+        {
+          "kind": "container",
+          "name": "ui_caret",
+          "template": "df6365b0-66d4-4af1-847f-1931cdd4e84c"
+        }
+      ],
+      "bindings": 10,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/c836a2cd-1d08-498f-b557-b2887e77b951",
+      "sha256": "136e9f5ff85b78948f8908d6a6d7817941e79e3d1b135a83259d88816392d462",
+      "bytes": 11676,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "IconID",
+          "type": 4,
+          "id": 396766188
+        },
+        {
+          "name": "StaticIsVisible",
+          "type": 0,
+          "id": 330354912
+        },
+        {
+          "name": "StaticInfoTipGUID",
+          "type": 1,
+          "id": 300622521
+        },
+        {
+          "name": "TextVisible",
+          "type": 0,
+          "id": 515341816
+        },
+        {
+          "name": "ButtonWidth",
+          "type": 3,
+          "id": 305251851
+        },
+        {
+          "name": "TextPlaneWidth",
+          "type": 3,
+          "id": 383981925
+        },
+        {
+          "name": "Constant",
+          "type": 4,
+          "id": 3224684465
+        },
+        {
+          "name": "NotEqual",
+          "type": 0,
+          "id": 451544053
+        },
+        {
+          "name": "NotEqual_01",
+          "type": 0,
+          "id": 496454763
+        },
+        {
+          "name": "Constant_02",
+          "type": 3,
+          "id": 3409426469
+        },
+        {
+          "name": "Constant_03",
+          "type": 3,
+          "id": 3252203392
+        },
+        {
+          "name": "HoverSoundGuid",
+          "type": 1,
+          "id": 536341701
+        },
+        {
+          "name": "Constant_07",
+          "type": 3,
+          "id": 3398727728
+        },
+        {
+          "name": "Multiplication",
+          "type": 3,
+          "id": 306842831
+        },
+        {
+          "name": "Multiplication_01",
+          "type": 3,
+          "id": 380165660
+        },
+        {
+          "name": "Constant_08",
+          "type": 3,
+          "id": 3408848861
+        },
+        {
+          "name": "Constant_01",
+          "type": 3,
+          "id": 3315805141
+        },
+        {
+          "name": "ReleaseSoundGuid",
+          "type": 1,
+          "id": 432044138
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_new_transparent_selected.png",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "btn_new_transparent_normal.png",
+          "template": null
+        },
+        {
+          "kind": "container",
+          "name": "ImageContainer",
+          "template": "ea6b0880-7e9c-448a-b1b5-46dbed752e52"
+        },
+        {
+          "kind": "label",
+          "name": "ButtonText",
+          "template": null
+        }
+      ],
+      "bindings": 45,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/ea6b0880-7e9c-448a-b1b5-46dbed752e52",
+      "sha256": "ac1765abbbad0edd8a2c995350d8f500485683d3edbf89fd7c210ea2adac6f12",
+      "bytes": 1195,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [
+        {
+          "name": "ImageID",
+          "type": 4,
+          "id": 363658937
+        },
+        {
+          "name": "MySize",
+          "type": 5,
+          "id": 467164578
+        }
+      ],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "icon_transparent.png",
+          "template": null
+        }
+      ],
+      "bindings": 2,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/1e50eb5a-ce6e-418a-8f6e-27aee75c1f38",
+      "sha256": "c46025974ca722a7e96ca5a6f9d10fcf562b2822011461f36027355df146bcd8",
+      "bytes": 525,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "color_grey_light_5.png",
+          "template": null
+        }
+      ],
+      "bindings": 0,
+      "event_action_properties": []
+    },
+    {
+      "path": "data/ui/studio/generated/df6365b0-66d4-4af1-847f-1931cdd4e84c",
+      "sha256": "d9a683bcc47ee4eb081f48790cf942ce5c76333815de9918ca7a4867b0852c4e",
+      "bytes": 524,
+      "complete_decode": true,
+      "roundtrip_equal": true,
+      "properties": [],
+      "elements": [
+        {
+          "kind": "template",
+          "name": "(template)",
+          "template": null
+        },
+        {
+          "kind": "image",
+          "name": "color_grey_dark_2.png",
+          "template": null
+        }
+      ],
+      "bindings": 0,
+      "event_action_properties": []
+    }
+  ],
+  "native_limits": {
+    "PWL_present": false,
+    "rdui_stubs_present": false,
+    "assets_defaults_datasets": "Not involved in these binary UI document declarations; no gameplay-asset or action implementation is proposed.",
+    "opaque_engine_actions": "Binding paths and native game objects exist, but arbitrary Lua callbacks / new engine actions have not been established."
+  },
+  "test_limits": "Source inspection / decoding only. No modified UI roundtrip fixture, generated mod load, game or multiplayer execution."
+}
