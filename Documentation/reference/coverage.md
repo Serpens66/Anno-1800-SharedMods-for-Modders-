@@ -117,6 +117,11 @@ For runtime behavior, preserve the original test's limits. Offline XML/Lua check
 - Ten actual GU17.1 fixtures passed, including foreign additions in both orders and explicit non-idempotence/preexisting-duplicate limits. The complete dependency chain retains all 96,272 asset identities and has zero semantic changes against the captured pre-edit Campaign 1.022 output. [Results](validation/mod-compatibility/results.json).
 - Campaign 1.023 changes only the preparation/append shape for the existing 151076 timer and adds its version/changelog entry. Story stays 1.032. Existing mod source examples, snapshots and review IDs remain historical and unchanged. No game, MP, save migration, publication or kit synchronization; KIT021 remains open.
 
+## Shared mod decision guidance (2026-11-25)
+
+- [Mod compatibility](../foundations/mod-compatibility.md#when-to-use-or-create-a-shared-mod) records Serp's reuse policy and uses a shared effect target pool and a shared participant role as examples. Source scope for the participant example covers the Vanilla `ParticipantID` dataset in `datasets.xml` (SHA-256 `814e866f3bd38b271e0aa4fa91a1080e9e64121d54431d98c74d916739c30a48`), the workspace `shared_NatureParticipant` 1.033 `assets.xml` (SHA-256 `a6324d033d572a7fc6a73c62e4f367773a04d1366299a61e20e8f124ba086a5d`) and the reviewed LuaMedium intermediary. This records source evidence for the example. Game, save and multiplayer behavior were outside the review.
+- Aligned the [bundling guidance](../foundations/identifiers-and-tools.md#shared-resources-and-development-tool-dependencies) with the pinned vscode-anno builder finding in [Q003](discrepancies.md#q003-urls-in-authoring-tool-moddependencies). The build/download execution status is unchanged.
+
 ## Serp GUID allocation inventory (2026-11-12)
 
 - Added the [workspace GUID register](serp-guid-usage.md) and repeatable live allocation check. The scan records literal occurrences, asset/text definition evidence, source hashes and nearest mod metadata; same-ModID copies and declared-incompatible pairs are classified separately. This is a conservative source inventory, not a feature audit or runtime collision certification. Serp explicitly requests normal use of the inclusive 1500000000-1500010000 reservation for Serp assets.

@@ -32,7 +32,7 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Read property definitions, nested types and dataset values | [Properties and datasets](foundations/vanilla-research.md#reading-properties-toolonexml-and-datasetsxml) |
 | Understand assets, templates and BaseAssetGUID | [Inheritance](foundations/inheritance.md) |
 | Package and order mods or shared dependencies | [Structure and metadata](foundations/structure-and-loading.md) |
-| Make mods compose safely | [Mod compatibility](foundations/mod-compatibility.md) |
+| Make mods compose safely and decide when to use a shared mod | [Mod compatibility](foundations/mod-compatibility.md) |
 | Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md) |
 | Choose external editors, viewers and converters; use and update Anno Toolbox | [Modding tools](modding-tools/README.md) |
 | Configure authoring tools and inspect generated deployment | [Authoring tools](foundations/authoring-tools.md) |

@@ -83,6 +83,22 @@ If the copy must include earlier mods' additions, establish that order. Do not a
 
 ## Shared components, metadata and names
 
+### When to use or create a shared mod
+
+When multiple mods could need the same definition, extension point or helper and should work together, use a suitable existing shared mod. If none exists, put the common feature in a shared mod so each consumer can reference or extend one definition. Give it a stable ModID and document the GUIDs, hooks or other interfaces consumers use. Keep mod-specific content and settings in the consuming mods. Use a targeted compatibility patch for an adjustment specific to the interaction of two particular mods.
+
+For example, Shared Pools and Definitions provides a common effect target pool for sand mines. Two mods can each add their own sand pit under its own building GUID, then append that GUID to the shared pool from their own patches. An effect that targets the pool can then reach both buildings through the same pool reference. See the [shared resources catalogue](identifiers-and-tools.md#shared-resources-and-development-tool-dependencies).
+
+### Share scarce enum slots by role
+
+When several mods need the same role from a limited enum, define the role once in a shared mod and have consumers reference it. That leaves more slots available for genuinely different roles and lets more mod content coexist. Distinct asset GUIDs still leave a collision risk if independent mods assign different participant profiles to the same `ParticipantID` slot. Coordinate the assignment when a feature needs a distinct participant.
+
+Serp's `shared_NatureParticipant` 1.033 defines a neutral participant using `Mod10`. The source describes it as a neutral owner for mod objects, such as helper objects. LuaMedium uses the same participant as an intermediary for transfers that need trade rights. `Mod10` is an existing entry in the Vanilla `ParticipantID` dataset, whose description requires preserving the entry order. Its dataset entry ID (`180`), Lua participant ID used by LuaMedium (`158`), and profile asset GUID (`1500004528`) are separate identifiers. The Vanilla dataset establishes the declared enum. The mod XML and Lua establish the intended reuse. See [Serp's helper source](https://github.com/Serpens66/Anno-1800-SharedMods-for-Modders-/blob/3aece64f299365309aaf1f7a57f28e2f6900f106/shared_NatureParticipant/data/config/export/main/asset/assets.xml), [LuaMedium's reviewed interface](../lua/shared-medium-and-ultra.md#mediums-implemented-public-table) and [dataset lookup](vanilla-research.md#dataset-lookup-and-the-different-kinds-of-identifiers).
+
+### Bundle and order shared dependencies
+
+For manual bundling, copy the complete shared mod folder, including its `modinfo.json` and any nested dependencies it ships, into the consuming mod. Preserve the shared mod's contents, ModID and version. For VS Code Build and Deploy, see the [version-scoped bundle configuration](authoring-tools.md#bundles-unresolved-documentation-shortcut).
+
 `ModDependencies` expresses required components; `LoadAfterIds` expresses ordering. A late-phase integration must respect the late phase as well as the named dependency. Keep stable ModIDs, check cycles and inspect the actual selected shared version. Highest-version selection is not an API guarantee; equal IDs/versions with different contents remain a packaging risk.
 
 Serp's SharedMods README asks consumers to keep shared copies unchanged, propose general improvements upstream and make private adaptations from their own consuming mod loaded afterwards (C08). Preserve that contract when bundling helpers.
