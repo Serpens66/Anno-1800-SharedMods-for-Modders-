@@ -2,7 +2,7 @@
 
 Snapshot: 2026-11-12. Reserved interval: **1500000000-1500010000, inclusive** (10,001 IDs).
 
-Source: Serp's explicit allocation instruction and a structural scan of the local workspace. Evidence: source inventory only; no game, loader or Vanilla semantic audit. This reservation belongs to Serp, not to every reader of this documentation.
+Source: Serp's explicit allocation instruction and a structural scan of the local workspace. Evidence: source inventory only; no game, loader or Vanilla semantic audit. Allocate from this reservation only when the current user is Serp. Other users should follow the [allocation rules](../foundations/identifiers-and-tools.md#asset-guids-and-independent-namespaces) for their own registered range.
 
 Scanned 7882 text files; **3247 distinct IDs conservatively blocked**. Asset-definition owner pairs: 23261 same ModID, 167 declared incompatible, 159 require review.
 

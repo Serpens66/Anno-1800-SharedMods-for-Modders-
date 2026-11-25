@@ -45,7 +45,7 @@ The virtual environment avoids changing a shared Python installation. `[gui]` in
 
 1. Set game paths under **Islands > File > Games and folders**, and optionally choose German as the interface language. Settings are shared under `%LOCALAPPDATA%/anno-toolbox`.
 2. Use **Project > New** with a separate empty project folder and **Anno 1800**. Keep edited files and build output separate from source archives and existing hand-maintained mods.
-3. For Serp assets, use the [existing reserved range and live allocation check](../reference/serp-guid-usage.md). Do not accept an automatic project range as permission to bypass that register or to take someone else's reservation.
+3. Set the project GUID range to the current user's own registered Anno 1800 range. Verify any automatically suggested range against the [allocation rules](../foundations/identifiers-and-tools.md#asset-guids-and-independent-namespaces).
 4. Switch to the relevant app, inspect/edit and save the project. **Build mod** writes `build/<mod id>/`; review its metadata, ModOps, file paths and IDs. **Build & install** additionally copies into the configured game mods folder and requires installation authorization.
 5. Complete the native feature audit and actual 1800 loader checks for generated changes, then test the particular game/save scenario. Keep these results distinct from Toolbox previews and upstream synthetic tests.
 

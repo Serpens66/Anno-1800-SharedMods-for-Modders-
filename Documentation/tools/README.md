@@ -16,7 +16,7 @@ For tooltip research, run `python -B tools/find_infotips.py --guid 500460 --refe
 
 ## Serp GUID allocation check
 
-`python -B tools/guid_inventory.py --check NUMBER` scans the configured workspace before assigning a new Serp GUID. Read the [register](../reference/serp-guid-usage.md) for scope, exit codes and limitations. `--write` explicitly refreshes the maintained Markdown/JSON register after allocation; omit it for read-only checks. Same-ModID and declared-incompatible definition pairs are classified separately from pairs needing review.
+This scanner is fixed to Serp’s reserved range. Use it for new GUID allocation only when the current user is Serp. `python -B tools/guid_inventory.py --check NUMBER` scans the configured workspace for the candidate GUID. Read the [register](../reference/serp-guid-usage.md) for scope, exit codes and limitations. `--write` explicitly refreshes the maintained Markdown/JSON register after allocation; omit it for read-only checks. Same-ModID and declared-incompatible definition pairs are classified separately from pairs needing review.
 
 ## Source research and offline evaluator tools
 

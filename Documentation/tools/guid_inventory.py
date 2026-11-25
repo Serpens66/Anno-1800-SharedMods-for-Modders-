@@ -137,7 +137,9 @@ def markdown(data):
              f"Snapshot: {data['date']}. Reserved interval: **{LOW}-{HIGH}, inclusive** (10,001 IDs).", '',
              'Source: Serp\'s explicit allocation instruction and a structural scan of the local workspace. '
              'Evidence: source inventory only; no game, loader or Vanilla semantic audit. '
-             'This reservation belongs to Serp, not to every reader of this documentation.', '',
+             'Allocate from this reservation only when the current user is Serp. Other users should follow the '
+             '[allocation rules](../foundations/identifiers-and-tools.md#asset-guids-and-independent-namespaces) '
+             'for their own registered range.', '',
              f"Scanned {data['scanned_text_files']} text files; **{len(data['guids'])} distinct IDs conservatively blocked**. "
              f"Asset-definition owner pairs: {counts['same-ModID']} same ModID, "
              f"{counts['declared-incompatible']} declared incompatible, {counts['review-required']} require review.", '',

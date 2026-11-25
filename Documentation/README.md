@@ -10,7 +10,9 @@ Public mod sources are linked on GitHub. Each user supplies their **own current 
 
 Give the chat this README and ask:
 
-> Read README.md, AGENTS.md, reference/coverage.md and reference/discrepancies.md from this Documentation folder. Use the relevant chapters and linked public sources for my task. Before game-dependent decisions, audit my own extracted Vanilla files. Ask for files you cannot access. Preserve evidence qualifications, and record reusable findings through maintenance.md.
+> Read README.md, AGENTS.md, reference/coverage.md and reference/discrepancies.md from this Documentation folder. Use the relevant chapters and linked public sources for my task. Before game-dependent decisions, audit my own extracted Vanilla files. Ask for files you cannot access. Use my own registered Anno 1800 GUID range for new asset IDs and ask me if you need it. Preserve evidence qualifications, and record reusable findings through maintenance.md.
+
+For new GUIDs, give your chat your own registered Anno 1800 range. Only Serp can allocate new GUIDs from Serp’s reservation, **1500000000–1500010000 inclusive**. See [Identifiers and tools](foundations/identifiers-and-tools.md#asset-guids-and-independent-namespaces).
 
 1. For explanation/research, begin with the topic index; no local setup is required.
 2. For mod work, follow [setup](setup.md) and the [workflow](workflow.md). A path grants access only if the chat has a file tool that can read it; otherwise upload the necessary files or use a local assistant.
@@ -31,7 +33,7 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Understand assets, templates and BaseAssetGUID | [Inheritance](foundations/inheritance.md) |
 | Package and order mods or shared dependencies | [Structure and metadata](foundations/structure-and-loading.md) |
 | Make mods compose safely | [Mod compatibility](foundations/mod-compatibility.md) |
-| Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md), [Serp workspace GUID register](reference/serp-guid-usage.md) |
+| Allocate identifiers and convert binary formats | [Identifiers and tools](foundations/identifiers-and-tools.md) |
 | Choose external editors, viewers and converters; use and update Anno Toolbox | [Modding tools](modding-tools/README.md) |
 | Configure authoring tools and inspect generated deployment | [Authoring tools](foundations/authoring-tools.md) |
 | Write an XML patch | [ModOps](xml/modops.md) and [XPath](xml/xpath.md) |

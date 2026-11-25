@@ -121,6 +121,8 @@ For runtime behavior, preserve the original test's limits. Offline XML/Lua check
 
 - Added the [workspace GUID register](serp-guid-usage.md) and repeatable live allocation check. The scan records literal occurrences, asset/text definition evidence, source hashes and nearest mod metadata; same-ModID copies and declared-incompatible pairs are classified separately. This is a conservative source inventory, not a feature audit or runtime collision certification. Serp explicitly requests normal use of the inclusive 1500000000-1500010000 reservation for Serp assets.
 
+- On 2026-11-25, Serp clarified that only Serp can allocate new GUIDs from this reservation. Every other user follows the [allocation rules](../foundations/identifiers-and-tools.md#asset-guids-and-independent-namespaces) for their own registered range. This is an author instruction.
+
 ## External modding-tools addition (2026-11-16)
 
 - Added the [modding-tools section](../modding-tools/README.md), with a task-oriented Anno Toolbox inventory, Python/MSI setup distinction, CLI examples and the local fast-forward update helper workflow.
