@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anno 1800 CFG Condition Converter</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; color: #eef2ef; background: #102020; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(100% - 2rem, 78rem); margin: 3rem auto; }
+    h1 { margin: 0; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.1; }
+    p { color: #c1d1cb; line-height: 1.5; }
+    a { color: #b4e4cc; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 18rem); gap: 1.4rem; align-items: start; }
+    .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    fieldset, .result { border: 1px solid #43615a; border-radius: .75rem; padding: .75rem; margin: 0; min-width: 0; background: #192d2c; }
+    legend { padding: 0 .42rem; font-weight: 700; color: #e8c98d; }
+    .choice { display: grid; grid-template-columns: auto 1fr auto; gap: .55rem; align-items: center; padding: .53rem .4rem; border-radius: .35rem; cursor: pointer; }
+    .choice:hover, .choice:focus-within, .choice:has(input:checked) { background: #294542; }
+    input[type=checkbox] { accent-color: #e8c98d; width: 1.12rem; height: 1.12rem; margin: 0; }
+    small { display: block; color: #bccbc4; overflow-wrap: anywhere; }
+    .choice code { font-size: .82rem; color: #e8c98d; }
+    .result { position: sticky; top: 1rem; padding: 1.05rem; }
+    .result label { display: block; font-weight: 700; }
+    #number { width: 100%; margin: .45rem 0 .7rem; padding: .35rem .5rem; border: 1px solid #5b756e; border-radius: .4rem; color: inherit; background: #102020; font: 700 clamp(1.35rem, 3vw, 1.85rem) ui-monospace, monospace; }
+    .actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+    button { padding: .5rem .75rem; border: 1px solid #738880; border-radius: .4rem; font: inherit; color: inherit; background: #263e3b; cursor: pointer; }
+    button:first-child { border-color: #e8c98d; color: #182421; background: #e8c98d; }
+    :focus-visible { outline: 2px solid #f1d9aa; outline-offset: 3px; }
+    #status { min-height: 1.5em; margin-bottom: 0; }
+    .note { margin: 1.2rem 0 0; max-width: 58rem; }
+    @media (max-width: 58rem) { .layout { grid-template-columns: minmax(0, 1fr); } .result { grid-row: 1; position: static; } }
+    @media (max-width: 36rem) { .choices { grid-template-columns: minmax(0, 1fr); } main { margin-top: 1.5rem; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Anno 1800 CFG Condition Converter</h1>
+    <p>Select the conditions you want to include, then copy the CFG number.</p>
+    <noscript><p>Enable JavaScript to calculate the CFG number. The individual values are listed beside each condition.</p></noscript>
+    <div class="layout">
+      <div class="choices" id="choices">
+      <fieldset>
+        <legend>Scene and selection</legend>
+        <label class="choice"><input type="checkbox" value="1"><span>Color transform state<small>ColorTransform</small></span><code>1</code></label>
+        <label class="choice"><input type="checkbox" value="2"><span>Physics transform state<small>PhysicsTransform</small></span><code>2</code></label>
+        <label class="choice"><input type="checkbox" value="4"><span>Destruction transform state<small>DestructionTransform</small></span><code>4</code></label>
+        <label class="choice"><input type="checkbox" value="8"><span>Selected<small>Selected</small></span><code>8</code></label>
+        <label class="choice"><input type="checkbox" value="16"><span>Unselected<small>Unselected</small></span><code>16</code></label>
+        <label class="choice"><input type="checkbox" value="65536"><span>Daytime sky<small>SkyDay</small></span><code>65536</code></label>
+      </fieldset>
+      <fieldset>
+        <legend>Status and warnings</legend>
+        <label class="choice"><input type="checkbox" value="131072"><span>Shield effect<small>EffectShield</small></span><code>131072</code></label>
+        <label class="choice"><input type="checkbox" value="262144"><span>Repair effect<small>EffectRepair</small></span><code>262144</code></label>
+        <label class="choice"><input type="checkbox" value="524288"><span>Stun effect<small>EffectStun</small></span><code>524288</code></label>
+        <label class="choice"><input type="checkbox" value="1048576"><span>Burn effect<small>EffectBurn</small></span><code>1048576</code></label>
+        <label class="choice"><input type="checkbox" value="2097152"><span>Warning lights<small>ShowWarningLights</small></span><code>2097152</code></label>
+        <label class="choice"><input type="checkbox" value="4194304"><span>Riot<small>Riot</small></span><code>4194304</code></label>
+        <label class="choice"><input type="checkbox" value="8388608"><span>Special riot state<small>RiotSpecial01</small></span><code>8388608</code></label>
+      </fieldset>
+      <fieldset>
+        <legend>Buildings and terrain</legend>
+        <label class="choice"><input type="checkbox" value="16777216"><span>No inhabitants<small>NoInhabitants</small></span><code>16777216</code></label>
+        <label class="choice"><input type="checkbox" value="33554432"><span>Ruin<small>Ruin</small></span><code>33554432</code></label>
+        <label class="choice"><input type="checkbox" value="67108864"><span>Irrigated<small>Irrigated</small></span><code>67108864</code></label>
+        <label class="choice"><input type="checkbox" value="134217728"><span>Default ground decal<small>GroundDecalDefault</small></span><code>134217728</code></label>
+        <label class="choice"><input type="checkbox" value="268435456"><span>Ground decal variation<small>GroundDecalVariation</small></span><code>268435456</code></label>
+        <label class="choice"><input type="checkbox" value="536870912"><span>Electricity<small>Electricity</small></span><code>536870912</code></label>
+      </fieldset>
+      <fieldset>
+        <legend>CFG-specific slots</legend>
+        <label class="choice"><input type="checkbox" value="32"><span>Common slot 1<small>Common01</small></span><code>32</code></label>
+        <label class="choice"><input type="checkbox" value="64"><span>Common slot 2<small>Common02</small></span><code>64</code></label>
+        <label class="choice"><input type="checkbox" value="128"><span>Common slot 3<small>Common03</small></span><code>128</code></label>
+        <label class="choice"><input type="checkbox" value="256"><span>Common slot 4<small>Common04</small></span><code>256</code></label>
+        <label class="choice"><input type="checkbox" value="512"><span>Common slot 5<small>Common05</small></span><code>512</code></label>
+        <label class="choice"><input type="checkbox" value="1024"><span>Common slot 6<small>Common06</small></span><code>1024</code></label>
+        <label class="choice"><input type="checkbox" value="2048"><span>Common slot 7<small>Common07</small></span><code>2048</code></label>
+        <label class="choice"><input type="checkbox" value="4096"><span>Common slot 8<small>Common08</small></span><code>4096</code></label>
+        <label class="choice"><input type="checkbox" value="8192"><span>Common slot 9<small>Common09</small></span><code>8192</code></label>
+        <label class="choice"><input type="checkbox" value="16384"><span>Common slot 10<small>Common10</small></span><code>16384</code></label>
+        <label class="choice"><input type="checkbox" value="32768"><span>Common slot 11<small>Common11</small></span><code>32768</code></label>
+      </fieldset>
+      </div>
+      <section class="result" aria-label="Result">
+        <label for="number">CFG number</label>
+        <input id="number" readonly value="0">
+        <div class="actions">
+          <button type="button" id="copy">Copy number</button>
+          <button type="button" id="clear">Clear selection</button>
+        </div>
+        <p id="status" role="status">No conditions selected.</p>
+      </section>
+    </div>
+    <p class="note">Common slots depend on the object. Check the sequence and transform in the same CFG to identify the right slot. Selecting several entries combines their values. The receiving transform determines how the combination behaves. <a href="../ui-and-resources/cfg-and-fc.md#cfg-render-conditions-and-sequence-tracks">CFG reference and examples</a></p>
+  </main>
+  <script>
+    const choices = document.querySelector('#choices');
+    const conditions = Array.from(choices.querySelectorAll('input'));
+    const number = document.querySelector('#number');
+    const status = document.querySelector('#status');
+
+    function updateResult() {
+      const selected = conditions.filter(condition => condition.checked);
+      number.value = String(selected.reduce((total, condition) => total + Number(condition.value), 0));
+      status.textContent = selected.length
+        ? selected.length + (selected.length === 1 ? ' condition selected.' : ' conditions selected.')
+        : 'No conditions selected.';
+    }
+
+    choices.addEventListener('change', updateResult);
+    document.querySelector('#clear').addEventListener('click', () => {
+      conditions.forEach(condition => { condition.checked = false; });
+      updateResult();
+    });
+    document.querySelector('#copy').addEventListener('click', async () => {
+      const copiedNumber = number.value;
+      try {
+        await navigator.clipboard.writeText(copiedNumber);
+        if (number.value === copiedNumber) status.textContent = 'Copied ' + copiedNumber + '.';
+      } catch {
+        number.focus();
+        number.select();
+        status.textContent = 'Number selected. Press Ctrl+C or Command+C to copy.';
+      }
+    });
+    updateResult();
+  </script>
+</body>
+</html>

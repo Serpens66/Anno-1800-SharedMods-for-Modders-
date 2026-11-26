@@ -6,7 +6,9 @@ This chapter documents the reviewed converter/addon interfaces and the graphics 
 
 Primary sources are [rdm4](https://github.com/lukts30/rdm4/tree/a1d5970021b2332babb36edecfc80cc7e3ad2503), the [original Blender addon](https://github.com/xormenter/Blender-Anno-.cfg-Import-Addon/tree/358cde764c8999bf59ef55a63af7f99e32f529fe) and its explicitly linked [Anno 1800 successor](https://github.com/anno-mods/Blender-Anno-1800/tree/c790c97572edfa6b2ea5fcb229feaff0fc753185). The original addon is discontinued. The separate Blender-Anno-117 repository is not this game's addon.
 
-The reviewed addon README targets Blender 3/3.2 and lists rdm4, Microsoft DirectXTex `texconv`, Jakob's AnnoFCConverter, optional A.N.T. Landscape for island previews, and RDA extraction. These are the source's version requirements, not a claim that every later Blender version is supported. Configure the extraction root to the folder **containing `data`**, and configure the actual converter executable paths. A scene's mod folder allows resources to be found in the mod as well as the extraction.
+The earlier pinned addon README targets Blender 3/3.2 and lists rdm4, Microsoft DirectXTex `texconv`, Jakob's AnnoFCConverter, optional A.N.T. Landscape for island previews, and RDA extraction. These are the source's version requirements, not a claim that every later Blender version is supported. Configure the extraction root to the folder **containing `data`**, and configure the actual converter executable paths. A scene's mod folder allows resources to be found in the mod as well as the extraction.
+
+The Anno 1800 successor README at the 2026-10-11 revision declares Blender **5.1** as its minimum. This is an add-on requirement. The older 3.x recommendations describe earlier add-on archives. Record the add-on revision, Blender version, rdm4 build and converter paths together when reproducing a graphics issue. [Pinned successor README](https://github.com/anno-mods/Blender-Anno-1800/blob/e0391b394f12e8fe9134524fd90508e606877e81/README.md#requirements), [community reports for earlier combinations](../community-research/graphics.md#models-and-blender).
 
 ## rdm4 command-line contract
 
@@ -36,6 +38,20 @@ The current CLI help text lists only three formats, but its `TargetVertexFormat`
 Missing normals/tangents trigger errors and fallback values in the inspected converter, which can still leave a generated file. Missing joint/weight data with skeleton export can panic. Check converter logs, exported attributes and reimported geometry, not just whether an RDM filename exists. For animated glTF the reader also reads weights even when the chosen destination omits stored weights; do not deliberately strip weight data from the source based only on `_I4b`.
 
 The animation guide's suggestion that the engine permits only one bone per vertex is explicitly a guess for its example. Weighted converter support is separate evidence and does not justify a universal one-bone limit or guarantee every weighted format in every material context.
+
+## Texture LODs and DDS mipmaps
+
+A DDS header records its own mip count. Anno's numbered DDS files are separate texture resources and can each include a mip chain. At the inspected [annotex 1.2 commit](https://github.com/jakobharder/annotex/tree/48b024fda4e0fb202ccdc5747912a388ac33f3bd), `annotex.exe townhall_diff.png -l=3` requests up to three numbered outputs starting at `_0.dds`. The program generates mipmaps before it decides whether to write numbered files. Its default LOD count of zero writes one unsuffixed DDS. The documented format detection distinguishes BC7 diffuse input from BC1 mask input and treats `_rga` and `_r_a` PNGs as packed inputs. See the [authoring wrapper](../foundations/authoring-tools.md) for conversion through the VS Code extension. [annotex entry point](https://github.com/jakobharder/annotex/blob/48b024fda4e0fb202ccdc5747912a388ac33f3bd/annotex.cpp#L40-L63), [DDS header specification](https://learn.microsoft.com/en-us/windows/win32/direct3ddds/dds-header).
+
+**Vanilla structural example.** Asset 1010282 (Brass Smelter) uses `HeavyFactoryBuilding` with an explicit `Object/Variations/Item/Filename` and no `BaseAssetGUID`. The Object schema identifies Variations as a vector and Filename as its CFG file path. The corresponding property default has an empty Variations list. The native `data/graphics/buildings/production/heavy_09/heavy_09.cfg` uses the stem `heavy_09_diff.psd` for its building diffuse slot and `heavy_09_mask.psd` for `cNightGlowMap`. The extracted `maps` directory contains these corresponding DDS families:
+
+| DDS family | Numbered files | Base dimensions | Internal level counts | Header format |
+| --- | --- | --- | --- | --- |
+| `heavy_09_diff` | `_0`–`_4` | 1536², 768², 384², 192², 96² | 11, 10, 9, 8, 7 | DX10 header, 98 (`BC7_TYPELESS`) |
+| `heavy_09_mask` | `_0`–`_4` | 1536², 768², 384², 192², 96² | 11, 10, 9, 8, 7 | `DXT1` (BC1) |
+| `heavy_09_norm`, `heavy_09_metal` | `_0`–`_4` per family | 1536², 768², 384², 192², 96² | 11, 10, 9, 8, 7 | DX10 header, 98 (`BC7_TYPELESS`) |
+
+The CFG SHA-256 is `30b6a5ee7f9717d3c3e9e1473c4aad57860abdd120c9957fbf015a0a14618829` in the extraction inspected 2026-11-26. These checks establish file naming, the material references and the selected DDS headers. Texture-quality selection and alternative DDS formats still need runtime verification. A separate community discussion and the [DDS Packer source review](../community-research/graphics.md#dds-packer-readme-and-emitted-channels) give cases for comparison. [DDS DXGI enum](https://learn.microsoft.com/en-us/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format), [original mipmap and LOD discussion](https://discord.com/channels/578443209940926465/1080167315452203040/1515007653107990779).
 
 ## Blender scene and material structure
 

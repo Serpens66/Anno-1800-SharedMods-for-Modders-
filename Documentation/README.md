@@ -48,9 +48,11 @@ For a progressive, human-readable introduction with collapsible code examples an
 | Search objects or count executing Coop peers | [ObjectFinder and CoopCount](lua/objectfinder-and-coopcount.md) |
 | Find a tooltip by UI area, text or GUID; trace its asset binding and patch the layout | [Infotips and text](ui-and-resources/infotips-and-text.md) |
 | Patch model and feedback files | [CFG and FC patches](ui-and-resources/cfg-and-fc.md) |
+| Find or calculate a render-condition number | [CFG condition table](ui-and-resources/cfg-and-fc.md#quick-lookup-by-desired-condition), [offline converter](tools/cfg-condition-converter.html) |
 | Decode binary resources and island containers | [Binary formats](ui-and-resources/binary-formats.md) |
 | Understand converters and Blender source procedures | [Graphics toolchain](ui-and-resources/graphics-toolchain.md) |
 | Build a small, reviewable example | [Recipes](recipes/basic-workflows.md) |
+| Find community reports, source checks and linked modding resources | [Discord research](community-research/README.md), [Graphics](community-research/graphics.md), [Code and XML](community-research/code-and-xml.md) |
 | Find source versions and review status | [Sources](reference/sources.md), [coverage](reference/coverage.md) |
 | Check external tutorial defects and integration gaps | [External authoring review](reference/external-authoring-review.md) |
 | Follow complete production/ship tutorial findings and pending native consumers | [Production tutorial review](reference/production-tutorial-review.md), [ship tutorial review](reference/ship-tutorial-review.md) |

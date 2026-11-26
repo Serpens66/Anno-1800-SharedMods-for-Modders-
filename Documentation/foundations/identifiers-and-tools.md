@@ -26,6 +26,12 @@ Internal graphics IDs are another finite namespace; the registry includes collis
 
 The repository has separate Anno 117 and Anno 1800 directories. Use the **1800** registry only. Record the commit/date used because reservations continue to change.
 
+## RDA archive extraction
+
+The RDAExplorer GUI and its linked fork both list Anno 1800 support in their READMEs. RdaConsole documents RDA 2.2 for Anno 1800 and an `extract` subcommand with input filenames (`-f`), a destination (`-o`) and an optional filename regex (`--filter`). For a targeted archive search, start with a separate scratch destination. The optional `-y` is documented as overwriting output. This is upstream documentation reviewed in November 2026. No extractor comparison or new tool execution was performed. [RdaConsole](https://github.com/anno-mods/RdaConsole) [Graphics pointer](https://discord.com/channels/578443209940926465/1080167315452203040/1574308624657023062) [RDAExplorer](https://github.com/lysanntranvouez/RDAExplorer) [RDAExplorer fork](https://github.com/lukts30/RDAExplorer) [Code pointer](https://discord.com/channels/578443209940926465/578443576552325143/1410332837802016799)
+
+For a full extraction, the community guide recommends applying archive revisions in ascending order so later duplicates replace earlier copies at the same path. Verify the archive series and recover the actual resource version before a feature audit. RDA extraction provides the archive entries. FileDBReader subsequently interprets supported serialized resources. [Tool guide](https://github.com/anno-mods/modding-guide/blob/main/getting-started/tools-you-need.md) [September 2026 discussion](https://discord.com/channels/578443209940926465/578443576552325143/1546099129615384617)
+
 ## FileDBReader conversion pipeline
 
 [FileDBReader](https://github.com/anno-mods/FileDBReader/tree/349145a1c1f188d09beb61b675311ff52586e15f) converts serialized/compressed game data to editable representations. Its README distinguishes `decompress`, `compress`, `interpret`, `toHex`, `check_fileversion`, `fctohex` and `hextofc`. An interpreter XML specifies the structure of a particular binary format. Decompression alone does not turn every format into human-readable game XML; interpreting and reconstructing bytes are separate steps.

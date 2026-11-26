@@ -127,3 +127,14 @@ Q009 follow-up, 2026-10-25: Campaign 1.022 includes the bounded current-source c
 - Root README says not on PyPI, while some sub-guides use bare PyPI installation commands. Use the checkout or documented Git installation. The CLI dispatcher exposes more command groups than the root README's two-command list.
 - Suite `--app` dispatch does not forward `--games`; restrict the standalone editor with it and select the game explicitly for a suite project. No upstream behavior was changed.
 - Island replacement by path, 1800 profile activation and generic 1800 save support remain upstream assumptions/unverified scope. No new game/save/MP test is claimed.
+
+## Discord graphics evidence and tool documentation (2026-11-26)
+
+- Anno DDS Packer v1.4.0 describes metal/roughness/AO in RGB, but the tagged packing code emits one metallic plane in RGB and AO in alpha when supplied. The README's numeric DXGI identifier for sRGB is also inconsistent with Microsoft's enum and the encoder's named format. The native brass smelter mask uses DXT1/BC1 while the packer documents BC7 output. Runtime compatibility remains open. [Source comparisons and scope](../community-research/graphics.md#dds-packer-readme-and-emitted-channels).
+- The 2023 Discord answer about CFG conditions correctly flags context-dependent use but gives no global list. Vanilla defines 30 named renderer IDs in property defaults. Generic slots still require the local CFG and its callers for meaning. [CFG render-condition sources](../ui-and-resources/cfg-and-fc.md#cfg-render-conditions-and-sequence-tracks).
+- Blender 3.x support in the earlier add-on snapshot and the 5.1 requirement declared by the successor's October 2026 README concern distinct add-on revisions. Anno 1800's PC update date cannot resolve that tool dependency. [Pinned versions](../ui-and-resources/graphics-toolchain.md#scope-and-prerequisites).
+
+## Discord code reports with unresolved causes (2026-11-26)
+
+- In the Persian localization test, both the patch structure and file size changed. The screenshot supports a visible text patch with a separate glyph issue. A general language-file size limit remains unestablished. [Packages and screenshot](../community-research/code-and-xml.md#lua-ui-and-diagnostics).
+- The historical status-chain screenshot shows simultaneous status icons. It supplies no hit count or independent confirmation on GU18.4. Reported ship HP thresholds likewise varied with the test. [Combat reports](../community-research/code-and-xml.md#asset-schema-gameplay-and-save-state).

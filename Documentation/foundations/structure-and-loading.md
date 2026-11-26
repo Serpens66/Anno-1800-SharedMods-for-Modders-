@@ -101,6 +101,8 @@ Serp's notebook records reload limitations: graphics do not refresh reliably thr
 
 The pinned repository contains older external-loader integration, including Python forwarding and a file watcher. Its `external-file-loader/src/mod_manager.cc` still recognizes `start_script.py`, scans only its historical folder arrangement and treats `.xml` as patchable. These remnants must not override current integrated-loader documentation about nested mods, binary patches or Lua. The reusable `xml-operations` implementation is the inspected source for ModOp semantics; provenance is recorded per component.
 
+Ubisoft confirmed the integrated PC loader in April 2023. Game Update 18 added the mod.io browser in August, and GU18.1 subsequently fixed a load-order issue for identical files. Use the release boundary when interpreting older installation or ordering reports. [Ubisoft's April follow-up](https://www.anno-union.com/union-update-news-patch-plans-and-a-community-spotlight/) [GU18](https://www.anno-union.com/updates/anno-1800-pc-game-update-18/) [GU18.1](https://www.anno-union.com/updates/anno-1800-pc-game-update-18-1/)
+
 Do not install historical replacement Python DLLs as a step in a new integrated-loader workflow. Python remains useful outside the game for extraction, XML/XPath checks, generation and analysis.
 
 
